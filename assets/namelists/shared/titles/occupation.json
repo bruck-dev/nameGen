@@ -1,0 +1,13 @@
+{
+    "title": "Occupation Titles Namelist",
+    "description": "Namelist for occupation title prefixes.",
+    "male": [
+
+    ],
+    "female": [
+
+    ],
+    "neutral": [
+
+    ]
+}

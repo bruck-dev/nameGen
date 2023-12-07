@@ -1,0 +1,34 @@
+{
+    "title": "Sobriquet Namelist",
+    "description": "Name list one-word sobriquets. Should probably replace surnames",
+    "male": [
+        "Twistedbeard"
+    ],
+    "female": [
+    ],
+    "neutral": [
+        "Bloodaxe",
+        "Blue-Snake",
+        "Bluetooth",
+        "Fairhair",
+        "Fear-Eater",
+        "Flat-Nose",
+        "Half-Hand",
+        "Iron-Hand",
+        "Ironsides",
+        "Lawgiver",
+        "Long-Legs",
+        "One-Eye",
+        "One-Leg",
+        "Priest-Eater",
+        "Priest-Hater",
+        "Sharp-Tongue",
+        "Stoneface",
+        "Strongarm",
+        "Troll-Slayer",
+        "Troublemaker",
+        "Truthseeker",
+        "Wartooth",
+        "Whiteshirt"
+    ]
+}

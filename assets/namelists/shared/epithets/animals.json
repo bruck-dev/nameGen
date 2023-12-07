@@ -1,0 +1,32 @@
+{
+    "title": "Epithet Animal Namelist",
+    "description": "Namelist of animal nicknames/epithets.",
+    "male": [],
+    "female": [
+        "the Dragoness",
+        "the She-Wolf"
+    ],
+    "neutral": [
+        "the Bear",
+        "the Black Adder",
+        "the Bloodhound",
+        "the Boar",
+        "the Bull",
+        "the Chimera",
+        "the Crow",
+        "the Dove",
+        "the Dragon",
+        "the Fox",
+        "the Frog",
+        "the Hawk",
+        "the Jackal",
+        "the Lion",
+        "the Mule",
+        "the Raven",
+        "the Serpent",
+        "the Snake",
+        "the Spider",
+        "the Tiger",
+        "the Wolf"
+    ]
+}

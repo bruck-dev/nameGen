@@ -1,0 +1,37 @@
+{
+    "title": "Religious Titles Namelist",
+    "description": "Namelist for religious title prefixes.",
+    "male": [
+        "Abbot",
+        "Brother",
+        "Father",
+        "High Priest",
+        "Patriarch",
+        "Priest",
+        "Prior"
+    ],
+    "female": [
+        "Abbess",
+        "Druidess",
+        "High Priestess",
+        "Matriarch",
+        "Mother",
+        "Mother Superior",
+        "Priestess",
+        "Prioress",
+        "Sister"
+    ],
+    "neutral": [
+        "Druid",
+        "Acolyte",
+        "Adept",
+        "Apostle",
+        "Ardent",
+        "Elder",
+        "Novice",
+        "Rector",
+        "Saint",
+        "Vicar",
+        "Zealot"
+    ]
+}

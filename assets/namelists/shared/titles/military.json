@@ -1,0 +1,20 @@
+{
+    "title": "Military Titles Namelist",
+    "description": "Namelist for military title prefixes.",
+    "male": [],
+    "female": [
+        "Knightess",
+        "Knightess-Errant"
+    ],
+    "neutral": [
+        "Captain",
+        "Commander",
+        "General",
+        "Knight",
+        "Knight-Errant",
+        "Lieutenant",
+        "Marshal",
+        "Officer",
+        "Sergeant"
+    ]
+}

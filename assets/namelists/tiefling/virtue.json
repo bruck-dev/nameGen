@@ -1,0 +1,34 @@
+{
+    "title": "Virtue Tiefling Namelist",
+    "description": "Virtue-style Tiefling names from DND. No surnames by default.",
+    "neutral": [
+        "Arcane",
+        "Art",
+        "Brave",
+        "Carrion",
+        "Chant",
+        "Creed",
+        "Despair",
+        "Excellence",
+        "Fear",
+        "Glory",
+        "Hope",
+        "Ideal",
+        "Knowledge",
+        "Liberation",
+        "Music",
+        "Nowhere",
+        "Open",
+        "Poetry",
+        "Quest",
+        "Random",
+        "Reverence",
+        "Sorrow",
+        "Temerity",
+        "Torment",
+        "Victory",
+        "Weary"
+    ],
+    "surname": [
+    ]
+}
