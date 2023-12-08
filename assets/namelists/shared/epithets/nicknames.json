@@ -7,6 +7,7 @@
         "the Seducer"
     ],
     "female": [
+        "the Bitch",
         "the Maid",
         "the Nun",
         "the Sea-Queen",
@@ -15,6 +16,7 @@
         "the She-Devil",
         "the Shieldmaiden",
         "the Temptress",
+        "the Vixen",
         "the Witch"
     ],
     "neutral": [
@@ -67,6 +69,7 @@
         "the Conqueror",
         "the Courageous",
         "the Cruel",
+        "the Deathless",
         "the Decadent",
         "the Deceiver",
         "the Defender",
@@ -111,6 +114,7 @@
         "the Glorious",
         "the Good",
         "the Gracious",
+        "the Gravewalker",
         "the Great",
         "the Greedy",
         "the Green Knight",
@@ -194,6 +198,7 @@
         "the Repulsive",
         "the Resilient",
         "the Restorer",
+        "the Revenant",
         "the Rich",
         "the Ruthless",
         "the Sage",

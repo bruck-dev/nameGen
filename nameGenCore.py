@@ -13,14 +13,13 @@ __status__ = "Development"
 
 
 ## Backend Imports ##
-import typing
-from PyQt6 import QtCore
+import time
 from util.jsonProcessing import *
 from util.fileProcessing import *
 
 ## PyQt Framework Imports ##
 from PyQt6.QtCore import Qt
-from PyQt6.QtCore import QUrl, QPropertyAnimation, QEasingCurve
+from PyQt6.QtCore import QUrl
 from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PyQt6.QtWidgets import (
     QApplication,
@@ -72,6 +71,9 @@ class Main(QMainWindow):
         ## Window Setup ##
         self.setWindowTitle('Bruck\'s Name Generator')
         self.setFixedSize(500, 425)
+        
+        ## Audio Setup ##
+        self.player = AudioPlayer()
         
         ## Widget Init ##
         tab = QTabWidget(self, movable=False, tabsClosable=False)
@@ -141,6 +143,9 @@ class Main(QMainWindow):
         self.comboToggleRow(self.jsonNameTypeCombo, 3, False) # Disable Gender Neutral
         self.jsonInputBox = QPlainTextEdit()
         
+        # Music Control Page #
+        
+        
         ## Signal Connection Configuration ##
         # Generator Page #
         genButton.clicked.connect(self.generateName)
@@ -162,6 +167,8 @@ class Main(QMainWindow):
         self.jsonListCombo.currentIndexChanged.connect(self.jsonNamelistChanged)
         self.jsonNameTypeCombo.currentTextChanged.connect(self.jsonNameTypeChanged)
         
+        # Music Control Page #
+        self.player.mediaStatusChanged.connect(self.musicUpdatePlaying)
         
         ## Page Layouts ##
         # Generator Page Layout #
@@ -227,6 +234,10 @@ class Main(QMainWindow):
         
         jsonPage.setLayout(jsonPage.layout)
         tab.addTab(jsonPage, 'Namelist Tools')
+        
+        # Music Control Layout #
+        musicPage = QWidget()
+        tab.addTab(musicPage, 'Music Controls')
         
         
         ## Finalize Window Layout ##
@@ -448,6 +459,76 @@ class Main(QMainWindow):
                     i += 1
             view.setRowHidden(row, show)
 
+    def musicUpdatePlaying(self):
+        pass
+    
+class AudioPlayer(QMediaPlayer):
+    def __init__(self):
+        super().__init__()
+        self.audioOut = QAudioOutput()
+        self.setAudioOutput(self.audioOut)
+        self.audioOutput().setVolume(.5)
+        self.currentVolume = self.audioOut.volume()
+        self.activeTrack = 0
+        
+        self.mediaStatusChanged.connect(self.detectSongChange)
+        
+        # Set track list and shuffle
+        self.tracks = getMusic()
+        if self.tracks is not None:
+            random.shuffle(self.tracks)
+            self.changeSong()
+            self.play()
+        
+    def play(self):
+        super().play()
+        
+    def pause(self):
+        super().pause()
+        
+    def stop(self):
+        super().stop()
+        
+    def skipForward(self):
+        self.stop()
+        if self.activeTrack < len(self.tracks)- 1:
+            self.activeTrack += 1
+        else:
+            self.activeTrack = 0
+        self.changeSong()
+        self.play()
+        
+    def skipBackward(self):
+        self.stop()
+        if self.activeTrack < len(self.tracks) - 1 and self.activeTrack > 0:
+            self.activeTrack -= 1
+        else:
+            self.activeTrack = len(self.tracks) - 1
+        self.changeSong()
+        self.play()
+    
+    # Change to next song in playlist
+    def changeSong(self):
+        self.setSource(QUrl.fromLocalFile(self.tracks[self.activeTrack]))
+        
+    # Checks for when currently playing media changes
+    def detectSongChange(self, status):
+        if status == QMediaPlayer.MediaStatus.EndOfMedia:
+            self.stop()
+            
+            if self.activeTrack < len(self.tracks)- 1:
+                self.activeTrack += 1
+            else:
+                self.activeTrack = 0
+                
+            # Ensure the media has fully stopped, and then wait 1ms to make sure it's fully ready to change source
+            while self.playbackState() != QMediaPlayer.PlaybackState.StoppedState:
+                pass
+            time.sleep(0.001)
+            
+            self.changeSong()
+            self.play()
+    
         
 # Execute App
 app = QApplication([])

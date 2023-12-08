@@ -9,4 +9,4 @@ __status__ = "Development"
 import glob
 
 def getMusic():
-    return list(glob.glob("assets/music/*.wav"))
+    return glob.glob("assets/music/*.wav") + glob.glob("assets/music/*.mp3")

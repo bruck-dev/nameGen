@@ -1,1 +1,1 @@
-Add uncompressed (.wav) music files into this folder to have them autoplay and shuffle within the app. Music not included, but originally designed for the Divinity: Original Sin 2, Baldur's Gate 3, and The Witcher 3 soundtracks.
+Add uncompressed (.wav, .mp3) music files into this folder to have them autoplay and shuffle within the app. Music not included, but originally designed for the Divinity: Original Sin 2, Baldur's Gate 3, and The Witcher 3 soundtracks.

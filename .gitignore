@@ -155,3 +155,5 @@ cython_debug/
 assets/music/*.wav
 assets/music/*.mp3
 assets/music/*.flac
+
+.vscode/
