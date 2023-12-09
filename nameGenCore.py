@@ -5,7 +5,8 @@
 
 Launches a PyQt6 application where namelist JSON files are used to create the name of a
 character, given a race and gender. Surnames can optionally also be generated and appended
-to the name.
+to the name Has a built-in background music player that enables if files are found in
+assets/music/ and of the type .mp3, .wav, or .flac.
 """
 __author__ = "bruck"
 __version__ = "1.0.0"
@@ -47,7 +48,7 @@ class Main(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        ## Saved Values ##
+        #region Global Variables
         # Namelist Declarations #
         self.titleLists = ['Nobility', 'Military', 'Religious', 'Occupation']
         self.jsonTitleLists = ['Noble Titles', 'Military Titles', 'Religious Titles', 'Occupations']
@@ -70,6 +71,11 @@ class Main(QMainWindow):
         self.genEpithet = None
         self.genTitle = None
         
+        self.playIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPlay)
+        self.pauseIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPause)
+        #endregion
+        
+        #region Widgets
         ## Window Setup ##
         self.setWindowTitle('Bruck\'s Name Generator')
         self.setFixedSize(500, 425)
@@ -153,8 +159,6 @@ class Main(QMainWindow):
         self.musicSkipBButton = QPushButton()
         self.musicSkipBButton.setFixedSize(100, 25)
         self.musicPlayButtonState = -1
-        self.playIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPlay)
-        self.pauseIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPause)
         self.musicPlayButton.setIcon(self.playIcon)
         self.musicSkipFButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipForward))
         self.musicSkipBButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipBackward))
@@ -165,11 +169,13 @@ class Main(QMainWindow):
         musicPageTitleLabel.setFont(font)
         self.musicPageTitle = QLabel()
         self.musicPageTitle.setWordWrap(True)
+        
         musicPageArtistLabel = QLabel('Artist')
         font = musicPageArtistLabel.font()
         font.setBold(True)
         musicPageArtistLabel.setFont(font)
         self.musicPageArtist = QLabel()
+        
         musicPageAlbumLabel = QLabel('Album')
         font = musicPageAlbumLabel.font()
         font.setBold(True)
@@ -178,10 +184,17 @@ class Main(QMainWindow):
         self.musicPageAlbum = QLabel()
         self.musicPageAlbum.setWordWrap(True)
         
+        musicPageLengthLabel = QLabel('\n')
+        musicPageLengthLabel.setFont(font)
+        self.musicPageLength = QLabel()
+        self.musicPageLength.setWordWrap(True)
+        
         self.albumCover = QPixmap()
         self.musicPageImageLabel = QLabel()
         self.musicPageImageLabel.setPixmap(self.albumCover)
+        #endregion
         
+        #region Signals
         ## Signal Connection Configuration ##
         # Generator Page #
         genButton.clicked.connect(self.generateName)
@@ -205,10 +218,13 @@ class Main(QMainWindow):
         
         # Music Control Page #
         self.player.mediaStatusChanged.connect(self.musicUpdatePlaying)
+        self.player.positionChanged.connect(self.musicProgress)
         self.musicPlayButton.clicked.connect(self.musicPlayButtonClicked)
         self.musicSkipFButton.clicked.connect(self.player.skipForward)
         self.musicSkipBButton.clicked.connect(self.player.skipBackward)
+        #endregion
         
+        #region Layout Configuration
         ## Page Layouts ##
         # Generator Page Layout #
         genPage = QWidget()
@@ -293,6 +309,8 @@ class Main(QMainWindow):
         musicPageData.layout.addWidget(self.musicPageArtist)
         musicPageData.layout.addWidget(musicPageAlbumLabel)
         musicPageData.layout.addWidget(self.musicPageAlbum)
+        musicPageData.layout.addWidget(musicPageLengthLabel)
+        musicPageData.layout.addWidget(self.musicPageLength, alignment=Qt.AlignmentFlag.AlignCenter)
         musicPageData.setLayout(musicPageData.layout)
         musicPageData.setFixedSize(200, 225)
         
@@ -323,6 +341,7 @@ class Main(QMainWindow):
         self.setCentralWidget(container)
         container.setLayout(container.layout)
         container.layout.addWidget(tab)
+        #endregion
     
     # Generates the name
     def generateName(self):            
@@ -359,7 +378,6 @@ class Main(QMainWindow):
         
         self.genNamelist = self.genListCombo.currentText()
         self.genListCombo.blockSignals(False)
-        
     def jsonRaceChanged(self, race:str):
         self.jsonListCombo.blockSignals(True)
         self.jsonRace = race
@@ -429,7 +447,6 @@ class Main(QMainWindow):
             self.comboToggleRow(self.genGenderCombo, 0, True)
             self.comboToggleRow(self.genGenderCombo, 1, True)
             self.comboToggleRow(self.genGenderCombo, 2, False)
-
     def jsonNamelistChanged(self, index):
         match self.jsonRace:
             case 'Human':
@@ -483,18 +500,15 @@ class Main(QMainWindow):
         else:
             self.genEpithetCombo.hide()
             self.genEpithet = None
-
     def genTitleChanged(self, checked:bool):
         if checked:
             self.genTitleCombo.show()
             self.genTitle = self.genTitleCombo.currentText()
         else:
             self.genTitleCombo.hide()
-            self.genTitle = None
-            
+            self.genTitle = None       
     def genTitleTypeChanged(self, titleType):
-        self.genTitle = titleType
-    
+        self.genTitle = titleType    
     def genEpithetTypeChanged(self, epithetType):
         self.genEpithet = epithetType
         
@@ -543,20 +557,25 @@ class Main(QMainWindow):
             self.albumCover = self.albumCover.scaled(225, 225)
             self.musicPageImageLabel.setPixmap(self.albumCover)
             
-            metaData = [self.player.tag.title, self.player.tag.artist, self.player.tag.album]
+            metaData = [self.player.tag.title, self.player.tag.artist, self.player.tag.album, self.player.runtime]
             if metaData[0] is not None:
-                self.musicPageTitle.setText(self.player.tag.title)
+                self.musicPageTitle.setText(metaData[0])
             else:
                 self.musicPageTitle.setText('Unknown')
             if metaData[1] is not None:
-                self.musicPageArtist.setText(self.player.tag.artist)
+                self.musicPageArtist.setText(metaData[1])
             else:
                 self.musicPageArtist.setText('Unknown')
             if metaData[2] is not None:
-                self.musicPageAlbum.setText(self.player.tag.album)
+                self.musicPageAlbum.setText(metaData[2])
             else:
                 self.musicPageAlbum.setText('Unknown')
+            if metaData[3] is not None or metaData[3] != '':
+                self.musicPageLength.setText('0:00 / ' + metaData[3])
+            else:
+                self.musicPageLength.setText('Unknown/Unknown')
     
+    # Pause or unpause song and change icon
     def musicPlayButtonClicked(self):
         if self.musicPlayButtonState <= 0:
             self.musicPlayButtonState = 1
@@ -570,6 +589,17 @@ class Main(QMainWindow):
             self.musicPlayButtonState = 1
             self.musicPlayButton.setIcon(self.pauseIcon)
             self.player.play()
+        
+    # Update length label to current song time
+    def musicProgress(self, t):
+        t = int(t / 1000)
+        time = str(int(t / 60)) + ':'
+        sec = int(t % 60)
+        if sec < 10:
+            time += '0' + str(sec)
+        else:
+            time += str(sec)
+        self.musicPageLength.setText(time + " / " + self.player.runtime)
     
 class AudioPlayer(QMediaPlayer):
     def __init__(self):
@@ -579,6 +609,7 @@ class AudioPlayer(QMediaPlayer):
         self.audioOutput().setVolume(.5)
         self.currentVolume = self.audioOut.volume()
         self.activeTrack = 0
+        self.runtime = ''
         
         self.mediaStatusChanged.connect(self.detectSongChange)
         
@@ -626,6 +657,13 @@ class AudioPlayer(QMediaPlayer):
         self.setSource(QUrl.fromLocalFile(self.tracks[self.activeTrack]))
         self.tag = TinyTag.get(self.tracks[self.activeTrack], image=True)
         
+        self.runtime = str(int(self.tag.duration / 60)) + ':'
+        sec = int(self.tag.duration % 60)
+        if sec < 10:
+            self.runtime += '0' + str(sec)
+        else:
+            self.runtime += str(sec)
+        
     # Checks for when currently playing media changes
     def detectSongChange(self, status):
         if status == QMediaPlayer.MediaStatus.EndOfMedia:
@@ -644,7 +682,6 @@ class AudioPlayer(QMediaPlayer):
             self.changeSong()
             self.play()
     
-        
 # Execute App
 app = QApplication([])
 app.setWindowIcon(QIcon('assets/gui/bruck.png'))
