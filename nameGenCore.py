@@ -20,7 +20,7 @@ from util.fileProcessing import *
 ## PyQt Framework Imports ##
 from PyQt6.QtCore import Qt
 from PyQt6.QtCore import QUrl
-from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer, QMediaMetaData
+from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PyQt6.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -40,7 +40,8 @@ from PyQt6.QtWidgets import (
     QWidget,
     QStyle
 )
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QPixmap
+from tinytag import TinyTag
 
 class Main(QMainWindow):
     def __init__(self):
@@ -146,8 +147,11 @@ class Main(QMainWindow):
         
         # Music Control Page #
         self.musicPlayButton = QPushButton()
+        self.musicPlayButton.setFixedSize(100, 25)
         self.musicSkipFButton = QPushButton()
+        self.musicSkipFButton.setFixedSize(100, 25)
         self.musicSkipBButton = QPushButton()
+        self.musicSkipBButton.setFixedSize(100, 25)
         self.musicPlayButtonState = -1
         self.playIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPlay)
         self.pauseIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPause)
@@ -155,6 +159,28 @@ class Main(QMainWindow):
         self.musicSkipFButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipForward))
         self.musicSkipBButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipBackward))
         
+        musicPageTitleLabel = QLabel('Title')
+        font = musicPageTitleLabel.font()
+        font.setBold(True)
+        musicPageTitleLabel.setFont(font)
+        self.musicPageTitle = QLabel()
+        self.musicPageTitle.setWordWrap(True)
+        musicPageArtistLabel = QLabel('Artist')
+        font = musicPageArtistLabel.font()
+        font.setBold(True)
+        musicPageArtistLabel.setFont(font)
+        self.musicPageArtist = QLabel()
+        musicPageAlbumLabel = QLabel('Album')
+        font = musicPageAlbumLabel.font()
+        font.setBold(True)
+        self.musicPageArtist.setWordWrap(True)
+        musicPageAlbumLabel.setFont(font)
+        self.musicPageAlbum = QLabel()
+        self.musicPageAlbum.setWordWrap(True)
+        
+        self.albumCover = QPixmap()
+        self.musicPageImageLabel = QLabel()
+        self.musicPageImageLabel.setPixmap(self.albumCover)
         
         ## Signal Connection Configuration ##
         # Generator Page #
@@ -250,13 +276,45 @@ class Main(QMainWindow):
         
         # Music Control Layout #
         musicPage = QWidget()
-        musicPage.layout = QGridLayout()
-        musicPage.layout.addWidget(self.musicPlayButton, 0, 1)
-        musicPage.layout.addWidget(self.musicSkipFButton, 0, 2)
-        musicPage.layout.addWidget(self.musicSkipBButton, 0, 0)
+        musicPage.layout = QVBoxLayout()
+        musicPageControlGroup = QGroupBox()
+        musicPageControlGroup.layout = QGridLayout()
+        musicPageControlGroup.layout.addWidget(self.musicSkipBButton, 0, 0)
+        musicPageControlGroup.layout.addWidget(self.musicPlayButton, 0, 1)
+        musicPageControlGroup.layout.addWidget(self.musicSkipFButton, 0, 2)
+        musicPageControlGroup.setLayout(musicPageControlGroup.layout)
+        musicPageControlGroup.setFixedHeight(50)
         
+        musicPageData = QGroupBox()
+        musicPageData.layout = QVBoxLayout()
+        musicPageData.layout.addWidget(musicPageTitleLabel)
+        musicPageData.layout.addWidget(self.musicPageTitle)
+        musicPageData.layout.addWidget(musicPageArtistLabel)
+        musicPageData.layout.addWidget(self.musicPageArtist)
+        musicPageData.layout.addWidget(musicPageAlbumLabel)
+        musicPageData.layout.addWidget(self.musicPageAlbum)
+        musicPageData.setLayout(musicPageData.layout)
+        musicPageData.setFixedSize(200, 225)
+        
+        musicPageImage = QGroupBox()
+        musicPageImage.layout = QVBoxLayout()
+        musicPageImage.layout.addWidget(self.musicPageImageLabel)
+        musicPageImage.setLayout(musicPageImage.layout)
+        musicPageImage.setFixedSize(225, 225)
+        
+        musicPageMetaDataGroup = QWidget()
+        musicPageMetaDataGroup.layout = QHBoxLayout()
+        musicPageMetaDataGroup.layout.addWidget(musicPageData)
+        musicPageMetaDataGroup.layout.addWidget(musicPageImage)
+        musicPageMetaDataGroup.setLayout(musicPageMetaDataGroup.layout)
+        
+        musicPage.layout.addWidget(musicPageMetaDataGroup, alignment=Qt.AlignmentFlag.AlignCenter)
+        musicPage.layout.addWidget(musicPageControlGroup, alignment=Qt.AlignmentFlag.AlignCenter)
+        musicPage.layout.addStretch()
         musicPage.setLayout(musicPage.layout)
-        tab.addTab(musicPage, 'Music Controls')
+        
+        if self.player.tracks is not None:
+            tab.addTab(musicPage, 'Music Controls')
         
         
         ## Finalize Window Layout ##
@@ -478,8 +536,26 @@ class Main(QMainWindow):
                     i += 1
             view.setRowHidden(row, show)
 
-    def musicUpdatePlaying(self):
-        pass
+    # Update song title, artist, album, album art, etc. when new song is played
+    def musicUpdatePlaying(self, status):
+        if status == QMediaPlayer.MediaStatus.LoadedMedia:
+            self.albumCover.loadFromData(self.player.tag.get_image())
+            self.albumCover = self.albumCover.scaled(225, 225)
+            self.musicPageImageLabel.setPixmap(self.albumCover)
+            
+            metaData = [self.player.tag.title, self.player.tag.artist, self.player.tag.album]
+            if metaData[0] is not None:
+                self.musicPageTitle.setText(self.player.tag.title)
+            else:
+                self.musicPageTitle.setText('Unknown')
+            if metaData[1] is not None:
+                self.musicPageArtist.setText(self.player.tag.artist)
+            else:
+                self.musicPageArtist.setText('Unknown')
+            if metaData[2] is not None:
+                self.musicPageAlbum.setText(self.player.tag.album)
+            else:
+                self.musicPageAlbum.setText('Unknown')
     
     def musicPlayButtonClicked(self):
         if self.musicPlayButtonState <= 0:
@@ -523,7 +599,7 @@ class AudioPlayer(QMediaPlayer):
         
     def skipForward(self):
         self.stop()
-        if self.activeTrack < len(self.tracks)- 1:
+        if self.activeTrack < len(self.tracks) - 1:
             self.activeTrack += 1
         else:
             self.activeTrack = 0
@@ -541,7 +617,6 @@ class AudioPlayer(QMediaPlayer):
             self.activeTrack = len(self.tracks) - 1
         while self.playbackState() != QMediaPlayer.PlaybackState.StoppedState:
             pass
-        print(self.activeTrack)
         time.sleep(0.001)
         self.changeSong()
         self.play()
@@ -549,6 +624,7 @@ class AudioPlayer(QMediaPlayer):
     # Change to next song in playlist
     def changeSong(self):
         self.setSource(QUrl.fromLocalFile(self.tracks[self.activeTrack]))
+        self.tag = TinyTag.get(self.tracks[self.activeTrack], image=True)
         
     # Checks for when currently playing media changes
     def detectSongChange(self, status):
