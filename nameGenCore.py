@@ -20,7 +20,7 @@ from util.fileProcessing import *
 ## PyQt Framework Imports ##
 from PyQt6.QtCore import Qt
 from PyQt6.QtCore import QUrl
-from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
+from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer, QMediaMetaData
 from PyQt6.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -37,7 +37,8 @@ from PyQt6.QtWidgets import (
     QGridLayout,
     QFormLayout,
     QGroupBox,
-    QWidget
+    QWidget,
+    QStyle
 )
 from PyQt6.QtGui import QIcon
 
@@ -144,6 +145,15 @@ class Main(QMainWindow):
         self.jsonInputBox = QPlainTextEdit()
         
         # Music Control Page #
+        self.musicPlayButton = QPushButton()
+        self.musicSkipFButton = QPushButton()
+        self.musicSkipBButton = QPushButton()
+        self.musicPlayButtonState = -1
+        self.playIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPlay)
+        self.pauseIcon = self.style().standardIcon(QStyle.StandardPixmap.SP_MediaPause)
+        self.musicPlayButton.setIcon(self.playIcon)
+        self.musicSkipFButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipForward))
+        self.musicSkipBButton.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MediaSkipBackward))
         
         
         ## Signal Connection Configuration ##
@@ -169,6 +179,9 @@ class Main(QMainWindow):
         
         # Music Control Page #
         self.player.mediaStatusChanged.connect(self.musicUpdatePlaying)
+        self.musicPlayButton.clicked.connect(self.musicPlayButtonClicked)
+        self.musicSkipFButton.clicked.connect(self.player.skipForward)
+        self.musicSkipBButton.clicked.connect(self.player.skipBackward)
         
         ## Page Layouts ##
         # Generator Page Layout #
@@ -237,6 +250,12 @@ class Main(QMainWindow):
         
         # Music Control Layout #
         musicPage = QWidget()
+        musicPage.layout = QGridLayout()
+        musicPage.layout.addWidget(self.musicPlayButton, 0, 1)
+        musicPage.layout.addWidget(self.musicSkipFButton, 0, 2)
+        musicPage.layout.addWidget(self.musicSkipBButton, 0, 0)
+        
+        musicPage.setLayout(musicPage.layout)
         tab.addTab(musicPage, 'Music Controls')
         
         
@@ -462,6 +481,20 @@ class Main(QMainWindow):
     def musicUpdatePlaying(self):
         pass
     
+    def musicPlayButtonClicked(self):
+        if self.musicPlayButtonState <= 0:
+            self.musicPlayButtonState = 1
+            self.musicPlayButton.setIcon(self.pauseIcon)
+            self.player.play()
+        elif self.musicPlayButtonState == 1:
+            self.musicPlayButtonState = 2
+            self.musicPlayButton.setIcon(self.playIcon)
+            self.player.pause()
+        elif self.musicPlayButtonState == 2:
+            self.musicPlayButtonState = 1
+            self.musicPlayButton.setIcon(self.pauseIcon)
+            self.player.play()
+    
 class AudioPlayer(QMediaPlayer):
     def __init__(self):
         super().__init__()
@@ -478,7 +511,6 @@ class AudioPlayer(QMediaPlayer):
         if self.tracks is not None:
             random.shuffle(self.tracks)
             self.changeSong()
-            self.play()
         
     def play(self):
         super().play()
@@ -495,15 +527,22 @@ class AudioPlayer(QMediaPlayer):
             self.activeTrack += 1
         else:
             self.activeTrack = 0
+        while self.playbackState() != QMediaPlayer.PlaybackState.StoppedState:
+            pass
+        time.sleep(0.001)
         self.changeSong()
         self.play()
         
     def skipBackward(self):
         self.stop()
-        if self.activeTrack < len(self.tracks) - 1 and self.activeTrack > 0:
+        if self.activeTrack < len(self.tracks) and self.activeTrack > 0:
             self.activeTrack -= 1
         else:
             self.activeTrack = len(self.tracks) - 1
+        while self.playbackState() != QMediaPlayer.PlaybackState.StoppedState:
+            pass
+        print(self.activeTrack)
+        time.sleep(0.001)
         self.changeSong()
         self.play()
     
@@ -516,7 +555,7 @@ class AudioPlayer(QMediaPlayer):
         if status == QMediaPlayer.MediaStatus.EndOfMedia:
             self.stop()
             
-            if self.activeTrack < len(self.tracks)- 1:
+            if self.activeTrack < len(self.tracks) - 1:
                 self.activeTrack += 1
             else:
                 self.activeTrack = 0

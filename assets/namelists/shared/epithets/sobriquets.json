@@ -4,8 +4,7 @@
     "male": [
         "Twistedbeard"
     ],
-    "female": [
-    ],
+    "female": [],
     "neutral": [
         "Bloodaxe",
         "Blue-Snake",
@@ -23,6 +22,7 @@
         "Priest-Eater",
         "Priest-Hater",
         "Sharp-Tongue",
+        "Sicarius",
         "Stoneface",
         "Strongarm",
         "Troll-Slayer",
