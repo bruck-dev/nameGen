@@ -10,11 +10,14 @@
         "Captain",
         "Commander",
         "General",
+        "Justiciar",
         "Knight",
         "Knight-Errant",
         "Lieutenant",
+        "Man-At-Arms",
         "Marshal",
         "Officer",
+        "Paladin",
         "Sergeant"
     ]
 }

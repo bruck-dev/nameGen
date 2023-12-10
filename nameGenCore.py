@@ -191,6 +191,7 @@ class Main(QMainWindow):
         
         self.albumCover = QPixmap()
         self.musicPageImageLabel = QLabel()
+        self.musicPageImageLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.musicPageImageLabel.setPixmap(self.albumCover)
         #endregion
         
@@ -220,8 +221,8 @@ class Main(QMainWindow):
         self.player.mediaStatusChanged.connect(self.musicUpdatePlaying)
         self.player.positionChanged.connect(self.musicProgress)
         self.musicPlayButton.clicked.connect(self.musicPlayButtonClicked)
-        self.musicSkipFButton.clicked.connect(self.player.skipForward)
-        self.musicSkipBButton.clicked.connect(self.player.skipBackward)
+        self.musicSkipFButton.clicked.connect(self.musicSkipFButtonClicked)
+        self.musicSkipBButton.clicked.connect(self.musicSkipBButtonClicked)
         #endregion
         
         #region Layout Configuration
@@ -316,7 +317,7 @@ class Main(QMainWindow):
         
         musicPageImage = QGroupBox()
         musicPageImage.layout = QVBoxLayout()
-        musicPageImage.layout.addWidget(self.musicPageImageLabel)
+        musicPageImage.layout.addWidget(self.musicPageImageLabel, alignment=Qt.AlignmentFlag.AlignCenter)
         musicPageImage.setLayout(musicPageImage.layout)
         musicPageImage.setFixedSize(225, 225)
         
@@ -554,7 +555,9 @@ class Main(QMainWindow):
     def musicUpdatePlaying(self, status):
         if status == QMediaPlayer.MediaStatus.LoadedMedia:
             self.albumCover.loadFromData(self.player.tag.get_image())
-            self.albumCover = self.albumCover.scaled(225, 225)
+            if self.albumCover.isNull():
+                self.albumCover = QPixmap('assets/gui/unknownAlbum.jpg')
+            self.albumCover = self.albumCover.scaled(200, 200, aspectRatioMode=Qt.AspectRatioMode.KeepAspectRatio, transformMode=Qt.TransformationMode.SmoothTransformation)
             self.musicPageImageLabel.setPixmap(self.albumCover)
             
             metaData = [self.player.tag.title, self.player.tag.artist, self.player.tag.album, self.player.runtime]
@@ -589,6 +592,16 @@ class Main(QMainWindow):
             self.musicPlayButtonState = 1
             self.musicPlayButton.setIcon(self.pauseIcon)
             self.player.play()
+            
+    def musicSkipFButtonClicked(self):
+        self.player.skipForward()
+        self.musicPlayButtonState = 1
+        self.musicPlayButton.setIcon(self.pauseIcon)
+    
+    def musicSkipBButtonClicked(self):
+        self.player.skipBackward()
+        self.musicPlayButtonState = 1
+        self.musicPlayButton.setIcon(self.pauseIcon)
         
     # Update length label to current song time
     def musicProgress(self, t):
@@ -684,8 +697,8 @@ class AudioPlayer(QMediaPlayer):
     
 # Execute App
 app = QApplication([])
+app.setStyle('Fusion')
 app.setWindowIcon(QIcon('assets/gui/bruck.png'))
-
 window = Main()
 window.show()
 app.exec()

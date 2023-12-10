@@ -22,13 +22,16 @@
         "Sister"
     ],
     "neutral": [
-        "Druid",
         "Acolyte",
         "Adept",
         "Apostle",
         "Ardent",
+        "Cleric",
+        "Druid",
         "Elder",
+        "Missionary",
         "Novice",
+        "Paladin",
         "Rector",
         "Saint",
         "Vicar",
