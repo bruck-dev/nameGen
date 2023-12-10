@@ -17,6 +17,10 @@ def getNamelist(namelist:str):
         # Human Lists
         case 'Western':
             file = open('assets/namelists/human/western.json', encoding='utf-8')
+        case 'Eastern':
+            file = open('assets/namelists/human/eastern.json', encoding='utf-8')
+        case 'Northern':
+            file = open('assets/namelists/human/northern.json', encoding='utf-8')
         
         # Elf Lists
         case 'High Elf':

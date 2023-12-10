@@ -4,7 +4,9 @@
     "male": [],
     "female": [
         "the Dragoness",
-        "the She-Wolf"
+        "the Lioness",
+        "the She-Wolf",
+        "the Tigress"
     ],
     "neutral": [
         "the Bat",
@@ -29,6 +31,7 @@
         "the Leopard",
         "the Lion",
         "the Mule",
+        "the Nightingale",
         "the Owl",
         "the Pig",
         "the Rabbit",

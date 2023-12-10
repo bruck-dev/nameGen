@@ -54,7 +54,7 @@ class Main(QMainWindow):
         self.jsonTitleLists = ['Noble Titles', 'Military Titles', 'Religious Titles', 'Occupations']
         self.epithetLists = ['Suffixes', 'Nicknames', 'Sobriquets', 'Animals']
         self.raceList = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Tiefling', 'Orc']
-        self.humanNamelists = ['Western', 'Eastern']
+        self.humanNamelists = ['Western', 'Eastern', 'Northern']
         self.elfNamelists = ['High Elf', 'Wood Elf','Dark Elf', 'Drow']
         self.dwarfNamelists = ['Dwarf']
         self.halflingNamelists = ['Placeholder']
