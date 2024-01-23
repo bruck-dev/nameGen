@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-"""Random name generator designed to support a multitude of fantasy races and/or cultures.
+"""
+Random name generator designed to support a multitude of fantasy races and/or cultures.
 
 Launches a PyQt6 application where namelist JSON files are used to create the name of a
 character, given a race and gender. Surnames can optionally also be generated and appended
