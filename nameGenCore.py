@@ -58,9 +58,9 @@ class Main(QMainWindow):
         self.humanNamelists = ['Western', 'Eastern', 'Northern']
         self.elfNamelists = ['High Elf', 'Wood Elf','Dark Elf', 'Drow']
         self.dwarfNamelists = ['Dwarf']
-        self.halflingNamelists = ['Placeholder']
+        self.halflingNamelists = ['Halfling']
         self.tieflingNamelists = ['Infernal', 'Virtue']
-        self.orcNamelists = ['Placeholder']
+        self.orcNamelists = ['Orc']
         self.availableNamelists = [self.humanNamelists, self.elfNamelists, self.dwarfNamelists, self.titleLists, self.epithetLists]
         
         self.genNamelist = self.jsonNamelist = self.availableNamelists[0][0]
@@ -78,7 +78,7 @@ class Main(QMainWindow):
         
         #region Widgets
         ## Window Setup ##
-        self.setWindowTitle('Bruck\'s Name Generator')
+        self.setWindowTitle('Bruck\'s Fantasy Name Generator')
         self.setFixedSize(500, 425)
         
         ## Audio Setup ##

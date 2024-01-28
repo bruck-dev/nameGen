@@ -31,16 +31,24 @@ def getNamelist(namelist:str):
             file = open('assets/namelists/elf/darkElf.json', encoding='utf-8')
         case 'Drow':
             file = open('assets/namelists/elf/drow.json', encoding='utf-8')
-            
+        
         # Dwarf Lists
         case 'Dwarf':
             file = open('assets/namelists/dwarf/dwarf.json', encoding='utf-8')
+            
+        # Halfling Lists
+        case 'Halfling':
+            file = open('assets/namelists/halfling/halfling.json', encoding='utf-8')
             
         # Tiefling Lists
         case 'Infernal':
             file = open('assets/namelists/tiefling/infernal.json', encoding='utf-8')
         case 'Virtue':
             file = open('assets/namelists/tiefling/virtue.json', encoding='utf-8')
+            
+        # Orc Lists
+        case 'Orc':
+            file = open('assets/namelists/orc/orc.json', encoding='utf-8')
         
         # Epithet Lists
         case 'Suffixes':

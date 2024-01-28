@@ -22,9 +22,9 @@ Has broad support for the following:
     - Dwarf
         - Generic Dwarf
     - Halfing
-        - WIP
+        - Generic Halfling
     - Orc
-        - WIP
+        - Generic Orc
     - Tiefling
         - Infernal Style
         - 'Virtue' Style
