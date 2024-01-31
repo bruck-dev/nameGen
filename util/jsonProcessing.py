@@ -94,9 +94,20 @@ def generateNameFromJson(namelist:str, gender:str, surnameEnabled:bool=True, epi
             name += random.choice(data['female'])
         case 'Neutral':
             name += random.choice(data['neutral'])
+            
     if surnameEnabled:
         if data['surname'] and data['surname'][0] != '': # Check if the surname list isn't empty, and isn't disabled by having a blank entry in index 1
-            name = name + ' ' + random.choice(data['surname'])
+            surname = random.choice(data['surname'])
+            if namelist == 'Northern' and gender == 'Female': # Nordic and Russian names used to be patronyms, so this adds the 'daughter of' variant. Keeps the leading 's' for possessive.
+                if surname.endswith('ssen') or surname.endswith('sson'):
+                    surname = surname[0:-3] + random.choice(['dottir', 'datter', 'dotter'])
+                elif surname.endswith('sen') or surname.endswith('son'):
+                    surname = surname[0:-2] + random.choice(['dottir', 'datter', 'dotter'])
+
+                elif surname.endswith('ov'):
+                    surname = surname[0:-3] + 'a'
+            name = name + ' ' + surname
+            
     if epithetType is not None:
         data = json.load(getNamelist(epithetType)) # fix this to use different namelists
         match gender:
