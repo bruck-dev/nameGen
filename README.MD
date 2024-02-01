@@ -4,7 +4,7 @@ I've handpicked most of the contents in the namelists to things I would actually
 default to using Markov generators or using prefix/suffix construction which can lead to weird or undesirable results;
 this is my personal project to always have *something* that I'd actually want to use.
 
-Requires Python 3.10 or newer. See requirements.txt for more information.
+Requires Python 3.10 or newer to run the webapp locally. See requirements.txt for more information. Can also be accessed on the web via Github Pages; not the same tool, but included in the repo.
 
 
 ## Name Generator
@@ -43,4 +43,4 @@ Multiple Word Entries
 
 
 ## Music Player
-For some reason I also put in a music player. Put .mp3, .wav, or .flac files into the assets/music folder and they'll show up on the player tab. If there's nothing there the tab won't appear.
+For some reason I also put in a music player. Put .mp3, .wav, or .flac files into the assets/music folder and they'll show up on the player tab. If there's nothing there the tab won't appear. Doesn't exist on the web version.
