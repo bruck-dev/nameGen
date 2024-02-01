@@ -1,6 +1,0 @@
-﻿title: Bruck's Fantasy Name Generator
-description: Web-accessible version of the Python desktop tool included in the repo. Uses the same .json files for reference but otherwise functionally separate.
-
-remote_theme: jekyll-theme-modernist
-plugins:
-- jekyll-remote-theme

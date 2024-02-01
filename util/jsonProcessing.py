@@ -81,7 +81,7 @@ def generateNameFromJson(namelist:str, gender:str, surnameEnabled:bool=True, epi
             case 'Male':
                 name += random.choice(list(set(data['neutral'] + data['male']))) + ' '
             case 'Female':
-                name += random.choice(list(set(data['neutral'] + data ['female'])))+ ' '
+                name += random.choice(list(set(data['neutral'] + data ['female']))) + ' '
             case 'Neutral':
                 name += random.choice(data['neutral'])+ ' '
                 
@@ -98,12 +98,11 @@ def generateNameFromJson(namelist:str, gender:str, surnameEnabled:bool=True, epi
     if surnameEnabled:
         if data['surname'] and data['surname'][0] != '': # Check if the surname list isn't empty, and isn't disabled by having a blank entry in index 1
             surname = random.choice(data['surname'])
-            if namelist == 'Northern' and gender == 'Female': # Nordic and Russian names used to be patronyms, so this adds the 'daughter of' variant. Keeps the leading 's' for possessive.
+            if namelist == 'Northern' and gender == 'Female': # Nordic and Slavic names used to be patronymic, so this adds the 'daughter of' variant. Keeps the leading 's' for possessive.
                 if surname.endswith('ssen') or surname.endswith('sson'):
                     surname = surname[0:-3] + random.choice(['dottir', 'datter', 'dotter'])
                 elif surname.endswith('sen') or surname.endswith('son'):
                     surname = surname[0:-2] + random.choice(['dottir', 'datter', 'dotter'])
-
                 elif surname.endswith('ov'):
                     surname = surname[0:-3] + 'a'
             name = name + ' ' + surname

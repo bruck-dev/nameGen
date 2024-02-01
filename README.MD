@@ -4,7 +4,7 @@ I've handpicked most of the contents in the namelists to things I would actually
 default to using Markov generators or using prefix/suffix construction which can lead to weird or undesirable results;
 this is my personal project to always have *something* that I'd actually want to use.
 
-Requires Python 3.10 or newer to run the webapp locally. See requirements.txt for more information. Can also be accessed on the web via Github Pages; not the same tool, but included in the repo.
+Requires Python 3.10 or newer to run the desktop app locally. See requirements.txt for more information. Can also be accessed on the web via Github Pages; not the same tool, but included in the repo.
 
 
 ## Name Generator

@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device_width, initial-scale=1">
     <title>Bruck's Fantasy Name Generator</title>
     <link rel="icon" href="assets/gui/bruck.ico">
+    <script src="js/generator.js"></script>
 </head>
 
 <body>
-    <p>WIP</p>
+    <p id="p1">Placeholder</p>
+    <script>
+        document.getElementById("p1").textContent = generateName('High Elf', 'Female', true, false, false);
+    </script>
 </body>
 
 </html>
