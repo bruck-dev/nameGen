@@ -1,5 +1,6 @@
 function randomItem(items)
 {
+    console.log(items);
     return items[Math.floor(Math.random()*items.length)];
 }
 
@@ -84,7 +85,6 @@ function getNamelist(namelist)
             file = 'assets/namelists/shared/titles/occupation.json';
             break;
     }
-    console.log(file);
     let namelistJson = fetch(file)
     .then(response => response.json())
     return namelistJson;
@@ -123,6 +123,7 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
     if(namelist)
     {
         data = getNamelist(namelist);
+        console.log(data);
         let male = data['male'];
         let fem = data['female'];
         let neu = data['neutral'];
@@ -138,6 +139,7 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
                 }
                 break;
             case 'Female':
+                console.log(data['female']);
                 generatedName.concat(' ', randomItem(fem));
                 if(surname)
                 {
