@@ -4,11 +4,10 @@
  * @author bruck
  * 
  * @version  0.1.A
- */ 
+ */
 
 function randomItem(items)
 {
-    console.log(items);
     return items[Math.floor(Math.random()*items.length)];
 }
 
@@ -93,10 +92,10 @@ function getNamelist(namelist)
             file = 'assets/namelists/shared/titles/occupation.json';
             break;
     }
-    fetch(file)
-    .then(response => response.json())
-    .then(console.log(response))
-    return response;
+    let request = new XMLHttpRequest();
+    request.open('GET', file, false);
+    request.send(null);
+    return JSON.parse(request.responseText);
 }
 
 function generateName(namelist=null, gender=null, surname=false, epithet=null, title=null)
@@ -106,7 +105,7 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
     // Picks a title
     if(title)
     {
-        data = getNamelist(titleType);
+        data = getNamelist(title);
         let combined = [];
         let male = data['male'];
         let fem = data['female'];
@@ -116,14 +115,14 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
         {
             case 'Male':
                 combined = male.concat(neu);
-                generatedName.concat(randomItem(combined))
+                generatedName += randomItem(combined) + ' ';
                 break;
             case 'Female':
                 combined = fem.concat(neu);
-                generatedName.concat(randomItem(combined))
+                generatedName += randomItem(combined) + ' ';
                 break;
             case 'Neutral':
-                generatedName.concat(randomItem(neu));
+                generatedName += randomItem(neu) + ' ';
                 break;
         }
     }
@@ -140,15 +139,14 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
         switch(gender)
         {
             case 'Male':
-                generatedName.concat(' ', randomItem(male));
+                generatedName += randomItem(male);
                 if(surname)
                 {
-                    generatedName.concat(' ', randomItem(sur));
+                    generatedName += ' ' + randomItem(sur);
                 }
                 break;
             case 'Female':
-                console.log(data['female']);
-                generatedName.concat(' ', randomItem(fem));
+                generatedName += randomItem(fem);
                 if(surname)
                 {
                     let pickedSur = randomItem(sur);
@@ -167,14 +165,14 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
                             pickedSur.concat('a');
                         }
                     } 
-                    generatedName.concat(' ', pickedSur);
+                    generatedName += ' ' + randomItem(sur);
                 }
                 break;
             case 'Neutral':
-                generatedName.concat(' ', randomItem(neu));
+                generatedName += randomItem(neu);
                 if(surname)
                 {
-                    generatedName.concat(' ', randomItem(sur));
+                    generatedName += randomItem(sur);
                 }
                 break;
         }
@@ -192,14 +190,14 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
         {
             case 'Male':
                 combined = male.concat(neu);
-                generatedName.concat(' ', randomItem(combined))
+                generatedName += ' ' + randomItem(combined);
                 break;
             case 'Female':
                 combined = fem.concat(neu);
-                generatedName.concat(' ', randomItem(combined))
+                generatedName += ' ' + randomItem(combined);
                 break;
             case 'Neutral':
-                generatedName.concat(' ', randomItem(neu))
+                generatedName += ' ' + randomItem(combined);
                 break;
         }
     }
