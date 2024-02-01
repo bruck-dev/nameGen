@@ -10,10 +10,88 @@
 </head>
 
 <body>
-    <p id="p1">Placeholder</p>
+    <select name="race" id="raceSelect">
+        <optgroup label="Humans">
+            <option value="Western">Westerner</option>
+            <option value="Northern">Northerner</option>
+            <option value="Eastern">Easterner</option>
+            <option value="Drow">Drow</option>
+        </optgroup>
+        <optgroup label="Elves">
+            <option value="High Elf">High Elf</option>
+            <option value="Wood Elf">Wood Elf</option>
+            <option value="Dark Elf">Dark Elf</option>
+            <option value="Drow">Drow</option>
+        </optgroup>
+        <optgroup label="Dwarves">
+            <option value="Dwarf">Dwarf</option>
+        </optgroup>
+        <optgroup label="Halfling">
+            <option value="Halfling">Halfling</option>
+        </optgroup>
+        <optgroup label="Tiefling">
+            <option value="Infernal">Infernal</option>
+            <option value="Virtue">Virtue</option>
+        </optgroup>
+        <optgroup label="Orc">
+            <option value="Orc">Orc</option>
+        </optgroup>
+    </select>
+
+    <select name="gender" id="genderSelect">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <input type="checkbox" id="surname" name="surnamecheck">
+    <label for="surnamecheck">Generate Surname?</label>
+    <select name="title" id="titleSelect">
+        <option value="None">None</option>
+        <option value="Military">Military</option>
+        <option value="Nobility">Nobility</option>
+        <option value="Religious">Religious</option>
+        <option value="Occupation">Occupation</option>
+    </select>
+    <select name="nick" id="nickSelect">
+        <option value="None">None</option>
+        <option value="Animals">Animals</option>
+        <option value="Nicknames">Nicknames</option>
+        <option value="Sobriquets">Sobriquets</option>
+        <option value="Suffixes">Suffixes</option>
+    </select>
+    <p id="name">Placeholder</p>
+
+    <button id="generate" onclick="execute()">Generate</button>
+
     <script>
-        document.getElementById("p1").textContent = generateName('High Elf', 'Female', true, 'Animals', 'Military');
+        function execute()
+        {
+            let race = document.getElementById("raceSelect").value;
+            let gender = document.getElementById("genderSelect").value;
+            let surname = document.getElementById("surname").checked;
+            let title = document.getElementById("titleSelect").value;
+            let nick = document.getElementById("nickSelect").value;
+
+            if(title == "None")
+            {
+                title = null;
+            }
+
+            if(nick == "None")
+            {
+                nick = null;
+            }
+
+            if(race == "Virtue")
+            {
+                gender = "Neutral";
+                surname = "False";
+            }
+
+            document.getElementById("name").textContent = generateName(race, gender, surname, nick, title);
+        }
     </script>
+
 </body>
 
 </html>

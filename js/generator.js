@@ -5,6 +5,13 @@
  * 
  * @version  0.1.A
  */
+function getJson(file)
+{
+    let request = new XMLHttpRequest();
+    request.open('GET', file, false);
+    request.send(null);
+    return JSON.parse(request.responseText);
+}
 
 function randomItem(items)
 {
@@ -92,10 +99,8 @@ function getNamelist(namelist)
             file = 'assets/namelists/shared/titles/occupation.json';
             break;
     }
-    let request = new XMLHttpRequest();
-    request.open('GET', file, false);
-    request.send(null);
-    return JSON.parse(request.responseText);
+
+    return getJson(file);
 }
 
 function generateName(namelist=null, gender=null, surname=false, epithet=null, title=null)
@@ -152,20 +157,20 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
                     let pickedSur = randomItem(sur);
                     if(namelist == 'Northern') // Nordic and Slavic names used to be patronymic, so this adds the 'daughter of' variant. Keeps the leading 's' for possessive.
                     {
-                        if(pickedSur.endswith('ssen') || pickedSur.endswith('sson'))
+                        if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
                         {
-                            pickedSur = pickedSur.slice(0, -3);
+                            pickedSur = pickedSur.slice(0, -3) + randomItem(['dottir', 'datter', 'dotter']);
                         }
-                        else if(pickedSur.endswith('sen') || pickedSur.endswith('son'))
+                        else if(pickedSur.endsWith('sen') || pickedSur.endsWith('son'))
                         {
-                            pickedSur = pickedSur.slice(0, -2);
+                            pickedSur = pickedSur.slice(0, -2) + randomItem(['dottir', 'datter', 'dotter']);
                         }
-                        else if(pickedSur.endswith('ov'))
+                        else if(pickedSur.endsWith('ov'))
                         {
-                            pickedSur.concat('a');
+                            pickedSur += 'a';
                         }
                     } 
-                    generatedName += ' ' + randomItem(sur);
+                    generatedName += ' ' + pickedSur;
                 }
                 break;
             case 'Neutral':
