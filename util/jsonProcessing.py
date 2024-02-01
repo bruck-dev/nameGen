@@ -3,7 +3,7 @@
 
 """Utility file containing JSON manipulation functions."""
 __author__ = "bruck"
-__version__ = "1.0.0"
+__version__ = "0.1.A"
 __status__ = "Development"
 
 

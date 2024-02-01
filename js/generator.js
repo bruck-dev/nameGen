@@ -1,3 +1,11 @@
+/**
+ * @summary Generator Functions File
+ * @description Contains all JS functions used on the web app to generate the names; essentially identical the Python desktop app ones.
+ * @author bruck
+ * 
+ * @version  0.1.A
+ */ 
+
 function randomItem(items)
 {
     console.log(items);
@@ -85,16 +93,17 @@ function getNamelist(namelist)
             file = 'assets/namelists/shared/titles/occupation.json';
             break;
     }
-    let namelistJson = fetch(file)
+    fetch(file)
     .then(response => response.json())
-    return namelistJson;
+    .then(console.log(response))
+    return response;
 }
 
 function generateName(namelist=null, gender=null, surname=false, epithet=null, title=null)
 {
     let generatedName = '';
 
-    // Pick a title
+    // Picks a title
     if(title)
     {
         data = getNamelist(titleType);
@@ -119,11 +128,10 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
         }
     }
 
-    // Pick a given name and surname if enabled
+    // Picks a given name and surname if enabled
     if(namelist)
     {
         data = getNamelist(namelist);
-        console.log(data);
         let male = data['male'];
         let fem = data['female'];
         let neu = data['neutral'];
@@ -172,7 +180,7 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
         }
     }
 
-    // Pick an epithet if enabled
+    // Picks an epithet if enabled
     if(epithet)
     {
         data = getNamelist(epithet);

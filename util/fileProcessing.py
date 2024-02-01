@@ -3,7 +3,7 @@
 
 """Utility file containing non-JSON file editing and retrieval functions."""
 __author__ = "bruck"
-__version__ = "1.0.0"
+__version__ = "0.1.A"
 __status__ = "Development"
 
 import glob

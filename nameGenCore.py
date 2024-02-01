@@ -10,7 +10,7 @@ to the name Has a built-in background music player that enables if files are fou
 assets/music/ and of the type .mp3, .wav, or .flac.
 """
 __author__ = "bruck"
-__version__ = "1.0.0"
+__version__ = "0.1.A"
 __status__ = "Development"
 
 
