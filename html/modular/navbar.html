@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" style="background :#181818">
 
 <head>
+    <style>html{visibility: hidden;opacity:0;}</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device_width, initial-scale=1">
     <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <div class="gendropdown">
-            <button class="dropbtn">Generators</button>
-            <div class="gendropdown-content">
-              <a href="generators.html" onclick="localStorage.setItem('genType','fantasy');">Fantasy Generator</a>
-              <a href="generators.html" onclick="localStorage.setItem('genType','modern');">Modern Generator</a>
-              <a href="generators.html" onclick="localStorage.setItem('genType','scifi');">Sci-Fi Generator</a>
-            </div>
-        </div>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
+    <div id="navbar">
+        <ul class="navbar">           
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a class="dropbtn">Fantasy Generators</a>
+                <div class="dropdown-content">
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Humans</a>
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Elves</a>
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Dwarves</a>
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Halflings</a>
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Tieflings</a>
+                    <a href="generator.html" onclick="localStorage.setItem('genType','human');">Orcs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn">Sci-Fi Generators</a>
+                <div class="dropdown-content">
+                    <a href="generator.html" onclick="localStorage.setItem('genType','placeholder');">Placeholder</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn">Other Generators</a>
+                <div class="dropdown-content">
+                    <a href="generator.html" onclick="localStorage.setItem('genType','placeholder');">Placeholder</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+         </ul>
     </div>
 </body>
 </html>

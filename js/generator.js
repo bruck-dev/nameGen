@@ -5,6 +5,7 @@
  * 
  * @version  0.1.A
  */
+
 function getJson(file)
 {
     let request = new XMLHttpRequest();

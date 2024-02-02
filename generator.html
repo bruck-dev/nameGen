@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" style="background :#181818">
 
 <head>
+    <style>html{visibility: hidden;opacity:0;}</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device_width, initial-scale=1">
     <title>Bruck's Name Generator</title>
     <link rel="icon" href="assets/gui/bruck.ico">
+    <link href="css/style.css" rel="stylesheet">
     <script src="js/generator.js"></script>
     <script src="js/htmlScripts.js"></script>
-    <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body onload="includeHTML('html/modular/navbar.html', 'navbar')">
+<body>
     <div id="navbar"></div>
-    <p id="gen1"></p>
+    <script>
+        window.onload = createNavbar();
+    </script>
+    <div id="generatorinterface"></div>
     <div id="generatorsettings"></div>
     <script>
-        document.getElementById('gen1').textContent = localStorage.getItem("genType");
-        includeHTML('html/modular/generatorSettings.html', 'generatorsettings');
+        createGeneratorUI(localStorage.getItem("genType"));
     </script>
 </body>
 
