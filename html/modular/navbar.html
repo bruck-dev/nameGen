@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device_width, initial-scale=1">
+    <link href="css/navbar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <div class="gendropdown">
+            <button class="dropbtn">Generators</button>
+            <div class="gendropdown-content">
+              <a href="generators.html" onclick="localStorage.setItem('genType','fantasy');">Fantasy Generator</a>
+              <a href="generators.html" onclick="localStorage.setItem('genType','modern');">Modern Generator</a>
+              <a href="generators.html" onclick="localStorage.setItem('genType','scifi');">Sci-Fi Generator</a>
+            </div>
+        </div>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+</body>
+</html>

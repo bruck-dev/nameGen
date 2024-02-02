@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device_width, initial-scale=1">
-    <title>Bruck's Fantasy Name Generator</title>
+    <title>Bruck's Name Generators</title>
     <link rel="icon" href="assets/gui/bruck.ico">
     <script src="js/generator.js"></script>
+    <script src="js/htmlScripts.js"></script>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="includeHTML('html/modular/navbar.html', 'navbar')">
+    <div id="navbar"></div>
     <select name="race" id="raceSelect">
         <optgroup label="Humans">
             <option value="Western">Westerner</option>
@@ -82,10 +85,15 @@
                 nick = null;
             }
 
-            if(race == "Virtue")
+            if(race == "Virtue") // gender less and no surnames
             {
                 gender = "Neutral";
                 surname = "False";
+            }
+
+            else if(race == "Infernal") // currently no surnames for tieflings, will fix later
+            {
+                surname = false;
             }
 
             document.getElementById("name").textContent = generateName(race, gender, surname, nick, title);
