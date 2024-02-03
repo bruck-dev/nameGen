@@ -14,13 +14,10 @@
 
 <body>
     <div id="navbar"></div>
+    <div id="generatorinterface"></div>
     <script>
         window.onload = createNavbar();
-    </script>
-    <div id="generatorinterface"></div>
-    <div id="generatorsettings"></div>
-    <script>
-        createGeneratorUI(localStorage.getItem("genType"));
+        window.onload = createGeneratorUI(localStorage.getItem("genType"));
     </script>
 </body>
 

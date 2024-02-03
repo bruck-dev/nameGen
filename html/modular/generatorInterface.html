@@ -7,8 +7,75 @@
     <meta name="viewport" content="width=device_width, initial-scale=1">
     <link href="css/generator.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/generator.js"></script>
+    <script src="js/htmlScripts.js"></script>
 </head>
 <body>
-    <textarea id="nameoutput" class="nameoutput" name="nameoutput" rows="20" cols="70" readonly></textarea>
+    <div id="info">
+        <br>
+        <h1 class="gentitle" id="gentitle">Placeholder</h1>
+    </div>
+    <div>
+        <textarea id="nameoutput" class="nameoutput" rows="15" cols="1" readonly></textarea>
+    </div>
+    <div class="controls">
+        <div class="subrace">
+            <label>Subrace</label>
+        </div>
+        <div>
+            <select id="subraceselect" class="subraceselect"></select>
+        </div>
+        <br>
+        <div class="gender">
+            <label>Gender</label>
+        </div>
+        <div>
+            <select id="genderselect">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <br>
+        <div class="surname">
+            <label>Surname</label>
+        </div>
+        <div>
+            <input type="checkbox" id="surname">
+        </div>
+        <br>
+        <div class="title">
+            <label>Title</label>
+        </div>
+        <div>
+            <select id="titleselect">
+                <option value="None">None</option>
+                <option value="Military">Military</option>
+                <option value="Nobility">Nobility</option>
+                <option value="Religious">Religious</option>
+                <option value="Occupation">Occupation</option>
+            </select>
+        </div>
+        <br>
+        <div class="epithet">
+            <label>Epithet</label>
+        </div>
+        <div>
+            <select id="nickselect">
+                <option value="None">None</option>
+                <option value="Animals">Animals</option>
+                <option value="Nicknames">Nicknames</option>
+                <option value="Sobriquets">Sobriquets</option>
+                <option value="Suffixes">Suffixes</option>
+            </select>
+        </div>
+        <script>
+            window.onload = setSubrace(localStorage.getItem("genType"))
+        </script>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button id="generate" onclick="executeGenerator()">Generate</button>
+    </div>
 </body>
 </html>

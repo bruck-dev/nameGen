@@ -6,6 +6,8 @@ body {
     text-align: center;
 }
 
+/* To prevent rogue HTML from flashing before the CSS is loaded, everything starts technically invisible. */
+/* This just makes everything visible once the CSS is fully loaded.                                       */
 html {
     visibility: visible;
     opacity: 1;

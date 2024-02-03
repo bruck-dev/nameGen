@@ -209,3 +209,39 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
     }
     return generatedName;
 }
+
+function executeGenerator()
+{
+    let race = document.getElementById("subraceselect").value;
+    let gender = document.getElementById("genderselect").value;
+    let surname = document.getElementById("surname").checked;
+    let title = document.getElementById("titleselect").value;
+    let nick = document.getElementById("nickselect").value;
+
+    if(title == "None")
+    {
+        title = null;
+    }
+
+    if(nick == "None")
+    {
+        nick = null;
+    }
+
+    if(race == "Virtue") // genderless and no surnames
+    {
+        gender = "Neutral";
+        surname = false;
+    }
+
+    else if(race == "Infernal") // currently no surnames for tieflings, will fix later
+    {
+        surname = false;
+    }
+
+    document.getElementById("nameoutput").textContent = '';
+    for(let i = 0; i < 10; i++)
+    {
+        document.getElementById("nameoutput").textContent += generateName(race, gender, surname, nick, title) + "\n";
+    }
+}

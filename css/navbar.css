@@ -6,11 +6,13 @@
   background-color: #212121;
 }
 
+/* Each navbar block */
 li {
   float: left;
-  width: 15%;
+  width: 15%; /* Update this to divide by how many elements there are in the navbar with some remainder */
 }
 
+/* Text in the navbar */
 li a, .dropbtn {
   display: inline-block;
   color: #eeeeee;
@@ -19,6 +21,7 @@ li a, .dropbtn {
   text-decoration: none;
 }
 
+/* Do to text when hovering */
 li a:hover, .dropdown:hover .dropbtn {
   background-color: #0092ca;
 }
@@ -27,6 +30,7 @@ li.dropdown {
   display: inline-block;
 }
 
+/* Dropdown item block */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -37,6 +41,7 @@ li.dropdown {
   z-index: 1;
 }
 
+/* Dropdown item text */
 .dropdown-content a {
   color: #eeeeee;
   padding: 12px 16px;
