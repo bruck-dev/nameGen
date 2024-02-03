@@ -234,11 +234,6 @@ function executeGenerator()
         surname = false;
     }
 
-    else if(race == "Infernal") // currently no surnames for tieflings, will fix later
-    {
-        surname = false;
-    }
-
     document.getElementById("nameoutput").textContent = '';
     for(let i = 0; i < 10; i++)
     {
