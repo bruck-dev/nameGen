@@ -13,10 +13,11 @@
 </head>
 
 <body>
+    <div id="topbar"></div>
     <div id="navbar"></div>
     <div id="generatorinterface"></div>
     <script>
-        window.onload = createNavbar();
+        window.onload = createConstantElements();
         window.onload = createGeneratorUI(localStorage.getItem("genType"));
     </script>
 </body>

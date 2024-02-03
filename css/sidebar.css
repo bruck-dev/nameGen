@@ -1,0 +1,73 @@
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 7.5%;
+    position: absolute;
+    z-index: 1;
+    top: 9.5%;
+    left: 0;
+    background-color: #212121;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav > a {
+    padding: 16px 16px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #eeeeee;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+details > summary {
+    list-style: none;
+}
+
+/* Dropdown title text */
+summary {
+    text-align: left;
+    cursor: pointer;
+    padding: 16px 16px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+details div {
+    text-align: left;
+    padding-left: 15%;
+    cursor: pointer;
+    color: #eeeeee;
+    text-decoration: none;
+    width: 100%;
+}
+
+/* Hides default summary marker */
+summary::marker { content: none }
+
+/* Creates custom marker */
+summary::after {
+    content: " ►";
+    font-size: 16px;
+}
+details[open] summary:after {
+    content: " ▼";
+}
+
+/* On mouse-over */
+.sidenav > a:hover, details div:hover, details > summary:hover {
+    color: #eeeeee;
+    background-color: #0092ca;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

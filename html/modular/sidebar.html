@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" style="background :#181818">
+
+<head>
+    <style>html{visibility: hidden;opacity:0;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device_width, initial-scale=1">
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidenav">   
+        <a href="index.html">Home</a>
+        <details class="dropdown"><summary>Fantasy</summary>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','human');">Humans</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','elf');">Elves</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','dwarf');">Dwarves</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','halfling');">Halflings</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','tiefling');"></div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','orc');">Orcs</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','kingdom');">Kingdoms and Realms</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','settlements');">Towns and Cities</div>
+        </details>
+
+        <details class="dropdown"><summary>Sci-Fi</summary>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+        </details>
+
+        <details class="dropdown"><summary>Other</summary>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+        </details>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn'))
+            {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++)
+                {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show'))
+                    {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

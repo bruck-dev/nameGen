@@ -29,9 +29,10 @@ function setVisibility(element, visible)
 }
 
 // Creates the navbar on each page
-function createNavbar()
+function createConstantElements()
 {
-  includeHTML('html/modular/navbar.html', 'navbar');
+  includeHTML('html/modular/topbar.html', 'topbar');
+  includeHTML('html/modular/sidebar.html', 'navbar');
 }
 
 // Constructs the frontend for the generator page - varies based on passed genType
@@ -124,4 +125,9 @@ function setPageTitle(genType)
 {
   genType = genType.charAt(0).toUpperCase() + genType.slice(1); // Capitalize first letter because I didn't have the foresight to do this earlier
   document.getElementById('gentitle').textContent = genType + ' Namelists';
+}
+
+function showButtonContent(content)
+{
+  document.getElementById(content).classList.toggle("show");
 }
