@@ -6,6 +6,7 @@
  * @version  0.1.A
  */
 
+// Gets the data from a given JSON file
 function getJson(file)
 {
     let request = new XMLHttpRequest();
@@ -14,11 +15,13 @@ function getJson(file)
     return JSON.parse(request.responseText);
 }
 
+// Picks a random item from the passed list
 function randomItem(items)
 {
     return items[Math.floor(Math.random()*items.length)];
 }
 
+// Finds the necessary JSON file and returns its data
 function getNamelist(namelist)
 {
     let file;
@@ -104,6 +107,7 @@ function getNamelist(namelist)
     return getJson(file);
 }
 
+// Creates a name
 function generateName(namelist=null, gender=null, surname=false, epithet=null, title=null)
 {
     let generatedName = '';
@@ -210,6 +214,7 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
     return generatedName;
 }
 
+// On button press, take attributes and generate
 function executeGenerator()
 {
     let race = document.getElementById("subraceselect").value;

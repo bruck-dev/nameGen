@@ -1,11 +1,10 @@
 /**
  * @summary HTML Scripting Handler File
- * @description Contains all JS functions used on the web app to manipulate the HTML of the front end..
+ * @description Contains all JS functions used on the web app to manipulate the HTML of the front end.
  * @author bruck
  * 
  * @version  0.1.A
  */
-
 
 // Places the passed HTML file at the location of the passed element, i.e. puts the navbar in <div id='navbar'>
 function includeHTML(html, element)
@@ -15,6 +14,7 @@ function includeHTML(html, element)
   .then(text => document.getElementById(element).innerHTML = text);
 }
 
+// Toggles visibility of element
 function setVisibility(element, visible)
 {
   if(visible)
@@ -33,6 +33,7 @@ function createNavbar()
 {
   includeHTML('html/modular/navbar.html', 'navbar');
 }
+
 // Constructs the frontend for the generator page - varies based on passed genType
 function createGeneratorUI(genType)
 {
@@ -75,17 +76,17 @@ function createGeneratorUI(genType)
   }
 }
 
+// Sets the subrace dropdown depending on passed race
 function setSubrace(race)
 {
   subrace = document.getElementById('subraceselect');
+  subraceList = [];
 
   for(let i = subrace.options.length - 1; i >= 0 ; i--)
   {
     subrace.remove(i);
   }
 
-  subraceList = [];
-  
   switch(race)
   {
     case "human":
@@ -118,6 +119,7 @@ function setSubrace(race)
   }
 }
 
+// Sets the namelist title depending on passed namelist
 function setPageTitle(genType)
 {
   genType = genType.charAt(0).toUpperCase() + genType.slice(1); // Capitalize first letter because I didn't have the foresight to do this earlier
