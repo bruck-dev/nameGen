@@ -4,11 +4,13 @@
     width: 7.5%;
     position: absolute;
     z-index: 1;
-    top: 9.5%;
+    top: 10%;
     left: 0;
     background-color: #212121;
     overflow-x: hidden;
     overflow-y: scroll;
+    border-right: 1px solid #3d3d3d;
+    border-top: 1px solid #3d3d3d;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -26,39 +28,61 @@
     outline: none;
 }
 
+/* UNIVERSAL DROPDOWN CSS */
 details > summary {
     list-style: none;
 }
+summary::marker { content: none }
 
-/* Dropdown title text */
-summary {
+/* TIER 1 DROPDOWN CSS */
+.dropdown-tier1 > summary {
     text-align: left;
     cursor: pointer;
     padding: 16px 16px 6px 16px;
     text-decoration: none;
     font-size: 20px;
 }
-
-details div {
+.dropdown-tier1 div {
     text-align: left;
     padding-left: 15%;
     cursor: pointer;
     color: #eeeeee;
     text-decoration: none;
     width: 100%;
+    font-size: 16px;
 }
-
-/* Hides default summary marker */
-summary::marker { content: none }
-
-/* Creates custom marker */
-summary::after {
+.dropdown-tier1 > summary::after {
     content: " ►";
     font-size: 16px;
 }
-details[open] summary:after {
+.dropdown-tier1[open] > summary:after {
     content: " ▼";
 }
+
+/* TIER 2 DROPDOWN CSS */
+.dropdown-tier2 > summary {
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    padding-left: 15%;
+}
+.dropdown-tier2 div {
+    text-align: left;
+    padding-left: 20%;
+    cursor: pointer;
+    color: #eeeeee;
+    text-decoration: none;
+    width: 100%;
+}
+.dropdown-tier2 > summary::after {
+    content: " ►";
+    font-size: 12px;
+}
+.dropdown-tier2[open] > summary:after {
+    content: " ▼";
+}
+
 
 /* On mouse-over */
 .sidenav > a:hover, details div:hover, details > summary:hover {

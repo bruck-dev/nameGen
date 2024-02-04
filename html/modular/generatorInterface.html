@@ -11,6 +11,7 @@
     <script src="js/htmlScripts.js"></script>
 </head>
 <body>
+    <!-- Generator title at top of page-->
     <div id="info">
         <br>
         <h1 class="gentitle" id="gentitle">Placeholder</h1>
@@ -18,36 +19,45 @@
     <div>
         <textarea id="nameoutput" class="nameoutput" rows="15" cols="1" readonly></textarea>
     </div>
+    <!-- All tools that appear under the output box. Selectboxes can be hijacked for other purposes since they're created dynamically. -->
     <div class="controls">
-        <div class="subrace">
+        <br>
+        <!-- Used to select a subrace -->
+        <div id="opt1">
             <label>Subrace</label>
         </div>
         <div>
-            <select id="subraceselect" class="subraceselect"></select>
+            <select id="opt1select" class="opt1select"></select>
         </div>
         <br>
-        <div class="gender">
+        <div id="opt2">
             <label>Gender</label>
         </div>
+
+        <!-- Used to select name gender -->
         <div>
-            <select id="genderselect">
+            <select id="opt2select">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
         </div>
         <br>
-        <div class="surname">
+
+        <!-- Surname checkbox, should probably be hidden for non-names -->
+        <div id="opt3">
             <label>Surname</label>
         </div>
         <div>
-            <input type="checkbox" id="surname" checked>
+            <input type="checkbox" id="opt3check" checked>
         </div>
         <br>
-        <div class="title">
+        <div id="opt4">
             <label>Title</label>
         </div>
+
+        <!-- Used to select prefix title -->
         <div>
-            <select id="titleselect">
+            <select id="opt4select">
                 <option value="None">None</option>
                 <option value="Military">Military</option>
                 <option value="Nobility">Nobility</option>
@@ -56,11 +66,13 @@
             </select>
         </div>
         <br>
-        <div class="epithet">
+
+        <!-- Used to select suffix epithet -->
+        <div id="opt5">
             <label>Epithet</label>
         </div>
         <div>
-            <select id="nickselect">
+            <select id="opt5select">
                 <option value="None">None</option>
                 <option value="Animals">Animals</option>
                 <option value="Nicknames">Nicknames</option>
@@ -69,13 +81,13 @@
             </select>
         </div>
         <script>
-            window.onload = setSubrace(localStorage.getItem("genType"))
+            window.onload = setOpt1(localStorage.getItem("configType"), localStorage.getItem("genType"))
         </script>
     </div>
     <br>
     <br>
     <div>
-        <button id="generate" onclick="executeGenerator()">Generate</button>
+        <button class="generate" onclick="executeGenerator()">Generate</button>
     </div>
 </body>
 </html>

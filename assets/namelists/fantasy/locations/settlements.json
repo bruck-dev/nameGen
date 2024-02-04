@@ -1,13 +1,13 @@
 {
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
-    "villages": [
+    "humanvillages": [
         "Glenham"
     ],
-    "towns": [
+    "humantowns": [
         "Falkirk"
     ],
-    "cities": [
+    "humancities": [
 
     ]
 }

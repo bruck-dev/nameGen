@@ -11,44 +11,36 @@
 <body>
     <div class="sidenav">   
         <a href="index.html">Home</a>
-        <details class="dropdown"><summary>Fantasy</summary>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','human');">Humans</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','elf');">Elves</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','dwarf');">Dwarves</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','halfling');">Halflings</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','tiefling');"></div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','orc');">Orcs</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','kingdom');">Kingdoms and Realms</div>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','settlements');">Towns and Cities</div>
-        </details>
 
-        <details class="dropdown"><summary>Sci-Fi</summary>
+        <!-- When a generator option is picked, 2 background variables are set to determine the necessary namelist and control layout. -->
+        <details class="dropdown-tier1"><summary>Fantasy</summary>
+            <details class="dropdown-tier2"><summary>Races</summary>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-human'); localStorage.setItem('configType','f-race');">Humans</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-elf'); localStorage.setItem('configType','f-race');">Elves</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-dwarf'); localStorage.setItem('configType','f-race');">Dwarves</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-halfling'); localStorage.setItem('configType','f-race');">Halflings</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-tiefling'); localStorage.setItem('configType','f-race');"></div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-orc'); localStorage.setItem('configType','f-race');">Orcs</div>
+            </details>
+            <details class="dropdown-tier2"><summary>Locations</summary>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-kingdom'); localStorage.setItem('configType','f-location');">Kingdoms and Realms</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-settlement'); localStorage.setItem('configType','f-location');">Towns and Cities</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-magic-academy'); localStorage.setItem('configType','f-unique');">Magic Academy</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('genType','f-nature'); localStorage.setItem('configType','f-unique');">Natural Features</div>
+            </details>
+        </details>
+        <details class="dropdown-tier1"><summary>Sci-Fi</summary>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+        </details>
+        <details class="dropdown-tier1"><summary>Real Life</summary>
+            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+        </details>
+        <details class="dropdown-tier1"><summary>Other</summary>
             <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
         </details>
 
-        <details class="dropdown"><summary>Other</summary>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
-        </details>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </div>
-
-    <script>
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn'))
-            {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++)
-                {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show'))
-                    {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+{
+    "title": "Forest/greenery Feature Namelist",
+    "description": "Namelist for randomly generated natural features.",
+    "prefix": [
+        "Lily",
+        "Redwood",
+        "Greylock",
+        "Autumn"
+    ],
+    "suffix": [
+        "Valley",
+        "Forest",
+        "Hills",
+        "Fields",
+        "River",
+        "Brook"
+    ]
+}

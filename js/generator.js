@@ -217,11 +217,11 @@ function generateName(namelist=null, gender=null, surname=false, epithet=null, t
 // On button press, take attributes and generate
 function executeGenerator()
 {
-    let race = document.getElementById("subraceselect").value;
-    let gender = document.getElementById("genderselect").value;
-    let surname = document.getElementById("surname").checked;
-    let title = document.getElementById("titleselect").value;
-    let nick = document.getElementById("nickselect").value;
+    let race = document.getElementById("opt1select").value;
+    let gender = document.getElementById("opt2select").value;
+    let surname = document.getElementById("opt3check").checked;
+    let title = document.getElementById("opt4select").value;
+    let nick = document.getElementById("opt5select").value;
 
     if(title == "None")
     {

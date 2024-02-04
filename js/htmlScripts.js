@@ -36,7 +36,7 @@ function createConstantElements()
 }
 
 // Constructs the frontend for the generator page - varies based on passed genType
-function createGeneratorUI(genType)
+function createGeneratorUI(configType, genType)
 {
   try
   {
@@ -44,9 +44,9 @@ function createGeneratorUI(genType)
 
     // Wait until the subrace dropdown has been fully created before appending new elements.
     var observer = new MutationObserver(function (mutations, me) {
-      var dd = document.getElementById('subraceselect');
+      var dd = document.getElementById('opt1select');
       if (dd) {
-        setSubrace(genType);
+        setOpt1(configType, genType);
         me.disconnect();
         return;
       }
@@ -77,57 +77,76 @@ function createGeneratorUI(genType)
   }
 }
 
-// Sets the subrace dropdown depending on passed race
-function setSubrace(race)
+// Sets the first dropdown based on passed config type and generator type. Generally used for subraces.
+function setOpt1(config, list)
 {
-  subrace = document.getElementById('subraceselect');
-  subraceList = [];
-
-  for(let i = subrace.options.length - 1; i >= 0 ; i--)
+  contentList = [];
+  switch(config)
   {
-    subrace.remove(i);
+    // Configure for fantasy races - setup subraces. No need to change label.
+    case 'f-race':
+      switch(list)
+      {
+        case 'f-human':
+          contentList = ['Western', 'Eastern', 'Northern'];
+          setSelectContent('opt1select', contentList);
+          break;
+        case 'f-elf':
+          contentList = ['High Elf', 'Wood Elf', 'Dark Elf', 'Drow'];
+          setSelectContent('opt1select', contentList);
+          break;
+        case 'f-dwarf':
+          contentList = ['Dwarf'];
+          setSelectContent('opt1select', contentList);
+          break;
+        case 'f-halfling':
+          contentList = ['Halfling'];
+          setSelectContent('opt1select', contentList);
+          break;
+        case 'f-tiefling':
+            contentList = ['Infernal', 'Virtue'];
+            setSelectContent('opt1select', contentList);
+            break;
+        case 'f-orc':
+          contentList = ['Orc'];
+          setSelectContent('opt1select', contentList);
+          break;
+      }
+    case 'f-unique':
+      switch(list)
+      {
+        case 'f-magic-academy':
+          setVisibility('opt1', false);
+          setVisibility('opt1select', false);
+          break;
+      }
+  }
+}
+
+function setSelectContent(selectid, contentList)
+{
+  let select = document.getElementById(selectid);
+
+  for(let i = select.options.length - 1; i >= 0 ; i--)
+  {
+    select.remove(i);
   }
 
-  switch(race)
+  for(i = 0; i < contentList.length; i++)
   {
-    case "human":
-      subraceList = ['Western', 'Eastern', 'Northern'];
-      break;
-    case "elf":
-      subraceList = ['High Elf', 'Wood Elf', 'Dark Elf', 'Drow'];
-      break;
-    case "dwarf":
-      subraceList = ['Dwarf'];
-      break;
-    case "halfling":
-      subraceList = ['Halfling'];
-      break;
-    case "tiefling":
-        subraceList = ['Infernal', 'Virtue'];
-        break;
-    case "orc":
-      subraceList = ['Orc'];
-      break;
-  }
-
-  for(i = 0; i < subraceList.length; i++)
-  {
-    let opt = subraceList[i];
+    let opt = contentList[i];
     let element = document.createElement('option');
     element.textContent = opt;
     element.value = opt;
-    subrace.appendChild(element);
+    select.appendChild(element);
   }
 }
 
 // Sets the namelist title depending on passed namelist
 function setPageTitle(genType)
 {
-  genType = genType.charAt(0).toUpperCase() + genType.slice(1); // Capitalize first letter because I didn't have the foresight to do this earlier
-  document.getElementById('gentitle').textContent = genType + ' Namelists';
-}
-
-function showButtonContent(content)
-{
-  document.getElementById(content).classList.toggle("show");
+  genType = genType.substring(genType.indexOf('-') + 1); // Slice off the type delimiter ('f-', etc.)
+  genType = genType.replaceAll('-', ' ');
+  document.getElementById('gentitle').textContent = genType + ' namelists';
+  document.getElementById('gentitle').style.textTransform = "capitalize";
 }

@@ -1,35 +1,14 @@
-# Bruck's Fantasy Name Generator
-A highly curated name generator for fantasy applications, such as DND, Baldur's Gate, or other generic fantasy environments.
-I've handpicked most of the contents in the namelists to things I would actually use. I've found that most online generators
-default to using Markov generators or using prefix/suffix construction which can lead to weird or undesirable results;
-this is my personal project to always have *something* that I'd actually want to use.
+# Bruck's Name Generator
+A highly curated name generator originally created for fantasy applications, but quickly spiraled beyond that scope once I moved towards using
+Github Pages instead of the Python desktop app.
 
-Requires Python 3.10 or newer to run the desktop app locally. See requirements.txt for more information. Can also be accessed on the web via Github Pages; not the same tool, but included in the repo.
+I've often found that online generators use prefix/suffix construction or Markov chain generation. These are useful tools, but can often
+create fairly undesirable results if the components aren't selected carefully. This is my personal answer to what's probably a gripe
+only I have.
 
-
-## Name Generator
-Has broad support for the following:
-- Races:
-    - Human
-        - Western European Style
-        - Northern/Eastern European Style
-        - Eastern/Asian Style
-    - Elf
-        - High Elf
-        - Wood Elf
-        - Drow
-        - Dark Elf
-    - Dwarf
-        - Generic Dwarf
-    - Halfing
-        - Generic Halfling
-    - Orc
-        - Generic Orc
-    - Tiefling
-        - Infernal Style
-        - 'Virtue' Style
-
-Names can also be generated with added titles, nicknames, etc. to start formulating a personality or societal role for your character.
+I've included fairly broad support for classic fantasy/DND races already, and I'm actively expanding it beyond that scope. I'd recommend
+using the Github Pages site to use it, as the Python desktop app has become slightly outdated as I've expanded the scale. It includes an
+editor for the base races, however, if you're just content to use those and create your own list.
 
 
 ## Namelist Editor
