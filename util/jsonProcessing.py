@@ -16,59 +16,59 @@ def getNamelist(namelist:str):
     match namelist:
         # Human Lists
         case 'Western':
-            file = open('assets/namelists/human/western.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/human/western.json', encoding='utf-8')
         case 'Eastern':
-            file = open('assets/namelists/human/eastern.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/human/eastern.json', encoding='utf-8')
         case 'Northern':
-            file = open('assets/namelists/human/northern.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/human/northern.json', encoding='utf-8')
         
         # Elf Lists
         case 'High Elf':
-            file = open('assets/namelists/elf/highElf.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/elf/highElf.json', encoding='utf-8')
         case 'Wood Elf':
-            file = open('assets/namelists/elf/woodElf.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/elf/woodElf.json', encoding='utf-8')
         case 'Dark Elf':
-            file = open('assets/namelists/elf/darkElf.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/elf/darkElf.json', encoding='utf-8')
         case 'Drow':
-            file = open('assets/namelists/elf/drow.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/elf/drow.json', encoding='utf-8')
         
         # Dwarf Lists
         case 'Dwarf':
-            file = open('assets/namelists/dwarf/dwarf.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/dwarf/dwarf.json', encoding='utf-8')
             
         # Halfling Lists
         case 'Halfling':
-            file = open('assets/namelists/halfling/halfling.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/halfling/halfling.json', encoding='utf-8')
             
         # Tiefling Lists
         case 'Infernal':
-            file = open('assets/namelists/tiefling/infernal.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/tiefling/infernal.json', encoding='utf-8')
         case 'Virtue':
-            file = open('assets/namelists/tiefling/virtue.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/tiefling/virtue.json', encoding='utf-8')
             
         # Orc Lists
         case 'Orc':
-            file = open('assets/namelists/orc/orc.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/orc/orc.json', encoding='utf-8')
         
         # Epithet Lists
         case 'Suffixes':
-            file = open('assets/namelists/shared/epithets/suffixes.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/epithets/suffixes.json', encoding='utf-8')
         case 'Nicknames':
-            file = open('assets/namelists/shared/epithets/nicknames.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/epithets/nicknames.json', encoding='utf-8')
         case 'Animals':
-            file = open('assets/namelists/shared/epithets/animals.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/epithets/animals.json', encoding='utf-8')
         case 'Sobriquets':
-            file = open('assets/namelists/shared/epithets/sobriquets.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/epithets/sobriquets.json', encoding='utf-8')
             
         # Title Lists
         case 'Nobility':
-            file = open('assets/namelists/shared/titles/noble.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/titles/noble.json', encoding='utf-8')
         case 'Military':
-            file = open('assets/namelists/shared/titles/military.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/titles/military.json', encoding='utf-8')
         case 'Religious':
-            file = open('assets/namelists/shared/titles/religious.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/titles/religious.json', encoding='utf-8')
         case 'Occupation':
-            file = open('assets/namelists/shared/titles/occupation.json', encoding='utf-8')
+            file = open('assets/namelists/fantasy/shared/titles/occupation.json', encoding='utf-8')
     return file
 
 # Names are assembled in order, starting with prefix titles and ending with epithets

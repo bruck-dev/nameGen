@@ -29,78 +29,78 @@ function getNamelist(namelist)
     {
         // Human Lists
         case 'Western':
-            file = 'assets/namelists/human/western.json';
+            file = 'assets/namelists/fantasy/human/western.json';
             break;
         case 'Eastern':
-            file = 'assets/namelists/human/eastern.json';
+            file = 'assets/namelists/fantasy/human/eastern.json';
             break;
         case 'Northern':
-            file = 'assets/namelists/human/northern.json';
+            file = 'assets/namelists/fantasy/human/northern.json';
             break;
         
         // Elf Lists
         case 'High Elf':
-            file = 'assets/namelists/elf/highElf.json';
+            file = 'assets/namelists/fantasy/elf/highElf.json';
             break;
         case 'Wood Elf':
-            file = 'assets/namelists/elf/woodElf.json';
+            file = 'assets/namelists/fantasy/elf/woodElf.json';
             break;
         case 'Dark Elf':
-            file = 'assets/namelists/elf/darkElf.json';
+            file = 'assets/namelists/fantasy/elf/darkElf.json';
             break;
         case 'Drow':
-            file = 'assets/namelists/elf/drow.json';
+            file = 'assets/namelists/fantasy/elf/drow.json';
             break;
         
         // Dwarf Lists
         case 'Dwarf':
-            file = 'assets/namelists/dwarf/dwarf.json';
+            file = 'assets/namelists/fantasy/dwarf/dwarf.json';
             break;
             
         // Halfling Lists
         case 'Halfling':
-            file = 'assets/namelists/halfling/halfling.json';
+            file = 'assets/namelists/fantasy/halfling/halfling.json';
             break;
             
         // Tiefling Lists
         case 'Infernal':
-            file = 'assets/namelists/tiefling/infernal.json';
+            file = 'assets/namelists/fantasy/tiefling/infernal.json';
             break;
         case 'Virtue':
-            file = 'assets/namelists/tiefling/virtue.json';
+            file = 'assets/namelists/fantasy/tiefling/virtue.json';
             break;
             
         // Orc Lists
         case 'Orc':
-            file = 'assets/namelists/orc/orc.json';
+            file = 'assets/namelists/fantasy/orc/orc.json';
             break;
         
         // Epithet Lists
         case 'Suffixes':
-            file = 'assets/namelists/shared/epithets/suffixes.json';
+            file = 'assets/namelists/fantasy/shared/epithets/suffixes.json';
             break;
         case 'Nicknames':
-            file = 'assets/namelists/shared/epithets/nicknames.json';
+            file = 'assets/namelists/fantasy/shared/epithets/nicknames.json';
             break;
         case 'Animals':
-            file = 'assets/namelists/shared/epithets/animals.json';
+            file = 'assets/namelists/fantasy/shared/epithets/animals.json';
             break;
         case 'Sobriquets':
-            file = 'assets/namelists/shared/epithets/sobriquets.json';
+            file = 'assets/namelists/fantasy/shared/epithets/sobriquets.json';
             break;
             
         // Title Lists
         case 'Nobility':
-            file = 'assets/namelists/shared/titles/noble.json';
+            file = 'assets/namelists/fantasy/shared/titles/noble.json';
             break;
         case 'Military':
-            file = 'assets/namelists/shared/titles/military.json';
+            file = 'assets/namelists/fantasy/shared/titles/military.json';
             break;
         case 'Religious':
-            file = 'assets/namelists/shared/titles/religious.json';
+            file = 'assets/namelists/fantasy/shared/titles/religious.json';
             break;
         case 'Occupation':
-            file = 'assets/namelists/shared/titles/occupation.json';
+            file = 'assets/namelists/fantasy/shared/titles/occupation.json';
             break;
     }
 
