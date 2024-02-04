@@ -42,20 +42,43 @@ function createGeneratorUI(configType, genType)
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
 
-    // Wait until the subrace dropdown has been fully created before appending new elements.
-    var observer = new MutationObserver(function (mutations, me) {
-      var dd = document.getElementById('opt1select');
-      if (dd) {
-        setOpt1(configType, genType);
-        me.disconnect();
-        return;
-      }
-    });
-    observer.observe(document, {
-      childList: true,
-      subtree: true
-    });
+    uniqueConfigs = ['f-unq'];
 
+    // The unique config type has no options to set, so disable the interface
+    if(uniqueConfigs.includes(configType))
+    {
+      var observer = new MutationObserver(function (mutations, me) {
+        var controls = document.getElementById('controls');
+        if(controls) {
+          setVisibility('controls', false);
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    else
+    {
+      // Wait until the opt1 dropdown has been fully created before appending new elements.
+      var observer = new MutationObserver(function (mutations, me) {
+        var dd = document.getElementById('opt1select');
+        if (dd) {
+          setOpt1(configType, genType);
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    // Wait until title is created and then set it
     var observer = new MutationObserver(function (mutations, me) {
       var title = document.getElementById('gentitle');
       if (title) {
@@ -78,46 +101,46 @@ function createGeneratorUI(configType, genType)
 }
 
 // Sets the first dropdown based on passed config type and generator type. Generally used for subraces.
-function setOpt1(config, list)
+function setOpt1(config, genType)
 {
   contentList = [];
   switch(config)
   {
     // Configure for fantasy races - setup subraces. No need to change label.
     case 'f-race':
-      switch(list)
+      switch(genType)
       {
-        case 'f-human':
+        case 'human':
           contentList = ['Western', 'Eastern', 'Northern'];
           setSelectContent('opt1select', contentList);
           break;
-        case 'f-elf':
+        case 'elf':
           contentList = ['High Elf', 'Wood Elf', 'Dark Elf', 'Drow'];
           setSelectContent('opt1select', contentList);
           break;
-        case 'f-dwarf':
+        case 'dwarf':
           contentList = ['Dwarf'];
           setSelectContent('opt1select', contentList);
           break;
-        case 'f-halfling':
+        case 'halfling':
           contentList = ['Halfling'];
           setSelectContent('opt1select', contentList);
           break;
-        case 'f-tiefling':
+        case 'tiefling':
             contentList = ['Infernal', 'Virtue'];
             setSelectContent('opt1select', contentList);
             break;
-        case 'f-orc':
+        case 'orc':
           contentList = ['Orc'];
           setSelectContent('opt1select', contentList);
           break;
       }
-    case 'f-unique':
-      switch(list)
+    case 'f-location':
+      switch(genType)
       {
-        case 'f-magic-academy':
-          setVisibility('opt1', false);
-          setVisibility('opt1select', false);
+        case 1:
+          break;
+        case 2:
           break;
       }
   }
@@ -145,7 +168,6 @@ function setSelectContent(selectid, contentList)
 // Sets the namelist title depending on passed namelist
 function setPageTitle(genType)
 {
-  genType = genType.substring(genType.indexOf('-') + 1); // Slice off the type delimiter ('f-', etc.)
   genType = genType.replaceAll('-', ' ');
   document.getElementById('gentitle').textContent = genType + ' namelists';
   document.getElementById('gentitle').style.textTransform = "capitalize";

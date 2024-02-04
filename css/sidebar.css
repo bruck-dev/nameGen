@@ -26,11 +26,17 @@
     text-align: left;
     cursor: pointer;
     outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /* UNIVERSAL DROPDOWN CSS */
 details > summary {
     list-style: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 summary::marker { content: none }
 

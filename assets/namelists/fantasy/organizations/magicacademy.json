@@ -1,21 +1,21 @@
 {
     "title": "Magic Academy Namelist",
-    "description": "Magical academy construction namelist. Names followed by '-random' pick a random surname from the preceding namelist to represent a founder or iconic environmental feature.",
+    "description": "Magical academy construction namelist. Names followed by '' pick a random surname from the following namelist to represent a founder or iconic environmental feature.",
     "prefix": [
         "Royal",
         "Arcaneum",
         "Convergence",
         "Dayglow",
-        "Darkwood",
-        "naturegreen-random",
+        "random-nature-temperate",
+        "random-nature-freshwater",
+        "random-nature-rocky",
         "Owlhorn",
-        "westhuman-random",
-        "easthuman-random",
-        "saint-westhuman-random",
-        "saint-easthuman-random",
-        "highelf-random",
+        "random-western",
+        "random-eastern",
+        "random-highelf",
         "Imperial",
-        "Astral"
+        "Astral",
+        "Aquillian"
     ],
     "optionalprefix": [
         "Selective",
@@ -30,7 +30,6 @@
         "Academy",
         "Conservatory",
         "Symposium",
-        "Guild",
         "Institute",
         "Synod",
         "College",
@@ -92,6 +91,8 @@
         "of the Esoteric",
         "of Esoteric Studies",
         "of Esotericism",
-        "of Transcendent Knowledge"
+        "of Transcendent Knowledge",
+        "for Magical Proficiency",
+        "for Arcane Research"
     ]
 }

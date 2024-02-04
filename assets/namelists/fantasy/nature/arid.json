@@ -1,0 +1,13 @@
+{
+    "title": "Arid/Desert Namelist",
+    "description": "Namelist for randomly generated deserts and arid features.",
+    "prefix": [
+    ],
+    "suffix": [
+        "Desert",
+        "Mesa",
+        "Divide",
+        "Canyon",
+        "Gulch"
+    ]
+}

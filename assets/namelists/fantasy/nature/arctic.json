@@ -1,0 +1,10 @@
+{
+    "title": "Arctic Namelist",
+    "description": "Namelist for randomly generated arctic features.",
+    "prefix": [
+    ],
+    "suffix": [
+        "Glacier",
+        "Icefall"
+    ]
+}

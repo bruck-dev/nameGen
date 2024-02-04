@@ -1,12 +1,18 @@
 {
     "title": "Mountain/Cave feature Namelist",
     "description": "Mountain namelist, generated either prefixed with 'Mount' or followed by a suffix.",
-    "name": [
-
+    "prefix": [
+        "Jerand"
     ],
     "suffix": [
         "Mountains",
         "Mountain Range",
-        "Cavern"
+        "Cavern",
+        "Range",
+        "Ridge",
+        "Cave",
+        "Divide",
+        "Crest",
+        "Summit"
     ]
 }

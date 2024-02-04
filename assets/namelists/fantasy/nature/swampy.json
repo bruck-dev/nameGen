@@ -1,0 +1,19 @@
+{
+    "title": "Swampy Feature Namelist",
+    "description": "Namelist for randomly generated swamp/marshland features.",
+    "prefix": [
+        "Lily",
+        "Redwood",
+        "Greylock",
+        "Autumn"
+    ],
+    "suffix": [
+        "Swamp",
+        "Bog",
+        "Marsh",
+        "Fen",
+        "Wetlands",
+        "Marshland",
+        "Bayou"
+    ]
+}

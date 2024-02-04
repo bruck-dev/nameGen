@@ -1,0 +1,30 @@
+{
+    "title": "Forest/greenery Feature Namelist",
+    "description": "Namelist for randomly generated temperate features.",
+    "prefix": [
+        "Lily",
+        "Redwood",
+        "Greylock",
+        "Autumn",
+        "Dark",
+        "Black"
+    ],
+    "suffix": [
+        "Valley",
+        "Forest",
+        "Hills",
+        "Fields",
+        "Vale",
+        "Hollow",
+        "Dale",
+        "Woods",
+        "Meadows",
+        "Marsh",
+        "Bluff",
+        "Geyser",
+        "Spring",
+        "Grove",
+        "Pines",
+        "Plains"
+    ]
+}
