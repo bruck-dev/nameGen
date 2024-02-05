@@ -208,6 +208,7 @@ function setOpt1(config, genType)
           setSelectContent('opt1select', contentList);
           break;
       }
+      break;
     case 'f-loc':
       contentList = ['Human', 'Elf', 'Dwarf', 'Orc'];
       setSelectContent('opt1select', contentList)
@@ -220,6 +221,7 @@ function setOpt1(config, genType)
           setSelectContent('opt1select', contentList)
           break;
       }
+      break;
     case 'f-org':
       switch(genType)
       {
@@ -227,6 +229,7 @@ function setOpt1(config, genType)
           contentList = ['Merchant', 'Adventurer', 'Mage', 'Criminal', 'Assassin'];
           setSelectContent('opt1select', contentList);
       }
+      break;
   }
 }
 
