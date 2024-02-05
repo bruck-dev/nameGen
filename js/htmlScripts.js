@@ -249,7 +249,7 @@ function setOpt2(config, genType)
       switch(genType)
       {
         case 'settlement':
-          contentList = ['Hamlet', 'Village', 'Town', 'City'];
+          contentList = ['Tiny', 'Small', 'Medium', 'Large'];
           setSelectContent('opt2select', contentList);
           break;
         case 'realm':

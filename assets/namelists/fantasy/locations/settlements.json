@@ -26,21 +26,33 @@
         "Urgduz",
         "Dûl Ord"
     ],
-    "hamlets" :[
+    "tiny" :[
         "Hamlet",
         "Farm",
         "Farms",
         "Homestead",
         "Mill",
-        "Ranch"
+        "Ranch",
+        "Abbey",
+        "Crossroads",
+        "Mine",
+        "Outpost"
     ],
-    "villages": [
-        "Village"
+    "small": [
+        "Village",
+        "Crossroads",
+        "Fort"
     ],
-    "towns": [
-        "Town of"
+    "medium": [
+        "Town",
+        "Township",
+        "Fortress"
     ],
-    "cities": [
-        "City of"
+    "large": [
+        "City",
+        "Port of",
+        "Harbor",
+        "Castle",
+        "Palace"
     ]
 }

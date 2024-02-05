@@ -403,48 +403,29 @@ function generateFantasyLocation(race, size, genType)
             return randomItem(data[(race + size).toLowerCase()]) + ' of ' + randomItem(data[race.toLowerCase()]);
         case 'settlement':
             let generatedName = randomItem(data[race.toLowerCase()]);
-            switch(size)
+            let descriptor = randomItem(data[size.toLowerCase()]);
+
+            // Plural descriptors must go at the end
+            if(descriptor.slice(-1) == 's')
             {
-                case 'Hamlet':
-                    // If descriptor is not plural, choose between doing 'X of Y' or 'X Y'
-                    descriptor = randomItem(data['hamlets']);
-                    if(descriptor.slice(-1) == 's')
-                    {
-                        generatedName += ' ' + descriptor;
-                    }
-                    else
-                    {
-                        if(Math.random() < 0.5)
-                        {
-                            generatedName = descriptor + ' of ' + generatedName;
-                        }
-                        else
-                        {
-                            generatedName += ' ' + descriptor;
-                        }
-                    }
-                    break;
-                case 'Village':
-                    descriptor = randomItem(data['villages']);
-                    if(Math.random() < 0.5)
-                    {
-                        generatedName = descriptor + ' of ' + generatedName;
-                    }
-                    else
-                    {
-                        generatedName += ' ' + descriptor;
-                    }
-                    break;
-                case 'Town':
-                    generatedName = randomItem(data['towns']) + ' ' + generatedName;
-                    break;
-                case 'City':
-                    generatedName = randomItem(data['cities']) + ' ' + generatedName;
-                    break;
+                generatedName += ' ' + descriptor;
+            }
+            // Descriptors with 'of' should not appear after
+            else if(descriptor.includes(' of'))
+            {
+                generatedName = descriptor + ' ' + generatedName;
+            }
+            // Randomly decide if the remaining descriptors should be X of Y or Y X
+            else if(Math.random() < 0.5)
+            {
+                generatedName = descriptor + ' of ' + generatedName;
+            }
+            else
+            {
+                generatedName += ' ' + descriptor;
             }
             return generatedName;
     }
-    
 }
 
 // Handles fantasy organization generations
