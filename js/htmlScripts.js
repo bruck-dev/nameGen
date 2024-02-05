@@ -209,17 +209,9 @@ function setOpt1(config, genType)
           break;
       }
     case 'f-loc':
-      switch(genType)
-      {
-        case 'settlement':
-          contentList = ['Human', 'Elf', 'Dwarf'];
-          setSelectContent('opt1select', contentList)
-          break;
-        case 'kingdom':
-          contentList = ['Human', 'Elf', 'Dwarf'];
-          setSelectContent('opt1select', contentList)
-          break;
-      }
+      contentList = ['Human', 'Elf', 'Dwarf', 'Orc'];
+      setSelectContent('opt1select', contentList)
+      break;
     case 'f-nat':
       switch(genType)
       {
@@ -232,7 +224,7 @@ function setOpt1(config, genType)
       switch(genType)
       {
         case 'guild':
-          contentList = ['Merchants', 'Adventurers', 'Mages'];
+          contentList = ['Merchant', 'Adventurer', 'Mage', 'Criminal', 'Assassin'];
           setSelectContent('opt1select', contentList);
       }
   }
@@ -248,6 +240,20 @@ function setOpt2(config, genType)
     case 'f-race':
       contentList = ['Male', 'Female'];
       setSelectContent('opt2select', contentList);
+      break;
+
+    case 'f-loc':
+      switch(genType)
+      {
+        case 'settlement':
+          contentList = ['Hamlet', 'Village', 'Town', 'City'];
+          setSelectContent('opt2select', contentList);
+          break;
+        case 'realm':
+          contentList = ['Kingdom', 'Duchy', 'County'];
+          setSelectContent('opt2select', contentList);
+          break;
+      }
       break;
   }
 }
@@ -319,7 +325,7 @@ function getConfigurationOptions(configType)
     case 'f-org':
       return [true, false, false, false, false];
     case 'f-loc':
-      return [true, false, false, false, false];
+      return [true, true, false, false, false];
     case 'f-nat':
       return [true, false, false, false, false];
   }
@@ -337,7 +343,7 @@ function getConfigurationLabels(configType)
     case 'f-org':
       return ['Background', false, false, false, false];
     case 'f-loc':
-      return ['Race', false, false, false, false];
+      return ['Race', 'Size', false, false, false];
     case 'f-nat':
       return ['Climate', false, false, false, false];
   }

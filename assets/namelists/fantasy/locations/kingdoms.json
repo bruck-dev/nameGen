@@ -1,7 +1,7 @@
 {
-    "title": "Kingdom Namelist",
-    "description": "List of fantasy kingdom names.",
-    "humankingdoms": [
+    "title": "Realms Namelist",
+    "description": "List of fantasy realm names.",
+    "human": [
         "Elodran",
         "Gerin",
         "Relain",
@@ -9,5 +9,81 @@
         "Osteran",
         "Vostrov",
         "Volaneux"
+    ],
+    "elf": [
+        "Elaera",
+        "Ayinor",
+        "Lyellon",
+        "Illadorei",
+        "Elhenas",
+        "Selenor",
+        "Erelond",
+        "Relthwin"
+    ],
+    "dwarf": [
+        "Krûnbar",
+        "Durn Olfrir"
+    ],
+    "orc": [
+
+    ],
+    "humancounty": [
+        "County",
+        "Barony",
+        "Earldom",
+        "Hold"
+    ],
+    "humanduchy": [
+        "Duchy",
+        "Archduchy",
+        "Grand Duchy",
+        "Jarldom",
+        "Province",
+        "Principality",
+        "Grand Principality"
+    ],
+    "humankingdom": [
+        "Kingdom",
+        "High Kingdom",
+        "Empire",
+        "Sovereignty",
+        "Dominion",
+        "Republic"
+    ],
+    "elfcounty": [
+
+    ],
+    "elfduchy": [
+        "Province"
+    ],
+    "elfkingdom": [
+        "Kingdom",
+        "Empire",
+        "Realm",
+        "Dominion"
+    ],
+    "dwarfcounty": [
+        "Chiefdom",
+        "Hold",
+        "Oath"
+    ],
+    "dwarfduchy": [
+        "High Chiefdom",
+        "Province"
+    ],
+    "dwarfkingdom": [
+        "Clan",
+        "Kingdom",
+        "High Kingdom"
+    ],
+    "orccounty": [
+        "Chiefdom",
+        "Tribe"
+    ],
+    "orcduchy": [
+        "High Chiefdom"
+    ],
+    "orckingdom": [
+        "Clan"
     ]
 }

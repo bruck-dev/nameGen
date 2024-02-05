@@ -1,0 +1,28 @@
+{
+    "title": "Guild and Society Namelist",
+    "description": "Namelist for societies and guilds.",
+    "merchant": [
+        "Trader's",
+        "Artisan's Industrial",
+        "Commerce and Trading"
+    ],
+    "adventurer": [
+        "Fighter's",
+        "Mercenary's Contract"
+    ],
+    "mage": [
+        "Mage's"
+    ],
+    "criminal": [
+        "Black Hood"
+    ],
+    "assassin": [
+        "Black Hand"
+    ],
+    "suffix": [
+        "Guild",
+        "Society",
+        "Circle",
+        "Association"
+    ]
+}

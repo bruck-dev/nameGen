@@ -1,13 +1,46 @@
 {
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
-    "humanvillages": [
-        "Glenham"
-    ],
-    "humantowns": [
+    "human": [
+        "Dunham",
+        "Glenham",
         "Falkirk"
     ],
-    "humancities": [
-
+    "elf": [
+        "Emhel",
+        "Isilme"
+    ],
+    "dwarf": [
+        "Gedum",
+        "Eduhr",
+        "Kar-Akor",
+        "Nador",
+        "Kar-Seor",
+        "Kholdor",
+        "Holgrun",
+        "Stonespire",
+        "Ironsong"
+    ],
+    "orc": [
+        "Nak Goz",
+        "Urgduz",
+        "Dûl Ord"
+    ],
+    "hamlets" :[
+        "Hamlet",
+        "Farm",
+        "Farms",
+        "Homestead",
+        "Mill",
+        "Ranch"
+    ],
+    "villages": [
+        "Village"
+    ],
+    "towns": [
+        "Town of"
+    ],
+    "cities": [
+        "City of"
     ]
 }

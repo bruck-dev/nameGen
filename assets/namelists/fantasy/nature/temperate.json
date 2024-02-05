@@ -3,11 +3,15 @@
     "description": "Namelist for randomly generated temperate features.",
     "prefix": [
         "Lily",
+        "Yolona",
         "Redwood",
         "Greylock",
         "Autumn",
         "Dark",
-        "Black"
+        "Black",
+        "Falkirk",
+        "Dunham",
+        "Glenham"
     ],
     "suffix": [
         "Valley",

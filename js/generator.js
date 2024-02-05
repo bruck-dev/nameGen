@@ -109,7 +109,7 @@ function getNamelist(genre, namelist)
                     break;
 
                 // Location Lists
-                case 'kingdom':
+                case 'realm':
                     file = 'assets/namelists/fantasy/locations/kingdoms.json';
                     break;
                 case 'settlement':
@@ -144,7 +144,7 @@ function getNamelist(genre, namelist)
                     file = 'assets/namelists/fantasy/organizations/magicacademy.json'
                     break;
                 case 'guild':
-                    file = 'assets/namelists/fantasy/organizations/guilds.json'
+                    file = 'assets/namelists/fantasy/organizations/guild.json'
                     break;
             }
         break;
@@ -157,6 +157,7 @@ function getNamelist(genre, namelist)
 function generateOutput(configType, opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
 {
     let generatedOutput = '';
+    const genType = localStorage.getItem('genType');
 
     switch(configType)
     {
@@ -164,12 +165,65 @@ function generateOutput(configType, opt1=null, opt2=null, opt3=false, opt4=null,
             generatedOutput = generateFantasyName(opt1, opt2, opt3, opt4, opt5);
             break;
         case 'f-unq':
-            generatedOutput = generateFantasyUnq(localStorage.getItem('genType'));
+            generatedOutput = generateFantasyUnq(genType);
             break;
         case 'f-nat':
             generatedOutput = generateFantasyNature(opt1);
+            break;
+        case 'f-loc':
+            generatedOutput = generateFantasyLocation(opt1, opt2, genType);
+            break;
+        case 'f-org':
+            generatedOutput = generateFantasyOrg(opt1, genType);
     }
     return generatedOutput;
+}
+
+// On button press, take attributes and generate
+function executeGenerator()
+{
+    let opt1 = document.getElementById("opt1select").value;
+    let opt2 = document.getElementById("opt2select").value;
+    let opt3 = document.getElementById("opt3check").checked;
+    let opt4 = document.getElementById("opt4select").value;
+    let opt5 = document.getElementById("opt5select").value;
+    let quantity = document.getElementById("quantity").value;
+
+    // Set a hard limit to 999 and a floor of 1. Ceiling is arbitrary.
+    if(quantity > 999)
+    {
+        quantity = 999;
+        document.getElementById("quantity").value = 999;
+    }
+    else if(quantity < 1)
+    {
+        quantity = 1;
+        document.getElementById("quantity").value = 1;
+    }
+
+    // Set select values to ignore if no list is selected
+    if(opt1 == "None")
+    {
+        opt1 = null;
+    }
+    if(opt2 == "None")
+    {
+        opt2 = null;
+    }
+    if(opt4 == "None")
+    {
+        opt4 = null;
+    }
+    if(opt5 == "None")
+    {
+        opt5 = null;
+    }
+
+    document.getElementById("nameoutput").textContent = '';
+    for(let i = 0; i < quantity; i++)
+    {
+        document.getElementById("nameoutput").textContent += generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5) + "\n";
+    }
 }
 
 // Handles fantasy name generation
@@ -355,49 +409,67 @@ function generateSimple(genre, namelist)
     return randomItem(data['prefix']) + ' ' + randomItem(data['suffix']);
 }
 
-// On button press, take attributes and generate
-function executeGenerator()
+// Handles fantasy location generation
+function generateFantasyLocation(race, size, genType)
 {
-    let opt1 = document.getElementById("opt1select").value;
-    let opt2 = document.getElementById("opt2select").value;
-    let opt3 = document.getElementById("opt3check").checked;
-    let opt4 = document.getElementById("opt4select").value;
-    let opt5 = document.getElementById("opt5select").value;
-    let quantity = document.getElementById("quantity").value;
+    const data = getNamelist('fantasy', genType);
+    switch(genType)
+    {
+        case 'realm':
+            return randomItem(data[(race + size).toLowerCase()]) + ' of ' + randomItem(data[race.toLowerCase()]);
+        case 'settlement':
+            let generatedName = randomItem(data[race.toLowerCase()]);
+            switch(size)
+            {
+                case 'Hamlet':
+                    // If descriptor is not plural, choose between doing 'X of Y' or 'X Y'
+                    descriptor = randomItem(data['hamlets']);
+                    if(descriptor.slice(-1) == 's')
+                    {
+                        generatedName += ' ' + descriptor;
+                    }
+                    else
+                    {
+                        if(Math.random() < 0.5)
+                        {
+                            generatedName = descriptor + ' of ' + generatedName;
+                        }
+                        else
+                        {
+                            generatedName += ' ' + descriptor;
+                        }
+                    }
+                    break;
+                case 'Village':
+                    descriptor = randomItem(data['villages']);
+                    if(Math.random() < 0.5)
+                    {
+                        generatedName = descriptor + ' of ' + generatedName;
+                    }
+                    else
+                    {
+                        generatedName += ' ' + descriptor;
+                    }
+                    break;
+                case 'Town':
+                    generatedName = randomItem(data['towns']) + ' ' + generatedName;
+                    break;
+                case 'City':
+                    generatedName = randomItem(data['cities']) + ' ' + generatedName;
+                    break;
+            }
+            return generatedName;
+    }
+    
+}
 
-    // Set a hard limit to 999 and a floor of 1. Ceiling is arbitrary.
-    if(quantity > 999)
+// Handles fantasy organization generations
+function generateFantasyOrg(opt1, genType)
+{
+    const data = getNamelist('fantasy', genType);
+    switch(genType)
     {
-        quantity = 999;
-        document.getElementById("quantity").value = 999;
-    }
-    else if(quantity < 1)
-    {
-        quantity = 1;
-        document.getElementById("quantity").value = 1;
-    }
-
-    // Set select values to ignore if no list is selected
-    if(opt1 == "None")
-    {
-        opt1 = null;
-    }
-    if(opt2 == "None")
-    {
-        opt2 = null;
-    }
-    if(opt4 == "None")
-    {
-        opt4 = null;
-    }
-    if(opt5 == "None")
-    {
-        opt5 = null;
-    }
-
-    document.getElementById("nameoutput").textContent = '';
-    for(let i = 0; i < quantity; i++)
-    {
-        document.getElementById("nameoutput").textContent += generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5) + "\n";
+        case 'guild':
+            return randomItem(data[opt1.toLowerCase()]) + ' ' + randomItem(data['suffix']);
     }
 }
