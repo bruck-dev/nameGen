@@ -13,7 +13,6 @@
 <body>
     <!-- Generator title at top of page-->
     <div id="info">
-        <br>
         <h1 class="gentitle" id="gentitle">Placeholder</h1>
     </div>
     <div>
@@ -21,7 +20,6 @@
     </div>
     <!-- All tools that appear under the output box. Selectboxes can be hijacked for other purposes since they're created dynamically. -->
     <div class="controls", id="controls">
-        <br>
         <!-- Used to select a subrace -->
         <div id="opt1">
             <label>Subrace</label>
@@ -29,7 +27,6 @@
         <div>
             <select id="opt1select" class="opt1select"></select>
         </div>
-        <br>
         <div id="opt2">
             <label>Gender</label>
         </div>
@@ -41,7 +38,6 @@
                 <option value="Female">Female</option>
             </select>
         </div>
-        <br>
 
         <!-- Surname checkbox, should probably be hidden for non-names -->
         <div id="opt3">
@@ -50,7 +46,6 @@
         <div>
             <input type="checkbox" id="opt3check" checked>
         </div>
-        <br>
         <div id="opt4">
             <label>Title</label>
         </div>
@@ -65,7 +60,6 @@
                 <option value="Occupation">Occupation</option>
             </select>
         </div>
-        <br>
 
         <!-- Used to select suffix epithet -->
         <div id="opt5">
@@ -80,14 +74,13 @@
                 <option value="Suffixes">Suffixes</option>
             </select>
         </div>
-        <script>
-            window.onload = setOpt1(localStorage.getItem("configType"), localStorage.getItem("genType"))
-        </script>
     </div>
-    <br>
-    <br>
-    <div>
+    <div class="btndiv">
         <button class="generate" onclick="executeGenerator()">Generate</button>
+    </div>
+    <div class="qtdiv">
+        <label>Quantity</label>
+        <input type="number" id="quantity" value="10" class="quantity" min="1">
     </div>
 </body>
 </html>

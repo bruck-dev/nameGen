@@ -363,6 +363,19 @@ function executeGenerator()
     let opt3 = document.getElementById("opt3check").checked;
     let opt4 = document.getElementById("opt4select").value;
     let opt5 = document.getElementById("opt5select").value;
+    let quantity = document.getElementById("quantity").value;
+
+    // Set a hard limit to 999 and a floor of 1. Ceiling is arbitrary.
+    if(quantity > 999)
+    {
+        quantity = 999;
+        document.getElementById("quantity").value = 999;
+    }
+    else if(quantity < 1)
+    {
+        quantity = 1;
+        document.getElementById("quantity").value = 1;
+    }
 
     // Set select values to ignore if no list is selected
     if(opt1 == "None")
@@ -383,7 +396,7 @@ function executeGenerator()
     }
 
     document.getElementById("nameoutput").textContent = '';
-    for(let i = 0; i < 10; i++)
+    for(let i = 0; i < quantity; i++)
     {
         document.getElementById("nameoutput").textContent += generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5) + "\n";
     }

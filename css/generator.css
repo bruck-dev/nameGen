@@ -6,7 +6,7 @@
 .nameoutput {
   display: inline-block;
   width: 50%;
-  height: auto;
+  height: 100%;
   box-sizing: border-box;
   border: 2px solid #3d3d3d;
   border-radius: 4px;
@@ -16,6 +16,7 @@
   color: #eeeeee;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
 }
 
 .info {
@@ -25,13 +26,14 @@
 
 .controls {
   display: inline-grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   border: 2px solid #3d3d3d;
   border-radius: 4px;
   width: 50%;
   justify-content: center;
   grid-column-gap: 2.5%;
+  margin-top: 0.5%;
 }
 
 .controls label {
@@ -64,4 +66,35 @@
   border: 1px solid #3d3d3d;
   border-radius: 5%;
   width: 5%;
+}
+
+.btndiv {
+  margin-top: 0.5%;
+}
+
+.quantity {
+  color: #eeeeee;
+  display: inline-block;
+  background-color: #212121;
+  font-size: 100%;
+  border: 1px solid #3d3d3d;
+  border-radius: 5%;
+  width: 2em;
+  text-align: right;
+  margin-left: 0.25%;
+}
+
+.qtdiv {
+  margin-top: 0.1%;
+}
+
+/* Hide the quantity arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance:textfield;
 }
