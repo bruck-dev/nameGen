@@ -31,10 +31,12 @@
   border-radius: 4px;
   width: 50%;
   justify-content: center;
+  grid-column-gap: 2.5%;
 }
 
 .controls label {
   text-align: center;
+  width: 100%;
 }
 
 .controls div {

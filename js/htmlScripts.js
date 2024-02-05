@@ -38,14 +38,17 @@ function createConstantElements()
 // Constructs the frontend for the generator page - varies based on passed genType
 function createGeneratorUI(configType, genType)
 {
+
+  optionsEnabled = getConfigurationOptions(configType);
+  optionsLabels = getConfigurationLabels(configType);
+  let checker = arr => arr.every(v => v === false);
+
   try
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
 
-    uniqueConfigs = ['f-unq'];
-
-    // The unique config type has no options to set, so disable the interface
-    if(uniqueConfigs.includes(configType))
+    // Hide all controls
+    if(checker(optionsEnabled))
     {
       var observer = new MutationObserver(function (mutations, me) {
         var controls = document.getElementById('controls');
@@ -63,11 +66,81 @@ function createGeneratorUI(configType, genType)
 
     else
     {
-      // Wait until the opt1 dropdown has been fully created before appending new elements.
+      // Configure opt1 (wait until created)
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt1select');
         if (dd) {
           setOpt1(configType, genType);
+          setVisibility('opt1', optionsEnabled[0]);
+          setVisibility('opt1select', optionsEnabled[0]);
+          document.getElementById('opt1').textContent = optionsLabels[0];
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+
+      // Configure opt2
+      var observer = new MutationObserver(function (mutations, me) {
+        var dd = document.getElementById('opt2select');
+        if (dd) {
+          setOpt2(configType, genType);
+          setVisibility('opt2', optionsEnabled[1]);
+          setVisibility('opt2select', optionsEnabled[1]);
+          document.getElementById('opt2').textContent = optionsLabels[1];
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+
+      // Configure opt3
+      var observer = new MutationObserver(function (mutations, me) {
+        var dd = document.getElementById('opt3check');
+        if (dd) {
+          setVisibility('opt3', optionsEnabled[2]);
+          setVisibility('opt3check', optionsEnabled[2]);
+          document.getElementById('opt3').textContent = optionsLabels[2];
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+
+      // Configure opt4
+      var observer = new MutationObserver(function (mutations, me) {
+        var dd = document.getElementById('opt4select');
+        if (dd) {
+          setOpt4(configType, genType);
+          setVisibility('opt4', optionsEnabled[3]);
+          setVisibility('opt4select', optionsEnabled[3]);
+          document.getElementById('opt4').textContent = optionsLabels[3];
+          me.disconnect();
+          return;
+        }
+      });
+      observer.observe(document, {
+        childList: true,
+        subtree: true
+      });
+
+      // Configure opt5
+      var observer = new MutationObserver(function (mutations, me) {
+        var dd = document.getElementById('opt5select');
+        if (dd) {
+          setOpt5(configType, genType);
+          setVisibility('opt5', optionsEnabled[4]);
+          setVisibility('opt5select', optionsEnabled[4]);
+          document.getElementById('opt5').textContent = optionsLabels[4];
           me.disconnect();
           return;
         }
@@ -77,7 +150,7 @@ function createGeneratorUI(configType, genType)
         subtree: true
       });
     }
-
+    
     // Wait until title is created and then set it
     var observer = new MutationObserver(function (mutations, me) {
       var title = document.getElementById('gentitle');
@@ -103,7 +176,7 @@ function createGeneratorUI(configType, genType)
 // Sets the first dropdown based on passed config type and generator type. Generally used for subraces.
 function setOpt1(config, genType)
 {
-  contentList = [];
+  let contentList = [];
   switch(config)
   {
     // Configure for fantasy races - setup subraces. No need to change label.
@@ -135,14 +208,75 @@ function setOpt1(config, genType)
           setSelectContent('opt1select', contentList);
           break;
       }
-    case 'f-location':
+    case 'f-loc':
       switch(genType)
       {
-        case 1:
+        case 'settlement':
+          contentList = ['Human', 'Elf', 'Dwarf'];
+          setSelectContent('opt1select', contentList)
           break;
-        case 2:
+        case 'kingdom':
+          contentList = ['Human', 'Elf', 'Dwarf'];
+          setSelectContent('opt1select', contentList)
           break;
       }
+    case 'f-nat':
+      switch(genType)
+      {
+        case 'nature':
+          contentList = ['Arctic', 'Arid', 'Freshwater', 'Rocky', 'Saltwater', 'Swampy', 'Temperate'];
+          setSelectContent('opt1select', contentList)
+          break;
+      }
+    case 'f-org':
+      switch(genType)
+      {
+        case 'guild':
+          contentList = ['Merchants', 'Adventurers', 'Mages'];
+          setSelectContent('opt1select', contentList);
+      }
+  }
+}
+
+// Sets the second dropdown based on passed config type and generator type. Generally used for gender.
+function setOpt2(config, genType)
+{
+  let contentList = [];
+  switch(config)
+  {
+    // Configure for fantasy races - setup subraces. No need to change label.
+    case 'f-race':
+      contentList = ['Male', 'Female'];
+      setSelectContent('opt2select', contentList);
+      break;
+  }
+}
+
+// Sets the 4th dropdown based on passed config type and generator type. Generally used for gender.
+function setOpt4(config, genType)
+{
+  let contentList = [];
+  switch(config)
+  {
+    // Configure for fantasy races - setup subraces. No need to change label.
+    case 'f-race':
+      contentList = ['None', 'Military', 'Nobility', 'Religious', 'Occupation'];
+      setSelectContent('opt4select', contentList);
+      break;
+  }
+}
+
+// Sets the 5th dropdown based on passed config type and generator type. Generally used for gender.
+function setOpt5(config, genType)
+{
+  let contentList = [];
+  switch(config)
+  {
+    // Configure for fantasy races - setup subraces. No need to change label.
+    case 'f-race':
+      contentList = ['None', 'Animals', 'Nicknames', 'Sobriquets', 'Suffixes'];
+      setSelectContent('opt5select', contentList);
+      break;
   }
 }
 
@@ -171,4 +305,40 @@ function setPageTitle(genType)
   genType = genType.replaceAll('-', ' ');
   document.getElementById('gentitle').textContent = genType + ' namelists';
   document.getElementById('gentitle').style.textTransform = "capitalize";
+}
+
+// Returns an array of enabled options
+function getConfigurationOptions(configType)
+{
+  switch(configType)
+  {
+    case 'f-race':
+      return [true, true, true, true, true];
+    case 'f-unq':
+      return [false, false, false, false, false];
+    case 'f-org':
+      return [true, false, false, false, false];
+    case 'f-loc':
+      return [true, false, false, false, false];
+    case 'f-nat':
+      return [true, false, false, false, false];
+  }
+}
+
+// Returns an array of option labels
+function getConfigurationLabels(configType)
+{
+  switch(configType)
+  {
+    case 'f-race':
+      return ['Subrace', 'Gender', 'Surname', 'Title', 'Epithet'];
+    case 'f-unq':
+      return [false, false, false, false, false];
+    case 'f-org':
+      return ['Background', false, false, false, false];
+    case 'f-loc':
+      return ['Race', false, false, false, false];
+    case 'f-nat':
+      return ['Climate', false, false, false, false];
+  }
 }

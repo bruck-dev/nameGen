@@ -166,6 +166,8 @@ function generateOutput(configType, opt1=null, opt2=null, opt3=false, opt4=null,
         case 'f-unq':
             generatedOutput = generateFantasyUnq(localStorage.getItem('genType'));
             break;
+        case 'f-nat':
+            generatedOutput = generateFantasyNature(opt1);
     }
     return generatedOutput;
 }
