@@ -168,7 +168,7 @@ function generateOutput(configType, opt1=null, opt2=null, opt3=false, opt4=null,
             generatedOutput = generateFantasyUnq(genType);
             break;
         case 'f-nat':
-            generatedOutput = generateFantasyNature(opt1);
+            generatedOutput = generateSimple('fantasy', opt1.toLowerCase());
             break;
         case 'f-loc':
             generatedOutput = generateFantasyLocation(opt1, opt2, genType);
@@ -384,22 +384,6 @@ function generateFantasyUnq(genType)
             break;
     }
     return generatedName;
-}
-
-// Handles fantasy natural features
-function generateFantasyNature(natureType)
-{
-    const genre = 'fantasy';
-
-    if(natureType == 'saltwater')
-    {
-        // do special cases here
-    }
-
-    else
-    {
-        return generateSimple(genre, natureType);
-    }
 }
 
 // Handles simple prefix/suffix creation

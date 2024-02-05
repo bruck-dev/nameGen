@@ -4,27 +4,24 @@
     "prefix": [
 
     ],
-    "suffixland": [
+    "suffix": [
+        "Sea",
+        "Ocean",
+        "Bay",
+        "Straits",
+        "Gulf",
+        "Cove",
         "Reef",
         "Shoal",
         "Bank",
         "Shore",
         "Island",
         "Isle",
-        "Rock",
         "Atoll",
         "Harbor",
         "Islet",
         "Key",
         "Grotto",
         "Cape"
-    ],
-    "suffixwater": [
-        "Sea",
-        "Ocean",
-        "Bay",
-        "Straits",
-        "Gulf",
-        "Cove"
     ]
 }
