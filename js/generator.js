@@ -361,7 +361,7 @@ function generateFantasyUnq(genType)
             {
                 if(prefix.includes('nature'))
                 {
-                    prefix = generateFantasyNature(prefix.slice(14));
+                    prefix = generateSimple('fantasy', prefix.slice(14));
                 }
                 else
                 {
