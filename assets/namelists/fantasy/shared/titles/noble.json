@@ -12,8 +12,7 @@
         "Marquis",
         "Prince-Elector",
         "Ser",
-        "Sir",
-        "Tsar"
+        "Sir"
     ],
     "humanfemale": [
         "Baronetess",
@@ -25,11 +24,7 @@
         "Margravine",
         "Marquise",
         "Princess-Elector",
-        "Tsarina",
         "Viscountess"
-    ],
-    "humanneutral": [
-        "Jarl"
     ],
     "elfmale": [],
     "elffemale": [],
@@ -89,5 +84,28 @@
         "Prince",
         "Viscount"
     ],
-    "neutral": []
+    "neutral": [],
+    "tieflingfemale": [
+        "Archis",
+        "Archonesa",
+        "Basilissa",
+        "Despoina",
+        "Despotissa"
+    ],
+    "tieflingmale": [
+        "Archon",
+        "Basileus",
+        "Despot",
+        "Despotes"
+    ],
+    "northernneutral": [
+        "Jarl",
+        "Thane"
+    ],
+    "northernmale": [
+        "Tsar"
+    ],
+    "northernfemale": [
+        "Tsarina"
+    ]
 }

@@ -1,23 +1,41 @@
 {
     "title": "Military Titles Namelist",
     "description": "Namelist for military title prefixes.",
-    "male": [],
-    "female": [
+    "humanmale": [
+        "Knight",
+        "Knight-Errant"
+    ],
+    "humanfemale": [
         "Knightess",
         "Knightess-Errant"
     ],
+    "male": [
+        "Man-At-Arms"
+    ],
+    "female": [
+        "Woman-At-Arms"
+    ],
     "neutral": [
+        "Battlemage",
         "Captain",
         "Commander",
         "General",
         "Justiciar",
-        "Knight",
-        "Knight-Errant",
         "Lieutenant",
-        "Man-At-Arms",
         "Marshal",
         "Officer",
         "Paladin",
         "Sergeant"
+    ],
+    "tieflingneutral": [
+        "Strategos"
+    ],
+    "northernfemale": [
+        "Shieldmaiden",
+        "Valkyrie"
+    ],
+    "northernmale": [
+        "Berserker",
+        "Shieldbrother"
     ]
 }

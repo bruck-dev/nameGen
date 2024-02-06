@@ -2,9 +2,12 @@
     "title": "Sobriquet Namelist",
     "description": "Name list one-word sobriquets. Should probably replace surnames",
     "male": [
+        "Rex",
         "Twistedbeard"
     ],
-    "female": [],
+    "female": [
+        "Regina"
+    ],
     "neutral": [
         "Bloodaxe",
         "Blue-Snake",

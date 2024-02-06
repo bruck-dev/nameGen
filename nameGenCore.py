@@ -97,7 +97,7 @@ class Main(QMainWindow):
         self.jsonInputBox = QPlainTextEdit()
         
         self.jsonKeyBox = QLineEdit()
-        self.jsonKeyBox.setFixedSize(200, 25)
+        self.jsonKeyBox.setFixedSize(225, 25)
         jsonKeyBoxLabel = QLabel('Key Editor')
         jsonAddKeyButton = QPushButton('Add Key')
         jsonAddKeyButton.setFixedSize(75, 25)

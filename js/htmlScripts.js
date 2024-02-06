@@ -185,40 +185,32 @@ function setOpt1(config, genType)
       {
         case 'human':
           contentList = ['Western', 'Eastern', 'Northern'];
-          setSelectContent('opt1select', contentList);
           break;
         case 'elf':
           contentList = ['High Elf', 'Wood Elf', 'Dark Elf', 'Drow'];
-          setSelectContent('opt1select', contentList);
           break;
         case 'dwarf':
           contentList = ['Dwarf'];
-          setSelectContent('opt1select', contentList);
           break;
         case 'halfling':
           contentList = ['Halfling'];
-          setSelectContent('opt1select', contentList);
           break;
         case 'tiefling':
             contentList = ['Infernal', 'Virtue'];
-            setSelectContent('opt1select', contentList);
             break;
         case 'orc':
           contentList = ['Orc'];
-          setSelectContent('opt1select', contentList);
           break;
       }
       break;
     case 'f-loc':
       contentList = ['Human', 'Elf', 'Dwarf', 'Orc'];
-      setSelectContent('opt1select', contentList)
       break;
     case 'f-nat':
       switch(genType)
       {
         case 'nature':
           contentList = ['Arctic', 'Arid', 'Freshwater', 'Rocky', 'Saltwater', 'Swampy', 'Temperate'];
-          setSelectContent('opt1select', contentList)
           break;
       }
       break;
@@ -227,10 +219,20 @@ function setOpt1(config, genType)
       {
         case 'guild':
           contentList = ['Merchant', 'Adventurer', 'Mage', 'Criminal', 'Assassin'];
-          setSelectContent('opt1select', contentList);
       }
       break;
   }
+
+  // Sorts alphabetically but puts 'None' at front (for default) if present
+  contentList = contentList.sort();
+  if(contentList.includes('None'))
+  {
+    if (contentList.indexOf('None') > 0) {
+      contentList.splice(contentList.indexOf('None'), 1);
+      contentList.unshift('None');
+    }
+  }
+  setSelectContent('opt1select', contentList)
 }
 
 // Sets the second dropdown based on passed config type and generator type. Generally used for gender.
@@ -242,7 +244,6 @@ function setOpt2(config, genType)
     // Configure for fantasy races - setup subraces. No need to change label.
     case 'f-race':
       contentList = ['Male', 'Female'];
-      setSelectContent('opt2select', contentList);
       break;
 
     case 'f-loc':
@@ -250,15 +251,24 @@ function setOpt2(config, genType)
       {
         case 'settlement':
           contentList = ['Tiny', 'Small', 'Medium', 'Large'];
-          setSelectContent('opt2select', contentList);
           break;
         case 'realm':
           contentList = ['Kingdom', 'Duchy', 'County'];
-          setSelectContent('opt2select', contentList);
           break;
       }
       break;
   }
+
+  // Sorts alphabetically but puts 'None' at front (for default) if present
+  contentList = contentList.sort();
+  if(contentList.includes('None'))
+  {
+    if (contentList.indexOf('None') > 0) {
+      contentList.splice(contentList.indexOf('None'), 1);
+      contentList.unshift('None');
+    }
+  }
+  setSelectContent('opt2select', contentList);
 }
 
 // Sets the 4th dropdown based on passed config type and generator type. Generally used for gender.
@@ -269,10 +279,19 @@ function setOpt4(config, genType)
   {
     // Configure for fantasy races - setup subraces. No need to change label.
     case 'f-race':
-      contentList = ['None', 'Military', 'Nobility', 'Religious', 'Occupation'];
-      setSelectContent('opt4select', contentList);
+      contentList = ['None', 'Military', 'Nobility', 'Religious', 'Magical'];
       break;
   }
+  // Sorts alphabetically but puts 'None' at front (for default) if present
+  contentList = contentList.sort();
+  if(contentList.includes('None'))
+  {
+    if (contentList.indexOf('None') > 0) {
+      contentList.splice(contentList.indexOf('None'), 1);
+      contentList.unshift('None');
+    }
+  }
+  setSelectContent('opt4select', contentList);
 }
 
 // Sets the 5th dropdown based on passed config type and generator type. Generally used for gender.
@@ -284,9 +303,19 @@ function setOpt5(config, genType)
     // Configure for fantasy races - setup subraces. No need to change label.
     case 'f-race':
       contentList = ['None', 'Animals', 'Nicknames', 'Sobriquets', 'Suffixes'];
-      setSelectContent('opt5select', contentList);
       break;
   }
+
+  // Sorts alphabetically but puts 'None' at front (for default) if present
+  contentList = contentList.sort();
+  if(contentList.includes('None'))
+  {
+    if (contentList.indexOf('None') > 0) {
+      contentList.splice(contentList.indexOf('None'), 1);
+      contentList.unshift('None');
+    }
+  }
+  setSelectContent('opt5select', contentList);
 }
 
 function setSelectContent(selectid, contentList)

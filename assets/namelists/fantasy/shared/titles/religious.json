@@ -35,7 +35,16 @@
         "Prelate",
         "Rector",
         "Saint",
+        "Shaman",
         "Vicar",
         "Zealot"
+    ],
+    "northernmale": [
+        "Godi",
+        "Volkhv"
+    ],
+    "northernfemale": [
+        "Gydja",
+        "Vedunya"
     ]
 }

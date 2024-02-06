@@ -16,28 +16,81 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
     if(title)
     {
         const data = getNamelist(genre, title);
-        let titleChoices = [];
-        try
+        let subraceTitles = [];
+        let raceTitles =[];
+        let genericTitles = [];
+
+        // Check for subrace titles
+        subraceTitles = subraceTitles.concat(data[namelist.toLowerCase() + gender.toLowerCase()]);
+        subraceTitles = subraceTitles.concat(data[namelist.toLowerCase() + 'neutral']);
+
+        // Check for race specific titles
+        raceTitles = raceTitles.concat(data[genType + gender.toLowerCase()]);
+        raceTitles = raceTitles.concat(data[genType + 'neutral']);
+
+        // Check for generic titles
+        genericTitles = genericTitles.concat(data[gender.toLowerCase()]);
+        genericTitles = genericTitles.concat(data['neutral']);
+
+        // Remove any undefined values, i.e. disregarding any namelists that don't exist
+        subraceTitles = subraceTitles.filter(function( element ) {
+            return element !== undefined;
+         });
+
+        raceTitles = raceTitles.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        genericTitles = genericTitles.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        // Pick a random from the lists, weighted. Checks if lists have values first.
+        generatedTitle = '';
+        const rando = Math.random();
+        if(raceTitles.length == 0 && subraceTitles.length == 0)
         {
-            try
-            {
-                // Check for subrace specific titles
-                titleChoices = titleChoices.concat(data[namelist.toLowerCase() + gender.toLowerCase()].concat(data[namelist.toLowerCase() + 'neutral']));
-            }
-            catch(error)
-            {
-                // If none, ignore the missing key error and try to find race specific names
-            }
-            // Check for race-specific titles
-            titleChoices = titleChoices.concat(data[genType + gender.toLowerCase()].concat(data[genType + 'neutral']));
+            generatedTitle = randomItem(genericTitles);
         }
-        catch(error) 
+        else if(subraceTitles.length == 0 && raceTitles.length != 0)
         {
-            // If none, ignore the missing key error and use the shared list as expected
+            if(rando < 0.6)
+            {
+                generatedTitle = randomItem(raceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
+        }
+        else if(subraceTitles.length != 0 && raceTitles.length == 0)
+        {
+            if(rando < 0.6)
+            {
+                generatedTitle = randomItem(subraceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
+        }
+        else
+        {
+            if(rando < 0.45)
+            {
+                generatedTitle = randomItem(subraceTitles);
+            }
+            else if(rando < 0.70)
+            {
+                generatedTitle = randomItem(raceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
         }
 
-        titleChoices = titleChoices.concat(data[gender.toLowerCase()].concat(data['neutral']));
-        generatedName += randomItem(titleChoices) + ' ';
+        generatedName += generatedTitle + ' ';
     }
 
     // Picks a given name and surname if enabled

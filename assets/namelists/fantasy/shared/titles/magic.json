@@ -1,0 +1,49 @@
+{
+    "title": "Magic Titles Namelist",
+    "description": "Wizard ranks (Archmage, etc).",
+    "male": [
+        "Enchanter",
+        "Grand Sorcerer",
+        "Headmaster",
+        "High Enchanter",
+        "Seer",
+        "Sorcerer"
+    ],
+    "female": [
+        "Enchantress",
+        "Grand Sorceress",
+        "Headmistress",
+        "High Enchantress",
+        "Seeress",
+        "Sorceress",
+        "Witch"
+    ],
+    "neutral": [
+        "Abjurist",
+        "Adept",
+        "Adeptus Major",
+        "Adeptus Minor",
+        "Apprentice",
+        "Arch-Magi",
+        "Archmage",
+        "Archmagus",
+        "Augur",
+        "Battlemage",
+        "Conjurer",
+        "Evoker",
+        "Hedge Wizard",
+        "High Magus",
+        "Illusionist",
+        "Journeymage",
+        "Magister",
+        "Magus",
+        "Necromancer",
+        "Neophyte",
+        "Novice",
+        "Scholar",
+        "Thaumaturgist",
+        "Theurgist",
+        "Warlock",
+        "Wizard"
+    ]
+}

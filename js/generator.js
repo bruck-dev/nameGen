@@ -104,8 +104,8 @@ function getNamelist(genre, namelist)
                 case 'religious':
                     file = 'assets/namelists/fantasy/shared/titles/religious.json';
                     break;
-                case 'occupation':
-                    file = 'assets/namelists/fantasy/shared/titles/occupation.json';
+                case 'magical':
+                    file = 'assets/namelists/fantasy/shared/titles/magic.json';
                     break;
 
                 // Location Lists
@@ -220,6 +220,8 @@ function executeGenerator()
     }
 
     document.getElementById("nameoutput").textContent = '';
+    
+    // Generates names given quantity, regenerates duplicates (decreasingly likelihood as more options are enabled)
     let i = 0;
     while(i < quantity)
     {
