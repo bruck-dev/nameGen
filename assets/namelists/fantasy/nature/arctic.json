@@ -1,7 +1,11 @@
 {
     "title": "Arctic Namelist",
     "description": "Namelist for randomly generated arctic features.",
-    "prefix": [],
+    "prefix": [
+        "Frostcliff",
+        "Frozen",
+        "Northreach"
+    ],
     "suffix": [
         "Glacier",
         "Icefall"

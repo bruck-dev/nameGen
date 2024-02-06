@@ -4,14 +4,21 @@
     "prefix": [
         "Autumn",
         "Black",
+        "Bleak",
         "Dark",
         "Dunham",
         "Falkirk",
+        "Fearthford",
         "Glenham",
         "Greylock",
+        "Hayward",
         "Lily",
         "Redwood",
-        "Yolona"
+        "Yolona",
+        "random-eastern-surname",
+        "random-highelf-surname",
+        "random-western-surname",
+        "random-woodelf-surname"
     ],
     "suffix": [
         "Bluff",

@@ -18,45 +18,33 @@
         "Illadorei",
         "Lyellon",
         "Relthwin",
-        "Selenor"
+        "Selenor",
+        "random-drow-surname",
+        "random-woodelf-surname"
     ],
     "dwarf": [
         "Durn Olfrir",
         "Krûnbar"
     ],
-    "orc": [],
+    "orc": [
+        "random-orc-surname"
+    ],
     "humancounty": [
-        "Barony",
-        "County",
         "Earldom",
         "Hold"
     ],
     "humanduchy": [
-        "Archduchy",
-        "Duchy",
-        "Grand Duchy",
-        "Grand Principality",
-        "Jarldom",
-        "Principality",
-        "Province"
+        "Jarldom"
     ],
     "humankingdom": [
-        "Dominion",
-        "Empire",
         "High Kingdom",
-        "Kingdom",
         "Republic",
         "Sovereignty"
     ],
     "elfcounty": [],
-    "elfduchy": [
-        "Province"
-    ],
+    "elfduchy": [],
     "elfkingdom": [
-        "Dominion",
-        "Empire",
-        "Kingdom",
-        "Realm"
+        "Elven Realm"
     ],
     "dwarfcounty": [
         "Chiefdom",
@@ -68,7 +56,7 @@
         "Province"
     ],
     "dwarfkingdom": [
-        "Clan",
+        "Dwarf Clan",
         "High Kingdom",
         "Kingdom"
     ],
@@ -80,6 +68,24 @@
         "High Chiefdom"
     ],
     "orckingdom": [
-        "Clan"
+        "War Tribe",
+        "Orcish Clan"
+    ],
+    "county": [
+        "Barony",
+        "County"
+    ],
+    "duchy": [
+        "Archduchy",
+        "Duchy",
+        "Grand Duchy",
+        "Grand Principality",
+        "Principality",
+        "Province"
+    ],
+    "kingdom": [
+        "Kingdom",
+        "Dominion",
+        "Empire"
     ]
 }

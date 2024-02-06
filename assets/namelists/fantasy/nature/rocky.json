@@ -6,10 +6,12 @@
         "Blue",
         "Grey",
         "Greywarren",
-        "Ilian",
         "Jerand",
-        "Jerren",
-        "Red"
+        "Red",
+        "random-darkelf-surname",
+        "random-drow-surname",
+        "random-dwarf-surname",
+        "random-infernal-surname"
     ],
     "suffix": [
         "Cave",

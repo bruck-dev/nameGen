@@ -10,12 +10,14 @@
         "Imperial",
         "Owlhorn",
         "Royal",
-        "random-eastern",
-        "random-highelf",
-        "random-nature-freshwater",
-        "random-nature-rocky",
-        "random-nature-temperate",
-        "random-western"
+        "random-darkelf-surname",
+        "random-drow-surname",
+        "random-eastern-surname",
+        "random-highelf-surname",
+        "random-freshwater",
+        "random-rocky",
+        "random-temperate",
+        "random-western-surname"
     ],
     "optionalprefix": [
         "Preparatory",
@@ -25,18 +27,14 @@
     ],
     "type": [
         "Academy",
-        "Circle",
-        "Citadel",
         "College",
         "Conservatory",
-        "Hall",
         "Halls",
         "Institute",
         "Magisterium",
         "Sanctum",
         "School",
         "Symposium",
-        "Synod",
         "University"
     ],
     "optionalsuffix": [

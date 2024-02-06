@@ -1,7 +1,17 @@
 {
     "title": "Arid/Desert Namelist",
     "description": "Namelist for randomly generated deserts and arid features.",
-    "prefix": [],
+    "prefix": [
+        "Blackrock",
+        "Bohdan's",
+        "Brokerock",
+        "Drywinds",
+        "Red",
+        "Red Sands",
+        "random-darkelf-surname",
+        "random-eastern-surname",
+        "random-infernal-surname"
+    ],
     "suffix": [
         "Canyon",
         "Desert",

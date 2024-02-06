@@ -222,14 +222,9 @@ function executeGenerator()
     document.getElementById("nameoutput").textContent = '';
     
     // Generates names given quantity, regenerates duplicates (decreasingly likelihood as more options are enabled)
-    let i = 0;
-    while(i < quantity)
+    for(let i = 0; i < quantity; i++)
     {
         let genName = generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5);
-        if(!(document.getElementById("nameoutput").textContent.includes(genName)))
-        {
-            document.getElementById("nameoutput").textContent += genName + "\n";
-            i++;
-        }
+        document.getElementById("nameoutput").textContent += genName + "\n";
     }
 }

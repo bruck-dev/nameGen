@@ -148,8 +148,6 @@ function generateFantasyUnq(genType)
     switch(genType)
     {
         case 'magic-academy':
-            const optPrefixChance = Math.random() < 0.25;
-            const optSuffixChance = Math.random() < 0.5;
             const data = getNamelist(genre, genType);
 
             let prefix = randomItem(data['prefix']);
@@ -157,25 +155,24 @@ function generateFantasyUnq(genType)
             // Check if prefix includes random sublist selectors
             if(prefix.includes('random-'))
             {
-                if(prefix.includes('nature'))
+                if(!prefix.includes('surname')) // Nature case
                 {
-                    prefix = generateSimple('fantasy', prefix.slice(14));
+                    prefix = prefix.slice(7);
+                    prefix = generateSimple(genre, prefix);
                 }
-                else
+                else // Surname founder case
                 {
-                    const founder = getNamelist(genre, prefix.slice(7));
-                    prefix = randomItem(founder['surname']);
-                    prefix = prefix.charAt(0).toUpperCase() + prefix.slice(1); // Capitalizes the first letter just in case
+                    prefix = getRandomName(genre, prefix);
                 }
             }
             generatedName += prefix;
-            if(optPrefixChance)
+            if(Math.random() < 0.25)
             {
                 let optPrefix = randomItem(data['optionalprefix']);
                 generatedName += ' ' + optPrefix;
             }
             generatedName += ' ' + randomItem(data['type']);
-            if(optSuffixChance)
+            if(Math.random() < 0.5)
             {
                 generatedName += ' ' + randomItem(data['optionalsuffix']);
             }
@@ -191,7 +188,30 @@ function generateFantasyLocation(race, size, genType)
     switch(genType)
     {
         case 'realm':
-            return randomItem(data[(race + size).toLowerCase()]) + ' of ' + randomItem(data[race.toLowerCase()]);
+            let tierRacial = data[(race + size).toLowerCase()];
+            const tierGeneric = data[size.toLowerCase()];
+
+            tierRacial = tierRacial.filter(function( element ) {
+                return element !== undefined;
+             });
+
+            let tier = ''
+            if(Math.random() < 0.6 && tierRacial.length > 0)
+            {
+                tier = randomItem(tierRacial);
+            }
+            else
+            {
+                tier = randomItem(tierGeneric);
+            }
+
+            let name = randomItem(data[race.toLowerCase()]);
+            if(name.includes('random-'))
+            {
+                name = getRandomName('fantasy', name);
+            }
+            return  tier + ' of ' + name;
+
         case 'settlement':
             let generatedName = randomItem(data[race.toLowerCase()]);
             let descriptor = randomItem(data[size.toLowerCase()]);
