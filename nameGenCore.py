@@ -57,7 +57,7 @@ class Main(QMainWindow):
         #region Widgets
         ## Window Setup ##
         self.setWindowTitle('Bruck\'s JSON Editor')
-        self.setFixedSize(500, 425)
+        self.setFixedSize(500, 525)
         
         ## Audio Setup ##
         self.player = AudioPlayer()
@@ -95,6 +95,14 @@ class Main(QMainWindow):
         self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
         self.jsonKeysCombo.setFixedSize(225, 25)
         self.jsonInputBox = QPlainTextEdit()
+        
+        self.jsonKeyBox = QLineEdit()
+        self.jsonKeyBox.setFixedSize(200, 25)
+        jsonKeyBoxLabel = QLabel('Key Editor')
+        jsonAddKeyButton = QPushButton('Add Key')
+        jsonAddKeyButton.setFixedSize(75, 25)
+        jsonRemoveKeyButton = QPushButton('Remove Key')
+        jsonRemoveKeyButton.setFixedSize(75, 25)
         
         # Music Control Page #
         self.musicPlayButton = QPushButton()
@@ -150,6 +158,8 @@ class Main(QMainWindow):
         jsonReplaceNamesButton.clicked.connect(self.replaceNames)
         jsonDumpNamesButton.clicked.connect(self.dumpNames)
         jsonClearButton.clicked.connect(self.clearInputBox)
+        jsonAddKeyButton.clicked.connect(self.addKey)
+        jsonRemoveKeyButton.clicked.connect(self.removeKey)
         
         # Music Control Page #
         self.player.mediaStatusChanged.connect(self.musicUpdatePlaying)
@@ -173,6 +183,20 @@ class Main(QMainWindow):
         jsonPageButtonGroup.layout.addWidget(jsonClearButton, 1, 1)
         jsonPageButtonGroup.setLayout(jsonPageButtonGroup.layout)
         
+        jsonPageKeyGroup = QGroupBox()
+        jsonPageKeyGroup.layout = QVBoxLayout()
+        jsonPageKeyButtonGroup = QGroupBox()
+        jsonPageKeyButtonGroup.layout = QHBoxLayout()
+        jsonPageKeyButtonGroup.layout.addWidget(jsonAddKeyButton)
+        jsonPageKeyButtonGroup.layout.addWidget(jsonRemoveKeyButton)
+        jsonPageKeyButtonGroup.setFlat(True)
+        jsonPageKeyButtonGroup.setLayout(jsonPageKeyButtonGroup.layout)
+        
+        jsonPageKeyGroup.layout.addWidget(jsonKeyBoxLabel)
+        jsonPageKeyGroup.layout.addWidget(self.jsonKeyBox)
+        jsonPageKeyGroup.layout.addWidget(jsonPageKeyButtonGroup)
+        jsonPageKeyGroup.setLayout(jsonPageKeyGroup.layout)
+        
         jsonPageControlGroup = QGroupBox()
         jsonPageControlGroup.layout = QFormLayout()
         jsonPageControlGroup.layout.addWidget(jsonRootLabel)
@@ -183,6 +207,7 @@ class Main(QMainWindow):
         jsonPageControlGroup.layout.addWidget(self.jsonFileCombo)
         jsonPageControlGroup.layout.addWidget(jsonKeysLabel)
         jsonPageControlGroup.layout.addWidget(self.jsonKeysCombo)
+        jsonPageControlGroup.layout.addRow(jsonPageKeyGroup)
         jsonPageControlGroup.layout.addRow(jsonPageButtonGroup)
         jsonPageControlGroup.setLayout(jsonPageControlGroup.layout)
         
@@ -278,6 +303,26 @@ class Main(QMainWindow):
         self.jsonKeysCombo.clear()
         self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
         self.jsonKeysCombo.blockSignals(False)
+        
+    def addKey(self):
+        key = self.jsonKeyBox.text()
+        data = json.load(open(self.jsonFileCombo.currentText(), encoding='utf-8'))
+        data[key] = []
+        with open(self.jsonFileCombo.currentText(), 'w',encoding='utf-8') as f:
+            json.dump(data, f, indent=4,ensure_ascii=False)
+        self.jsonKeysCombo.clear()
+        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+    def removeKey(self):
+        key = self.jsonKeyBox.text()
+        data = json.load(open(self.jsonFileCombo.currentText(), encoding='utf-8'))
+        try:
+            del data[key]
+        except:
+            pass # Key didn't exist, ignore
+        with open(self.jsonFileCombo.currentText(), 'w',encoding='utf-8') as f:
+            json.dump(data, f, indent=4,ensure_ascii=False)
+        self.jsonKeysCombo.clear()
+        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
         
     # Name Processing Functions
     def addNames(self):

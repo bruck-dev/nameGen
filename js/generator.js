@@ -220,8 +220,14 @@ function executeGenerator()
     }
 
     document.getElementById("nameoutput").textContent = '';
-    for(let i = 0; i < quantity; i++)
+    let i = 0;
+    while(i < quantity)
     {
-        document.getElementById("nameoutput").textContent += generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5) + "\n";
+        let genName = generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5);
+        if(!(document.getElementById("nameoutput").textContent.includes(genName)))
+        {
+            document.getElementById("nameoutput").textContent += genName + "\n";
+            i++;
+        }
     }
 }

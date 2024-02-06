@@ -36,10 +36,14 @@
     "elfneutral": [],
     "dwarfmale": [
         "Mountain King",
+        "Stone King",
+        "Stonelord",
         "Underking"
     ],
     "dwarffemale": [
         "Mountain Queen",
+        "Stone Queen",
+        "Stonelady",
         "Underqueen"
     ],
     "dwarfneutral": [
@@ -66,6 +70,8 @@
         "Grand Princess",
         "High Queen",
         "Lady",
+        "Matriarch",
+        "Matron",
         "Princess",
         "Queen"
     ],
@@ -79,6 +85,7 @@
         "High King",
         "King",
         "Lord",
+        "Patriarch",
         "Prince",
         "Viscount"
     ],

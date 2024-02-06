@@ -2,9 +2,17 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
+        "Ashcroft",
+        "Blackwell",
         "Dunham",
         "Falkirk",
-        "Glenham"
+        "Fearthford",
+        "Glenham",
+        "Greywarren",
+        "Hayward",
+        "Hearthford",
+        "Stillwell",
+        "Woodcroft"
     ],
     "elf": [
         "Emhel",

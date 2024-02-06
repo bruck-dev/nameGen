@@ -19,8 +19,17 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
         let titleChoices = [];
         try
         {
+            try
+            {
+                // Check for subrace specific titles
+                titleChoices = titleChoices.concat(data[namelist.toLowerCase() + gender.toLowerCase()].concat(data[namelist.toLowerCase() + 'neutral']));
+            }
+            catch(error)
+            {
+                // If none, ignore the missing key error and try to find race specific names
+            }
             // Check for race-specific titles
-            titleChoices = data[genType + gender.toLowerCase()].concat(data[genType + 'neutral']);
+            titleChoices = titleChoices.concat(data[genType + gender.toLowerCase()].concat(data[genType + 'neutral']));
         }
         catch(error) 
         {
