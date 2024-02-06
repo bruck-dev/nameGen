@@ -2,9 +2,9 @@
     "title": "Guild and Society Namelist",
     "description": "Namelist for societies and guilds.",
     "merchant": [
-        "Trader's",
         "Artisan's Industrial",
-        "Commerce and Trading"
+        "Commerce and Trading",
+        "Trader's"
     ],
     "adventurer": [
         "Fighter's",
@@ -20,9 +20,9 @@
         "Black Hand"
     ],
     "suffix": [
-        "Guild",
-        "Society",
+        "Association",
         "Circle",
-        "Association"
+        "Guild",
+        "Society"
     ]
 }

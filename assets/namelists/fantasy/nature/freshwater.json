@@ -2,21 +2,21 @@
     "title": "Freshwater",
     "description": "Freshwater feature namelist.",
     "prefix": [
-        "Lily",
-        "Redwood",
+        "Autumn",
         "Greylock",
-        "Autumn"
+        "Lily",
+        "Redwood"
     ],
     "suffix": [
-        "River",
         "Brook",
         "Creek",
-        "Lake",
         "Falls",
-        "Rapids",
+        "Lake",
         "Pond",
-        "Stream",
+        "Rapids",
+        "River",
         "River Delta",
-        "Run"
+        "Run",
+        "Stream"
     ]
 }

@@ -4,63 +4,59 @@
     "human": [
         "Elodran",
         "Gerin",
-        "Relain",
         "Mirelen",
         "Osteran",
-        "Vostrov",
-        "Volaneux"
+        "Relain",
+        "Volaneux",
+        "Vostrov"
     ],
     "elf": [
-        "Elaera",
         "Ayinor",
-        "Lyellon",
-        "Illadorei",
+        "Elaera",
         "Elhenas",
-        "Selenor",
         "Erelond",
-        "Relthwin"
+        "Illadorei",
+        "Lyellon",
+        "Relthwin",
+        "Selenor"
     ],
     "dwarf": [
-        "Krûnbar",
-        "Durn Olfrir"
+        "Durn Olfrir",
+        "Krûnbar"
     ],
-    "orc": [
-
-    ],
+    "orc": [],
     "humancounty": [
-        "County",
         "Barony",
+        "County",
         "Earldom",
         "Hold"
     ],
     "humanduchy": [
-        "Duchy",
         "Archduchy",
+        "Duchy",
         "Grand Duchy",
+        "Grand Principality",
         "Jarldom",
-        "Province",
         "Principality",
-        "Grand Principality"
+        "Province"
     ],
     "humankingdom": [
-        "Kingdom",
-        "High Kingdom",
-        "Empire",
-        "Sovereignty",
         "Dominion",
-        "Republic"
+        "Empire",
+        "High Kingdom",
+        "Kingdom",
+        "Republic",
+        "Sovereignty"
     ],
-    "elfcounty": [
-
-    ],
+    "elfcounty": [],
     "elfduchy": [
         "Province"
     ],
     "elfkingdom": [
-        "Kingdom",
+        "Dominion",
         "Empire",
-        "Realm",
-        "Dominion"
+        "Kingdom",
+        "Realm"
     ],
     "dwarfcounty": [
         "Chiefdom",
@@ -73,8 +69,8 @@
     ],
     "dwarfkingdom": [
         "Clan",
-        "Kingdom",
-        "High Kingdom"
+        "High Kingdom",
+        "Kingdom"
     ],
     "orccounty": [
         "Chiefdom",

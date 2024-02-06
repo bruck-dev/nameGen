@@ -3,56 +3,56 @@
     "description": "List of fantasy settlement names.",
     "human": [
         "Dunham",
-        "Glenham",
-        "Falkirk"
+        "Falkirk",
+        "Glenham"
     ],
     "elf": [
         "Emhel",
         "Isilme"
     ],
     "dwarf": [
-        "Gedum",
         "Eduhr",
+        "Gedum",
+        "Holgrun",
+        "Ironsong",
         "Kar-Akor",
-        "Nador",
         "Kar-Seor",
         "Kholdor",
-        "Holgrun",
-        "Stonespire",
-        "Ironsong"
+        "Nador",
+        "Stonespire"
     ],
     "orc": [
+        "Dûl Ord",
         "Nak Goz",
-        "Urgduz",
-        "Dûl Ord"
+        "Urgduz"
     ],
-    "tiny" :[
-        "Hamlet",
-        "Farm",
-        "Farms",
-        "Homestead",
-        "Mill",
-        "Ranch",
+    "tiny": [
         "Abbey",
         "Crossroads",
+        "Farm",
+        "Farms",
+        "Hamlet",
+        "Homestead",
+        "Mill",
         "Mine",
-        "Outpost"
+        "Outpost",
+        "Ranch"
     ],
     "small": [
-        "Village",
         "Crossroads",
-        "Fort"
+        "Fort",
+        "Village"
     ],
     "medium": [
+        "Fortress",
         "Town",
-        "Township",
-        "Fortress"
+        "Township"
     ],
     "large": [
-        "City",
-        "Port of",
-        "Harbor",
         "Castle",
-        "Palace"
+        "City",
+        "Harbor",
+        "Palace",
+        "Port of"
     ]
 }

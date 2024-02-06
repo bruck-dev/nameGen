@@ -1,27 +1,25 @@
 {
     "title": "Saltwater Namelist",
     "description": "Saltwater feature namelist.",
-    "prefix": [
-
-    ],
+    "prefix": [],
     "suffix": [
-        "Sea",
-        "Ocean",
-        "Bay",
-        "Straits",
-        "Gulf",
-        "Cove",
-        "Reef",
-        "Shoal",
+        "Atoll",
         "Bank",
-        "Shore",
+        "Bay",
+        "Cape",
+        "Cove",
+        "Grotto",
+        "Gulf",
+        "Harbor",
         "Island",
         "Isle",
-        "Atoll",
-        "Harbor",
         "Islet",
         "Key",
-        "Grotto",
-        "Cape"
+        "Ocean",
+        "Reef",
+        "Sea",
+        "Shoal",
+        "Shore",
+        "Straits"
     ]
 }

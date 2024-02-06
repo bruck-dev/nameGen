@@ -1,57 +1,86 @@
 {
     "title": "Noble Titles Namelist",
     "description": "Namelist for noble title prefixes.",
-    "male": [
-        "Archduke",
+    "humanmale": [
         "Baronet",
         "Burgrave",
-        "Count",
-        "Crown Prince",
-        "Duke",
         "Ealdorman",
-        "Earl",
-        "Emperor",
-        "Grand Duke",
-        "Grand Prince",
-        "High King",
+        "Elector-Count",
         "Kaiser",
-        "King",
         "Landgrave",
-        "Lord",
         "Margrave",
         "Marquis",
-        "Prince",
         "Prince-Elector",
         "Ser",
         "Sir",
-        "Tsar",
-        "Viscount"
+        "Tsar"
     ],
+    "humanfemale": [
+        "Baronetess",
+        "Burgravine",
+        "Dame",
+        "Elector-Countess",
+        "Kaiserin",
+        "Landgravine",
+        "Margravine",
+        "Marquise",
+        "Princess-Elector",
+        "Tsarina",
+        "Viscountess"
+    ],
+    "humanneutral": [
+        "Jarl"
+    ],
+    "elfmale": [],
+    "elffemale": [],
+    "elfneutral": [],
+    "dwarfmale": [
+        "Mountain King",
+        "Underking"
+    ],
+    "dwarffemale": [
+        "Mountain Queen",
+        "Underqueen"
+    ],
+    "dwarfneutral": [
+        "Hammerthane",
+        "Oathkeeper"
+    ],
+    "orcmale": [
+        "Chief",
+        "High Chief"
+    ],
+    "orcfemale": [
+        "Chieftess",
+        "High Chieftess"
+    ],
+    "orcneutral": [],
     "female": [
         "Archduchess",
         "Baroness",
-        "Baronetess",
-        "Burgravine",
         "Countess",
         "Crown Princess",
-        "Dame",
         "Duchess",
         "Empress",
         "Grand Duchess",
         "Grand Princess",
         "High Queen",
-        "Kaiserin",
         "Lady",
-        "Landgravine",
-        "Margravine",
-        "Marquise",
         "Princess",
-        "Princess-Elector",
-        "Queen",
-        "Tsarina",
-        "Viscountess"
+        "Queen"
     ],
-    "neutral": [
-        "Jarl"
-    ]
+    "male": [
+        "Archduke",
+        "Count",
+        "Crown Prince",
+        "Duke",
+        "Earl",
+        "Emperor",
+        "High King",
+        "King",
+        "Lord",
+        "Prince",
+        "Viscount"
+    ],
+    "neutral": []
 }
