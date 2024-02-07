@@ -1,32 +1,24 @@
 // Handles simple prefix/suffix creation
-function generateSimple(genre, namelist)
+function generateSimple(root, subfolder, namelist)
 {
-    const data = getNamelist(genre, namelist);
+    const data = getNamelist(root, subfolder, namelist);
 
     let prefix = randomItem(data['prefix']);
 
     // If the prefix select contains the random- parameter, split it up to find the namelist and key to pull from.
     if(prefix.includes('random-'))
     {
-        prefix = getRandomName(genre, prefix)
+        let randomParameters = prefix.split('-');
+        prefix = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
     }
 
     const suffix = randomItem(data['suffix']);
     return prefix + ' ' + suffix;
 }
 
-function getRandomName(genre, randomWord)
+// Get a random element from the given list and key
+function getRandomName(root, subfolder, list, key)
 {
-    let randomParameters = [];
-    if(randomWord.includes('random-'))
-    {
-        randomParameters = randomWord.slice(7).split('-');
-    }
-    else
-    {
-        randomParameters = randomWord.split('-');
-    }
-    
-    word = randomItem(getNamelist(genre, randomParameters[0])[randomParameters[1]]);
+    word = randomItem(getNamelist(root, subfolder, list)[key]);
     return word.charAt(0).toUpperCase() + word.slice(1); // Capitalizes the first letter just in case 
 }

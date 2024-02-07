@@ -8,10 +8,10 @@
         "Greywarren",
         "Jerand",
         "Red",
-        "random-darkelf-surname",
-        "random-drow-surname",
-        "random-dwarf-surname",
-        "random-infernal-surname"
+        "random-races/elf-darkelf-surname",
+        "random-races/elf-drow-surname",
+        "random-races/dwarf-dwarf-surname",
+        "random-races/tiefling-infernal-surname"
     ],
     "suffix": [
         "Cave",

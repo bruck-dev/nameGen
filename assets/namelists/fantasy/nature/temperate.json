@@ -15,10 +15,10 @@
         "Lily",
         "Redwood",
         "Yolona",
-        "random-eastern-surname",
-        "random-highelf-surname",
-        "random-western-surname",
-        "random-woodelf-surname"
+        "random-races/human-eastern-surname",
+        "random-races/elf-highelf-surname",
+        "random-races/human-western-surname",
+        "random-races/elf-woodelf-surname"
     ],
     "suffix": [
         "Bluff",

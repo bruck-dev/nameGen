@@ -1,0 +1,25 @@
+{
+    "title": "Religious and Military Order Namelist",
+    "description": "Namelist for crusader and priestly orders.",
+    "priestly": [
+        "Monastic"
+    ],
+    "militant": [
+        "Sovereign Military",
+        "Monastic",
+        "Templar"
+    ],
+    "prefix": [
+        "Conclave",
+        "Order of"
+    ],
+    "suffix": [
+        "Order",
+        "Conclave",
+        "Synod"
+    ],
+    "name": [
+        "God's Anointed",
+        "God's Chosen"
+    ]
+}

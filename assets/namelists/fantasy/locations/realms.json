@@ -19,63 +19,65 @@
         "Lyellon",
         "Relthwin",
         "Selenor",
-        "random-drow-surname",
-        "random-woodelf-surname"
+        "random-races/elf-drow-surname",
+        "random-races/elf-woodelf-surname"
     ],
     "dwarf": [
         "Durn Olfrir",
         "Krûnbar"
     ],
     "orc": [
-        "random-orc-surname"
+        "random-races/orc-orc-surname"
     ],
-    "humancounty": [
+    "humansmall": [
         "Earldom",
         "Hold"
     ],
-    "humanduchy": [
+    "humanmedium": [
         "Jarldom"
     ],
-    "humankingdom": [
+    "humanlarge": [
         "High Kingdom",
         "Republic",
         "Sovereignty"
     ],
-    "elfcounty": [],
-    "elfduchy": [],
-    "elfkingdom": [
+    "elfsmall": [],
+    "elfmedium": [],
+    "elflarge": [
         "Elven Realm"
     ],
-    "dwarfcounty": [
+    "dwarfsmall": [
         "Chiefdom",
         "Hold",
         "Oath"
     ],
-    "dwarfduchy": [
+    "dwarfmedium": [
         "High Chiefdom",
         "Province"
     ],
-    "dwarfkingdom": [
+    "dwarflarge": [
         "Dwarf Clan",
         "High Kingdom",
-        "Kingdom"
+        "Underkingdom"
     ],
-    "orccounty": [
+    "orcsmall": [
         "Chiefdom",
         "Tribe"
     ],
-    "orcduchy": [
+    "orcmedium": [
         "High Chiefdom"
     ],
-    "orckingdom": [
+    "orclarge": [
         "War Tribe",
         "Orcish Clan"
     ],
-    "county": [
-        "Barony",
+    "tiny": [
+        "Barony"
+    ],
+    "small": [
         "County"
     ],
-    "duchy": [
+    "medium": [
         "Archduchy",
         "Duchy",
         "Grand Duchy",
@@ -83,7 +85,7 @@
         "Principality",
         "Province"
     ],
-    "kingdom": [
+    "large": [
         "Kingdom",
         "Dominion",
         "Empire"

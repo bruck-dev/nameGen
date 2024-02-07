@@ -8,9 +8,9 @@
         "Drywinds",
         "Red",
         "Red Sands",
-        "random-darkelf-surname",
-        "random-eastern-surname",
-        "random-infernal-surname"
+        "random-races/elf-darkelf-surname",
+        "random-races/human-eastern-surname",
+        "random-races/tiefling-infernal-surname"
     ],
     "suffix": [
         "Canyon",

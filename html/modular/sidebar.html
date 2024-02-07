@@ -15,31 +15,44 @@
         <!-- When a generator option is picked, 2 background variables are set to determine the necessary namelist and control layout. -->
         <details class="dropdown-tier1"><summary>Fantasy</summary>
             <details class="dropdown-tier2"><summary>Races</summary>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','human'); localStorage.setItem('configType','f-race');">Humans</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','elf'); localStorage.setItem('configType','f-race');">Elves</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','dwarf'); localStorage.setItem('configType','f-race');">Dwarves</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','halfling'); localStorage.setItem('configType','f-race');">Halflings</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','tiefling'); localStorage.setItem('configType','f-race');">Tieflings</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','orc'); localStorage.setItem('configType','f-race');">Orcs</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/human'); localStorage.setItem('pageTitle', 'Human Names');">Humans</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/elf'); localStorage.setItem('pageTitle', 'Elvish Names');">Elves</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/dwarf'); localStorage.setItem('pageTitle', 'Dwarf Names');">Dwarves</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/halfling'); localStorage.setItem('pageTitle', 'Halflings Names');">Halflings</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/tiefling'); localStorage.setItem('pageTitle', 'Tieflings Names');">Tieflings</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','races/orc'); localStorage.setItem('pageTitle', 'Orcish Names');">Orcs</div>
             </details>
             <details class="dropdown-tier2"><summary>Locations</summary>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','realm'); localStorage.setItem('configType','f-loc');">Kingdoms and Realms</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','settlement'); localStorage.setItem('configType','f-loc');">Towns and Settlements</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','nature'); localStorage.setItem('configType','f-nat');">Geographic Features</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','locations'); localStorage.setItem('list','realms'); localStorage.setItem('pageTitle', 'Fantasy Kingdoms and Realms');">
+                    Kingdoms and Realms
+                </div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','locations'); localStorage.setItem('list','settlements'); localStorage.setItem('pageTitle', 'Fantasy Towns and Settlements');">
+                    Towns and Settlements
+                </div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','nature'); localStorage.setItem('pageTitle', 'Fantasy Geographic Features');">
+                    Geographic Features
+                </div>
             </details>
             <details class="dropdown-tier2"><summary>Organizations</summary>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','guild'); localStorage.setItem('configType','f-org');">Guilds and Societies</div>
-                <div onclick="location.href='generator.html'; localStorage.setItem('genType','magic-academy'); localStorage.setItem('configType','f-unq');">Magic Academies</div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','organizations'); localStorage.setItem('list','guild'); localStorage.setItem('pageTitle', 'Fantasy Guilds and Societies');">
+                    Guilds and Societies
+                </div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','organizations'); localStorage.setItem('list','order'); localStorage.setItem('pageTitle', 'Fantasy Priestly and Military Orders');">
+                    Religious Orders
+                </div>
+                <div onclick="location.href='generator.html'; localStorage.setItem('root','fantasy'); localStorage.setItem('subfolder','unique'); localStorage.setItem('list','magicacademy'); localStorage.setItem('pageTitle', 'Magic Academies and Colleges');">
+                    Magic Academies
+                </div>
             </details>
         </details>
         <details class="dropdown-tier1"><summary>Sci-Fi</summary>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('root', 'scifi');">Placeholder</div>
         </details>
         <details class="dropdown-tier1"><summary>Real Life</summary>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('root','reallife');">Placeholder</div>
         </details>
         <details class="dropdown-tier1"><summary>Other</summary>
-            <div onclick="location.href='generator.html'; localStorage.setItem('genType','placeholder');">Placeholder</div>
+            <div onclick="location.href='generator.html'; localStorage.setItem('root','other');">Placeholder</div>
         </details>
 
         <a href="about.html">About</a>

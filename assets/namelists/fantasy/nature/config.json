@@ -1,0 +1,22 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations and labels. First entry is the label.",
+    "opt1": [
+        "Biome",
+        "Arctic",
+        "Arid",
+        "Freshwater",
+        "Rocky",
+        "Saltwater",
+        "Swampy",
+        "Temperate"
+    ],
+    "opt2": [
+    ],
+    "opt3": [
+    ],
+    "opt4": [
+    ],
+    "opt5": [
+    ]
+}

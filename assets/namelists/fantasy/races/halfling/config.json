@@ -1,0 +1,25 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations and labels. First entry is the label.",
+    "opt1": [
+        "Subrace",
+        "Halfling"
+    ],
+    "opt2": [
+        "Gender",
+        "Male",
+        "Female"
+    ],
+    "opt3": [
+        "Surname",
+        "true"
+    ],
+    "opt4": [
+        "Title",
+        "root-shared-titles-lists"
+    ],
+    "opt5": [
+        "Epithet",
+        "root-shared-epithets-lists"
+    ]
+}

@@ -22,159 +22,45 @@ function randomItem(items)
 }
 
 // Finds the necessary JSON file and returns its data
-function getNamelist(genre, namelist)
+function getNamelist(root, subfolder, namelist)
 {
-    let file;
-    namelist = namelist.replaceAll(' ', '').toLowerCase();
-    switch(genre)
-    {
-        /* FANTASY LISTS */
-        case 'fantasy':
-            switch(namelist)
-            {
-                // Human Lists
-                case 'western':
-                    file = 'assets/namelists/fantasy/human/western.json';
-                    break;
-                case 'eastern':
-                    file = 'assets/namelists/fantasy/human/eastern.json';
-                    break;
-                case 'northern':
-                    file = 'assets/namelists/fantasy/human/northern.json';
-                    break;
-                
-                // Elf Lists
-                case 'highelf':
-                    file = 'assets/namelists/fantasy/elf/highElf.json';
-                    break;
-                case 'woodelf':
-                    file = 'assets/namelists/fantasy/elf/woodElf.json';
-                    break;
-                case 'darkelf':
-                    file = 'assets/namelists/fantasy/elf/darkElf.json';
-                    break;
-                case 'drow':
-                    file = 'assets/namelists/fantasy/elf/drow.json';
-                    break;
-                
-                // Dwarf Lists
-                case 'dwarf':
-                    file = 'assets/namelists/fantasy/dwarf/dwarf.json';
-                    break;
-                    
-                // Halfling Lists
-                case 'halfling':
-                    file = 'assets/namelists/fantasy/halfling/halfling.json';
-                    break;
-                    
-                // Tiefling Lists
-                case 'infernal':
-                    file = 'assets/namelists/fantasy/tiefling/infernal.json';
-                    break;
-                case 'virtue':
-                    file = 'assets/namelists/fantasy/tiefling/virtue.json';
-                    break;
-                    
-                // Orc Lists
-                case 'orc':
-                    file = 'assets/namelists/fantasy/orc/orc.json';
-                    break;
-                
-                // Epithet Lists
-                case 'suffixes':
-                    file = 'assets/namelists/fantasy/shared/epithets/suffixes.json';
-                    break;
-                case 'nicknames':
-                    file = 'assets/namelists/fantasy/shared/epithets/nicknames.json';
-                    break;
-                case 'animals':
-                    file = 'assets/namelists/fantasy/shared/epithets/animals.json';
-                    break;
-                case 'sobriquets':
-                    file = 'assets/namelists/fantasy/shared/epithets/sobriquets.json';
-                    break;
-                    
-                // Title Lists
-                case 'nobility':
-                    file = 'assets/namelists/fantasy/shared/titles/noble.json';
-                    break;
-                case 'military':
-                    file = 'assets/namelists/fantasy/shared/titles/military.json';
-                    break;
-                case 'religious':
-                    file = 'assets/namelists/fantasy/shared/titles/religious.json';
-                    break;
-                case 'magical':
-                    file = 'assets/namelists/fantasy/shared/titles/magic.json';
-                    break;
-
-                // Location Lists
-                case 'realm':
-                    file = 'assets/namelists/fantasy/locations/kingdoms.json';
-                    break;
-                case 'settlement':
-                    file = 'assets/namelists/fantasy/locations/settlements.json';
-                    break;
-
-                // Nature Lists
-                case 'arctic':
-                    file = 'assets/namelists/fantasy/nature/arctic.json';
-                    break;
-                case 'arid':
-                    file = 'assets/namelists/fantasy/nature/arid.json';
-                    break;
-                case 'freshwater':
-                    file = 'assets/namelists/fantasy/nature/freshwater.json';
-                    break;
-                case 'rocky':
-                    file = 'assets/namelists/fantasy/nature/rocky.json';
-                    break;
-                case 'saltwater':
-                    file = 'assets/namelists/fantasy/nature/saltwater.json';
-                    break;
-                case 'swampy':
-                    file = 'assets/namelists/fantasy/nature/swampy.json';
-                    break;
-                case 'temperate':
-                    file = 'assets/namelists/fantasy/nature/temperate.json';
-                    break;
-
-                // Organization Lists
-                case 'magic-academy':
-                    file = 'assets/namelists/fantasy/organizations/magicacademy.json'
-                    break;
-                case 'guild':
-                    file = 'assets/namelists/fantasy/organizations/guild.json'
-                    break;
-            }
-        break;
-    }
-
-    return getJson(file);
+    namelist = namelist.replaceAll(' ','').toLowerCase();
+    path = 'assets/namelists/' + root + '/' + subfolder + '/' + namelist + '.json';
+    return getJson(path);
 }
 
 // Creates requested output for generator
-function generateOutput(configType, opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
+function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
 {
     let generatedOutput = '';
-    const genType = localStorage.getItem('genType');
+    const root = localStorage.getItem('root');
+    const subfolder = localStorage.getItem('subfolder');
+    const list = localStorage.getItem('list');
 
-    switch(configType)
+    switch(root)
     {
-        case 'f-race':
-            generatedOutput = generateFantasyName(opt1, opt2, opt3, opt4, opt5);
-            break;
-        case 'f-unq':
-            generatedOutput = generateFantasyUnq(genType);
-            break;
-        case 'f-nat':
-            generatedOutput = generateSimple('fantasy', opt1.toLowerCase());
-            break;
-        case 'f-loc':
-            generatedOutput = generateFantasyLocation(opt1, opt2, genType);
-            break;
-        case 'f-org':
-            generatedOutput = generateFantasyOrg(opt1, genType);
+        case 'fantasy':
+            if(subfolder.includes('races/'))
+            {
+                generatedOutput = generateFantasyName(root, subfolder, opt1, opt2, opt3, opt4, opt5);
+            }
+            else if(subfolder.includes('location'))
+            {
+                generatedOutput = generateFantasyLocation(root, subfolder, list, opt1, opt2);
+            }
+            else if(subfolder.includes('nature'))
+            {
+                generatedOutput = generateSimple(root, subfolder, opt1.toLowerCase());
+            }
+            else if(subfolder.includes('organizations'))
+            {
+                generatedOutput = generateFantasyOrg(root, subfolder, list, opt1);
+            }
+            else
+            {
+                generatedOutput = generateFantasyUnq(root, subfolder, list);
+            }
+        break;
     }
     return generatedOutput;
 }
@@ -224,7 +110,7 @@ function executeGenerator()
     // Generates names given quantity, regenerates duplicates (decreasingly likelihood as more options are enabled)
     for(let i = 0; i < quantity; i++)
     {
-        let genName = generateOutput(localStorage.getItem("configType"), opt1, opt2, opt3, opt4, opt5);
+        let genName = generateOutput(opt1, opt2, opt3, opt4, opt5);
         document.getElementById("nameoutput").textContent += genName + "\n";
     }
 }

@@ -10,14 +10,14 @@
         "Imperial",
         "Owlhorn",
         "Royal",
-        "random-darkelf-surname",
-        "random-drow-surname",
-        "random-eastern-surname",
-        "random-highelf-surname",
-        "random-freshwater",
-        "random-rocky",
-        "random-temperate",
-        "random-western-surname"
+        "random-races/elf-darkelf-surname",
+        "random-races/elf-drow-surname",
+        "random-races/human-eastern-surname",
+        "random-races/elf-highelf-surname",
+        "random-nature-freshwater",
+        "random-nature-rocky",
+        "random-nature-temperate",
+        "random-races/human-western-surname"
     ],
     "optionalprefix": [
         "Preparatory",

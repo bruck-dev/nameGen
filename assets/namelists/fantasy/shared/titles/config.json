@@ -1,0 +1,12 @@
+{
+    "title": "Config file",
+    "description": "List of available sets",
+    "lists": [
+        "None",
+        "Magic",
+        "Military",
+        "Nobility",
+        "Peasant",
+        "Religious"
+    ]
+}

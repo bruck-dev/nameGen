@@ -20,19 +20,16 @@
     </div>
     <!-- All tools that appear under the output box. Selectboxes can be hijacked for other purposes since they're created dynamically. -->
     <div class="controls", id="controls">
+
         <!-- Used to select a subrace -->
-        <div id="opt1">
-            <label>Subrace</label>
-        </div>
         <div>
+            <label id="opt1">Subrace</label>
             <select id="opt1select" class="opt1select"></select>
-        </div>
-        <div id="opt2">
-            <label>Gender</label>
         </div>
 
         <!-- Used to select name gender -->
         <div>
+            <label id="opt2">Gender</label>
             <select id="opt2select">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -40,18 +37,14 @@
         </div>
 
         <!-- Surname checkbox, should probably be hidden for non-names -->
-        <div id="opt3">
-            <label>Surname</label>
-        </div>
         <div>
+            <label id="opt3">Surname</label>
             <input type="checkbox" id="opt3check" checked>
-        </div>
-        <div id="opt4">
-            <label>Title</label>
         </div>
 
         <!-- Used to select prefix title -->
         <div>
+            <label id="opt4">Title</label>
             <select id="opt4select">
                 <option value="None">None</option>
                 <option value="Nobility">Nobility</option>
@@ -62,10 +55,8 @@
         </div>
 
         <!-- Used to select suffix epithet -->
-        <div id="opt5">
-            <label>Epithet</label>
-        </div>
         <div>
+            <label id="opt5">Epithet</label>
             <select id="opt5select">
                 <option value="None">None</option>
                 <option value="Animals">Animals</option>

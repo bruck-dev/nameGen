@@ -1,9 +1,8 @@
 // Handles fantasy name generation
-function generateFantasyName(namelist=null, gender=null, surname=false, title=null, epithet=null)
+function generateFantasyName(root, subfolder, namelist=null, gender=null, surname=false, title=null, epithet=null)
 {
     let generatedName = '';
-    const genre = 'fantasy';
-    genType = localStorage.getItem('genType'); // gets base race
+    let race = localStorage.getItem('subfolder').slice(6); // gets base race
 
     // Special conditions
     if(namelist == "Virtue") // genderless and no surnames, ignore inputs
@@ -15,7 +14,7 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
     // Picks a title
     if(title)
     {
-        const data = getNamelist(genre, title);
+        const data = getNamelist(root, 'shared/titles', title);
         let subraceTitles = [];
         let raceTitles =[];
         let genericTitles = [];
@@ -25,8 +24,8 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
         subraceTitles = subraceTitles.concat(data[namelist.toLowerCase() + 'neutral']);
 
         // Check for race specific titles
-        raceTitles = raceTitles.concat(data[genType + gender.toLowerCase()]);
-        raceTitles = raceTitles.concat(data[genType + 'neutral']);
+        raceTitles = raceTitles.concat(data[race + gender.toLowerCase()]);
+        raceTitles = raceTitles.concat(data[race + 'neutral']);
 
         // Check for generic titles
         genericTitles = genericTitles.concat(data[gender.toLowerCase()]);
@@ -96,7 +95,7 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
     // Picks a given name and surname if enabled
     if(namelist)
     {
-        const data = getNamelist(genre, namelist);
+        const data = getNamelist(root, subfolder, namelist);
         const names = data[gender.toLowerCase()];
 
         generatedName += randomItem(names) + ' '
@@ -131,7 +130,7 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
     // Picks an epithet if enabled
     if(epithet)
     {
-        const data = getNamelist(genre, epithet);
+        const data = getNamelist(root, 'shared/epithets', epithet);
         const nick = data[gender.toLowerCase()].concat(data['neutral']);
         generatedName += ' ' + randomItem(nick);
     }
@@ -140,29 +139,27 @@ function generateFantasyName(namelist=null, gender=null, surname=false, title=nu
 }
 
 // Handles fantasy uniques
-function generateFantasyUnq(genType)
+function generateFantasyUnq(root, subfolder, list)
 {
-    let genre = 'fantasy';
-    generatedName = '';
-
-    switch(genType)
+    let generatedName = '';
+    switch(list)
     {
-        case 'magic-academy':
-            const data = getNamelist(genre, genType);
+        case 'magicacademy':
+            const data = getNamelist(root, subfolder, list);
 
             let prefix = randomItem(data['prefix']);
 
             // Check if prefix includes random sublist selectors
             if(prefix.includes('random-'))
             {
+                let randomParameters = prefix.split('-');
                 if(!prefix.includes('surname')) // Nature case
                 {
-                    prefix = prefix.slice(7);
-                    prefix = generateSimple(genre, prefix);
+                    prefix = generateSimple(root, randomParameters[1], randomParameters[2]);
                 }
                 else // Surname founder case
                 {
-                    prefix = getRandomName(genre, prefix);
+                    prefix = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
                 }
             }
             generatedName += prefix;
@@ -182,18 +179,25 @@ function generateFantasyUnq(genType)
 }
 
 // Handles fantasy location generation
-function generateFantasyLocation(race, size, genType)
+function generateFantasyLocation(root, subfolder, list, race, size)
 {
-    const data = getNamelist('fantasy', genType);
-    switch(genType)
+    const data = getNamelist(root, subfolder, list);
+    switch(list)
     {
-        case 'realm':
+        case 'realms':
             let tierRacial = data[(race + size).toLowerCase()];
             const tierGeneric = data[size.toLowerCase()];
 
-            tierRacial = tierRacial.filter(function( element ) {
-                return element !== undefined;
-             });
+            if(tierRacial != undefined)
+            {
+                tierRacial = tierRacial.filter(function( element ) {
+                    return element !== undefined;
+                 });
+            }
+            else
+            {
+                tierRacial = [];
+            }
 
             let tier = ''
             if(Math.random() < 0.6 && tierRacial.length > 0)
@@ -208,11 +212,12 @@ function generateFantasyLocation(race, size, genType)
             let name = randomItem(data[race.toLowerCase()]);
             if(name.includes('random-'))
             {
-                name = getRandomName('fantasy', name);
+                const randomParameters = name.split('-');
+                name = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
             }
             return  tier + ' of ' + name;
 
-        case 'settlement':
+        case 'settlements':
             let generatedName = randomItem(data[race.toLowerCase()]);
             let descriptor = randomItem(data[size.toLowerCase()]);
 
@@ -240,10 +245,10 @@ function generateFantasyLocation(race, size, genType)
 }
 
 // Handles fantasy organization generations
-function generateFantasyOrg(opt1, genType)
+function generateFantasyOrg(root, subfolder, list, opt1)
 {
-    const data = getNamelist('fantasy', genType);
-    switch(genType)
+    const data = getNamelist(root, subfolder, list);
+    switch(list)
     {
         case 'guild':
             return randomItem(data[opt1.toLowerCase()]) + ' ' + randomItem(data['suffix']);

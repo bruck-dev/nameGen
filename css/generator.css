@@ -26,14 +26,14 @@
 
 .controls {
   display: inline-grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1, auto;
   grid-template-rows: auto auto;
   border: 2px solid #3d3d3d;
   border-radius: 4px;
   width: 50%;
   justify-content: center;
-  grid-column-gap: 2.5%;
   margin-top: 0.5%;
+  justify-items: center;
 }
 
 .controls label {
@@ -42,7 +42,11 @@
 }
 
 .controls div {
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  width: 150%;
+  overflow: auto;
 }
 
 .controls div select {
@@ -52,6 +56,14 @@
   border: 1px solid #3d3d3d;
   border-radius: 5%;
   width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+  margin-left: 2px;
+}
+
+.controls div label {
+  text-align: left;
+  margin-right: 2px;
 }
 
 .controls div input {

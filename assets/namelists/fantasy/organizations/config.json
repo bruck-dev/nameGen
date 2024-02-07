@@ -1,0 +1,27 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations",
+    "opt1": [
+        "Background/guild",
+        "Adventurers",
+        "Assassins",
+        "Criminals",
+        "Mages",
+        "Merchants"
+
+    ],
+    "opt2": [
+        "Background/order",
+        "Priestly",
+        "Militant"
+    ],
+    "opt3": [
+
+    ],
+    "opt4": [
+
+    ],
+    "opt5": [
+        
+    ]
+}

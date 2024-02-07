@@ -36,24 +36,32 @@ function createConstantElements()
 }
 
 // Constructs the frontend for the generator page - varies based on passed genType
-function createGeneratorUI(configType, genType)
+function createGeneratorUI()
 {
-
-  optionsEnabled = getConfigurationOptions(configType);
-  optionsLabels = getConfigurationLabels(configType);
-  let checker = arr => arr.every(v => v === false);
-
+  const config = getJson('assets/namelists/' + localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/config.json');
+  console.log(config);
+  const opt1 = config['opt1'];
+  const opt2 = config['opt2'];
+  const opt3 = config['opt3'];
+  const opt4 = config['opt4'];
+  const opt5 = config['opt5'];
+  let visible = false;
+  const list = localStorage.getItem('list');
   try
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
 
     // Hide all controls
-    if(checker(optionsEnabled))
+    if( (opt1.length == 0) &&
+        (opt2.length == 0) &&
+        (opt3.length == 0) &&
+        (opt4.length == 0) &&
+        (opt5.length == 0) )
     {
       var observer = new MutationObserver(function (mutations, me) {
         var controls = document.getElementById('controls');
         if(controls) {
-          setVisibility('controls', false);
+          setVisibility('controls', visible);
           me.disconnect();
           return;
         }
@@ -66,14 +74,36 @@ function createGeneratorUI(configType, genType)
 
     else
     {
-      // Configure opt1 (wait until created)
+      // Configure opt1
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt1select');
         if (dd) {
-          setOpt1(configType, genType);
-          setVisibility('opt1', optionsEnabled[0]);
-          setVisibility('opt1select', optionsEnabled[0]);
-          document.getElementById('opt1').textContent = optionsLabels[0];
+          if(opt1.length != 0)
+          {
+            if(opt1[0].includes('/') && !opt1[0].includes('/' + list))
+            {
+              visible = false;
+            }
+            else
+            {
+              setSelectContent('opt1select', opt1.slice(1));
+              visible = true;
+              if(opt1[0].includes('/'))
+              {
+                document.getElementById('opt1').textContent = opt1[0].substring(0, opt1[0].indexOf('/'));
+              }
+              else
+              {
+                document.getElementById('opt1').textContent = opt1[0];
+              }
+            }
+          }
+          else
+          {       
+            visible = false;
+          }
+          setVisibility('opt1', visible);
+          setVisibility('opt1select', visible);
           me.disconnect();
           return;
         }
@@ -87,10 +117,32 @@ function createGeneratorUI(configType, genType)
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt2select');
         if (dd) {
-          setOpt2(configType, genType);
-          setVisibility('opt2', optionsEnabled[1]);
-          setVisibility('opt2select', optionsEnabled[1]);
-          document.getElementById('opt2').textContent = optionsLabels[1];
+          if(opt2.length != 0)
+          {
+            if(opt2[0].includes('/') && !opt2[0].includes('/' + list))
+            {
+              visible = false;
+            }
+            else
+            {
+              setSelectContent('opt2select', opt2.slice(1));
+              visible = true;
+              if(opt2[0].includes('/'))
+              {
+                document.getElementById('opt2').textContent = opt2[0].substring(0, opt2[0].indexOf('/'));
+              }
+              else
+              {
+                document.getElementById('opt2').textContent = opt2[0];
+              }
+            }
+          }
+          else
+          {       
+            visible = false;
+          }
+          setVisibility('opt2', visible);
+          setVisibility('opt2select', visible);
           me.disconnect();
           return;
         }
@@ -104,9 +156,39 @@ function createGeneratorUI(configType, genType)
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt3check');
         if (dd) {
-          setVisibility('opt3', optionsEnabled[2]);
-          setVisibility('opt3check', optionsEnabled[2]);
-          document.getElementById('opt3').textContent = optionsLabels[2];
+          if(opt3.length != 0)
+          {
+            if(opt3[0].includes('/') && !opt3[0].includes('/' + list))
+            {
+              visible = false;
+            }
+            else
+            {
+              if(opt3[1] == 'false')
+              {
+                document.getElementById('opt3').checked = false;
+              }
+              else
+              {
+                document.getElementById('opt3').checked = true;
+              }
+              if(opt3[0].includes('/'))
+              {
+                document.getElementById('opt3').textContent = opt3[0].substring(0, opt3[0].indexOf('/'));
+              }
+              else
+              {
+                document.getElementById('opt3').textContent = opt3[0];
+              }
+              visible = true;
+            }
+          }
+          else
+          {       
+            visible = false;
+          }
+          setVisibility('opt3', visible);
+          setVisibility('opt3check', visible);
           me.disconnect();
           return;
         }
@@ -120,10 +202,32 @@ function createGeneratorUI(configType, genType)
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt4select');
         if (dd) {
-          setOpt4(configType, genType);
-          setVisibility('opt4', optionsEnabled[3]);
-          setVisibility('opt4select', optionsEnabled[3]);
-          document.getElementById('opt4').textContent = optionsLabels[3];
+          if(opt4.length != 0)
+          {
+            if(opt4[0].includes('/') && !opt4[0].includes('/' + list))
+            {
+              visible = false;
+            }
+            else
+            {
+              setSelectContent('opt4select', opt4.slice(1));
+              visible = true;
+              if(opt4[0].includes('/'))
+              {
+                document.getElementById('opt4').textContent = opt4[0].substring(0, opt4[0].indexOf('/'));
+              }
+              else
+              {
+                document.getElementById('opt4').textContent = opt4[0];
+              }
+            }
+          }
+          else
+          {       
+            visible = false;
+          }
+          setVisibility('opt4', visible);
+          setVisibility('opt4select', visible);
           me.disconnect();
           return;
         }
@@ -137,10 +241,32 @@ function createGeneratorUI(configType, genType)
       var observer = new MutationObserver(function (mutations, me) {
         var dd = document.getElementById('opt5select');
         if (dd) {
-          setOpt5(configType, genType);
-          setVisibility('opt5', optionsEnabled[4]);
-          setVisibility('opt5select', optionsEnabled[4]);
-          document.getElementById('opt5').textContent = optionsLabels[4];
+          if(opt5.length != 0)
+          {
+            if(opt5[0].includes('/') && !opt5[0].includes('/' + list))
+            {
+              visible = false;
+            }
+            else
+            {
+              setSelectContent('opt4select', opt5.slice(1));
+              visible = true;
+              if(opt5[0].includes('/'))
+              {
+                document.getElementById('opt5').textContent = opt5[0].substring(0, opt5[0].indexOf('/'));
+              }
+              else
+              {
+                document.getElementById('opt5').textContent = opt5[0];
+              }
+            }
+          }
+          else
+          {       
+            visible = false;
+          }
+          setVisibility('opt5', visible);
+          setVisibility('opt5select', visible);
           me.disconnect();
           return;
         }
@@ -155,7 +281,7 @@ function createGeneratorUI(configType, genType)
     var observer = new MutationObserver(function (mutations, me) {
       var title = document.getElementById('gentitle');
       if (title) {
-        setPageTitle(genType);
+        document.getElementById('gentitle').textContent = localStorage.getItem('pageTitle');
         me.disconnect();
         return;
       }
@@ -173,160 +299,36 @@ function createGeneratorUI(configType, genType)
   }
 }
 
-// Sets the first dropdown based on passed config type and generator type. Generally used for subraces.
-function setOpt1(config, genType)
-{
-  let contentList = [];
-  switch(config)
-  {
-    // Configure for fantasy races - setup subraces. No need to change label.
-    case 'f-race':
-      switch(genType)
-      {
-        case 'human':
-          contentList = ['Western', 'Eastern', 'Northern'];
-          break;
-        case 'elf':
-          contentList = ['High Elf', 'Wood Elf', 'Dark Elf', 'Drow'];
-          break;
-        case 'dwarf':
-          contentList = ['Dwarf'];
-          break;
-        case 'halfling':
-          contentList = ['Halfling'];
-          break;
-        case 'tiefling':
-            contentList = ['Infernal', 'Virtue'];
-            break;
-        case 'orc':
-          contentList = ['Orc'];
-          break;
-      }
-      break;
-    case 'f-loc':
-      contentList = ['Human', 'Elf', 'Dwarf', 'Orc'];
-      break;
-    case 'f-nat':
-      switch(genType)
-      {
-        case 'nature':
-          contentList = ['Arctic', 'Arid', 'Freshwater', 'Rocky', 'Saltwater', 'Swampy', 'Temperate'];
-          break;
-      }
-      break;
-    case 'f-org':
-      switch(genType)
-      {
-        case 'guild':
-          contentList = ['Merchant', 'Adventurer', 'Mage', 'Criminal', 'Assassin'];
-      }
-      break;
-  }
-
-  // Sorts alphabetically but puts 'None' at front (for default) if present
-  contentList = contentList.sort();
-  if(contentList.includes('None'))
-  {
-    if (contentList.indexOf('None') > 0) {
-      contentList.splice(contentList.indexOf('None'), 1);
-      contentList.unshift('None');
-    }
-  }
-  setSelectContent('opt1select', contentList)
-}
-
-// Sets the second dropdown based on passed config type and generator type. Generally used for gender.
-function setOpt2(config, genType)
-{
-  let contentList = [];
-  switch(config)
-  {
-    // Configure for fantasy races - setup subraces. No need to change label.
-    case 'f-race':
-      contentList = ['Male', 'Female'];
-      break;
-
-    case 'f-loc':
-      switch(genType)
-      {
-        case 'settlement':
-          contentList = ['Tiny', 'Small', 'Medium', 'Large'];
-          break;
-        case 'realm':
-          contentList = ['Kingdom', 'Duchy', 'County'];
-          break;
-      }
-      break;
-  }
-
-  // Sorts alphabetically but puts 'None' at front (for default) if present
-  contentList = contentList.sort();
-  if(contentList.includes('None'))
-  {
-    if (contentList.indexOf('None') > 0) {
-      contentList.splice(contentList.indexOf('None'), 1);
-      contentList.unshift('None');
-    }
-  }
-  setSelectContent('opt2select', contentList);
-}
-
-// Sets the 4th dropdown based on passed config type and generator type. Generally used for gender.
-function setOpt4(config, genType)
-{
-  let contentList = [];
-  switch(config)
-  {
-    // Configure for fantasy races - setup subraces. No need to change label.
-    case 'f-race':
-      contentList = ['None', 'Military', 'Nobility', 'Religious', 'Magical'];
-      break;
-  }
-  // Sorts alphabetically but puts 'None' at front (for default) if present
-  contentList = contentList.sort();
-  if(contentList.includes('None'))
-  {
-    if (contentList.indexOf('None') > 0) {
-      contentList.splice(contentList.indexOf('None'), 1);
-      contentList.unshift('None');
-    }
-  }
-  setSelectContent('opt4select', contentList);
-}
-
-// Sets the 5th dropdown based on passed config type and generator type. Generally used for gender.
-function setOpt5(config, genType)
-{
-  let contentList = [];
-  switch(config)
-  {
-    // Configure for fantasy races - setup subraces. No need to change label.
-    case 'f-race':
-      contentList = ['None', 'Animals', 'Nicknames', 'Sobriquets', 'Suffixes'];
-      break;
-  }
-
-  // Sorts alphabetically but puts 'None' at front (for default) if present
-  contentList = contentList.sort();
-  if(contentList.includes('None'))
-  {
-    if (contentList.indexOf('None') > 0) {
-      contentList.splice(contentList.indexOf('None'), 1);
-      contentList.unshift('None');
-    }
-  }
-  setSelectContent('opt5select', contentList);
-}
-
 function setSelectContent(selectid, contentList)
 {
   let select = document.getElementById(selectid);
+  let i = 0;
+
+  let indexArr = arrayCheckForSubstring(contentList, 'root-')
+  if(indexArr.length != 0)
+  {
+    let pathSplit = [];
+    let path = '';
+    let newContent = [];
+
+    for(i = 0; i < indexArr.length; i++)
+    {
+      path = 'assets/namelists/' + localStorage.getItem('root') + '/';
+      pathSplit = contentList[indexArr[i]].split('-');
+      for(let j = 1; j < pathSplit.length - 1; j++)
+      {
+        path += pathSplit[j] + '/';
+      }
+      newContent = newContent.concat(getJson(path + 'config.json')[pathSplit.at(-1)]);
+    }
+
+    contentList = newContent;
+  }
 
   for(let i = select.options.length - 1; i >= 0 ; i--)
   {
     select.remove(i);
   }
-
   for(i = 0; i < contentList.length; i++)
   {
     let opt = contentList[i];
@@ -337,46 +339,14 @@ function setSelectContent(selectid, contentList)
   }
 }
 
-// Sets the namelist title depending on passed namelist
-function setPageTitle(genType)
+// Checks if the passed substring exists in any element in the array
+function arrayCheckForSubstring(arr, substring)
 {
-  genType = genType.replaceAll('-', ' ');
-  document.getElementById('gentitle').textContent = genType + ' namelists';
-  document.getElementById('gentitle').style.textTransform = "capitalize";
-}
-
-// Returns an array of enabled options
-function getConfigurationOptions(configType)
-{
-  switch(configType)
+  indexList = []
+  for(let i = 0; i < arr.length; i++)
   {
-    case 'f-race':
-      return [true, true, true, true, true];
-    case 'f-unq':
-      return [false, false, false, false, false];
-    case 'f-org':
-      return [true, false, false, false, false];
-    case 'f-loc':
-      return [true, true, false, false, false];
-    case 'f-nat':
-      return [true, false, false, false, false];
+    if(arr[i].includes(substring))
+      indexList.push(i);
   }
-}
-
-// Returns an array of option labels
-function getConfigurationLabels(configType)
-{
-  switch(configType)
-  {
-    case 'f-race':
-      return ['Subrace', 'Gender', 'Surname', 'Title', 'Epithet'];
-    case 'f-unq':
-      return [false, false, false, false, false];
-    case 'f-org':
-      return ['Background', false, false, false, false];
-    case 'f-loc':
-      return ['Race', 'Size', false, false, false];
-    case 'f-nat':
-      return ['Climate', false, false, false, false];
-  }
+  return indexList;
 }

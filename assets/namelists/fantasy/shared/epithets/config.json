@@ -1,0 +1,11 @@
+{
+    "title": "Config file",
+    "description": "List of available sets",
+    "lists": [
+        "None",
+        "Animals",
+        "Nicknames",
+        "Sobriquets",
+        "Suffixes"
+    ]
+}
