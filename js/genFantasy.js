@@ -245,12 +245,22 @@ function generateFantasyLocation(root, subfolder, list, race, size)
 }
 
 // Handles fantasy organization generations
-function generateFantasyOrg(root, subfolder, list, opt1)
+function generateFantasyOrg(root, subfolder, list, opt1, opt2)
 {
+    console.log(list);
     const data = getNamelist(root, subfolder, list);
     switch(list)
     {
-        case 'guild':
+        case 'guilds':
             return randomItem(data[opt1.toLowerCase()]) + ' ' + randomItem(data['suffix']);
+        case 'orders':
+            if(Math.random() < 0.5)
+            {
+                return randomItem(data[opt2.toLowerCase()]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
+            }
+            else
+            {
+                return randomItem(data[opt2.toLowerCase()]) + ' ' + randomItem(data['suffix']) + ' ' + randomItem(data['name']);
+            }
     }
 }

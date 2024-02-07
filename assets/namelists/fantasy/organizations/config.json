@@ -2,7 +2,7 @@
     "title": "Config file",
     "description": "Sets dropdown configurations",
     "opt1": [
-        "Background/guild",
+        "Background/guilds",
         "Adventurers",
         "Assassins",
         "Criminals",
@@ -11,7 +11,7 @@
 
     ],
     "opt2": [
-        "Background/order",
+        "Background/orders",
         "Priestly",
         "Militant"
     ],
