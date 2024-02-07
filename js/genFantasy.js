@@ -142,12 +142,15 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
 function generateFantasyUnq(root, subfolder, list)
 {
     let generatedName = '';
+    const data = getNamelist(root, subfolder, list);
+    let prefix = ''
+
     switch(list)
     {
         case 'magicacademy':
-            const data = getNamelist(root, subfolder, list);
+            
 
-            let prefix = randomItem(data['prefix']);
+            prefix = randomItem(data['prefix']);
 
             // Check if prefix includes random sublist selectors
             if(prefix.includes('random-'))
@@ -174,6 +177,37 @@ function generateFantasyUnq(root, subfolder, list)
                 generatedName += ' ' + randomItem(data['optionalsuffix']);
             }
             break;
+
+        case 'inns':
+            // Use predefined names
+            let randomParameters = [];
+            if(Math.random() < 0.5)
+            {
+                prefix = randomItem(data['prefix']);
+                if(prefix.includes('random-nature'))
+                {
+                    randomParameters = prefix.split('-');
+                    prefix = generateSimple(root, randomParameters[1], randomParameters[2]);
+                }
+            }
+            // Construct one from the other keys
+            else
+            {
+                const noun = randomItem(['animals', 'objects', 'people'])
+                let descriptors = data['colors'].concat(data['metals']);
+                if(noun != 'objects')
+                {
+                    descriptors = descriptors.concat(data['adjectives']);
+                }
+                prefix =  randomItem(descriptors) + ' ' +  randomItem(data[noun]);
+            }
+            generatedName = 'The ' + prefix;
+            
+            // Add "Inn" or "Tavern" style endings if its not a random-style name or at 50/50 odds
+            if(Math.random() < 0.5 || randomParameters.length != 0)
+            {
+                generatedName += ' ' + randomItem(data['suffix'])
+            }
     }
     return generatedName;
 }
@@ -222,14 +256,14 @@ function generateFantasyLocation(root, subfolder, list, race, size)
             let descriptor = randomItem(data[size.toLowerCase()]);
 
             // Plural descriptors must go at the end
-            if(descriptor.slice(-1) == 's')
+            if(descriptor.slice(-1) == 's' && descriptor.slice(-2) != 'ss')
             {
                 generatedName += ' ' + descriptor;
             }
-            // Descriptors with 'of' should not appear after
-            else if(descriptor.includes(' of'))
+            // Descriptors with spaces at the end should not appear after
+            else if(descriptor.slice(-1) == ' ')
             {
-                generatedName = descriptor + ' ' + generatedName;
+                generatedName = descriptor + generatedName;
             }
             // Randomly decide if the remaining descriptors should be X of Y or Y X
             else if(Math.random() < 0.5)
