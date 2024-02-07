@@ -131,8 +131,87 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     if(epithet)
     {
         const data = getNamelist(root, 'shared/epithets', epithet);
-        const nick = data[gender.toLowerCase()].concat(data['neutral']);
-        generatedName += ' ' + randomItem(nick);
+        let nick = '';
+        let subraceNicks = [];
+        let raceNicks =[];
+        let genericNicks = [];
+
+        // Check for subrace nicks
+        subraceNicks = subraceNicks.concat(data[namelist.toLowerCase() + gender.toLowerCase()]);
+        subraceNicks = subraceNicks.concat(data[namelist.toLowerCase() + 'neutral']);
+
+        // Check for race specific nicks
+        raceNicks = raceNicks.concat(data[race + gender.toLowerCase()]);
+        raceNicks = raceNicks.concat(data[race + 'neutral']);
+
+        // Check for generic nicks
+        genericNicks = genericNicks.concat(data[gender.toLowerCase()]);
+        genericNicks = genericNicks.concat(data['neutral']);
+
+        // Remove any undefined values, i.e. disregarding any namelists that don't exist
+        subraceNicks = subraceNicks.filter(function( element ) {
+            return element !== undefined;
+         });
+
+        raceNicks = raceNicks.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        genericNicks = genericNicks.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        // Pick a random from the lists, weighted. Checks if lists have values first.
+        const rando = Math.random();
+        if(raceNicks.length == 0 && subraceNicks.length == 0)
+        {
+            nick = randomItem(genericNicks);
+        }
+        else if(subraceNicks.length == 0 && raceNicks.length != 0)
+        {
+            if(rando < 0.6)
+            {
+                nick = randomItem(raceNicks);
+            }
+            else
+            {
+                nick = randomItem(genericNicks);
+            }
+        }
+        else if(subraceNicks.length != 0 && raceNicks.length == 0)
+        {
+            if(rando < 0.6)
+            {
+                nick = randomItem(subraceNicks);
+            }
+            else
+            {
+                nick = randomItem(genericNicks);
+            }
+        }
+        else
+        {
+            if(rando < 0.45)
+            {
+                nick = randomItem(subraceNicks);
+            }
+            else if(rando < 0.70)
+            {
+                nick = randomItem(raceNicks);
+            }
+            else
+            {
+                nick = randomItem(genericNicks);
+            }
+        }
+        if(nick.charAt(0) == ' ')
+        {
+            generatedName += ',' + nick;
+        }
+        else
+        {
+            generatedName += ' ' + nick;
+        }
     }
 
     return generatedName;

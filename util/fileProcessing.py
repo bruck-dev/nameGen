@@ -26,6 +26,7 @@ def getJsonKeys(json):
     keys = list(json.keys())
     keys.remove('title')
     keys.remove('description')
+    keys.sort()
     return keys
 
 def getImmediateSubdirs(dir):

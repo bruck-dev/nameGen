@@ -4,6 +4,7 @@ body {
     color: #eeeeee;
     text-align: center;
     padding-top: 5%;
+    font-size: 1rem;
 }
 
 /* To prevent rogue HTML from flashing before the CSS is loaded, everything starts technically invisible. */

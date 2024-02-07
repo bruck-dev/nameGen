@@ -80,10 +80,6 @@
         "Buck",
         "Deer",
         "Giant",
-        "Elf",
-        "Dwarf",
-        "Halfling",
-        "Drow",
         "Owl"
     ],
     "objects": [
@@ -112,6 +108,10 @@
         "Baroness",
         "Duke",
         "Duchess",
-        "Steward"
+        "Steward",
+        "Elf",
+        "Dwarf",
+        "Halfling",
+        "Drow"
     ]
 }

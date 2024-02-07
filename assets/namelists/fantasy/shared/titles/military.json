@@ -28,6 +28,9 @@
         "Sergeant"
     ],
     "tieflingneutral": [
+        "Centurion",
+        "Legate",
+        "Praetorian",
         "Strategos"
     ],
     "northernfemale": [
@@ -35,7 +38,21 @@
         "Valkyrie"
     ],
     "northernmale": [
-        "Berserker",
         "Shieldbrother"
+    ],
+    "northernneutral": [
+        "Berserker"
+    ],
+    "tieflingmale": [
+        "Legatus"
+    ],
+    "tieflingfemale": [
+        "Legata"
+    ],
+    "orcfemale": [
+        "Warchieftess"
+    ],
+    "orcmale": [
+        "Warchief"
     ]
 }

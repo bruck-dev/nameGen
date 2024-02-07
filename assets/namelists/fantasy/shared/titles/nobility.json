@@ -23,8 +23,7 @@
         "Landgravine",
         "Margravine",
         "Marquise",
-        "Princess-Elector",
-        "Viscountess"
+        "Princess-Elector"
     ],
     "elfmale": [],
     "elffemale": [],
@@ -42,16 +41,20 @@
         "Underqueen"
     ],
     "dwarfneutral": [
+        "Forgelord",
         "Hammerthane",
-        "Oathkeeper"
+        "Oathkeeper",
+        "Thane"
     ],
     "orcmale": [
         "Chief",
-        "High Chief"
+        "High Chief",
+        "Warchief"
     ],
     "orcfemale": [
         "Chieftess",
-        "High Chieftess"
+        "High Chieftess",
+        "Warchieftess"
     ],
     "orcneutral": [],
     "female": [
@@ -68,7 +71,9 @@
         "Matriarch",
         "Matron",
         "Princess",
-        "Queen"
+        "Queen",
+        "Vicerine",
+        "Viscountess"
     ],
     "male": [
         "Archduke",
@@ -82,21 +87,28 @@
         "Lord",
         "Patriarch",
         "Prince",
+        "Viceroy",
         "Viscount"
     ],
-    "neutral": [],
+    "neutral": [
+        "Consul"
+    ],
     "tieflingfemale": [
         "Archis",
         "Archonesa",
         "Basilissa",
         "Despoina",
-        "Despotissa"
+        "Despotissa",
+        "Ducissa",
+        "Imperatrix"
     ],
     "tieflingmale": [
         "Archon",
         "Basileus",
         "Despot",
-        "Despotes"
+        "Despotes",
+        "Dux",
+        "Imperator"
     ],
     "northernneutral": [
         "Jarl",
@@ -107,5 +119,8 @@
     ],
     "northernfemale": [
         "Tsarina"
+    ],
+    "tieflingneutral": [
+        "Praetor"
     ]
 }

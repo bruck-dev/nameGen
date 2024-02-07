@@ -2,13 +2,18 @@
     "title": "Epithet Namelist",
     "description": "Name list of epithets that are combined with the usual surname list when activated.",
     "male": [
+        " Lord of Blasphemy",
+        " Lord of Blood",
         "the Man",
         "the Sea-King",
         "the Seducer",
         "the Sleeping King",
-        "the Tyrant"
+        "the Tyrant",
+        "the Witch-Lord"
     ],
     "female": [
+        " Lady of Blasphemy",
+        " Lady of Blood",
         "the Bitch",
         "the Huntress",
         "the Maid",
@@ -23,7 +28,8 @@
         "the Temptress",
         "the Valkyrie",
         "the Vixen",
-        "the Witch"
+        "the Witch",
+        "the Witch-Queen"
     ],
     "neutral": [
         "of a Thousand Faces",
@@ -54,6 +60,7 @@
         "the Betrayer",
         "the Bewitched",
         "the Black",
+        "the Black Blade",
         "the Black Elm",
         "the Black Whirlwind",
         "the Blessed",
@@ -254,6 +261,7 @@
         "the Ogre",
         "the Old",
         "the Old Dog",
+        "the Omen",
         "the One-Eyed",
         "the Oppressor",
         "the Outcast",
@@ -397,6 +405,7 @@
         "the Wanderer",
         "the War-Bringer",
         "the Warden",
+        "the Warleader",
         "the Warlike",
         "the Warlock",
         "the Warlord",

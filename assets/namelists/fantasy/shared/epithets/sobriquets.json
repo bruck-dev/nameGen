@@ -9,9 +9,7 @@
         "Regina"
     ],
     "neutral": [
-        "Bloodaxe",
         "Blue-Snake",
-        "Bluetooth",
         "Curse-Bringer",
         "Fairhair",
         "Fear-Eater",
@@ -38,5 +36,20 @@
         "Wartooth",
         "Whiteshirt",
         "Witch-Breaker"
+    ],
+    "dwarfneutral": [
+        "Bloodaxe",
+        "Crownforger",
+        "Thronecarver"
+    ],
+    "dwarfmale": [
+        "Forgefather"
+    ],
+    "dwarffemale": [
+        "Forgemother"
+    ],
+    "northernneutral": [
+        "Bloodaxe",
+        "Bluetooth"
     ]
 }

@@ -1,10 +1,10 @@
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
-    width: 7.5%;
+    width: 200px;
     position: absolute;
     z-index: 1;
-    top: 10%;
+    top: 100px;
     left: 0;
     background-color: #212121;
     overflow: hidden;
@@ -38,6 +38,10 @@ details > summary {
     -ms-user-select: none;
 }
 summary::marker { content: none }
+
+details summary::-webkit-details-marker {
+    display:none;
+}
 
 /* TIER 1 DROPDOWN CSS */
 .dropdown-tier1 > summary {
@@ -88,15 +92,7 @@ summary::marker { content: none }
     content: " ▼";
 }
 
-
-/* On mouse-over */
 .sidenav > a:hover, details div:hover, details > summary:hover {
     color: #eeeeee;
     background-color: #0092ca;
-}
-
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }

@@ -249,7 +249,7 @@ function createGeneratorUI()
             }
             else
             {
-              setSelectContent('opt4select', opt5.slice(1));
+              setSelectContent('opt5select', opt5.slice(1));
               visible = true;
               if(opt5[0].includes('/'))
               {
