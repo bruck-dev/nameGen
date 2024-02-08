@@ -6,11 +6,11 @@
         "Bohdan's",
         "Brokerock",
         "Drywinds",
-        "Red",
         "Red Sands",
         "random-races/elf-darkelf-surname",
         "random-races/human-eastern-surname",
-        "random-races/tiefling-infernal-surname"
+        "random-races/tiefling-infernal-surname",
+        "random-shared/util-colors-colors"
     ],
     "suffix": [
         "Canyon",

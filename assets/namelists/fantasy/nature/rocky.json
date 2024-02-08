@@ -2,16 +2,12 @@
     "title": "Mountain/Cave feature Namelist",
     "description": "Mountain namelist, generated either prefixed with 'Mount' or followed by a suffix.",
     "prefix": [
-        "Andorn",
-        "Blue",
-        "Grey",
-        "Greywarren",
-        "Jerand",
-        "Red",
         "random-races/elf-darkelf-surname",
         "random-races/elf-drow-surname",
         "random-races/dwarf-dwarf-surname",
-        "random-races/tiefling-infernal-surname"
+        "random-races/tiefling-infernal-surname",
+        "random-races/human-western-surname",
+        "random-shared/util-colors-colors"
     ],
     "suffix": [
         "Cave",

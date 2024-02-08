@@ -7,9 +7,9 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     namelist = namelist.toLowerCase();
 
     // Special conditions
-    if(namelist == "Virtue") // genderless and no surnames, ignore inputs
+    if(namelist == "virtue") // genderless and no surnames, ignore inputs
     {
-        gender = "Neutral";
+        gender = "neutral";
         surname = false;
     }
     
@@ -105,7 +105,7 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         if(surname)
         {
             const sur = data['surname'];
-            if(gender == 'Female' && namelist == 'Northern')
+            if(gender == 'female' && namelist == 'northern')
             {
                 let pickedSur = randomItem(sur);
                 if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
@@ -121,6 +121,10 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
                     pickedSur += 'a';
                 }
                 generatedName += pickedSur;
+            }
+            else if(namelist == 'eastern')
+            {
+                generatedName = randomItem(sur) + ' ' + generatedName.slice(0, -1);
             }
             else
             {
@@ -260,13 +264,21 @@ function generateFantasyUnq(root, subfolder, list)
         case 'inns':
             // Use predefined names
             let randomParameters = [];
-            if(Math.random() < 0.5)
+            if(Math.random() < 0.3)
             {
                 prefix = randomItem(data['prefix']);
-                if(prefix.includes('random-nature'))
+                if(prefix.includes('random-'))
                 {
                     randomParameters = prefix.split('-');
-                    prefix = generateSimple(root, randomParameters[1], randomParameters[2]);
+                    if(prefix.includes('nature'))
+                    {
+                        prefix = generateSimple(root, randomParameters[1], randomParameters[2]);
+                    }
+                    else
+                    {
+                        prefix = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                    }
+
                 }
             }
             // Construct one from the other keys
@@ -278,12 +290,15 @@ function generateFantasyUnq(root, subfolder, list)
                 {
                     descriptors = descriptors.concat(data['adjectives']);
                 }
-                prefix =  randomItem(descriptors) + ' ' +  randomItem(data[noun]);
+                randomParameters = randomItem(descriptors).split('-');
+                prefix =  getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                randomParameters = randomItem(data[noun]).split('-');
+                prefix += ' ' +  getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
             }
             generatedName = 'The ' + prefix;
             
             // Add "Inn" or "Tavern" style endings if its not a random-style name or at random
-            if(Math.random() < 0.60 || randomParameters.length != 0)
+            if(Math.random() < 0.55 || randomParameters.length != 0)
             {
                 generatedName += ' ' + randomItem(data['suffix'])
             }

@@ -1,0 +1,22 @@
+{
+    "title": "Materials Namelist",
+    "description": "Shared materials list.",
+    "materials": [
+        "Birch",
+        "Brass",
+        "Bronze",
+        "Copper",
+        "Gold",
+        "Iron",
+        "Lead",
+        "Mithril",
+        "Oaken",
+        "Pine",
+        "Silver",
+        "Steel",
+        "Stone",
+        "Tin",
+        "Wax",
+        "Wooden"
+    ]
+}

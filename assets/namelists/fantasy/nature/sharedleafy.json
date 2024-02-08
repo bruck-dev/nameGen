@@ -15,6 +15,7 @@
         "random-races/elf-highelf-surname",
         "random-races/human-western-surname",
         "random-races/elf-woodelf-surname",
-        "random-locations-settlements-human"
+        "random-locations-settlements-human",
+        "random-shared/util-colors-colors"
     ]
 }

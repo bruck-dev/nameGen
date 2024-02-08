@@ -1,0 +1,25 @@
+{
+    "title": "Objects Namelist",
+    "description": "Shared objects list.",
+    "objects": [
+        "Axe",
+        "Brew",
+        "Bridge",
+        "Candle",
+        "Drum",
+        "Flute",
+        "Fork",
+        "Galleon",
+        "Horn",
+        "Lute",
+        "Mug",
+        "Oak",
+        "Pint",
+        "Quill",
+        "Reed",
+        "Shield",
+        "Spoon",
+        "Stool",
+        "Sword"
+    ]
+}

@@ -3,7 +3,7 @@
     "description": "Saltwater feature namelist.",
     "prefix": [
         "Crasswater",
-        "Red"
+        "random-shared/util-colors-colors"
     ],
     "suffix": [
         "Atoll",
@@ -13,7 +13,6 @@
         "Cove",
         "Grotto",
         "Gulf",
-        "Harbor",
         "Island",
         "Isle",
         "Islet",
