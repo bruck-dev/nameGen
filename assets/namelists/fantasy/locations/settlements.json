@@ -2,42 +2,37 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
-        "Ashcroft",
-        "Blackwell",
-        "Brynnock",
-        "Cadogan",
+        "Cotia",
         "Dunham",
         "Dunharrow",
         "Falkirk",
-        "Fearthford",
+        "Forvast",
         "Gaerham",
-        "Gaerston",
-        "Gardner",
         "Glenham",
-        "Greywarren",
-        "Hayward",
-        "Hearthford",
-        "Hyland",
         "Jevan",
-        "Kearn",
-        "Lancart",
-        "Moorsley",
-        "Morchester",
-        "Morrin",
         "Myrcourt",
-        "Ravenwood",
-        "Sadurmont",
-        "Sernas",
-        "Sitwell",
-        "Stillwell",
-        "Valadec",
-        "Woodcroft"
+        "Oulia",
+        "Ravenwood"
+    ],
+    "humanrandom": [
+        "random-nature-temperate",
+        "random-races/human-western-surname",
+        "random-races/human-eastern-surname"
     ],
     "elf": [
         "Emhel",
-        "Isilme"
+        "Enera",
+        "Enetear",
+        "Isilme",
+        "Tilonder"
+    ],
+    "elfrandom": [
+        "random-races/elf-highelf-surname",
+        "random-races/elf-woodelf-surname",
+        "random-races/elf-drow-surname"
     ],
     "dwarf": [
+        "Doleor",
         "Eduhr",
         "Gedum",
         "Holgrun",
@@ -48,18 +43,25 @@
         "Nador",
         "Stonespire"
     ],
+    "dwarfrandom": [
+        "random-races/dwarf-dwarf-surname"
+    ],
     "orc": [
         "Dûl Ord",
         "Nak Goz",
         "Urgduz"
+        
+    ],
+    "orcrandom": [
+        "random-race/orc-orc-surname"
     ],
     "tiny": [
         "Abbey",
-        "Bridge",
-        "Crossing",
-        "Crossroads",
+        " Bridge",
+        " Crossing",
+        " Crossroads",
         "Farm",
-        "Farms",
+        " Farms",
         "Hamlet",
         "Homestead",
         "Mill",
@@ -68,21 +70,24 @@
         "Ranch"
     ],
     "small": [
-        "Crossing",
-        "Crossroads",
+        " Crossing",
+        " Crossroads",
         "Fort ",
         "Village"
     ],
     "medium": [
-        "Fortress",
+        " Fortress",
+        " Keep",
         "Town",
         "Township"
     ],
     "large": [
-        "Castle",
+        " Castle",
+        "Citadel",
         "City",
         "Harbor",
-        "Palace",
-        "Port of "
+        " Palace",
+        "Port of ",
+        "Stronghold"
     ]
 }

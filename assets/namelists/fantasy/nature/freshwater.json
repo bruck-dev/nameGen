@@ -2,10 +2,8 @@
     "title": "Freshwater",
     "description": "Freshwater feature namelist.",
     "prefix": [
-        "Autumn",
-        "Greylock",
-        "Lily",
-        "Redwood"
+        "random-nature-sharedleafy-prefix",
+        "random-nature-sharedleafy-prefixrandom"
     ],
     "suffix": [
         "Brook",

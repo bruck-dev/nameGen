@@ -2,23 +2,8 @@
     "title": "Forest/greenery Feature Namelist",
     "description": "Namelist for randomly generated temperate features.",
     "prefix": [
-        "Autumn",
-        "Black",
-        "Bleak",
-        "Dark",
-        "Dunham",
-        "Falkirk",
-        "Fearthford",
-        "Glenham",
-        "Greylock",
-        "Hayward",
-        "Lily",
-        "Redwood",
-        "Yolona",
-        "random-races/human-eastern-surname",
-        "random-races/elf-highelf-surname",
-        "random-races/human-western-surname",
-        "random-races/elf-woodelf-surname"
+        "random-nature-sharedleafy-prefix",
+        "random-nature-sharedleafy-prefixrandom"
     ],
     "suffix": [
         "Bluff",

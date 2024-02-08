@@ -4,11 +4,17 @@
     "human": [
         "Elodran",
         "Gerin",
+        "Hessia",
+        "Laesia",
         "Mirelen",
         "Osteran",
         "Relain",
         "Volaneux",
         "Vostrov"
+    ],
+    "humanrandom": [
+        "random-races/human-eastern-surname",
+        "random-races/human-western-surname"
     ],
     "elf": [
         "Ayinor",
@@ -18,7 +24,9 @@
         "Illadorei",
         "Lyellon",
         "Relthwin",
-        "Selenor",
+        "Selenor"
+    ],
+    "elfrandom": [
         "random-races/elf-drow-surname",
         "random-races/elf-woodelf-surname"
     ],
@@ -26,7 +34,13 @@
         "Durn Olfrir",
         "Krûnbar"
     ],
+    "dwarfrandom": [
+        "random-races/dwarf-dwarf-surname"
+    ],
     "orc": [
+        "Margashburz"
+    ],
+    "orcrandom": [
         "random-races/orc-orc-surname"
     ],
     "humansmall": [

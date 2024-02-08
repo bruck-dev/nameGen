@@ -39,7 +39,6 @@ function createConstantElements()
 function createGeneratorUI()
 {
   const config = getJson('assets/namelists/' + localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/config.json');
-  console.log(config);
   const opt1 = config['opt1'];
   const opt2 = config['opt2'];
   const opt3 = config['opt3'];

@@ -3,6 +3,8 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
 {
     let generatedName = '';
     let race = localStorage.getItem('subfolder').slice(6); // gets base race
+    gender = gender.toLowerCase();
+    namelist = namelist.toLowerCase();
 
     // Special conditions
     if(namelist == "Virtue") // genderless and no surnames, ignore inputs
@@ -20,15 +22,15 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         let genericTitles = [];
 
         // Check for subrace titles
-        subraceTitles = subraceTitles.concat(data[namelist.toLowerCase() + gender.toLowerCase()]);
-        subraceTitles = subraceTitles.concat(data[namelist.toLowerCase() + 'neutral']);
+        subraceTitles = subraceTitles.concat(data[namelist + gender]);
+        subraceTitles = subraceTitles.concat(data[namelist + 'neutral']);
 
         // Check for race specific titles
-        raceTitles = raceTitles.concat(data[race + gender.toLowerCase()]);
+        raceTitles = raceTitles.concat(data[race + gender]);
         raceTitles = raceTitles.concat(data[race + 'neutral']);
 
         // Check for generic titles
-        genericTitles = genericTitles.concat(data[gender.toLowerCase()]);
+        genericTitles = genericTitles.concat(data[gender]);
         genericTitles = genericTitles.concat(data['neutral']);
 
         // Remove any undefined values, i.e. disregarding any namelists that don't exist
@@ -96,7 +98,7 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     if(namelist)
     {
         const data = getNamelist(root, subfolder, namelist);
-        const names = data[gender.toLowerCase()];
+        const names = data[gender];
 
         generatedName += randomItem(names) + ' '
 
@@ -137,15 +139,15 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         let genericNicks = [];
 
         // Check for subrace nicks
-        subraceNicks = subraceNicks.concat(data[namelist.toLowerCase() + gender.toLowerCase()]);
-        subraceNicks = subraceNicks.concat(data[namelist.toLowerCase() + 'neutral']);
+        subraceNicks = subraceNicks.concat(data[namelist + gender]);
+        subraceNicks = subraceNicks.concat(data[namelist + 'neutral']);
 
         // Check for race specific nicks
-        raceNicks = raceNicks.concat(data[race + gender.toLowerCase()]);
+        raceNicks = raceNicks.concat(data[race + gender]);
         raceNicks = raceNicks.concat(data[race + 'neutral']);
 
         // Check for generic nicks
-        genericNicks = genericNicks.concat(data[gender.toLowerCase()]);
+        genericNicks = genericNicks.concat(data[gender]);
         genericNicks = genericNicks.concat(data['neutral']);
 
         // Remove any undefined values, i.e. disregarding any namelists that don't exist
@@ -227,8 +229,6 @@ function generateFantasyUnq(root, subfolder, list)
     switch(list)
     {
         case 'magicacademy':
-            
-
             prefix = randomItem(data['prefix']);
 
             // Check if prefix includes random sublist selectors
@@ -273,7 +273,7 @@ function generateFantasyUnq(root, subfolder, list)
             else
             {
                 const noun = randomItem(['animals', 'objects', 'people'])
-                let descriptors = data['colors'].concat(data['metals']);
+                let descriptors = data['colors'].concat(data['materials']);
                 if(noun != 'objects')
                 {
                     descriptors = descriptors.concat(data['adjectives']);
@@ -282,8 +282,8 @@ function generateFantasyUnq(root, subfolder, list)
             }
             generatedName = 'The ' + prefix;
             
-            // Add "Inn" or "Tavern" style endings if its not a random-style name or at 50/50 odds
-            if(Math.random() < 0.5 || randomParameters.length != 0)
+            // Add "Inn" or "Tavern" style endings if its not a random-style name or at random
+            if(Math.random() < 0.60 || randomParameters.length != 0)
             {
                 generatedName += ' ' + randomItem(data['suffix'])
             }
@@ -295,11 +295,13 @@ function generateFantasyUnq(root, subfolder, list)
 function generateFantasyLocation(root, subfolder, list, race, size)
 {
     const data = getNamelist(root, subfolder, list);
+    race = race.toLowerCase();
+    size = size.toLowerCase();
     switch(list)
     {
         case 'realms':
-            let tierRacial = data[(race + size).toLowerCase()];
-            const tierGeneric = data[size.toLowerCase()];
+            let tierRacial = data[(race + size)];
+            const tierGeneric = data[size];
 
             if(tierRacial != undefined)
             {
@@ -322,7 +324,26 @@ function generateFantasyLocation(root, subfolder, list, race, size)
                 tier = randomItem(tierGeneric);
             }
 
-            let name = randomItem(data[race.toLowerCase()]);
+            let name = '';
+            // Weighted choice between random construction sets or pre-made sets
+            if(Math.random() < 0.55)
+            {
+                name = randomItem(data[race]);
+            }
+            else
+            {
+                try
+                {
+                    // Check if racial randoms exist
+                    if(data[race + 'random'].length != 0)
+                    {
+                        name = randomItem(data[race + 'random']);
+                    }
+                }
+                catch(error) {
+                    name = randomItem(data[race]);
+                }
+            }
             if(name.includes('random-'))
             {
                 const randomParameters = name.split('-');
@@ -331,13 +352,46 @@ function generateFantasyLocation(root, subfolder, list, race, size)
             return  tier + ' of ' + name;
 
         case 'settlements':
-            let generatedName = randomItem(data[race.toLowerCase()]);
-            let descriptor = randomItem(data[size.toLowerCase()]);
+            let generatedName = '';
 
-            // Plural descriptors must go at the end
-            if(descriptor.slice(-1) == 's' && descriptor.slice(-2) != 'ss')
+            // Weighted choice between random construction sets or pre-made sets
+            if(Math.random() < 0.55)
             {
-                generatedName += ' ' + descriptor;
+                generatedName = randomItem(data[race]);
+            }
+            else
+            {
+                try
+                {
+                    // Check if racial randoms exist
+                    if(data[race + 'random'].length != 0)
+                    {
+                        generatedName = randomItem(data[race + 'random']);
+                    }
+                }
+                catch(error) {
+                    generatedName = randomItem(data[race]);
+                }
+            }
+            
+            if(generatedName.includes('random-'))
+            {
+                const randomParameters = generatedName.split('-');
+                if(generatedName.includes('nature'))
+                {
+                    generatedName = generateSimple(root, randomParameters[1], randomParameters[2], ['races/elf', 'races/orc', 'races/dwarf']);
+                }
+                else
+                {
+                    generatedName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                }
+            }
+            let descriptor = randomItem(data[size]);
+
+            // Descriptors with spaces at the front should not appear before
+            if(descriptor.charAt(0) == ' ')
+            {
+                generatedName += descriptor;
             }
             // Descriptors with spaces at the end should not appear after
             else if(descriptor.slice(-1) == ' ')
@@ -360,20 +414,21 @@ function generateFantasyLocation(root, subfolder, list, race, size)
 // Handles fantasy organization generations
 function generateFantasyOrg(root, subfolder, list, opt1, opt2)
 {
-    console.log(list);
     const data = getNamelist(root, subfolder, list);
+    opt1 = opt1.toLowerCase();
+    opt2 = opt2.toLowerCase();
     switch(list)
     {
         case 'guilds':
-            return randomItem(data[opt1.toLowerCase()]) + ' ' + randomItem(data['suffix']);
+            return randomItem(data[opt1]) + ' ' + randomItem(data['suffix']);
         case 'orders':
             if(Math.random() < 0.5)
             {
-                return randomItem(data[opt2.toLowerCase()]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
+                return randomItem(data[opt2]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
             }
             else
             {
-                return randomItem(data[opt2.toLowerCase()]) + ' ' + randomItem(data['suffix']) + ' ' + randomItem(data['name']);
+                return randomItem(data[opt2]) + ' ' + randomItem(data['suffix']) + ' ' + randomItem(data['name']);
             }
     }
 }
