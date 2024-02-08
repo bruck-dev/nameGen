@@ -4,7 +4,8 @@
     "prefix": [
         "random-nature-freshwater",
         "random-nature-temperate",
-        "random-races/halfling-halfling-surname"
+        "random-races/halfling-halfling-surname",
+        "random-unique-inns-preset"
     ],
     "suffix": [
         "Inn",
@@ -12,21 +13,29 @@
         "Pub"
     ],
     "colors": [
-        "random-shared/util-colors-colors"
+        "random-shared/util-resources-colors"
     ],
     "materials": [
-        "random-shared/util-materials-materials"
+        "random-shared/util-resources-materials"
     ],
     "adjectives": [
-        "random-shared/util-adjectives-adjectives"
+        "random-shared/util-resources-adjectives"
     ],
     "animals": [
-        "random-shared/util-creatures-creatures"
+        "random-shared/util-resources-creatures"
     ],
     "objects": [
-        "random-shared/util-objects-objects"
+        "random-shared/util-resources-objects"
     ],
     "people": [
-        "random-shared/util-people-people"
+        "random-shared/util-resources-people"
+    ],
+    "preset": [
+        "Cat's Whiskers",
+        "Dragon's Bones",
+        "Giant's Foot",
+        "Mourning Widow",
+        "Rabbit's Foot",
+        "Toil & Trouble"
     ]
 }

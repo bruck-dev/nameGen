@@ -18,15 +18,19 @@ function generateSimple(root, subfolder, namelist, excludes=null)
 // Get a random element from the given list and key
 function getRandomName(root, subfolder, list, key, excludes=null)
 {
+    if(key == undefined) // Probably called upwards FROM a sublist into one that has a full generation function.
+    {
+        return generateSimple(root, subfolder, list, excludes);
+    }
+
     let data = getNamelist(root, subfolder, list)[key];
 
     // Filters out any values that contain excluded strings from the list
     if(excludes)
     {
-        for(let i = 0; i < excludes.length; i++)
-        {
-            data = data.filter(s => !s.includes(excludes[i]));
-        }
+        excludes.forEach(element => {
+            data = data.filter(s => !s.includes(element));
+        });
     }
 
     word = randomItem(data);

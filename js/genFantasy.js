@@ -297,8 +297,8 @@ function generateFantasyUnq(root, subfolder, list)
             }
             generatedName = 'The ' + prefix;
             
-            // Add "Inn" or "Tavern" style endings if its not a random-style name or at random
-            if(Math.random() < 0.55 || randomParameters.length != 0)
+            // Add "Inn" or "Tavern" style endings
+            if(Math.random() < 0.55)
             {
                 generatedName += ' ' + randomItem(data['suffix'])
             }
@@ -369,36 +369,31 @@ function generateFantasyLocation(root, subfolder, list, race, size)
         case 'settlements':
             let generatedName = '';
 
-            // Weighted choice between random construction sets or pre-made sets
-            if(Math.random() < 0.55)
-            {
-                generatedName = randomItem(data[race]);
-            }
-            else
-            {
-                try
-                {
-                    // Check if racial randoms exist
-                    if(data[race + 'random'].length != 0)
-                    {
-                        generatedName = randomItem(data[race + 'random']);
-                    }
-                }
-                catch(error) {
-                    generatedName = randomItem(data[race]);
-                }
-            }
+            generatedName = randomItem(data[race]);
             
             if(generatedName.includes('random-'))
             {
                 const randomParameters = generatedName.split('-');
+                let excludes = [];
+                // Exclude all other races from subgeneration
+                const options = document.getElementById('opt1select').options;
+                for(let i = 0; i < options.length; i++)
+                {
+                    element = options[i].value.toLowerCase();
+                    excludes.push(element + '-');
+                    excludes.push('-' + element);
+                }
+
+                
+                excludes = excludes.filter(s => !s.includes(race));
                 if(generatedName.includes('nature'))
                 {
-                    generatedName = generateSimple(root, randomParameters[1], randomParameters[2], ['races/elf', 'races/orc', 'races/dwarf']);
+
+                    generatedName = generateSimple(root, randomParameters[1], randomParameters[2], excludes);
                 }
                 else
                 {
-                    generatedName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                    generatedName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3], excludes);
                 }
             }
             let descriptor = randomItem(data[size]);

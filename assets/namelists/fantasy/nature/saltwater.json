@@ -3,7 +3,7 @@
     "description": "Saltwater feature namelist.",
     "prefix": [
         "Crasswater",
-        "random-shared/util-colors-colors"
+        "random-shared/util-resources-colors"
     ],
     "suffix": [
         "Atoll",

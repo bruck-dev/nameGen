@@ -2,58 +2,20 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
-        "Cotia",
-        "Dunham",
-        "Dunharrow",
-        "Falkirk",
-        "Forvast",
-        "Gaerham",
-        "Glenham",
-        "Jevan",
-        "Myrcourt",
-        "Oulia",
-        "Ravenwood"
-    ],
-    "humanrandom": [
-        "random-nature-temperate",
-        "random-races/human-western-surname",
-        "random-races/human-eastern-surname"
+        "random-locations-sharedsettlements-human",
+        "random-locations-sharedsettlements-humanrandom"
     ],
     "elf": [
-        "Emhel",
-        "Enera",
-        "Enetear",
-        "Isilme",
-        "Tilonder"
-    ],
-    "elfrandom": [
-        "random-races/elf-highelf-surname",
-        "random-races/elf-woodelf-surname",
-        "random-races/elf-drow-surname"
+        "random-locations-sharedsettlements-elf",
+        "random-locations-sharedsettlements-elfrandom"
     ],
     "dwarf": [
-        "Doleor",
-        "Eduhr",
-        "Gedum",
-        "Holgrun",
-        "Ironsong",
-        "Kar-Akor",
-        "Kar-Seor",
-        "Kholdor",
-        "Nador",
-        "Stonespire"
-    ],
-    "dwarfrandom": [
-        "random-races/dwarf-dwarf-surname"
+        "random-locations-sharedsettlements-dwarf",
+        "random-locations-sharedsettlements-dwarfrandom"
     ],
     "orc": [
-        "Dûl Ord",
-        "Nak Goz",
-        "Urgduz"
-        
-    ],
-    "orcrandom": [
-        "random-race/orc-orc-surname"
+        "random-locations-sharedsettlements-orc",
+        "random-locations-sharedsettlements-orcrandom"
     ],
     "tiny": [
         "Abbey",

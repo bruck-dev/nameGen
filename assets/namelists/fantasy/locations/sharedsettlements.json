@@ -1,0 +1,58 @@
+{
+    "title": "Settlements shared sublist",
+    "description": "Contains constant and random names.",
+    "human": [
+        "Cotia",
+        "Dunham",
+        "Dunharrow",
+        "Falkirk",
+        "Forvast",
+        "Gaerham",
+        "Glenham",
+        "Jevan",
+        "Myrcourt",
+        "Oulia",
+        "Ravenwood"
+    ],
+    "humanrandom": [
+        "random-nature-temperate",
+        "random-races/human-western-surname",
+        "random-races/human-eastern-surname"
+    ],
+    "elf": [
+        "Emhel",
+        "Enera",
+        "Enetear",
+        "Isilme",
+        "Tilonder"
+    ],
+    "elfrandom": [
+        "random-races/elf-highelf-surname",
+        "random-races/elf-woodelf-surname",
+        "random-races/elf-drow-surname"
+    ],
+    "dwarf": [
+        "Doleor",
+        "Eduhr",
+        "Gedum",
+        "Holgrun",
+        "Ironsong",
+        "Kar-Akor",
+        "Kar-Seor",
+        "Kholdor",
+        "Nador",
+        "Stonespire"
+    ],
+    "dwarfrandom": [
+        "random-races/dwarf-dwarf-surname"
+    ],
+    "orc": [
+        "Dûl Ord",
+        "Nak Goz",
+        "Urgduz"
+        
+    ],
+    "orcrandom": [
+        "random-race/orc-orc-surname"
+    ]
+}

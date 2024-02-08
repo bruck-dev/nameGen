@@ -10,7 +10,7 @@
         "random-races/elf-darkelf-surname",
         "random-races/human-eastern-surname",
         "random-races/tiefling-infernal-surname",
-        "random-shared/util-colors-colors"
+        "random-shared/util-resources-colors"
     ],
     "suffix": [
         "Canyon",
