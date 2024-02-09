@@ -3,10 +3,10 @@
     "description": "Sets dropdown configurations and labels. First entry is the label.",
     "opt1": [
         "Subrace",
-        "Dark Elf",
-        "Drow",
         "High Elf",
-        "Wood Elf"
+        "Wood Elf",
+        "Dark Elf",
+        "Drow"
     ],
     "opt2": [
         "Gender",

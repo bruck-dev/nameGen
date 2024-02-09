@@ -293,6 +293,7 @@ function createGeneratorUI()
   }
   catch(error)
   {
+    includeHTML('html/modular/topbar.html', 'topbar');
     includeHTML('html/modular/navbar.html', 'navbar');
     includeHTML('html/modular/error.html', 'generatorinterface')
   }

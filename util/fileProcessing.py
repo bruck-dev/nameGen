@@ -20,7 +20,14 @@ def getLowestSubdir(firstDir):
     return lowestDir
             
 def getJson(path):
-    return glob.glob(path + '/*.json')
+    paths = glob.glob(path + '/*.json')
+    
+    # Don't show config files
+    for element in paths:
+        if "config" in element:
+            del paths[paths.index(element)]
+            
+    return paths
 
 def getJsonKeys(json):
     keys = list(json.keys())

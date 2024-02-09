@@ -108,6 +108,7 @@
         "Owl",
         "Parrot",
         "Pegasus",
+        "Pheasant",
         "Pigeon",
         "Pony",
         "Rabbit",
@@ -121,6 +122,7 @@
         "Snake",
         "Stag",
         "Tiger",
+        "Turtle",
         "Unicorn",
         "Whale"
     ],
@@ -161,6 +163,7 @@
         "Elf",
         "Emperor",
         "Fey",
+        "Fiend",
         "General",
         "Gnome",
         "Goblin",
@@ -183,7 +186,9 @@
         "Sorcerer",
         "Sorceress",
         "Steward",
+        "Swordsman",
         "Tiefling",
+        "Warlock",
         "Warrior",
         "Wench",
         "Witch",
@@ -220,5 +225,18 @@
         "Stool",
         "Sword",
         "Tankard"
+    ],
+    "quantity": [
+        "Eight",
+        "Eleven",
+        "Five",
+        "Four",
+        "Nine",
+        "Seven",
+        "Six",
+        "Ten",
+        "Three",
+        "Twelve",
+        "Two"
     ]
 }

@@ -110,14 +110,14 @@
         "Dux",
         "Imperator"
     ],
-    "northernneutral": [
+    "nordicneutral": [
         "Jarl",
         "Thane"
     ],
-    "northernmale": [
+    "nordicmale": [
         "Tsar"
     ],
-    "northernfemale": [
+    "nordicfemale": [
         "Tsarina"
     ],
     "tieflingneutral": [

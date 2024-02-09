@@ -9,11 +9,11 @@
         "Mirelen",
         "Osteran",
         "Relain",
-        "Volaneux",
-        "Vostrov"
+        "Volaneux"
     ],
     "humanrandom": [
         "random-races/human-eastern-surname",
+        "random-races/human-slavic-surname",
         "random-races/human-western-surname"
     ],
     "elf": [

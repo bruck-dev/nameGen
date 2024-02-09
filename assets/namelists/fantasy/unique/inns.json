@@ -30,6 +30,9 @@
     "people": [
         "random-shared/util-resources-people"
     ],
+    "quantity": [
+        "random-shared/util-resources-quantity"
+    ],
     "preset": [
         "Cat's Whiskers",
         "Dragon's Bones",

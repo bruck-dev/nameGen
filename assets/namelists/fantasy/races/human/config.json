@@ -3,9 +3,11 @@
     "description": "Sets dropdown configurations and labels. First entry is the label.",
     "opt1": [
         "Subrace",
+        "Western",
         "Eastern",
-        "Northern",
-        "Western"
+        "Nordic",
+        "Slavic"
+        
     ],
     "opt2": [
         "Gender",

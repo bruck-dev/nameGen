@@ -105,30 +105,58 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         if(surname)
         {
             const sur = data['surname'];
-            if(gender == 'female' && namelist == 'northern')
+            let pickedSur = randomItem(sur);
+
+            if(gender == 'female')
             {
-                let pickedSur = randomItem(sur);
-                if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
-                {
-                    pickedSur = pickedSur.slice(0, -3) + randomItem(['dottir', 'datter', 'dotter']);
+                if(namelist == 'nordic')
+                { 
+                    if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
+                    {
+                        pickedSur = pickedSur.slice(0, -3) + randomItem(['dottir', 'datter', 'dotter']);
+                    }
+                    else if(pickedSur.endsWith('sen') || pickedSur.endsWith('son'))
+                    {
+                        pickedSur = pickedSur.slice(0, -2) + randomItem(['dottir', 'datter', 'dotter']);
+                    }
+                    generatedName += pickedSur;
                 }
-                else if(pickedSur.endsWith('sen') || pickedSur.endsWith('son'))
+                
+            }
+
+            if(namelist == 'eastern')
+            {
+                generatedName = pickedSur + ' ' + generatedName.slice(0, -1);
+            }
+
+            else if(namelist == 'slavic')
+            {
+                if(gender == 'female')
                 {
-                    pickedSur = pickedSur.slice(0, -2) + randomItem(['dottir', 'datter', 'dotter']);
+                    if(pickedSur.endsWith('ov') || pickedSur.endsWith('ev') || pickedSur.endsWith('in') || pickedSur.endsWith('r'))
+                    {
+                        if(Math.random() < 0.5)
+                        {
+                            pickedSur += 'a';
+                        }
+                        else
+                        {
+                            pickedSur += 'na';
+                        }
+                    }
                 }
-                else if(pickedSur.endsWith('ov'))
+                else
                 {
-                    pickedSur += 'a';
+                    if((pickedSur.endsWith('ov') || pickedSur.endsWith('ev')) && Math.random() < 0.4)
+                    {
+                        pickedSur += 'ich'
+                    }
                 }
                 generatedName += pickedSur;
             }
-            else if(namelist == 'eastern')
-            {
-                generatedName = randomItem(sur) + ' ' + generatedName.slice(0, -1);
-            }
             else
             {
-                generatedName += randomItem(sur);
+                generatedName += pickedSur;
             }
         }
     }
@@ -264,6 +292,7 @@ function generateFantasyUnq(root, subfolder, list)
         case 'inns':
             // Use predefined names
             let randomParameters = [];
+            let prefix = '';
             if(Math.random() < 0.3)
             {
                 prefix = randomItem(data['prefix']);
@@ -285,15 +314,23 @@ function generateFantasyUnq(root, subfolder, list)
             else
             {
                 const noun = randomItem(['animals', 'objects', 'people'])
-                let descriptors = data['colors'].concat(data['materials']);
+                let descriptors = ['quantity', 'colors', 'materials'];
                 if(noun != 'objects')
                 {
-                    descriptors = descriptors.concat(data['adjectives']);
+                    descriptors.push('adjectives');
                 }
-                randomParameters = randomItem(descriptors).split('-');
+                const descriptorCategory = randomItem(descriptors);
+                randomParameters = randomItem(data[descriptorCategory]).split('-');
                 prefix =  getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
                 randomParameters = randomItem(data[noun]).split('-');
-                prefix += ' ' +  getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                if(descriptorCategory == 'quantity')
+                {
+                    prefix += ' ' +  pluralizeNoun(getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]));
+                }
+                else
+                {
+                    prefix += ' ' +  getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                }
             }
             generatedName = 'The ' + prefix;
             

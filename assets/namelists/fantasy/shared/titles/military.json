@@ -33,15 +33,18 @@
         "Praetorian",
         "Strategos"
     ],
-    "northernfemale": [
+    "nordicfemale": [
         "Shieldmaiden",
         "Valkyrie"
     ],
-    "northernmale": [
+    "nordicmale": [
         "Shieldbrother"
     ],
-    "northernneutral": [
+    "nordicneutral": [
         "Berserker"
+    ],
+    "slavicneutral": [
+        "Druzhina"
     ],
     "tieflingmale": [
         "Legatus"
