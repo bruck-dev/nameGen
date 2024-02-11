@@ -13,11 +13,14 @@
         "random-shared/util-resources-colors"
     ],
     "suffix": [
+        "Barrens",
         "Canyon",
         "Desert",
         "Divide",
         "Gorge",
         "Gulch",
-        "Mesa"
+        "Mesa",
+        "Scrubland",
+        "Wastes"
     ]
 }

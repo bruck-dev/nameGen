@@ -1,0 +1,19 @@
+{
+    "title": "Government Titles Namelist",
+    "description": "classic corruption moment",
+    "male": [],
+    "female": [],
+    "neutral": [
+        "Adjudicator",
+        "Chancellor",
+        "Exchequer",
+        "Governor",
+        "Herald",
+        "Lord Chancellor",
+        "Magistrate",
+        "Military-Governor",
+        "Minister",
+        "Seneschal",
+        "Steward"
+    ]
+}

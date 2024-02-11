@@ -1,24 +1,60 @@
 {
     "title": "Config file",
     "description": "Sets dropdown configurations and labels. First entry is the label.",
-    "opt1": [
-        "Race",
-        "Human",
-        "Elf",
-        "Dwarf",
-        "Orc"
-    ],
-    "opt2": [
-        "Size",
-        "Tiny",
-        "Small",
-        "Medium",
-        "Large"
-    ],
-    "opt3": [
-    ],
-    "opt4": [
-    ],
-    "opt5": [
-    ]
+    "settlements": {
+        "opt1": [
+            "Race",
+            "Human",
+            "Elf",
+            "Dwarf",
+            "Orc"
+        ],
+        "opt2": [
+            "Size",
+            "Tiny",
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "realms": {
+        "opt1": [
+            "Race",
+            "Human",
+            "Elf",
+            "Dwarf",
+            "Orc"
+        ],
+        "opt2": [
+            "Size",
+            "Tiny",
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "inns": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    }
 }

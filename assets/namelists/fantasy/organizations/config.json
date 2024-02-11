@@ -1,27 +1,62 @@
 {
     "title": "Config file",
     "description": "Sets dropdown configurations",
-    "opt1": [
-        "Background/guilds",
-        "Adventurers",
-        "Assassins",
-        "Criminals",
-        "Mages",
-        "Merchants"
-
-    ],
-    "opt2": [
-        "Background/orders",
-        "Priestly",
-        "Militant"
-    ],
-    "opt3": [
-
-    ],
-    "opt4": [
-
-    ],
-    "opt5": [
-        
-    ]
+    "guilds": {
+        "opt1": [
+            "Adventurers",
+            "Assassins",
+            "Criminals",
+            "Mages",
+            "Merchants"
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+    
+        ],
+        "opt4": [
+    
+        ],
+        "opt5": [
+            
+        ]
+    },
+    "orders": {
+        "opt1": [
+            "Priestly",
+            "Militant"
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [ 
+        ]
+   },
+   "magicacademy": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "gangs": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    }
 }

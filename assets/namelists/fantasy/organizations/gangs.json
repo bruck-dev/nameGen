@@ -2,12 +2,16 @@
     "title": "Gangs Namelist",
     "description": "Namelist for thugs.",
     "prefix": [
-        
+        "random-nature-freshwater",
+        "random-nature-rocky",
+        "random-nature-temperate"
     ],
     "suffix": [
+        "Bandits",
         "Boys",
-        "Gang",
         "Crew",
-        "Family"
+        "Freebooters",
+        "Gang",
+        "Looters"
     ]
 }

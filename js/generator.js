@@ -56,10 +56,6 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             {
                 generatedOutput = generateFantasyOrg(root, subfolder, list, opt1, opt2);
             }
-            else
-            {
-                generatedOutput = generateFantasyUnq(root, subfolder, list);
-            }
         break;
     }
     return generatedOutput;
