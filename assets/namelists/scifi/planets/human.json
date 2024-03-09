@@ -1,0 +1,25 @@
+{
+    "title": "Human Planet Namelist",
+    "description": "Human planet namelist.",
+    "temperate": [
+
+    ],
+    "snowy": [
+
+    ],
+    "arid": [
+
+    ],
+    "aquatic": [
+
+    ],
+    "paradisal" : [
+
+    ],
+    "ecumenopolis": [
+        "Citadel"
+    ],
+    "uninhabitable": [
+
+    ]
+}

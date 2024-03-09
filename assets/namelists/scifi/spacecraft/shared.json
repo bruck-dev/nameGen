@@ -1,0 +1,23 @@
+{
+    "title": "Spaceships and Stations Shared Namelist",
+    "description": "Shared elements used in both sci fi stations and ships.",
+    "prefix": [
+        "AE",
+        "AFS",
+        "EAS",
+        "GSV",
+        "IAV",
+        "IMS",
+        "ISC",
+        "ISD",
+        "ISS",
+        "MCRN",
+        "ROU",
+        "RSV",
+        "UNE",
+        "UNN",
+        "UNSC",
+        "USCSS",
+        "USS"
+    ]
+}

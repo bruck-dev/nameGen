@@ -1,0 +1,24 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations and labels. First entry is the label.",
+    "opt1": [
+        "Type",
+        "Civilian",
+        "Military",
+        "Pirate"
+    ],
+    "opt2": [
+        "Size",
+        "Standard",
+        "Capital",
+        "Station"
+    ],
+    "opt3": [
+        "Prefix",
+        "true"
+    ],
+    "opt4": [
+    ],
+    "opt5": [
+    ]
+}

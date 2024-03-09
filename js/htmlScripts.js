@@ -215,6 +215,7 @@ function setupOptCheck(labelid, checkid, configList)
             document.getElementById(checkid).checked = true;
           }
           visible = true;
+          document.getElementById(labelid).textContent = configList[0];
       }
       else
       {       

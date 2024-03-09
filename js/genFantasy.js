@@ -418,12 +418,11 @@ function generateFantasyLocation(root, subfolder, list, race, size)
 }
 
 // Handles fantasy organization generations
-function generateFantasyOrg(root, subfolder, list, opt1, opt2)
+function generateFantasyOrg(root, subfolder, list, opt1)
 {
     const data = getNamelist(root, subfolder, list);
     let generatedName = '';
     opt1 = opt1.toLowerCase();
-    opt2 = opt2.toLowerCase();
     switch(list)
     {
         case 'guilds':
@@ -433,11 +432,11 @@ function generateFantasyOrg(root, subfolder, list, opt1, opt2)
         case 'orders':
             if(Math.random() < 0.5)
             {
-                return randomItem(data[opt2]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
+                return randomItem(data[opt1]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
             }
             else
             {
-                return randomItem(data[opt2]) + ' ' + randomItem(data['suffix']) + ' ' + randomItem(data['name']);
+                return randomItem(data['name']) + ' ' + randomItem(data[opt1]) + ' ' + randomItem(data['suffix']);
             }
         case 'magicacademy':
             prefix = randomItem(data['prefix']);
