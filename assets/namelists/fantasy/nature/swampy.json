@@ -3,7 +3,8 @@
     "description": "Namelist for randomly generated swamp/marshland features.",
     "prefix": [
         "random-nature-sharedleafy-prefix",
-        "random-nature-sharedleafy-prefixrandom"
+        "random-nature-sharedleafy-prefixadjective",
+        "random-nature-sharedleafy-prefixracial"
     ],
     "suffix": [
         "Bayou",

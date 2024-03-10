@@ -3,20 +3,23 @@
     "description": "Green-ish naturals can all pick from these names.",
     "prefix": [
         "Autumn",
-        "Black",
-        "Bleak",
-        "Dark",
-        "Lily",
-        "Redwood",
-        "Yolona"
+        "Spring",
+        "Summer",
+        "Winter"
     ],
-    "prefixrandom": [
+    "prefixracial": [
         "random-races/human-eastern-surname",
         "random-races/elf-highelf-surname",
         "random-races/human-western-surname",
         "random-races/elf-woodelf-surname",
         "random-locations-sharedsettlements-human",
-        "random-locations-sharedsettlements-elf",
-        "random-shared/util-resources-colors"
+        "random-locations-sharedsettlements-elf"
+    ],
+    "prefixadjective": [
+        "random-shared/util-resources-colors",
+        "random-shared/util-resources-environmentalharsh",
+        "random-shared/util-resources-materials",
+        "random-shared/util-resources-flowers",
+        "random-shared/util-resources-trees"
     ]
 }

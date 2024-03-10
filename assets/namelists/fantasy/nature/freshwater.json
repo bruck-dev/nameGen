@@ -3,7 +3,8 @@
     "description": "Freshwater feature namelist.",
     "prefix": [
         "random-nature-sharedleafy-prefix",
-        "random-nature-sharedleafy-prefixrandom"
+        "random-nature-sharedleafy-prefixadjective",
+        "random-nature-sharedleafy-prefixracial"
     ],
     "suffix": [
         "Brook",
@@ -11,7 +12,6 @@
         "Falls",
         "Lake",
         "Pond",
-        "Rapids",
         "River",
         "Run",
         "Stream"

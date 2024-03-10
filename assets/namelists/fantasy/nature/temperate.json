@@ -3,14 +3,14 @@
     "description": "Namelist for randomly generated temperate features.",
     "prefix": [
         "random-nature-sharedleafy-prefix",
-        "random-nature-sharedleafy-prefixrandom"
+        "random-nature-sharedleafy-prefixadjective",
+        "random-nature-sharedleafy-prefixracial"
     ],
     "suffix": [
         "Bluff",
         "Dale",
         "Fields",
         "Forest",
-        "Geyser",
         "Grove",
         "Hills",
         "Hollow",

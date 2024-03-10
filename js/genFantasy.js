@@ -387,9 +387,9 @@ function generateFantasyLocation(root, subfolder, list, race, size)
             // Construct one from the other keys
             else
             {
-                const noun = randomItem(['animals', 'objects', 'people'])
+                const noun = randomItem(['animals', 'objects', 'people', 'flowers'])
                 let descriptors = ['quantity', 'colors', 'materials'];
-                if(noun != 'objects')
+                if(noun != 'objects' && noun != 'flowers')
                 {
                     descriptors.push('adjectives');
                 }
@@ -439,31 +439,42 @@ function generateFantasyOrg(root, subfolder, list, opt1)
                 return randomItem(data['name']) + ' ' + randomItem(data[opt1]) + ' ' + randomItem(data['suffix']);
             }
         case 'magicacademy':
-            prefix = randomItem(data['prefix']);
-
-            // Check if prefix includes random sublist selectors
-            if(prefix.includes('random-'))
+            if(Math.random() < 0.5)
             {
+                prefix = randomItem(data['prefix']);
+            }
+            else
+            {
+                prefix = randomItem(data['prefixrandom']);
                 let randomParameters = prefix.split('-');
-                if(!prefix.includes('surname')) // Nature case
+                if(prefix.includes('nature'))
                 {
                     prefix = generateSimple(root, randomParameters[1], randomParameters[2]);
+                }
+                else if(prefix.includes('realms'))
+                {
+                    prefix = generateFantasyLocation(root, subfolder, list, race, size)
                 }
                 else // Surname founder case
                 {
                     prefix = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                    if(Math.random() < 0.2) // Saint xyz University
+                    {
+                        prefix = 'Saint ' + prefix;
+                    }
                 }
             }
+
             generatedName += prefix;
             if(Math.random() < 0.25)
             {
-                let optPrefix = randomItem(data['optionalprefix']);
+                let optPrefix = randomItem(data['adjective']);
                 generatedName += ' ' + optPrefix;
             }
             generatedName += ' ' + randomItem(data['type']);
             if(Math.random() < 0.5)
             {
-                generatedName += ' ' + randomItem(data['optionalsuffix']);
+                generatedName += ' ' + randomItem(data['suffix']);
             }
             return generatedName;
     }
