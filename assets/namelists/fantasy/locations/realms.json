@@ -3,6 +3,7 @@
     "description": "List of fantasy realm names.",
     "human": [
         "Elodran",
+        "Enora",
         "Gerin",
         "Hessia",
         "Laesia",
@@ -17,14 +18,26 @@
         "random-races/human-western-surname"
     ],
     "elf": [
+        "Alanar",
+        "Alereia",
+        "Anelor",
         "Ayinor",
+        "Belanore",
+        "Calvinor",
         "Elaera",
         "Elhenas",
+        "Elunore",
+        "Elysia",
+        "Entheas",
         "Erelond",
         "Illadorei",
         "Lyellon",
+        "Maeriel",
+        "Myehna",
         "Relthwin",
-        "Selenor"
+        "Selenor",
+        "Seluria",
+        "Syll Unarith"
     ],
     "elfrandom": [
         "random-races/elf-drow-surname",
@@ -32,7 +45,9 @@
     ],
     "dwarf": [
         "Durn Olfrir",
-        "Krûnbar"
+        "Haldrach",
+        "Krûnbar",
+        "Thalmir"
     ],
     "dwarfrandom": [
         "random-races/dwarf-dwarf-surname"

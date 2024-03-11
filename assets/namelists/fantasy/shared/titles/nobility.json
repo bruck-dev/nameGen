@@ -29,19 +29,20 @@
     "elffemale": [],
     "elfneutral": [],
     "dwarfmale": [
+        "Forgelord",
         "Mountain King",
         "Stone King",
         "Stonelord",
         "Underking"
     ],
     "dwarffemale": [
+        "Forgelady",
         "Mountain Queen",
         "Stone Queen",
         "Stonelady",
         "Underqueen"
     ],
     "dwarfneutral": [
-        "Forgelord",
         "Hammerthane",
         "Oathkeeper",
         "Thane"
@@ -68,8 +69,8 @@
         "Grand Princess",
         "High Queen",
         "Lady",
+        "Lady-Consort",
         "Matriarch",
-        "Matron",
         "Princess",
         "Queen",
         "Vicerine",
@@ -85,6 +86,7 @@
         "High King",
         "King",
         "Lord",
+        "Lord-Consort",
         "Patriarch",
         "Prince",
         "Viceroy",
@@ -114,13 +116,37 @@
         "Jarl",
         "Thane"
     ],
-    "nordicmale": [
+    "slavicmale": [
+        "Boyar",
+        "Czar",
+        "Knyaz",
         "Tsar"
     ],
-    "nordicfemale": [
-        "Tsarina"
+    "slavicfemale": [
+        "Boyarina",
+        "Czarina",
+        "Knyazina",
+        "Tsarina",
+        "Tsaritsa"
     ],
     "tieflingneutral": [
         "Praetor"
+    ],
+    "highelfmale": [
+        "Kinlord"
+    ],
+    "highelffemale": [
+        "Kinlady"
+    ],
+    "drowfemale": [
+        "Matron"
+    ],
+    "easternmale": [
+        "Daimyō",
+        "Shōgun",
+        "Tianzi"
+    ],
+    "easternfemale": [
+        "Onna-Daimyō"
     ]
 }

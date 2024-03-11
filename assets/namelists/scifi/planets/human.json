@@ -2,24 +2,110 @@
     "title": "Human Planet Namelist",
     "description": "Human planet namelist.",
     "temperate": [
-
+        "Concord",
+        "Solaria",
+        "Victoria",
+        "Cordelia",
+        "Arteria",
+        "Miranda",
+        "Ophelia",
+        "Morgaina",
+        "Asteria",
+        "Carlia",
+        "Mindiria",
+        "Eirene",
+        "Meridian",
+        "Rhea",
+        "Liann",
+        "Ezra",
+        "Constance",
+        "Corinal",
+        "Arcadia",
+        "New Holland",
+        "Minerva",
+        "Abenhald",
+        "Jiaying",
+        "Unity",
+        "Theia",
+        "Cascadia",
+        "Shepherd",
+        "Enora"
     ],
     "snowy": [
-
+        "Abenstadt",
+        "Aurora",
+        "Borealis",
+        "Calton",
+        "Carrow",
+        "Chosin",
+        "Dakota",
+        "Deadrock",
+        "Jinsu",
+        "Jotunheim",
+        "New Austria",
+        "New Hokkaido",
+        "Sigurd",
+        "Ursa",
+        "Valgaard",
+        "Vilsbruck",
+        "Waldorf"
     ],
     "arid": [
-
+        "Eiro",
+        "Accona",
+        "Bardenas",
+        "Scirocco",
+        "Anand",
+        "Andon",
+        "Corregan",
+        "Sobek",
+        "Bikana",
+        "Ordos",
+        "Khara",
+        "Horus",
+        "Tanis",
+        "Solas",
+        "Kali",
+        "New Jerusalem",
+        "Byko"
     ],
     "aquatic": [
-
+        "Hyderia",
+        "Euxina",
+        "Pacifica",
+        "Meredith Bay",
+        "New Tianjin",
+        "Amadora",
+        "Crescent"
     ],
-    "paradisal" : [
-
+    "tropical": [
+        "Khersonia",
+        "Amazonia",
+        "Lianshu",
+        "New Hanoi",
+        "Rana",
+        "Veridian",
+        "Kinh",
+        "Kishkindha",
+        "New Kinshasa"
+    ],
+    "paradisal": [
+        "Haven",
+        "Eden",
+        "Sanctuary",
+        "Elysium",
+        "Paragon"
     ],
     "ecumenopolis": [
-        "Citadel"
+        "Citadel",
+        "New Tokyo",
+        "New Beijing"
     ],
     "uninhabitable": [
-
+        "Sedra",
+        "Chiron",
+        "Itera",
+        "Acrion",
+        "Giles"
     ]
 }

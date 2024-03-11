@@ -4,94 +4,13 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     let generatedName = '';
     let race = localStorage.getItem('subfolder').slice(6); // gets base race
     gender = gender.toLowerCase();
-    namelist = namelist.toLowerCase();
+    namelist = namelist.replaceAll(' ', '').toLowerCase();
 
     // Special conditions
     if(namelist == "virtue") // genderless and no surnames, ignore inputs
     {
         gender = "neutral";
         surname = false;
-    }
-    
-    // Picks a title
-    if(title)
-    {
-        const data = getNamelist(root, 'shared/titles', title);
-        let subraceTitles = [];
-        let raceTitles =[];
-        let genericTitles = [];
-
-        // Check for subrace titles
-        subraceTitles = subraceTitles.concat(data[namelist + gender]);
-        subraceTitles = subraceTitles.concat(data[namelist + 'neutral']);
-
-        // Check for race specific titles
-        raceTitles = raceTitles.concat(data[race + gender]);
-        raceTitles = raceTitles.concat(data[race + 'neutral']);
-
-        // Check for generic titles
-        genericTitles = genericTitles.concat(data[gender]);
-        genericTitles = genericTitles.concat(data['neutral']);
-
-        // Remove any undefined values, i.e. disregarding any namelists that don't exist
-        subraceTitles = subraceTitles.filter(function( element ) {
-            return element !== undefined;
-         });
-
-        raceTitles = raceTitles.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        genericTitles = genericTitles.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        // Pick a random from the lists, weighted. Checks if lists have values first.
-        generatedTitle = '';
-        const rando = Math.random();
-        if(raceTitles.length == 0 && subraceTitles.length == 0)
-        {
-            generatedTitle = randomItem(genericTitles);
-        }
-        else if(subraceTitles.length == 0 && raceTitles.length != 0)
-        {
-            if(rando < 0.6)
-            {
-                generatedTitle = randomItem(raceTitles);
-            }
-            else
-            {
-                generatedTitle = randomItem(genericTitles);
-            }
-        }
-        else if(subraceTitles.length != 0 && raceTitles.length == 0)
-        {
-            if(rando < 0.6)
-            {
-                generatedTitle = randomItem(subraceTitles);
-            }
-            else
-            {
-                generatedTitle = randomItem(genericTitles);
-            }
-        }
-        else
-        {
-            if(rando < 0.45)
-            {
-                generatedTitle = randomItem(subraceTitles);
-            }
-            else if(rando < 0.70)
-            {
-                generatedTitle = randomItem(raceTitles);
-            }
-            else
-            {
-                generatedTitle = randomItem(genericTitles);
-            }
-        }
-
-        generatedName += generatedTitle + ' ';
     }
 
     // Picks a given name and surname if enabled
@@ -159,6 +78,87 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
                 generatedName += pickedSur;
             }
         }
+    }
+
+    // Picks a title
+    if(title)
+    {
+        const data = getNamelist(root, 'shared/titles', title);
+        let subraceTitles = [];
+        let raceTitles =[];
+        let genericTitles = [];
+
+        // Check for subrace titles
+        subraceTitles = subraceTitles.concat(data[namelist + gender]);
+        subraceTitles = subraceTitles.concat(data[namelist + 'neutral']);
+
+        // Check for race specific titles
+        raceTitles = raceTitles.concat(data[race + gender]);
+        raceTitles = raceTitles.concat(data[race + 'neutral']);
+
+        // Check for generic titles
+        genericTitles = genericTitles.concat(data[gender]);
+        genericTitles = genericTitles.concat(data['neutral']);
+
+        // Remove any undefined values, i.e. disregarding any namelists that don't exist
+        subraceTitles = subraceTitles.filter(function( element ) {
+            return element !== undefined;
+            });
+
+        raceTitles = raceTitles.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        genericTitles = genericTitles.filter(function( element ) {
+            return element !== undefined;
+        });
+
+        // Pick a random from the lists, weighted. Checks if lists have values first.
+        generatedTitle = '';
+        const rando = Math.random();
+        if(raceTitles.length == 0 && subraceTitles.length == 0)
+        {
+            generatedTitle = randomItem(genericTitles);
+        }
+        else if(subraceTitles.length == 0 && raceTitles.length != 0)
+        {
+            if(rando < 0.6)
+            {
+                generatedTitle = randomItem(raceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
+        }
+        else if(subraceTitles.length != 0 && raceTitles.length == 0)
+        {
+            if(rando < 0.6)
+            {
+                generatedTitle = randomItem(subraceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
+        }
+        else
+        {
+            if(rando < 0.35)
+            {
+                generatedTitle = randomItem(subraceTitles);
+            }
+            else if(rando < 0.65)
+            {
+                generatedTitle = randomItem(raceTitles);
+            }
+            else
+            {
+                generatedTitle = randomItem(genericTitles);
+            }
+        }
+
+        generatedName = generatedTitle + ' ' + generatedName;
     }
 
     // Picks an epithet if enabled

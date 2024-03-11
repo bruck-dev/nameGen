@@ -1,0 +1,20 @@
+{
+    "title": "Abstract Alien Planet Namelist",
+    "description": "Abstract alien planet namelist.",
+    "temperate": [
+    ],
+    "snowy": [
+    ],
+    "arid": [
+    ],
+    "aquatic": [
+    ],
+    "tropical": [
+    ],
+    "paradisal" : [
+    ],
+    "ecumenopolis": [
+    ],
+    "uninhabitable": [
+    ]
+}

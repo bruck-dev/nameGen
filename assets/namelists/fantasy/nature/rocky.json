@@ -14,11 +14,13 @@
         "Cavern",
         "Crest",
         "Divide",
+        "Karst",
         "Mountain Range",
         "Mountains",
         "Plateau",
         "Range",
         "Ridge",
-        "Summit"
+        "Summit",
+        "Volcano"
     ]
 }

@@ -63,6 +63,10 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             {
                 generatedOutput = generateSciFiSpacecraft(root, subfolder, opt1, opt2, opt3);
             }
+            if(subfolder.includes('planets'))
+            {
+                generatedOutput = generateSciFiPlanet(root, subfolder, opt1, opt2);
+            }
         break;
     }
     return generatedOutput;

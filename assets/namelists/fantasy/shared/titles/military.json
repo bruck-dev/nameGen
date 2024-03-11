@@ -16,12 +16,10 @@
         "Woman-At-Arms"
     ],
     "neutral": [
-        "Adjudicator",
         "Battlemage",
         "Captain",
         "Commander",
         "General",
-        "Justiciar",
         "Lieutenant",
         "Marshal",
         "Officer",
@@ -58,5 +56,8 @@
     ],
     "orcmale": [
         "Warchief"
+    ],
+    "highelfneutral": [
+        "Justiciar"
     ]
 }
