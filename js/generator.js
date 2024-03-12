@@ -67,6 +67,10 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             {
                 generatedOutput = generateSciFiPlanet(root, subfolder, opt1, opt2);
             }
+            if(subfolder.includes('organizations'))
+            {
+                generatedOutput = generateSciFiOrg(root, subfolder, list, opt1, opt2);
+            }
         break;
     }
     return generatedOutput;

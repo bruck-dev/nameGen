@@ -1,0 +1,171 @@
+{
+    "title": "Sci-Fi Corporation Namelist",
+    "description": "Weyland-Yutani moment.",
+    "acronym": [],
+    "asian": [
+        "Geza",
+        "Huada",
+        "Ishida",
+        "Jiaying",
+        "Jinsu",
+        "Kaiba",
+        "Kakao",
+        "Laoshan",
+        "Neotokyo",
+        "New Beijing",
+        "New Taipei",
+        "Taira",
+        "Tajima",
+        "Zhujiang",
+        "ChiCom",
+        "KORTEL"
+    ],
+    "western": [
+        "Abenstadt",
+        "Abbott",
+        "Atlantic",
+        "Cardinal",
+        "Crown",
+        "Concordia",
+        "Eden",
+        "Emperor",
+        "Heimdall",
+        "Paladin",
+        "Reservoir",
+        "Sobek",
+        "Wyvern",
+        "Valgaard"
+    ],
+    "soviet": [
+        "Lavrov",
+        "Sokolov",
+        "BELRUS",
+        "Rustek",
+        "Ural",
+        "RUSTEL"
+    ],
+    "adjgeneric": [
+        "Corporate"
+    ],
+    "adjdefense": [
+        "Aeronautics",
+        "Aerospace",
+        "Advanced Defense",
+        "Defense",
+        "Heavy",
+        "Shipbuilding",
+        "Military",
+        "Tactical"
+    ],
+    "adjindustrial": [
+        "Heavy",
+        "Industrial",
+        "Resource"
+    ],
+    "adjrnd": [
+        "Advanced",
+        "Engineering"
+    ],
+    "adjlogistics": [
+
+    ],
+    "adjpmc": [
+        "Defense",
+        "Intelligence",
+        "Police",
+        "Security",
+        "Tactical"
+    ],
+    "adjtech": [
+        "Advanced"
+    ],
+    "adjmedical": [
+        "Advanced",
+        "Medical"
+    ],
+    "sufgeneric": [
+        "Association",
+        "Combine",
+        "Company",
+        "Concern",
+        "Conglomerate",
+        "Corporation",
+        "Enterprises",
+        "Group",
+        "Holdings",
+        "Incorporated",
+        "Services",
+        "Solutions"
+    ],
+    "sufdefense": [
+        "Industries",
+        "Manufacturing",
+        "Laboratories",
+        "Systems"
+    ],
+    "sufindustrial": [
+        "Consortium",
+        "Construction",
+        "Extraction",
+        "Industries",
+        "Manufacturing",
+        "Nanomaterials",
+        "Processing",
+        "Works"
+    ],
+    "sufrnd": [
+        "Engineering",
+        "Innovations",
+        "Laboratories",
+        "Technologies",
+        "Research",
+        "Bioengineering",
+        "Sciences",
+        "Computing",
+        "Design",
+        "Systems"
+    ],
+    "suflogistics": [
+        "Logistics",
+        "Shipping and Receiving",
+        "Interstellar",
+        "Transportation",
+        "Freight",
+        "Fulfillment",
+        "Suppliers",
+        "International",
+        "Global"
+    ],
+    "sufpmc": [
+        "Consulting",
+        "Peacekeeping",
+        "Security",
+        "Systems",
+        "Intelligence"
+    ],
+    "suftech": [
+        "Cybernetics",
+        "Electronics",
+        "Software",
+        "Microelectronics",
+        "Computing",
+        "Robotics",
+        "Engineering",
+        "Systems",
+        "Quantum Computing"
+    ],
+    "sufmedical": [
+        "Biotechnologies",
+        "Biotech",
+        "Pharmaceuticals",
+        "Bioengineering",
+        "Laboratories",
+        "Nanotechnologies",
+        "Cybernetics",
+        "Medical Technology",
+        "Sciences",
+        "Research",
+        "Chemicals",
+        "Systems"
+    ]
+}
