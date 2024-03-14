@@ -3,8 +3,6 @@
     "description": "List of fantasy realm names.",
     "human": [
         "Elodran",
-        "Enora",
-        "Gerin",
         "Hessia",
         "Laesia",
         "Mirelen",
@@ -13,65 +11,53 @@
         "Volaneux"
     ],
     "humanrandom": [
+        "random-locations-shared-human",
         "random-races/human-eastern-surname",
         "random-races/human-slavic-surname",
         "random-races/human-western-surname"
     ],
     "elf": [
-        "Alanar",
-        "Alereia",
-        "Anelor",
-        "Ayinor",
-        "Belanore",
-        "Calvinor",
-        "Elaera",
-        "Elhenas",
-        "Elunore",
-        "Elysia",
-        "Entheas",
-        "Erelond",
-        "Illadorei",
-        "Lyellon",
-        "Maeriel",
-        "Myehna",
-        "Relthwin",
-        "Selenor",
-        "Seluria",
-        "Syll Unarith"
+        
     ],
     "elfrandom": [
-        "random-races/elf-drow-surname",
-        "random-races/elf-woodelf-surname"
+        "random-locations-shared-elf",
+        "random-locations-shared-elfrandom"
     ],
     "dwarf": [
-        "Durn Olfrir",
-        "Haldrach",
-        "Krûnbar",
-        "Thalmir"
+
     ],
     "dwarfrandom": [
-        "random-races/dwarf-dwarf-surname"
+        "random-locations-shared-dwarf",
+        "random-locations-shared-dwarfrandom"
     ],
     "orc": [
-        "Margashburz"
+
     ],
     "orcrandom": [
-        "random-races/orc-orc-surname"
+        "random-locations-shared-orcrandom",
+        "random-locations-shared-orc"
     ],
     "humansmall": [
         "Earldom",
         "Hold"
     ],
     "humanmedium": [
-        "Jarldom"
+        "Grand Duchy",
+        "Grand Principality",
+        "Principality",
+        "Jarldom",
+        "House"
     ],
     "humanlarge": [
         "High Kingdom",
         "Republic",
-        "Sovereignty"
+        "Sovereignty",
+        "Empire"
     ],
     "elfsmall": [],
-    "elfmedium": [],
+    "elfmedium": [
+        "House"
+    ],
     "elflarge": [
         "Elven Realm"
     ],
@@ -81,13 +67,13 @@
         "Oath"
     ],
     "dwarfmedium": [
-        "High Chiefdom",
-        "Province"
+        "High Chiefdom"
     ],
     "dwarflarge": [
         "Dwarf Clan",
         "High Kingdom",
-        "Underkingdom"
+        "Underkingdom",
+        "Empire"
     ],
     "orcsmall": [
         "Chiefdom",
@@ -98,7 +84,8 @@
     ],
     "orclarge": [
         "War Tribe",
-        "Orcish Clan"
+        "Orcish Clan",
+        "High Kingdom"
     ],
     "tiny": [
         "Barony"
@@ -109,14 +96,10 @@
     "medium": [
         "Archduchy",
         "Duchy",
-        "Grand Duchy",
-        "Grand Principality",
-        "Principality",
         "Province"
     ],
     "large": [
         "Kingdom",
-        "Dominion",
-        "Empire"
+        "Dominion"
     ]
 }

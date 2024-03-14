@@ -1,19 +1,21 @@
 {
     "title": "Military Titles Namelist",
     "description": "Namelist for military title prefixes.",
-    "humanmale": [
+    "westernmale": [
         "Knight",
-        "Knight-Errant"
-    ],
-    "humanfemale": [
-        "Knightess",
-        "Knightess-Errant"
-    ],
-    "male": [
+        "Knight-Errant",
         "Man-At-Arms"
     ],
-    "female": [
+    "westernfemale": [
+        "Knightess",
+        "Knightess-Errant",
         "Woman-At-Arms"
+    ],
+    "male": [
+        
+    ],
+    "female": [
+        
     ],
     "neutral": [
         "Battlemage",
@@ -57,7 +59,13 @@
     "orcmale": [
         "Warchief"
     ],
+    "elfneutral": [
+        "Warden"
+    ],
     "highelfneutral": [
         "Justiciar"
+    ],
+    "woodelfneutral": [
+        "Forest Warden"
     ]
 }

@@ -58,7 +58,7 @@ function generateSciFiOrg(root, subfolder, list, opt1, opt2)
             if(opt2 == 'acronym')
             {
                 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                let acronymLength = Math.random() * (4 - 2) + 2; // Random size between 2 and 4
+                let acronymLength = Math.random() * (4 - 1) + 1; // Random size between 2 and 4
 
                 while (generatedName.length < acronymLength) {
                     generatedName += alphabet[Math.floor(Math.random() * alphabet.length)];

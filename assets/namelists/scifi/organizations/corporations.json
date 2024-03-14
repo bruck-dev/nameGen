@@ -18,7 +18,33 @@
         "Tajima",
         "Zhujiang",
         "ChiCom",
-        "KORTEL"
+        "Teshio",
+        "Asahikawa",
+        "Amaterasu",
+        "Anshun",
+        "Qianxi",
+        "Baoding",
+        "Xinzheng",
+        "Danjiangkou",
+        "Jecheon",
+        "Seosan",
+        "Asukai",
+        "Akazome",
+        "Kaijin",
+        "Yaichi",
+        "Aizu",
+        "Ishizuka",
+        "Ishikawa",
+        "Kyoshi",
+        "Jinzai",
+        "Kindaichi",
+        "Anshi",
+        "Zhilin",
+        "Nianxi",
+        "Xiaowan",
+        "Anjin",
+        "Seok",
+        "Song"
     ],
     "western": [
         "Abenstadt",
@@ -42,7 +68,8 @@
         "BELRUS",
         "Rustek",
         "Ural",
-        "RUSTEL"
+        "RUSTEL",
+        "Transbaikal"
     ],
     "adjgeneric": [
         "Corporate"
@@ -64,7 +91,8 @@
     ],
     "adjrnd": [
         "Advanced",
-        "Engineering"
+        "Engineering",
+        "Quantum"
     ],
     "adjlogistics": [
 
@@ -77,7 +105,8 @@
         "Tactical"
     ],
     "adjtech": [
-        "Advanced"
+        "Advanced",
+        "Quantum"
     ],
     "adjmedical": [
         "Advanced",
@@ -151,8 +180,7 @@
         "Computing",
         "Robotics",
         "Engineering",
-        "Systems",
-        "Quantum Computing"
+        "Systems"
     ],
     "sufmedical": [
         "Biotechnologies",
@@ -166,6 +194,8 @@
         "Sciences",
         "Research",
         "Chemicals",
-        "Systems"
+        "Systems",
+        "Genetics",
+        "Cryogenics"
     ]
 }

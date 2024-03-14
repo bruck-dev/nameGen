@@ -2,24 +2,25 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
-        "random-locations-sharedsettlements-human",
-        "random-locations-sharedsettlements-humanrandom"
+        "random-locations-shared-human",
+        "random-locations-shared-humanrandom"
     ],
     "elf": [
-        "random-locations-sharedsettlements-elf",
-        "random-locations-sharedsettlements-elfrandom"
+        "random-locations-shared-elf",
+        "random-locations-shared-elfrandom"
     ],
     "dwarf": [
-        "random-locations-sharedsettlements-dwarf",
-        "random-locations-sharedsettlements-dwarfrandom"
+        "random-locations-shared-dwarf",
+        "random-locations-shared-dwarfrandom"
     ],
     "orc": [
-        "random-locations-sharedsettlements-orc",
-        "random-locations-sharedsettlements-orcrandom"
+        "random-locations-shared-orc",
+        "random-locations-shared-orcrandom"
     ],
     "tiny": [
         "Abbey",
         " Bridge",
+        " Community",
         " Crossing",
         " Crossroads",
         "Farm",
@@ -29,15 +30,19 @@
         "Mill",
         "Mine",
         "Outpost",
-        "Ranch"
+        "Ranch",
+        "Ward"
     ],
     "small": [
         " Crossing",
         " Crossroads",
+        "District",
         "Fort ",
-        "Village"
+        "Village",
+        "Ward"
     ],
     "medium": [
+        "District",
         " Fortress",
         " Keep",
         "Town",

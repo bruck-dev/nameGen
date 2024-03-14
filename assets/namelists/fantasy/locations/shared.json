@@ -13,7 +13,10 @@
         "Myrcourt",
         "Oulia",
         "Ravenwood",
-        "Yolona"
+        "Yolona",
+        "Enora",
+        "Gerin",
+        "Marshpoint"
     ],
     "humanrandom": [
         "random-nature-temperate",
@@ -22,6 +25,26 @@
         "random-races/human-western-surname"
     ],
     "elf": [
+        "Alanar",
+        "Alereia",
+        "Anelor",
+        "Ayinor",
+        "Belanore",
+        "Calvinor",
+        "Elaera",
+        "Elhenas",
+        "Elunore",
+        "Elysia",
+        "Entheas",
+        "Erelond",
+        "Illadorei",
+        "Lyellon",
+        "Maeriel",
+        "Myehna",
+        "Relthwin",
+        "Selenor",
+        "Seluria",
+        "Syll Unarith",
         "Caelora",
         "Elunore",
         "Emhel",
@@ -56,7 +79,11 @@
         "Kar-Seor",
         "Kholdor",
         "Nador",
-        "Stonespire"
+        "Stonespire",
+        "Durn Olfrir",
+        "Haldrach",
+        "Krûnbar",
+        "Thalmir"
     ],
     "dwarfrandom": [
         "random-races/dwarf-dwarf-surname"
@@ -64,9 +91,10 @@
     "orc": [
         "Dûl Ord",
         "Nak Goz",
-        "Urgduz"
+        "Urgduz",
+        "Margashburz"
     ],
     "orcrandom": [
-        "random-race/orc-orc-surname"
+        "random-races/orc-orc-surname"
     ]
 }

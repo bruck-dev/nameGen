@@ -2,7 +2,6 @@
     "title": "Freshwater",
     "description": "Freshwater feature namelist.",
     "prefix": [
-        "random-nature-sharedleafy-prefix",
         "random-nature-sharedleafy-prefixadjective",
         "random-nature-sharedleafy-prefixracial"
     ],
@@ -14,6 +13,7 @@
         "Pond",
         "River",
         "Run",
+        "Spring",
         "Stream"
     ]
 }

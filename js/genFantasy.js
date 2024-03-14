@@ -276,7 +276,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
             }
 
             let tier = ''
-            if(Math.random() < 0.6 && tierRacial.length > 0)
+            if(Math.random() < 0.65 && tierRacial.length > 0)
             {
                 tier = randomItem(tierRacial);
             }
@@ -287,7 +287,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
 
             let name = '';
             // Weighted choice between random construction sets or pre-made sets
-            if(Math.random() < 0.55)
+            if(Math.random() < 0.40 && data[race].length > 0)
             {
                 name = randomItem(data[race]);
             }

@@ -292,17 +292,26 @@
         "Blighted",
         "Burned",
         "Cold",
+        "Cracked",
         "Dark",
         "Desolate",
         "Frozen",
         "Grim",
         "Mournful",
         "Scorched",
-        "Windswept"
+        "Windswept",
+        "Pale",
+        "Winter"
     ],
     "environmentalpleasant": [
+        "Summer",
+        "Autumn",
         "Pleasant",
-        "Sunlight"
+        "Sunlight",
+        "Sun",
+        "Moonlight",
+        "Moon",
+        "Breezy"
     ],
     "flowers": [
         "Daisy",

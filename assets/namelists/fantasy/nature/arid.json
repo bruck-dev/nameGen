@@ -2,15 +2,22 @@
     "title": "Arid/Desert Namelist",
     "description": "Namelist for randomly generated deserts and arid features.",
     "prefix": [
+        "random-nature-arid-prefixarid",
+        "random-nature-arid-prefixrandom"
+    ],
+    "prefixrandom": [
+        "random-races/elf-darkelf-surname",
+        "random-races/human-eastern-surname",
+        "random-races/tiefling-infernal-surname",
+        "random-shared/util-resources-colors",
+        "random-shared/util-resources-environmentalharsh"
+    ],
+    "prefixarid": [
         "Blackrock",
         "Bohdan's",
         "Brokerock",
         "Drywinds",
-        "Red Sands",
-        "random-races/elf-darkelf-surname",
-        "random-races/human-eastern-surname",
-        "random-races/tiefling-infernal-surname",
-        "random-shared/util-resources-colors"
+        "Red Sands"
     ],
     "suffix": [
         "Barrens",
