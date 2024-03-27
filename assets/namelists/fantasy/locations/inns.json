@@ -13,28 +13,28 @@
         "Pub"
     ],
     "colors": [
-        "random-shared/util-resources-colors"
+        "random-util-resources-colors"
     ],
     "materials": [
-        "random-shared/util-resources-materials"
+        "random-util-resources-materials"
     ],
     "adjectives": [
-        "random-shared/util-resources-adjectives"
+        "random-util-resources-adjectives"
     ],
     "animals": [
-        "random-shared/util-resources-creatures"
+        "random-util-resources-creatures"
     ],
     "objects": [
-        "random-shared/util-resources-objects"
+        "random-util-resources-objects"
     ],
     "people": [
-        "random-shared/util-resources-people"
+        "random-util-resources-people"
     ],
     "quantity": [
-        "random-shared/util-resources-quantity"
+        "random-util-resources-quantity"
     ],
     "flowers": [
-        "random-shared/util-resources-flowers"
+        "random-util-resources-flowers"
     ],
     "preset": [
         "Cat's Whiskers",

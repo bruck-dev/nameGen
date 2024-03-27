@@ -7,9 +7,9 @@
         "random-races/dwarf-dwarf-surname",
         "random-races/tiefling-infernal-surname",
         "random-races/human-western-surname",
-        "random-shared/util-resources-colors",
-        "random-shared/util-resources-environmentalharsh",
-        "random-shared/util-resources-materials"
+        "random-util-resources-colors",
+        "random-util-resources-environmentalharsh",
+        "random-util-resources-materials"
     ],
     "suffix": [
         "Cave",

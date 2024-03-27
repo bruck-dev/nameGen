@@ -17,6 +17,11 @@ def getLowestSubdir(firstDir):
     for root,dirs,files in os.walk(firstDir):
         if files and not dirs:
             lowestDir.append(root)
+        elif files and dirs:
+            for file in files:
+                if file.endswith(".json"):
+                    lowestDir.append(root)
+                    break
     return lowestDir
             
 def getJson(path):

@@ -128,17 +128,24 @@ function generateSciFiName(root, subfolder, namelist=null, gender=null, surname=
             randomParameters = firstName.split('-');
             firstName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
         }
-        generatedName +=  firstName + ' '
+        generatedName = firstName;
 
         if(surname)
         {
             let surname = randomItem(data['surname']);
-            if(surname.includes('random-'))
+            if(namelist == 'krogan' || namelist == 'salarian')
             {
-                randomParameters = surname.split('-');
-                surname = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                generatedName = surname + ' ' + generatedName;
             }
-            generatedName += surname;
+            else
+            {
+                if(surname.includes('random-'))
+                {
+                    randomParameters = surname.split('-');
+                    surname = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                }
+                generatedName += ' ' + surname;            
+            }
         }
     }
 

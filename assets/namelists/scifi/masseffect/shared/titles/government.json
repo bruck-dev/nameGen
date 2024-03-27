@@ -23,5 +23,19 @@
     "humanneutral": [
         "MP",
         "Prime Minister"
+    ],
+    "kroganmale": [
+        "Chief",
+        "Patriarch"
+    ],
+    "kroganfemale": [
+        "Chieftess"
+    ],
+    "kroganneutral": [
+        "Shaman"
+    ],
+    "salarianfemale": [
+        "Dalatrass",
+        "Matriarch"
     ]
 }

@@ -31,7 +31,8 @@
         "Mine",
         "Outpost",
         "Ranch",
-        "Ward"
+        "Ward",
+        " Orchard"
     ],
     "small": [
         " Crossing",
@@ -39,7 +40,8 @@
         "District",
         "Fort ",
         "Village",
-        "Ward"
+        "Ward",
+        " Orchards"
     ],
     "medium": [
         "District",

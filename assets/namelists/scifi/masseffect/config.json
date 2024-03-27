@@ -3,10 +3,11 @@
     "description": "Sets dropdown configurations and labels. First entry is the label.",
     "opt1": [
         "Race",
-        "Human",
         "Asari",
         "Turian",
-        "Quarian"
+        "Quarian",
+        "Krogan",
+        "Salarian"
         
     ],
     "opt2": [

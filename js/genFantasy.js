@@ -83,7 +83,7 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     // Picks a title
     if(title)
     {
-        const data = getNamelist(root, 'shared/titles', title);
+        const data = getNamelist(root, 'races/shared/titles', title);
         let subraceTitles = [];
         let raceTitles =[];
         let genericTitles = [];
@@ -164,7 +164,7 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     // Picks an epithet if enabled
     if(epithet)
     {
-        const data = getNamelist(root, 'shared/epithets', epithet);
+        const data = getNamelist(root, 'races/shared/epithets', epithet);
         let nick = '';
         let subraceNicks = [];
         let raceNicks =[];

@@ -107,10 +107,10 @@
         "Chiron",
         "Acrion",
         "Itera",
-        "random-shared/util-resources-scientists"
+        "random-util-resources-scientists"
     ],
     "generic": [
-        "random-shared/util-resources-scientists",
-        "random-shared/util-resources-astronauts"
+        "random-util-resources-scientists",
+        "random-util-resources-astronauts"
     ]
 }

@@ -2,8 +2,8 @@
     "title": "Saltwater Namelist",
     "description": "Saltwater feature namelist.",
     "prefix": [
-        "random-shared/util-resources-colors",
-        "random-shared/util-resources-environmentalharsh"
+        "random-util-resources-colors",
+        "random-util-resources-environmentalharsh"
     ],
     "suffix": [
         "Atoll",

@@ -54,7 +54,7 @@
         "Crown",
         "Concordia",
         "Eden",
-        "Emperor",
+        "Empire",
         "Heimdall",
         "Paladin",
         "Reservoir",
@@ -196,6 +196,7 @@
         "Chemicals",
         "Systems",
         "Genetics",
-        "Cryogenics"
+        "Cryogenics",
+        "Antibiotics"
     ]
 }
