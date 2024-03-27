@@ -32,7 +32,13 @@ function generateSciFiPlanet(root, subfolder, climate, style)
     style = style.replaceAll(' ', '').toLowerCase();
     climate = climate.replaceAll(' ', '').toLowerCase();
     const data = getNamelist(root, subfolder, style);
-    let name = randomItem(data[climate].concat(data['generic']));
+
+    let names = data[climate];
+    if(climate != 'uninhabitable' && climate != 'paradisal')
+    {
+        names = names.concat(data['generic']);
+    }
+    let name = randomItem(names)
 
     if(name.includes('random-'))
     {
