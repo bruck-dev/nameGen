@@ -1,0 +1,59 @@
+{
+    "title": "Dune Human Planet Namelist",
+    "description": "Human planet namelist, sort of like Dune-ish.",
+    "temperate": [
+        "Asteria",
+        "Calydon",
+        "Carlia",
+        "Cordelia",
+        "Corinal",
+        "Enora",
+        "Lian",
+        "Morgaina",
+        "Orianna",
+        "Rhea",
+        "Theia"
+    ],
+    "snowy": [
+        "Calton",
+        "Carrow",
+        "Rell"
+    ],
+    "arid": [
+        "Amathea",
+        "Eiro",
+        "Accona",
+        "Andon",
+        "Corregan",
+        "Sobek",
+        "Bikana",
+        "Ordos",
+        "Khara",
+        "Tanis",
+        "Solas"
+    ],
+    "aquatic": [
+        "Amadora",
+        "Dorsa",
+        "Lacon"
+    ],
+    "tropical": [
+        "Caliban",
+        "Rana"
+    ],
+    "paradisal": [
+        "Eden",
+        "Elysium"
+    ],
+    "ecumenopolis": [
+        "Citadel"
+    ],
+    "uninhabitable": [
+        "Sedra",
+        "Itera",
+        "Acrion"
+    ],
+    "generic": [
+
+    ]
+}

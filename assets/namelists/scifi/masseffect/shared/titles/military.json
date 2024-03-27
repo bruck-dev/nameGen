@@ -1,0 +1,31 @@
+{
+    "title": "Military Titles Namelist",
+    "description": "Namelist for military title prefixes.",
+    "male": [
+        
+    ],
+    "female": [
+        
+    ],
+    "neutral": [
+        "Captain",
+        "Commander",
+        "General",
+        "Lieutenant",
+        "Officer",
+        "Sergeant",
+        "Specialist",
+        "Corporal",
+        "Private",
+        "Admiral",
+        "Colonel"
+    ],
+    "asarineutral": [
+        "Justicar"
+    ],
+    "turianneutral": [
+        "Auxiliary",
+        "Centurion",
+        "Hastatus"
+    ]
+}

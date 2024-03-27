@@ -1,0 +1,39 @@
+{
+    "title": "Resources Namelist",
+    "description": "Shared resource list.",
+    "scientists": [
+        "Einstein",
+        "Bohr",
+        "Hawking",
+        "Halley",
+        "Herschel",
+        "Sagan",
+        "Linnaeus",
+        "Darwin",
+        "Nobel",
+        "Bell",
+        "Planck",
+        "Franklin",
+        "Watson",
+        "Crick",
+        "Curie",
+        "Mendel",
+        "Rutherford",
+        "Faraday",
+        "Hooke",
+        "Edison",
+        "Turing"
+    ],
+    "astronauts": [
+        "Armstrong",
+        "Aldrin",
+        "Shepard",
+        "Glenn",
+        "Gagarin",
+        "Hadfield",
+        "Tereshkova",
+        "Grissom",
+        "Chaffee",
+        "Komarov"
+    ]
+}

@@ -16,6 +16,7 @@
         "Overseer",
         "Proctor",
         "Seneschal",
-        "Steward"
+        "Steward",
+        "Administrator"
     ]
 }

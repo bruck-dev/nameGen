@@ -1,0 +1,27 @@
+{
+    "title": "ME Goverment Titles Namelist",
+    "description": "Namelist for government title prefixes.",
+    "male": [
+        
+    ],
+    "female": [
+        
+    ],
+    "neutral": [
+        "Councilor",
+        "Overseer",
+        "Administrator",
+        "Minister",
+        "Ambassador"
+    ],
+    "asarineutral": [
+        "Matriarch"
+    ],
+    "turianneutral": [
+        "Primarch"
+    ],
+    "humanneutral": [
+        "MP",
+        "Prime Minister"
+    ]
+}

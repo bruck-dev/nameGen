@@ -1,0 +1,27 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations and labels. First entry is the label.",
+    "opt1": [
+        "Race",
+        "Human",
+        "Asari",
+        "Turian",
+        "Quarian"
+        
+    ],
+    "opt2": [
+        "Gender",
+        "Male",
+        "Female"
+    ],
+    "opt3": [
+        "Surname",
+        "true"
+    ],
+    "opt4": [
+        "Title",
+        "root-masseffect/shared/titles-lists"
+    ],
+    "opt5": [
+    ]
+}

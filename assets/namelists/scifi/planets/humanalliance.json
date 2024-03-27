@@ -1,6 +1,6 @@
 {
     "title": "Human Planet Namelist",
-    "description": "Human planet namelist.",
+    "description": "Human planet namelist, like if the UN named them.",
     "temperate": [
         "Concord",
         "Solaria",
@@ -79,15 +79,16 @@
         "Crescent"
     ],
     "tropical": [
-        "Khersonia",
         "Amazonia",
-        "Lianshu",
-        "New Hanoi",
-        "Rana",
-        "Veridian",
+        "Caliban",
+        "Khersonia",
         "Kinh",
         "Kishkindha",
-        "New Kinshasa"
+        "Lianshu",
+        "New Hanoi",
+        "New Kinshasa",
+        "Rana",
+        "Veridian"
     ],
     "paradisal": [
         "Haven",
@@ -104,8 +105,12 @@
     "uninhabitable": [
         "Sedra",
         "Chiron",
-        "Itera",
         "Acrion",
-        "Giles"
+        "Itera",
+        "random-shared/util-resources-scientists"
+    ],
+    "generic": [
+        "random-shared/util-resources-scientists",
+        "random-shared/util-resources-astronauts"
     ]
 }
