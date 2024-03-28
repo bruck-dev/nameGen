@@ -82,7 +82,7 @@ class Main(QMainWindow):
         
         jsonSubfolderLabel = QLabel('Subfolder')
         self.jsonSubfolderCombo = QComboBox()
-        self.jsonSubfolderCombo.addItems(getLowestSubdir(self.jsonRootCombo.currentText()))
+        self.jsonSubfolderCombo.addItems(getJsonDirectories(self.jsonRootCombo.currentText()))
         self.jsonSubfolderCombo.setFixedSize(225, 25)
         
         jsonFileLabel = QLabel('JSON File')
@@ -274,7 +274,7 @@ class Main(QMainWindow):
     def rootUpdated(self):
         self.jsonSubfolderCombo.blockSignals(True)
         self.jsonSubfolderCombo.clear()
-        self.jsonSubfolderCombo.addItems(getLowestSubdir(self.jsonRootCombo.currentText()))
+        self.jsonSubfolderCombo.addItems(getJsonDirectories(self.jsonRootCombo.currentText()))
         self.jsonSubfolderCombo.blockSignals(False)
         
         self.jsonFileCombo.blockSignals(True)

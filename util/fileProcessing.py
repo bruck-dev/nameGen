@@ -12,17 +12,17 @@ import os
 def getMusic():
     return glob.glob("assets/music/*.wav") + glob.glob("assets/music/*.mp3") + glob.glob("assets/music/*.flac")
 
-def getLowestSubdir(firstDir):
-    lowestDir = list()
+def getJsonDirectories(firstDir):
+    directories = list()
     for root,dirs,files in os.walk(firstDir):
         if files and not dirs:
-            lowestDir.append(root)
+            directories.append(root)
         elif files and dirs:
             for file in files:
                 if file.endswith(".json"):
-                    lowestDir.append(root)
+                    directories.append(root)
                     break
-    return lowestDir
+    return directories
             
 def getJson(path):
     paths = glob.glob(path + '/*.json')
