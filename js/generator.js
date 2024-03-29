@@ -56,6 +56,10 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             {
                 generatedOutput = generateFantasyOrg(root, subfolder, list, opt1);
             }
+            else if(subfolder.includes('deities'))
+            {
+                generatedOutput = generateFantasyDeity(root, subfolder, opt1, opt2, opt3, opt4, opt5);
+            }
         break;
 
         case 'scifi':

@@ -417,7 +417,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
     }
 }
 
-// Handles fantasy organization generations
+// Handles fantasy organization generation
 function generateFantasyOrg(root, subfolder, list, opt1)
 {
     const data = getNamelist(root, subfolder, list);
@@ -478,4 +478,83 @@ function generateFantasyOrg(root, subfolder, list, opt1)
             }
             return generatedName;
     }
+}
+
+// Handles deity generation
+function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, title=true, domain1=null, domain2=null,)
+{
+    const data = getNamelist(root, subfolder, 'deities');
+    let generatedName = '';
+    aspect = aspect.toLowerCase();
+    alignment = alignment.toLowerCase();
+    if(aspect == 'indeterminate')
+    {
+        generatedName = randomItem(data[aspect + 'neutral'].concat(data[aspect + alignment]));
+    }
+    else
+    {
+        generatedName = randomItem(data[aspect]);
+    }
+    if(domain1)
+    {
+        domain1 = domain1.replaceAll('/', '').toLowerCase();
+    }
+    if(domain2)
+    {
+        domain2 = domain2.replaceAll('/', '').toLowerCase();
+    }
+
+    if(title && ( domain1 != null || domain2 != null))
+    {
+        const domainsWithAlignment = ['life', 'death', 'violent', 'conceptual', 'governance'];
+        if(domain1 != null)
+        {
+            let domain1List = [];
+            if(domainsWithAlignment.indexOf(domain1) != -1)
+            {
+                domain1List = data[domain1 + alignment];
+                if(alignment != 'neutral')
+                {
+                    domain1List = data[domain1 + alignment].concat(data[domain1 + 'neutral']);
+                }
+            }
+            else
+            {
+                domain1List = data[domain1];
+            }
+            domain1 = randomItem(domain1List)
+            generatedName += ', ' + randomItem(data['titles' + aspect]) + ' of ' + domain1;
+        }
+        if(domain2 != null)
+        {
+            let domain2List = [];
+            if(domainsWithAlignment.indexOf(domain2) != -1)
+            {
+                domain2List = data[domain2 + alignment];
+                if(alignment != 'neutral')
+                {
+                    domain2List = data[domain2 + alignment].concat(data[domain2 + 'neutral']);
+                }
+            }
+            else
+            {
+                domain2List = data[domain2];
+            }
+            if(domain1 == null)
+            {
+                generatedName += ', ' + randomItem(data['titles' + aspect]) + ' of ' + randomItem(domain2List);  
+            }
+            else
+            {
+                domain2 = randomItem(domain2List);
+                // no duplicates allowed
+                while(domain1 == domain2)
+                {
+                    domain2 = randomItem(domain2List);
+                }
+                generatedName += ' and ' + domain2;
+            }
+        }
+    }
+    return generatedName;
 }
