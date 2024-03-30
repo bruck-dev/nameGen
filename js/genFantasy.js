@@ -506,7 +506,7 @@ function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, titl
 
     if(title && ( domain1 != null || domain2 != null))
     {
-        const domainsWithAlignment = ['life', 'death', 'violent', 'conceptual', 'governance'];
+        const domainsWithAlignment = ['life', 'death', 'conflict', 'conceptual', 'laworder'];
         if(domain1 != null)
         {
             let domain1List = [];

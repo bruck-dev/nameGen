@@ -1,26 +1,13 @@
 {
-    "title": "Spaceships and Stations Namelist",
-    "description": "Sci-Fi spaceship/station namelist. Shared accessed by all except station, others are specific to select options.",
+    "title": "Pirate spacecraft Namelist",
+    "description": "Pirates. Used by most pirate generators because I think it's a good list.",
     "prefix": [
-        "AE",
-        "AFS",
-        "EAS",
-        "GSV",
-        "IAV",
-        "IMS",
-        "ISC",
-        "ISD",
-        "ISS",
-        "MCRN",
-        "ROU",
-        "RSV",
-        "UNE",
-        "UNN",
-        "UNSC",
-        "USCSS",
-        "USS"
+        "ISS"
     ],
-    "pirateshared": [
+    "civilian": [
+        "random-masseffect/spacecraft-pirate-military"
+    ],
+    "military": [
         "2nd Amendment",
         "5th Amendment",
         "About Time",
@@ -192,16 +179,12 @@
         "Yes I Deserted",
         "You Are Being Robbed"
     ],
-    "civilianshared": [],
-    "militaryshared": [],
-    "militarycapital": [
-        "Harbinger of Redemption",
-        "Lord of War"
+    "capital": [
+        "random-masseffect/spacecraft-pirate-military"
     ],
-    "piratecapital": [
-
-    ],
-    "civiliancapital": [
-        
+    "station": [
+        "Safe Harbor",
+        "The Big House",
+        "Unsafe Harbor"
     ]
 }

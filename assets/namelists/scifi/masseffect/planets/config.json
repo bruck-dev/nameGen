@@ -1,0 +1,25 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations and labels. First entry is the label.",
+    "opt1": [
+        "Climate",
+        "Temperate",
+        "Tropical",
+        "Aquatic",
+        "Arid",
+        "Snowy",
+        "Paradisal",
+        "Ecumenopolis",
+        "Uninhabitable"
+    ],
+    "opt2": [
+        "Style",
+        "Alliance"
+    ],
+    "opt3": [
+    ],
+    "opt4": [
+    ],
+    "opt5": [
+    ]
+}

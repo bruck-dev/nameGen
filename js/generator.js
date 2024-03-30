@@ -75,7 +75,7 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             {
                 generatedOutput = generateSciFiOrg(root, subfolder, list, opt1, opt2);
             }
-            if(subfolder.includes('masseffect'))
+            if(subfolder.includes('masseffect/races'))
             {
                 generatedOutput = generateSciFiName(root, subfolder, opt1, opt2, opt3, opt4);
             }

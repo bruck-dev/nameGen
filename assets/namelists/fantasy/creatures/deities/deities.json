@@ -96,6 +96,7 @@
         "Inria",
         "Itara",
         "Iventa",
+        "Ivryn",
         "Iyanna",
         "Izona",
         "Jain",
@@ -135,6 +136,7 @@
         "Valessa",
         "Velena",
         "Vera",
+        "Xera",
         "Xeris",
         "Yvraine"
     ],
@@ -148,15 +150,16 @@
         "The Savior"
     ],
     "indeterminateneutral": [
+        "The Absent One",
+        "The All-Knowing",
+        "The All-Seeing",
+        "The Astral",
+        "The Boundless",
+        "The Dreamer",
         "The Nameless One",
         "The Old One",
         "The Shard",
-        "The Dreamer",
-        "The All-Seeing",
-        "The Absent One",
-        "The Astral",
-        "The Boundless",
-        "The All-Knowing"
+        "The Weaver"
     ],
     "indeterminateevil": [
         "The Destroyer",
@@ -166,19 +169,22 @@
         "Goddess",
         "Lady",
         "Matron",
-        "Mother"
+        "Mother",
+        "Queen"
     ],
     "titlesmasculine": [
+        "Father",
         "God",
+        "King",
         "Lord",
-        "Prince",
         "Patron",
-        "Father"
+        "Prince"
     ],
     "titlesindeterminate": [
+        "Embodiment",
+        "Font",
         "God",
-        "Spirit",
-        "Embodiment"
+        "Spirit"
     ],
     "lifegood": [
         "Abundance",
@@ -201,6 +207,7 @@
         "Forests",
         "Grass",
         "Growth",
+        "Hunts",
         "Life",
         "Nature",
         "the Wilderness"
@@ -220,8 +227,8 @@
     ],
     "deathneutral": [
         "Beginnings",
-        "Bones",
         "Death",
+        "Ends",
         "Graves",
         "Souls",
         "Spirits",
@@ -229,17 +236,20 @@
         "the Underworld"
     ],
     "deathevil": [
-        "Necromancy",
+        "Bones",
         "Corpses",
+        "Necromancy",
         "the Undead"
     ],
-    "violentgood": [
-        "Glory",
-        "Strategy",
+    "conflictgood": [
+        "Challenges",
+        "Competition",
         "Generals",
-        "Soldiers"
+        "Glory",
+        "Soldiers",
+        "Strategy"
     ],
-    "violentneutral": [
+    "conflictneutral": [
         "Assassins",
         "Conquest",
         "Retribution",
@@ -247,9 +257,10 @@
         "Vengeance",
         "War",
         "Wrath",
-        "the Hunt"
+        "Conflict",
+        "Struggle"
     ],
-    "violentevil": [
+    "conflictevil": [
         "Betrayal",
         "Blood",
         "Destruction",
@@ -258,7 +269,8 @@
         "Rage",
         "Suffering",
         "Torture",
-        "Violence"
+        "Violence",
+        "Strife"
     ],
     "conceptualgood": [
         "Beauty",
@@ -275,6 +287,7 @@
         "Love",
         "Music",
         "Peace",
+        "Poetry",
         "Protection",
         "Temperance",
         "Truth",
@@ -294,6 +307,7 @@
         "Pride",
         "Secrets",
         "Strength",
+        "Time",
         "Travel",
         "Trickery",
         "Unity",
@@ -315,14 +329,13 @@
         "Madness",
         "Rage"
     ],
-    "governancegood": [
+    "lawordergood": [
         "Justice",
         "Protection",
         "Fairness",
         "Liberation"
     ],
-    "governanceneutral": [
-        "Change",
+    "laworderneutral": [
         "Diplomats",
         "Discipline",
         "Judgement",
@@ -330,16 +343,18 @@
         "Nobility",
         "Order",
         "Rulership",
-        "Stewardship"
+        "Stewardship",
+        "Governance"
     ],
-    "governanceevil": [
+    "laworderevil": [
         "Tyranny",
         "Oppression",
         "Slavery",
         "Chaos"
     ],
-    "artisanal": [
+    "crafts": [
         "Artists",
+        "Artisans",
         "Avarice",
         "Brewers",
         "Craftsmen",
@@ -354,49 +369,61 @@
     "magical": [
         "Arcana",
         "Illusions",
+        "Ingenuity",
         "Knowledge",
         "Learning",
+        "Logic",
         "Magi",
         "Magic",
+        "Reason",
         "Sorcerers",
         "Students",
         "Wisdom",
         "Wizards",
         "the Arcane"
     ],
-    "lightwarm": [
-        "Fire",
-        "Summer",
-        "the Sun",
+    "light": [
+        "Dawn",
         "Daylight",
-        "Warmth",
         "Light",
-        "Dawn"
+        "Summer",
+        "the Sun"
     ],
     "dark": [
         "Darkness",
+        "Dusk",
+        "Moonlight",
         "Night",
         "Shadow",
-        "Moonlight",
-        "the Moon",
         "Twilight",
-        "Dusk"
+        "the Moon",
+        "the Stars"
+    ],
+    "heat": [
+        "Fire",
+        "Summer",
+        "Warmth",
+        "the Forges",
+        "Hearths",
+        "the Sun"
     ],
     "cold": [
-        "Snow",
-        "Ice",
-        "Winter",
+        "Blizzards",
         "Cold",
+        "Fog",
+        "Ice",
         "Mist",
-        "Fog"
+        "Snow",
+        "Winter"
     ],
     "water": [
-        "the Seas",
-        "Oceans",
+        "Floods",
         "Lakes",
-        "Rivers",
+        "Oceans",
         "Rainfall",
-        "Floods"
+        "Rivers",
+        "Sailors",
+        "the Seas"
     ],
     "earth": [
         "Stones",

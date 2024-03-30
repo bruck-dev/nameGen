@@ -128,8 +128,8 @@
         "Olympia"
     ],
     "uninhabitable": [
-        "random-planets-humanalliance-uninhabitablerandom",
-        "random-planets-humanalliance-uninhabitablepreset"
+        "random-masseffect/planets-alliance-uninhabitablerandom",
+        "random-masseffect/planets-alliance-uninhabitablepreset"
     ],
     "uninhabitablerandom": [
         "random-util-resources-scientists",

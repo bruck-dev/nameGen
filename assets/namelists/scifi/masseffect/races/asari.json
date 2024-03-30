@@ -2,7 +2,7 @@
     "title": "Asari Namelist",
     "description": "Asari from Mass Effect. Monogendered so all just points to female as is the general style in-game.",
     "male": [
-        "random-masseffect-asari-female"
+        "random-masseffect/races-asari-female"
     ],
     "female": [
         "Aeian",

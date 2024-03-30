@@ -29,16 +29,17 @@
         "None",
         "Life",
         "Death",
-        "Light/Warm",
+        "Light",
         "Dark",
+        "Heat",
         "Cold",
         "Water",
         "Earth",
         "Air",
         "Conceptual",
-        "Violent",
+        "Conflict",
         "Magical",
-        "Artisanal",
-        "Governance"
+        "Crafts",
+        "Law/Order"
     ]
 }

@@ -2,14 +2,20 @@
     "title": "Config file",
     "description": "Sets dropdown configurations and labels. First entry is the label.",
     "opt1": [
-        "Type",
-        "Civilian",
-        "Military",
+        "Faction",
+        "Alliance",
+        "Asari",
+        "Turian",
+        "Quarian",
+        "Krogan",
+        "Salarian",
+        "Batarian",
         "Pirate"
     ],
     "opt2": [
         "Class",
-        "Standard",
+        "Civilian",
+        "Military",
         "Capital",
         "Station"
     ],

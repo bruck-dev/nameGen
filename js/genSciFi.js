@@ -1,29 +1,22 @@
 // Handles Sci-Fi spacecraft generation
-function generateSciFiSpacecraft(root, subfolder, type, shipclass, usePrefix)
+function generateSciFiSpacecraft(root, subfolder, faction, shipclass, usePrefix)
 {
-    let generatedName = '';
-    const data = getNamelist(root, subfolder, 'ships');
-    if(shipclass == 'Station')
+    faction = faction.toLowerCase();
+    shipclass = shipclass.replaceAll(' ', '').toLowerCase();
+    const data = getNamelist(root, subfolder, faction);
+
+    let generatedName = randomItem(data[shipclass]);
+    if(generatedName.includes('random-'))
     {
-        generatedName = randomItem(getNamelist(root, subfolder, 'stations')[type.toLowerCase()]);
-    }
-    else if(shipclass != 'Standard')
-    {
-        generatedName = randomItem(data[type.toLowerCase() + shipclass.toLowerCase()].concat(data[type.toLowerCase() + 'shared']));
-    }
-    else
-    {
-        generatedName = randomItem(data[type.toLowerCase() + 'shared']);
+        randomParameters = generatedName.split('-');
+        generatedName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
     }
 
     if(usePrefix)
     {
-        return randomItem(getNamelist(root, subfolder, 'shared')['prefix']) + ' ' + generatedName;
+        generatedName = randomItem(data['prefix']) + ' ' + generatedName;
     }
-    else
-    {
-        return generatedName;
-    }
+    return generatedName;
 }
 
 // Handles Sci-Fi planet generation

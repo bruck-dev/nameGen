@@ -1,0 +1,26 @@
+{
+    "title": "Alliance Spacecraft Namelist",
+    "description": "Modern humans, essentially. Named after mountains, people, cities, etc.",
+    "prefix": [
+        "SSV",
+        "UNN",
+        "UNSC",
+        "USS",
+        "RSV"
+    ],
+    "civilian": [
+
+    ],
+    "military": [
+        "random-util-resources-cities",
+        "random-util-resources-scientists",
+        "random-util-resources-battles"
+    ],
+    "capital": [
+        "random-util-resources-mountains",
+        "random-util-resources-generals"
+    ],
+    "station": [
+
+    ]
+}
