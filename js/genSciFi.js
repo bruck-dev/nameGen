@@ -39,11 +39,18 @@ function generateSciFiPlanet(root, subfolder, climate, style)
         name = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
     }
 
-    if(!(name.indexOf(' ') > -1))
+    if(name.indexOf(' ') == -1)
     {
-        if(Math.random() < 0.2)
+        const modifier = Math.random();
+        // Acheron IV
+        if(modifier < 0.15)
         {
             name += ' ' + randomItem(getNamelist(root, subfolder, 'shared')['suffix']);
+        }
+        // 47 Acheron
+        else if(modifier < 0.25)
+        {
+            name = '' + getRandomInt(1, 400) + ' ' + name;
         }
     }
     return name;

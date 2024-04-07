@@ -1,0 +1,60 @@
+{
+    "title": "Alliance Spacecraft Namelist",
+    "description": "Modern humans, essentially. Named after mountains, people, cities, etc.",
+    "prefix": [
+        "ARA",
+        "ARN",
+        "ARV"
+    ],
+    "civilian": [
+        "random-masseffect/spacecraft-asari-military"
+    ],
+    "military": [
+        "Agessia",
+        "Ameretat",
+        "Armali",
+        "Asha",
+        "Cybaen",
+        "Cyone",
+        "Epaelaras",
+        "Hanalei",
+        "Ialessa",
+        "Illium",
+        "Kelandion",
+        "Kerishna",
+        "Kurinth",
+        "Lucen",
+        "Nefrane",
+        "Nevos",
+        "Oseros",
+        "Peraellon",
+        "Petrichor",
+        "Sanves",
+        "Selvos",
+        "Silea",
+        "Teukria",
+        "Tevos",
+        "Tevura",
+        "Zesmeni"
+    ],
+    "capital": [
+        "Ahltania",
+        "Alune",
+        "Athame",
+        "Destiny Ascension",
+        "Galea",
+        "Janiri",
+        "Kralla",
+        "Kurinth",
+        "Lucen",
+        "Parnitha",
+        "Piares",
+        "Siari",
+        "Teukria",
+        "Tevura",
+        "Thessia"
+    ],
+    "station": [
+        "random-masseffect/spacecraft-asari-military"
+    ]
+}

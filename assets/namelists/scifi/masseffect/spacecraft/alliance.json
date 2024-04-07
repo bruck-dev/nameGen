@@ -9,7 +9,7 @@
         "RSV"
     ],
     "civilian": [
-
+        "random-util-resources-cities"
     ],
     "military": [
         "random-util-resources-cities",
@@ -18,9 +18,10 @@
     ],
     "capital": [
         "random-util-resources-mountains",
-        "random-util-resources-generals"
+        "random-util-resources-generals",
+        "random-util-resources-battles"
     ],
     "station": [
-
+        "random-util-resources-cities"
     ]
 }
