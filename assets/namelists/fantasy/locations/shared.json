@@ -1,7 +1,7 @@
 {
     "title": "Settlements shared sublist",
     "description": "Contains constant and random names.",
-    "human": [
+    "humansettlement": [
         "Cotia",
         "Dunham",
         "Dunharrow",
@@ -21,13 +21,23 @@
         "Ravenwood",
         "Yolona"
     ],
+    "humanrealm": [
+        "Erodan",
+        "Hessia",
+        "Ladina",
+        "Laesia",
+        "Mirelen",
+        "Osteran",
+        "Relain",
+        "Volaneux"
+    ],
     "humanrandom": [
         "random-nature-temperate",
         "random-races/human-eastern-surname",
         "random-races/human-slavic-surname",
         "random-races/human-western-surname"
     ],
-    "elf": [
+    "elfsettlement": [
         "Alanar",
         "Alereia",
         "Anelor",
@@ -72,13 +82,14 @@
         "random-races/elf-woodelf-surname",
         "random-races/elf-drow-surname"
     ],
-    "dwarf": [
+    "dwarfsettlement": [
         "Doleor",
         "Durn Olfrir",
         "Eduhr",
         "Gedum",
         "Haldrach",
         "Holgrun",
+        "Ironkeep",
         "Ironsong",
         "Kar-Akor",
         "Kar-Seor",
@@ -92,7 +103,7 @@
     "dwarfrandom": [
         "random-races/dwarf-dwarf-surname"
     ],
-    "orc": [
+    "orcsettlement": [
         "Dûl Ord",
         "Nak Goz",
         "Urgduz",

@@ -2,19 +2,19 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
-        "random-locations-shared-human",
+        "random-locations-shared-humansettlement",
         "random-locations-shared-humanrandom"
     ],
     "elf": [
-        "random-locations-shared-elf",
+        "random-locations-shared-elfsettlement",
         "random-locations-shared-elfrandom"
     ],
     "dwarf": [
-        "random-locations-shared-dwarf",
+        "random-locations-shared-dwarfsettlement",
         "random-locations-shared-dwarfrandom"
     ],
     "orc": [
-        "random-locations-shared-orc",
+        "random-locations-shared-orcsettlement",
         "random-locations-shared-orcrandom"
     ],
     "tiny": [

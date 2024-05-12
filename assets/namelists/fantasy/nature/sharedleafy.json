@@ -6,8 +6,8 @@
         "random-races/elf-highelf-surname",
         "random-races/human-western-surname",
         "random-races/elf-woodelf-surname",
-        "random-locations-shared-human",
-        "random-locations-shared-elf"
+        "random-locations-shared-humansettlement",
+        "random-locations-shared-elfsettlement"
     ],
     "prefixadjective": [
         "random-util-resources-colors",

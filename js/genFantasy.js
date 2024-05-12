@@ -260,10 +260,9 @@ function generateFantasyLocation(root, subfolder, list, race, size)
     let generatedName = '';
     switch(list)
     {
-        // At some point I need to go in and unfuck the shared logic for realms and settlements, needs a redo
         case 'realms':
-            let tierRacial = data[(race + size)];
-            const tierGeneric = data[size];
+            let tierRacial = data[('tier-' + race + size)];
+            const tierGeneric = data['tier-' + size];
 
             if(tierRacial != undefined)
             {
@@ -288,24 +287,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
 
             let name = '';
             // Weighted choice between random construction sets or pre-made sets
-            if(Math.random() < 0.40 && data[race].length > 0)
-            {
-                name = randomItem(data[race]);
-            }
-            else
-            {
-                try
-                {
-                    // Check if racial randoms exist
-                    if(data[race + 'random'].length != 0)
-                    {
-                        name = randomItem(data[race + 'random']);
-                    }
-                }
-                catch(error) {
-                    name = randomItem(data[race]);
-                }
-            }
+            name = randomItem(data[race]);
             if(name.includes('random-'))
             {
                 const randomParameters = name.split('-');
