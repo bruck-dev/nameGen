@@ -260,6 +260,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
     let generatedName = '';
     switch(list)
     {
+        // At some point I need to go in and unfuck the shared logic for realms and settlements, needs a redo
         case 'realms':
             let tierRacial = data[(race + size)];
             const tierGeneric = data[size];

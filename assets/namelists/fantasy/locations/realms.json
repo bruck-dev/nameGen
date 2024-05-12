@@ -2,8 +2,9 @@
     "title": "Realms Namelist",
     "description": "List of fantasy realm names.",
     "human": [
-        "Elodran",
+        "Erodan",
         "Hessia",
+        "Ladina",
         "Laesia",
         "Mirelen",
         "Osteran",
@@ -16,23 +17,17 @@
         "random-races/human-slavic-surname",
         "random-races/human-western-surname"
     ],
-    "elf": [
-        
-    ],
+    "elf": [],
     "elfrandom": [
         "random-locations-shared-elf",
         "random-locations-shared-elfrandom"
     ],
-    "dwarf": [
-
-    ],
+    "dwarf": [],
     "dwarfrandom": [
         "random-locations-shared-dwarf",
         "random-locations-shared-dwarfrandom"
     ],
-    "orc": [
-
-    ],
+    "orc": [],
     "orcrandom": [
         "random-locations-shared-orcrandom",
         "random-locations-shared-orc"
