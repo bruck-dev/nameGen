@@ -1,0 +1,9 @@
+{
+    "title": "Sets file",
+    "description": "List of lists that can be used as dropdown options",
+    "titlelists": [
+        "None",
+        "Government",
+        "Military"
+    ]
+}

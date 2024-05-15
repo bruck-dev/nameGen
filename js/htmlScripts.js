@@ -38,9 +38,16 @@ function createConstantElements()
 // Constructs the frontend for the generator page - varies based on passed genType
 function createGeneratorUI()
 {
-  const config = getJson('assets/namelists/' + localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/config.json');
+  const config = getJson('assets/namelists/config.json');
   let visible = false;
-  const list = localStorage.getItem('list');
+
+  // Check if the config is per list or per subfolder
+  let list = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');;
+  if(config[list] == undefined)
+  {
+    list = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder');
+  }
+  
   try
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
@@ -152,7 +159,8 @@ function setSelectContent(selectid, contentList)
       {
         path += pathSplit[j] + '/';
       }
-      newContent = newContent.concat(getJson(path + 'config.json')[pathSplit.at(-1)]);
+      path = path.slice(0, -1) + '.json'; // remove last /
+      newContent = newContent.concat(getJson(path)[pathSplit.at(-1)]);
     }
 
     contentList = newContent;

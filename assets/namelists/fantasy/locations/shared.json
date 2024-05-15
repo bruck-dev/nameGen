@@ -92,11 +92,15 @@
     ],
     "dwarfsettlement": [
         "Bakraz",
+        "Blackhorn",
         "Doleor",
+        "Durn Baldak",
         "Durn Olfrir",
         "Eduhr",
         "Gedum",
+        "Gorunn",
         "Haldrach",
+        "Hammerhall",
         "Holgrun",
         "Ironkeep",
         "Ironsong",
@@ -109,11 +113,12 @@
         "Krûnbar",
         "Mekraz",
         "Nador",
+        "Silverstone",
         "Stonespire",
         "Thalmir"
     ],
     "dwarfrandom": [
-        "random-races/dwarf-dwarf-surname"
+        "random-nature-rocky"
     ],
     "orcsettlement": [
         "Dûl Ord",

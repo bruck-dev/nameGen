@@ -1,6 +1,23 @@
 {
     "title": "Fantasy Deities Namelist",
     "description": "Fantasy Deity name set. Components included.",
+    "domains": [
+        "None",
+        "Life",
+        "Death",
+        "Light",
+        "Dark",
+        "Heat",
+        "Cold",
+        "Water",
+        "Earth",
+        "Air",
+        "Conceptual",
+        "Conflict",
+        "Magical",
+        "Crafts",
+        "Law/Order"
+    ],
     "masculine": [
         "Aenin",
         "Aeric",

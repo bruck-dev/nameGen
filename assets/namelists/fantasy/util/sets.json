@@ -1,0 +1,20 @@
+{
+    "title": "Sets file",
+    "description": "List of lists that can be used as dropdown options",
+    "epithetlists": [
+        "None",
+        "Animals",
+        "Nicknames",
+        "Sobriquets",
+        "Suffixes"
+    ],
+    "titlelists": [
+        "None",
+        "Government",
+        "Magic",
+        "Military",
+        "Nobility",
+        "Peasant",
+        "Religious"
+    ]
+}

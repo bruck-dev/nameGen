@@ -44,7 +44,7 @@ function getRandomName(root, subfolder, list, key, excludes=null)
         }
         while(word.includes('Random-')) // returned capitalized
     }
-    return word.charAt(0).toUpperCase() + word.slice(1); // Capitalizes the first letter just in case 
+    return word.charAt(0).toUpperCase() + word.slice(1); // Capitalizes the first letter just in case
 }
 
 function pluralizeNoun(word)
@@ -56,7 +56,8 @@ function pluralizeNoun(word)
         "child:children",
         "person:people",
         "samurai:samurai",
-        "ronin:ronin"
+        "ronin:ronin",
+        "mouse:mice"
     ];
     const uncountable = [
         "sheep",

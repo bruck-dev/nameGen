@@ -1,0 +1,436 @@
+{
+    "title": "Config file",
+    "description": "Sets dropdown configurations",
+    "fantasy/creatures/deities": {
+        "opt1": [
+            "Aspect",
+            "Masculine",
+            "Feminine",
+            "Indeterminate"
+        ],
+        "opt2": [
+            "Alignment",
+            "Good",
+            "Neutral",
+            "Evil"
+        ],
+        "opt3": [
+            "Title",
+            "true"
+        ],
+        "opt4": [
+            "1st Domain",
+            "root-creatures/deities-domains"
+        ],
+        "opt5": [
+            "2nd Domain",
+            "root-creatures/deities-domains"
+        ]
+    },
+    "fantasy/locations/settlements": {
+        "opt1": [
+            "Race",
+            "Human",
+            "Elf",
+            "Dwarf",
+            "Orc"
+        ],
+        "opt2": [
+            "Size",
+            "Tiny",
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/locations/realms": {
+        "opt1": [
+            "Race",
+            "Human",
+            "Elf",
+            "Dwarf",
+            "Orc"
+        ],
+        "opt2": [
+            "Size",
+            "Tiny",
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/locations/inns": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/nature": {
+        "opt1": [
+            "Biome",
+            "Arctic",
+            "Arid",
+            "Freshwater",
+            "Rocky",
+            "Saltwater",
+            "Humid",
+            "Temperate"
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/organizations/guilds": {
+        "opt1": [
+            "Adventurers",
+            "Assassins",
+            "Criminals",
+            "Mages",
+            "Merchants"
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+    
+        ],
+        "opt4": [
+    
+        ],
+        "opt5": [
+            
+        ]
+    },
+    "fantasy/organizations/orders": {
+        "opt1": [
+            "Priestly",
+            "Militant"
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [ 
+        ]
+    },
+   "fantasy/organizations/magicacademy": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/organizations/gangs": {
+        "opt1": [
+        ],
+        "opt2": [
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "fantasy/races/dwarf": {
+        "opt1": [
+            "Subrace",
+            "Dwarf"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "fantasy/races/elf": {
+        "opt1": [
+            "Subrace",
+            "High Elf",
+            "Wood Elf",
+            "Dark Elf",
+            "Drow"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "fantasy/races/halfing": {
+        "opt1": [
+            "Subrace",
+            "Halfling"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "fantasy/races/human": {
+        "opt1": [
+            "Subrace",
+            "Western",
+            "Eastern",
+            "Nordic",
+            "Slavic"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "fantasy/races/orc": {
+        "opt1": [
+            "Subrace",
+            "Orc"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "fantasy/races/tiefling": {
+        "opt1": [
+            "Subrace",
+            "Infernal",
+            "Virtue"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+            "Epithet",
+            "root-util-sets-epithetlists"
+        ]
+    },
+    "scifi/masseffect/planets": {
+        "opt1": [
+            "Climate",
+            "Temperate",
+            "Tropical",
+            "Aquatic",
+            "Arid",
+            "Snowy",
+            "Paradisal",
+            "Ecumenopolis",
+            "Uninhabitable"
+        ],
+        "opt2": [
+            "Style",
+            "Alliance"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "scifi/masseffect/races": {
+        "opt1": [
+            "Race",
+            "Asari",
+            "Turian",
+            "Quarian",
+            "Krogan",
+            "Salarian",
+            "Batarian"
+        ],
+        "opt2": [
+            "Gender",
+            "Male",
+            "Female"
+        ],
+        "opt3": [
+            "Surname",
+            "true"
+        ],
+        "opt4": [
+            "Title",
+            "root-util-sets-titlelists"
+        ],
+        "opt5": [
+        ]
+    },
+    "scifi/masseffect/spacecraft": {
+        "opt1": [
+            "Faction",
+            "Alliance",
+            "Asari",
+            "Turian",
+            "Quarian",
+            "Krogan",
+            "Salarian",
+            "Batarian",
+            "Pirate"
+        ],
+        "opt2": [
+            "Class",
+            "Civilian",
+            "Military",
+            "Capital",
+            "Station"
+        ],
+        "opt3": [
+            "Prefix",
+            "true"
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "scifi/organizations/corporations": {
+        "opt1": [
+            "Industry",
+            "Generic",
+            "Industrial",
+            "Tech",
+            "Medical",
+            "RND",
+            "Logistics",
+            "Defense",
+            "PMC"
+        ],
+        "opt2": [
+            "Name Type",
+            "Acronym",
+            "Western",
+            "Soviet",
+            "Asian"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    },
+    "scifi/planets": {
+        "opt1": [
+            "Climate",
+            "Temperate",
+            "Tropical",
+            "Aquatic",
+            "Arid",
+            "Snowy",
+            "Paradisal",
+            "Ecumenopolis",
+            "Uninhabitable"
+        ],
+        "opt2": [
+            "Style",
+            "Human Alliance",
+            "Dune"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
+        ],
+        "opt5": [
+        ]
+    }
+}
