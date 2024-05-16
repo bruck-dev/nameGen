@@ -30,7 +30,7 @@ function getNamelist(root, subfolder, namelist)
 }
 
 // Creates requested output for generator based on necessary generator function
-function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
+function generateOutput(select1=null, select2=null, checkbox1=false, select4=null, select5=null)
 {
     let generatedOutput = '';
     const root = localStorage.getItem('root');
@@ -42,42 +42,42 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
         case 'fantasy':
             if(subfolder.includes('races/'))
             {
-                generatedOutput = generateFantasyName(root, subfolder, opt1, opt2, opt3, opt4, opt5);
+                generatedOutput = generateFantasyName(root, subfolder, select1, select2, checkbox1, select4, select5);
             }
             else if(subfolder.includes('location'))
             {
-                generatedOutput = generateFantasyLocation(root, subfolder, list, opt1, opt2, opt4);
+                generatedOutput = generateFantasyLocation(root, subfolder, list, select1, select2, select4);
             }
             else if(subfolder.includes('nature'))
             {
-                generatedOutput = generateSimple(root, subfolder, opt1.toLowerCase());
+                generatedOutput = generateSimple(root, subfolder, select1.toLowerCase());
             }
             else if(subfolder.includes('organizations'))
             {
-                generatedOutput = generateFantasyOrg(root, subfolder, list, opt1);
+                generatedOutput = generateFantasyOrg(root, subfolder, list, select1);
             }
             else if(subfolder.includes('creatures') && list.includes('deities'))
             {
-                generatedOutput = generateFantasyDeity(root, subfolder, opt1, opt2, opt3, opt4, opt5);
+                generatedOutput = generateFantasyDeity(root, subfolder, select1, select2, checkbox1, select4, select5);
             }
         break;
 
         case 'scifi':
             if(subfolder.includes('spacecraft'))
             {
-                generatedOutput = generateSciFiSpacecraft(root, subfolder, opt1, opt2, opt3);
+                generatedOutput = generateSciFiSpacecraft(root, subfolder, select1, select2, checkbox1);
             }
             if(subfolder.includes('planets'))
             {
-                generatedOutput = generateSciFiPlanet(root, subfolder, opt1, opt2);
+                generatedOutput = generateSciFiPlanet(root, subfolder, select1, select2);
             }
             if(subfolder.includes('organizations'))
             {
-                generatedOutput = generateSciFiOrg(root, subfolder, list, opt1, opt2);
+                generatedOutput = generateSciFiOrg(root, subfolder, list, select1, select2);
             }
             if(subfolder.includes('masseffect/races'))
             {
-                generatedOutput = generateSciFiName(root, subfolder, opt1, opt2, opt3, opt4);
+                generatedOutput = generateSciFiName(root, subfolder, select1, select2, checkbox1, select4);
             }
         break;
     }
@@ -87,11 +87,11 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
 // On button press, take attributes and generate
 function executeGenerator()
 {
-    let opt1 = document.getElementById("opt1select").value;
-    let opt2 = document.getElementById("opt2select").value;
-    let opt3 = document.getElementById("opt3check").checked;
-    let opt4 = document.getElementById("opt4select").value;
-    let opt5 = document.getElementById("opt5select").value;
+    let select1 = document.getElementById("select1").value;
+    let select2 = document.getElementById("select2").value;
+    let checkbox1 = document.getElementById("checkbox1").checked;
+    let select4 = document.getElementById("select4").value;
+    let select5 = document.getElementById("select5").value;
     let quantity = document.getElementById("quantity").value;
 
     // Set a hard limit to 999 and a floor of 1. Ceiling is arbitrary.
@@ -107,21 +107,21 @@ function executeGenerator()
     }
 
     // Set select values to ignore if no list is selected
-    if(opt1 == "None")
+    if(select1 == "None")
     {
-        opt1 = null;
+        select1 = null;
     }
-    if(opt2 == "None")
+    if(select2 == "None")
     {
-        opt2 = null;
+        select2 = null;
     }
-    if(opt4 == "None")
+    if(select4 == "None")
     {
-        opt4 = null;
+        select4 = null;
     }
-    if(opt5 == "None")
+    if(select5 == "None")
     {
-        opt5 = null;
+        select5 = null;
     }
 
     document.getElementById("nameoutput").textContent = '';
@@ -129,7 +129,7 @@ function executeGenerator()
     // Generates names given quantity, regenerates duplicates (decreasingly likelihood as more options are enabled)
     for(let i = 0; i < quantity; i++)
     {
-        let genName = generateOutput(opt1, opt2, opt3, opt4, opt5);
+        let genName = generateOutput(select1, select2, checkbox1, select4, select5);
         document.getElementById("nameoutput").textContent += genName + "\n";
     }
 }

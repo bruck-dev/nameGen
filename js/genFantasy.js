@@ -304,7 +304,7 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
                 const randomParameters = generatedName.split('-');
                 let excludes = [];
                 // Exclude all other races from subgeneration
-                const options = document.getElementById('opt1select').options;
+                const options = document.getElementById('select1').options;
                 for(let i = 0; i < options.length; i++)
                 {
                     element = options[i].value.toLowerCase();
@@ -403,25 +403,25 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
 }
 
 // Handles fantasy organization generation
-function generateFantasyOrg(root, subfolder, list, opt1)
+function generateFantasyOrg(root, subfolder, list, select1)
 {
     const data = getNamelist(root, subfolder, list);
     let generatedName = '';
-    opt1 = opt1.toLowerCase();
+    select1 = select1.toLowerCase();
     switch(list)
     {
         case 'guilds':
-            return randomItem(data[opt1]) + ' ' + randomItem(data['suffix']);
+            return randomItem(data[select1]) + ' ' + randomItem(data['suffix']);
         case 'gangs':
             return generateSimple(root, subfolder, list);
         case 'orders':
             if(Math.random() < 0.5)
             {
-                return randomItem(data[opt1]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
+                return randomItem(data[select1]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
             }
             else
             {
-                return randomItem(data['name']) + ' ' + randomItem(data[opt1]) + ' ' + randomItem(data['suffix']);
+                return randomItem(data['name']) + ' ' + randomItem(data[select1]) + ' ' + randomItem(data['suffix']);
             }
         case 'magicacademy':
             if(Math.random() < 0.5)

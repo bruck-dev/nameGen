@@ -56,11 +56,11 @@ function createGeneratorUI()
     if(config[list] != undefined)
     {
       // Hide all controls if no configurations
-      if( (config[list]['opt1'].length == 0) &&
-          (config[list]['opt2'].length == 0) &&
-          (config[list]['opt3'].length == 0) &&
-          (config[list]['opt4'].length == 0) &&
-          (config[list]['opt5'].length == 0) )
+      if( (config[list]['select1'].length == 0) &&
+          (config[list]['select2'].length == 0) &&
+          (config[list]['checkbox1'].length == 0) &&
+          (config[list]['select4'].length == 0) &&
+          (config[list]['select5'].length == 0) )
       {
         var observer = new MutationObserver(function (mutations, me) {
           var controls = document.getElementById('controls');
@@ -77,20 +77,20 @@ function createGeneratorUI()
       }
       else
       {
-        setupOptSelect('opt1', 'opt1select', config[list]['opt1']);
-        setupOptSelect('opt2', 'opt2select', config[list]['opt2']);
-        setupOptCheck('opt3', 'opt3check', config[list]['opt3']);
-        setupOptSelect('opt4', 'opt4select', config[list]['opt4']);
-        setupOptSelect('opt5', 'opt5select', config[list]['opt5']);
+        selectInit('select1label', 'select1', config[list]['select1']);
+        selectInit('select2label', 'select2', config[list]['select2']);
+        checkInit('checkbox1label', 'checkbox1', config[list]['checkbox1']);
+        selectInit('select4label', 'select4', config[list]['select4']);
+        selectInit('select5label', 'select5', config[list]['select5']);
       }
     }
 
     // Hide all controls if no configurations
-    else if( (config['opt1'].length == 0) &&
-        (config['opt2'].length == 0) &&
-        (config['opt3'].length == 0) &&
-        (config['opt4'].length == 0) &&
-        (config['opt5'].length == 0) )
+    else if( (config['select1'].length == 0) &&
+        (config['select2'].length == 0) &&
+        (config['checkbox1'].length == 0) &&
+        (config['select4'].length == 0) &&
+        (config['select5'].length == 0) )
     {
       var observer = new MutationObserver(function (mutations, me) {
         var controls = document.getElementById('controls');
@@ -109,11 +109,11 @@ function createGeneratorUI()
     // Do general config
     else
     {
-      setupOptSelect('opt1', 'opt1select', config['opt1']);
-      setupOptSelect('opt2', 'opt2select', config['opt2']);
-      setupOptCheck('opt3', 'opt3check', config['opt3']);
-      setupOptSelect('opt4', 'opt4select', config['opt4']);
-      setupOptSelect('opt5', 'opt5select', config['opt5']);
+      selectInit('select1label', 'select1', config['select1']);
+      selectInit('select2label', 'select2', config['select2']);
+      checkInit('checkbox1label', 'checkbox1', config['checkbox1']);
+      selectInit('select4label', 'select4', config['select4']);
+      selectInit('select5label', 'select5', config['select5']);
     }
     
     // Wait until title is created and then set it
@@ -182,7 +182,7 @@ function setSelectContent(selectid, contentList)
 }
 
 // Dropdown initializer
-function setupOptSelect(labelid, selectid, configList)
+function selectInit(labelid, selectid, configList)
 {
   var observer = new MutationObserver(function (mutations, me) {
     var dd = document.getElementById(selectid);
@@ -210,7 +210,7 @@ function setupOptSelect(labelid, selectid, configList)
 }
 
 // Checkbox initializer
-function setupOptCheck(labelid, checkid, configList)
+function checkInit(labelid, checkid, configList)
 {
   var observer = new MutationObserver(function (mutations, me) {
     var dd = document.getElementById(checkid);
@@ -257,23 +257,23 @@ function arrayCheckForSubstring(arr, substring)
 }
 
 // Updates dropdown dynamically if needed
-function doOptSelectUpdate(selectid)
+function updateSelectContent(selectid)
 {
   let pageId = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');
   switch(pageId)
   {
     case 'fantasy/locations/settlements':
-      if(selectid == 'opt1select')
+      if(selectid == 'select1')
       {
         let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
-        setSelectContent('opt2select', list);
+        setSelectContent('select2', list);
       }
       break;
     case 'fantasy/locations/realms':
-      if(selectid == 'opt1select')
+      if(selectid == 'select1')
       {
         let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
-        setSelectContent('opt2select', list);
+        setSelectContent('select2', list);
       }
       break;
 

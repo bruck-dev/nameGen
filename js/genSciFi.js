@@ -56,29 +56,29 @@ function generateSciFiPlanet(root, subfolder, climate, style)
     return name;
 }
 
-function generateSciFiOrg(root, subfolder, list, opt1, opt2)
+function generateSciFiOrg(root, subfolder, list, select1, select2)
 {
     switch(list)
     {
         case 'corporations':
             let generatedName = '';
-            opt1 = opt1.toLowerCase();
-            opt2 = opt2.toLowerCase();
+            select1 = select1.toLowerCase();
+            select2 = select2.toLowerCase();
         
             const adjChance = Math.random();
             const data = getNamelist(root, subfolder, 'corporations');
             let adjList = data['adjgeneric'];
-            let prefixList = data[opt2];
+            let prefixList = data[select2];
             let suffixList = data['sufgeneric'];
         
             // Add industry-specific stuff, weighted x2
-            if(opt1 != 'generic')
+            if(select1 != 'generic')
             {
-                adjList = adjList.concat(data['adj' + opt1]).concat(data['adj' + opt1]);
-                suffixList = suffixList.concat(data['suf' + opt1]).concat(data['suf' + opt1]);
+                adjList = adjList.concat(data['adj' + select1]).concat(data['adj' + select1]);
+                suffixList = suffixList.concat(data['suf' + select1]).concat(data['suf' + select1]);
             }
 
-            if(opt2 == 'acronym')
+            if(select2 == 'acronym')
             {
                 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 let acronymLength = Math.random() * (4 - 1) + 1; // Random size between 2 and 4

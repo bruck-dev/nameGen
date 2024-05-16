@@ -23,14 +23,14 @@
 
         <!-- Used to select a subrace -->
         <div>
-            <label id="opt1">Subrace</label>
-            <select id="opt1select" class="opt1select" onchange="doOptSelectUpdate('opt1select')"></select>
+            <label id="select1label">Subrace</label>
+            <select id="select1" class="select1" onchange="updateSelectContent('select1')"></select>
         </div>
 
         <!-- Used to select name gender -->
         <div>
-            <label id="opt2">Gender</label>
-            <select id="opt2select" onchange="doOptSelectUpdate('opt2select')">
+            <label id="select2label">Gender</label>
+            <select id="select2" onchange="updateSelectContent('select2')">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -38,14 +38,14 @@
 
         <!-- Surname checkbox, should probably be hidden for non-names -->
         <div>
-            <label id="opt3">Surname</label>
-            <input type="checkbox" id="opt3check" checked>
+            <label id="checkbox1label">Surname</label>
+            <input type="checkbox" id="checkbox1" checked>
         </div>
 
         <!-- Used to select prefix title -->
         <div>
-            <label id="opt4">Title</label>
-            <select id="opt4select" onchange="doOptSelectUpdate('opt4select')">
+            <label id="select4label">Title</label>
+            <select id="select4" onchange="updateSelectContent('select4')">
                 <option value="None">None</option>
                 <option value="Nobility">Nobility</option>
                 <option value="Military">Military</option>
@@ -56,8 +56,8 @@
 
         <!-- Used to select suffix epithet -->
         <div>
-            <label id="opt5">Epithet</label>
-            <select id="opt5select" onchange="doOptSelectUpdate('opt5select')">
+            <label id="select5label">Epithet</label>
+            <select id="select5" onchange="updateSelectContent('select5')">
                 <option value="None">None</option>
                 <option value="Animals">Animals</option>
                 <option value="Nicknames">Nicknames</option>
