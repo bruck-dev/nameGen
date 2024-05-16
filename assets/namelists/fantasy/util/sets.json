@@ -16,5 +16,30 @@
         "Nobility",
         "Peasant",
         "Religious"
+    ],
+    "dwarflists": [
+        "Dwarf"
+    ],
+    "elflists": [
+        "Dark Elf",
+        "Drow",
+        "High Elf",
+        "Wood Elf"
+    ],
+    "halflinglists": [
+        "Halfling"
+    ],
+    "humanlists": [
+        "Eastern",
+        "Nordic",
+        "Slavic",
+        "Western"
+    ],
+    "orclists": [
+        "Orc"
+    ],
+    "tieflinglists": [
+        "Infernal",
+        "Virtue"
     ]
 }

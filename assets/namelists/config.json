@@ -36,15 +36,17 @@
             "Orc"
         ],
         "opt2": [
+            "Subrace",
+            "fantasy-util-sets-humanlists"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
             "Size",
             "Tiny",
             "Small",
             "Medium",
             "Large"
-        ],
-        "opt3": [
-        ],
-        "opt4": [
         ],
         "opt5": [
         ]
@@ -58,15 +60,17 @@
             "Orc"
         ],
         "opt2": [
+            "Subrace",
+            "fantasy-util-sets-humanlists"
+        ],
+        "opt3": [
+        ],
+        "opt4": [
             "Size",
             "Tiny",
             "Small",
             "Medium",
             "Large"
-        ],
-        "opt3": [
-        ],
-        "opt4": [
         ],
         "opt5": [
         ]
@@ -164,7 +168,7 @@
     "fantasy/races/dwarf": {
         "opt1": [
             "Subrace",
-            "Dwarf"
+            "fantasy-util-sets-dwarflists"
         ],
         "opt2": [
             "Gender",
@@ -177,20 +181,17 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "fantasy/races/elf": {
         "opt1": [
             "Subrace",
-            "High Elf",
-            "Wood Elf",
-            "Dark Elf",
-            "Drow"
+            "fantasy-util-sets-elflists"
         ],
         "opt2": [
             "Gender",
@@ -203,17 +204,17 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "fantasy/races/halfing": {
         "opt1": [
             "Subrace",
-            "Halfling"
+            "fantasy-util-sets-halflinglists"
         ],
         "opt2": [
             "Gender",
@@ -226,20 +227,17 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "fantasy/races/human": {
         "opt1": [
             "Subrace",
-            "Western",
-            "Eastern",
-            "Nordic",
-            "Slavic"
+            "fantasy-util-sets-humanlists"
         ],
         "opt2": [
             "Gender",
@@ -252,17 +250,17 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "fantasy/races/orc": {
         "opt1": [
             "Subrace",
-            "Orc"
+            "fantasy-util-sets-orclists"
         ],
         "opt2": [
             "Gender",
@@ -275,18 +273,17 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "fantasy/races/tiefling": {
         "opt1": [
             "Subrace",
-            "Infernal",
-            "Virtue"
+            "fantasy-util-sets-tieflinglists"
         ],
         "opt2": [
             "Gender",
@@ -299,11 +296,11 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "fantasy-util-sets-titlelists"
         ],
         "opt5": [
             "Epithet",
-            "root-util-sets-epithetlists"
+            "fantasy-util-sets-epithetlists"
         ]
     },
     "scifi/masseffect/planets": {
@@ -350,7 +347,7 @@
         ],
         "opt4": [
             "Title",
-            "root-util-sets-titlelists"
+            "scifi-util-sets-titlelists"
         ],
         "opt5": [
         ]

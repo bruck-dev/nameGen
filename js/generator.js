@@ -46,7 +46,7 @@ function generateOutput(opt1=null, opt2=null, opt3=false, opt4=null, opt5=null)
             }
             else if(subfolder.includes('location'))
             {
-                generatedOutput = generateFantasyLocation(root, subfolder, list, opt1, opt2);
+                generatedOutput = generateFantasyLocation(root, subfolder, list, opt1, opt2, opt4);
             }
             else if(subfolder.includes('nature'))
             {

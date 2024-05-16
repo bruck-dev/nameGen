@@ -252,11 +252,12 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
 }
 
 // Handles fantasy location generation
-function generateFantasyLocation(root, subfolder, list, race, size)
+function generateFantasyLocation(root, subfolder, list, race, subrace, size)
 {
     const data = getNamelist(root, subfolder, list);
     race = race.toLowerCase();
     size = size.toLowerCase();
+    subrace = subrace.toLowerCase();
     let generatedName = '';
     switch(list)
     {
@@ -323,8 +324,8 @@ function generateFantasyLocation(root, subfolder, list, race, size)
                     generatedName = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3], excludes);
                 }
             }
+            
             let descriptor = randomItem(data[size]);
-
             // Descriptors with spaces at the front should not appear before
             if(descriptor.charAt(0) == ' ')
             {
@@ -344,6 +345,7 @@ function generateFantasyLocation(root, subfolder, list, race, size)
             {
                 generatedName += ' ' + descriptor;
             }
+
             return generatedName;
 
         case 'inns':

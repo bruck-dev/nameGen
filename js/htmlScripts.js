@@ -28,7 +28,7 @@ function setVisibility(element, visible)
   }
 }
 
-// Creates the navbar on each page
+// Creates the top/navbar on each page
 function createConstantElements()
 {
   includeHTML('html/modular/topbar.html', 'topbar');
@@ -139,12 +139,13 @@ function createGeneratorUI()
   }
 }
 
+// Set dropdown options
 function setSelectContent(selectid, contentList)
 {
   let select = document.getElementById(selectid);
   let i = 0;
 
-  let indexArr = arrayCheckForSubstring(contentList, 'root-')
+  let indexArr = arrayCheckForSubstring(contentList, '-')
   if(indexArr.length != 0)
   {
     let pathSplit = [];
@@ -153,8 +154,8 @@ function setSelectContent(selectid, contentList)
 
     for(i = 0; i < indexArr.length; i++)
     {
-      path = 'assets/namelists/' + localStorage.getItem('root') + '/';
       pathSplit = contentList[indexArr[i]].split('-');
+      path = 'assets/namelists/' + pathSplit[0] + '/';
       for(let j = 1; j < pathSplit.length - 1; j++)
       {
         path += pathSplit[j] + '/';
@@ -180,6 +181,7 @@ function setSelectContent(selectid, contentList)
   }
 }
 
+// Dropdown initializer
 function setupOptSelect(labelid, selectid, configList)
 {
   var observer = new MutationObserver(function (mutations, me) {
@@ -207,6 +209,7 @@ function setupOptSelect(labelid, selectid, configList)
   });
 }
 
+// Checkbox initializer
 function setupOptCheck(labelid, checkid, configList)
 {
   var observer = new MutationObserver(function (mutations, me) {
@@ -251,4 +254,30 @@ function arrayCheckForSubstring(arr, substring)
       indexList.push(i);
   }
   return indexList;
+}
+
+// Updates dropdown dynamically if needed
+function doOptSelectUpdate(selectid)
+{
+  let pageId = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');
+  switch(pageId)
+  {
+    case 'fantasy/locations/settlements':
+      if(selectid == 'opt1select')
+      {
+        let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        setSelectContent('opt2select', list);
+      }
+      break;
+    case 'fantasy/locations/realms':
+      if(selectid == 'opt1select')
+      {
+        let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        setSelectContent('opt2select', list);
+      }
+      break;
+
+    default:
+      break;
+  }
 }
