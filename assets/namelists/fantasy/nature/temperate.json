@@ -2,8 +2,8 @@
     "title": "Forest/greenery Feature Namelist",
     "description": "Namelist for randomly generated temperate features.",
     "prefix": [
-        "random-nature-sharedleafy-prefixadjective",
-        "random-nature-sharedleafy-prefixracial"
+        "random-nature-shared-leafy.adjective",
+        "random-nature-shared-leafy.racial"
     ],
     "suffix": [
         "Bluff",

@@ -1,6 +1,6 @@
 {
     "title": "Config file",
-    "description": "Sets dropdown configurations",
+    "description": "Sets generator interface configurations. Follows element appearance order.",
     "fantasy/creatures/deities": {
         "select1": [
             "Aspect",
@@ -20,11 +20,11 @@
         ],
         "select4": [
             "1st Domain",
-            "root-creatures/deities-domains"
+            "fantasy-creatures/deities-domains"
         ],
         "select5": [
             "2nd Domain",
-            "root-creatures/deities-domains"
+            "fantasy-creatures/deities-domains"
         ]
     },
     "fantasy/locations/settlements": {

@@ -1,152 +1,179 @@
 {
     "title": "Noble Titles Namelist",
     "description": "Namelist for noble title prefixes.",
-    "humanmale": [
-        "Baronet",
-        "Burgrave",
-        "Ealdorman",
-        "Elector-Count",
-        "Kaiser",
-        "Landgrave",
-        "Margrave",
-        "Marquis",
-        "Prince-Elector",
-        "Ser",
-        "Sir"
-    ],
-    "humanfemale": [
-        "Baronetess",
-        "Burgravine",
-        "Dame",
-        "Elector-Countess",
-        "Kaiserin",
-        "Landgravine",
-        "Margravine",
-        "Marquise",
-        "Princess-Elector"
-    ],
-    "elfmale": [],
-    "elffemale": [],
-    "elfneutral": [],
-    "dwarfmale": [
-        "Forgelord",
-        "Mountain King",
-        "Stone King",
-        "Stonelord",
-        "Underking"
-    ],
-    "dwarffemale": [
-        "Forgelady",
-        "Mountain Queen",
-        "Stone Queen",
-        "Stonelady",
-        "Underqueen"
-    ],
-    "dwarfneutral": [
-        "Hammerthane",
-        "Oathkeeper",
-        "Thane"
-    ],
-    "orcmale": [
-        "Chief",
-        "High Chief",
-        "Warchief"
-    ],
-    "orcfemale": [
-        "Chieftess",
-        "High Chieftess",
-        "Warchieftess"
-    ],
-    "orcneutral": [],
-    "female": [
-        "Archduchess",
-        "Baroness",
-        "Countess",
-        "Crown Princess",
-        "Duchess",
-        "Empress",
-        "Grand Duchess",
-        "Grand Princess",
-        "High Queen",
-        "Lady",
-        "Lady-Consort",
-        "Matriarch",
-        "Princess",
-        "Queen",
-        "Vicerine",
-        "Viscountess"
-    ],
-    "male": [
-        "Archduke",
-        "Count",
-        "Crown Prince",
-        "Duke",
-        "Earl",
-        "Emperor",
-        "High King",
-        "King",
-        "Lord",
-        "Lord-Consort",
-        "Patriarch",
-        "Prince",
-        "Viceroy",
-        "Viscount"
-    ],
-    "neutral": [
-        "Consul"
-    ],
-    "tieflingfemale": [
-        "Archis",
-        "Archonesa",
-        "Basilissa",
-        "Despoina",
-        "Despotissa",
-        "Ducissa",
-        "Imperatrix"
-    ],
-    "tieflingmale": [
-        "Archon",
-        "Basileus",
-        "Despot",
-        "Despotes",
-        "Dux",
-        "Imperator"
-    ],
-    "nordicneutral": [
-        "Jarl",
-        "Thane"
-    ],
-    "slavicmale": [
-        "Boyar",
-        "Czar",
-        "Knyaz",
-        "Tsar"
-    ],
-    "slavicfemale": [
-        "Boyarina",
-        "Czarina",
-        "Knyagina",
-        "Tsarina",
-        "Tsaritsa"
-    ],
-    "tieflingneutral": [
-        "Praetor"
-    ],
-    "highelfmale": [
-        "Kinlord"
-    ],
-    "highelffemale": [
-        "Kinlady"
-    ],
-    "drowfemale": [
-        "Matron"
-    ],
-    "easternmale": [
-        "Daimyō",
-        "Shōgun",
-        "Tianzi"
-    ],
-    "easternfemale": [
-        "Onna-Daimyō"
-    ]
+    "generic": {
+        "female": [
+            "Archduchess",
+            "Baroness",
+            "Countess",
+            "Crown Princess",
+            "Duchess",
+            "Empress",
+            "Grand Duchess",
+            "Grand Princess",
+            "High Queen",
+            "Lady",
+            "Lady-Consort",
+            "Matriarch",
+            "Princess",
+            "Queen",
+            "Vicerine",
+            "Viscountess"
+        ],
+        "male": [
+            "Archduke",
+            "Count",
+            "Crown Prince",
+            "Duke",
+            "Earl",
+            "Emperor",
+            "High King",
+            "King",
+            "Lord",
+            "Lord-Consort",
+            "Patriarch",
+            "Prince",
+            "Viceroy",
+            "Viscount"
+        ],
+        "neutral": [
+            "Consul"
+        ]
+    },
+
+    "human": {
+        "male": [
+            "Baronet",
+            "Burgrave",
+            "Ealdorman",
+            "Elector-Count",
+            "Kaiser",
+            "Landgrave",
+            "Margrave",
+            "Marquis",
+            "Prince-Elector",
+            "Ser",
+            "Sir"
+        ],
+        "female": [
+            "Baronetess",
+            "Burgravine",
+            "Dame",
+            "Elector-Countess",
+            "Kaiserin",
+            "Landgravine",
+            "Margravine",
+            "Marquise",
+            "Princess-Elector"
+        ],
+        "slavic": {
+            "male": [
+                "Boyar",
+                "Czar",
+                "Knyaz",
+                "Tsar"
+            ],
+            "female": [
+                "Boyarina",
+                "Czarina",
+                "Knyagina",
+                "Tsarina",
+                "Tsaritsa"
+            ]
+        },
+        "nordic": {
+            "neutral": [
+                "Jarl",
+                "Thane"
+            ]
+        },
+        "eastern": {
+            "male": [
+                "Daimyō",
+                "Shōgun",
+                "Tianzi"
+            ],
+            "female": [
+                "Onna-Daimyō"
+            ]
+        }
+    },
+
+    "elf": {
+        "male": [],
+        "emale": [],
+        "neutral": [],
+        "highelf": {
+            "male": [
+                "Kinlord"
+            ],
+            "female": [
+                "Kinlady"
+            ]
+        },
+        "drow": {
+            "female": [
+                "Matron"
+            ]
+        }
+    },
+
+    "dwarf": {
+        "male": [
+            "Forgelord",
+            "Mountain King",
+            "Stone King",
+            "Stonelord",
+            "Underking"
+        ],
+        "female": [
+            "Forgelady",
+            "Mountain Queen",
+            "Stone Queen",
+            "Stonelady",
+            "Underqueen"
+        ],
+        "neutral": [
+            "Hammerthane",
+            "Oathkeeper",
+            "Thane"
+        ]
+    },
+
+    "orc": {
+        "male": [
+            "Chief",
+            "High Chief",
+            "Warchief"
+        ],
+        "female": [
+            "Chieftess",
+            "High Chieftess",
+            "Warchieftess"
+        ],
+        "neutral": []
+    },
+    
+    "tiefling": {
+        "female": [
+            "Archis",
+            "Archonesa",
+            "Basilissa",
+            "Despoina",
+            "Despotissa",
+            "Ducissa",
+            "Imperatrix"
+        ],
+        "male": [
+            "Archon",
+            "Basileus",
+            "Despot",
+            "Despotes",
+            "Dux",
+            "Imperator"
+        ],
+        "neutral": [
+            "Praetor"
+        ]
+    }
 }

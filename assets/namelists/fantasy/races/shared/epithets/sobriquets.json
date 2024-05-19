@@ -1,55 +1,63 @@
 {
     "title": "Sobriquet Namelist",
     "description": "Name list one-word sobriquets. Should probably replace surnames",
-    "male": [
-        "Rex",
-        "Twistedbeard"
-    ],
-    "female": [
-        "Regina"
-    ],
-    "neutral": [
-        "Blue-Snake",
-        "Curse-Bringer",
-        "Fairhair",
-        "Fear-Eater",
-        "Flat-Nose",
-        "Half-Hand",
-        "Iron-Hand",
-        "Ironsides",
-        "Lawgiver",
-        "Limp-Leg",
-        "Lock-Jaw",
-        "Long-Legs",
-        "One-Eye",
-        "One-Leg",
-        "Priest-Eater",
-        "Priest-Hater",
-        "Serpent-Speaker",
-        "Sharp-Tongue",
-        "Sicarius",
-        "Stoneface",
-        "Strongarm",
-        "Troll-Slayer",
-        "Troublemaker",
-        "Truthseeker",
-        "Wartooth",
-        "Whiteshirt",
-        "Witch-Breaker"
-    ],
-    "dwarfneutral": [
-        "Bloodaxe",
-        "Crownforger",
-        "Thronecarver"
-    ],
-    "dwarfmale": [
-        "Forgefather"
-    ],
-    "dwarffemale": [
-        "Forgemother"
-    ],
-    "nordicneutral": [
-        "Bloodaxe",
-        "Bluetooth"
-    ]
+    "generic": {
+        "male": [
+            "Rex",
+            "Twistedbeard"
+        ],
+        "female": [
+            "Regina"
+        ],
+        "neutral": [
+            "Blue-Snake",
+            "Curse-Bringer",
+            "Fairhair",
+            "Fear-Eater",
+            "Flat-Nose",
+            "Half-Hand",
+            "Iron-Hand",
+            "Ironsides",
+            "Lawgiver",
+            "Limp-Leg",
+            "Lock-Jaw",
+            "Long-Legs",
+            "One-Eye",
+            "One-Leg",
+            "Priest-Eater",
+            "Priest-Hater",
+            "Serpent-Speaker",
+            "Sharp-Tongue",
+            "Sicarius",
+            "Stoneface",
+            "Strongarm",
+            "Troll-Slayer",
+            "Troublemaker",
+            "Truthseeker",
+            "Wartooth",
+            "Whiteshirt",
+            "Witch-Breaker"
+        ]
+    },
+    "dwarf": {
+        "neutral": [
+            "Bloodaxe",
+            "Crownforger",
+            "Thronecarver"
+        ],
+        "male": [
+            "Forgefather"
+        ],
+        "female": [
+            "Forgemother"
+        ]
+    },
+    "human": {
+        "nordic": {
+            "neutral": [
+                "Bloodaxe",
+                "Bluetooth"
+            ]
+        }
+    }
 }

@@ -1,33 +1,35 @@
 {
     "title": "Magic Academy Namelist",
     "description": "Magical academy construction namelist. Names followed by '' pick a random surname from the following namelist to represent a founder or iconic environmental feature.",
-    "prefix": [
-        "Aquillian",
-        "Arcaneum",
-        "Astral",
-        "Black Garden",
-        "Coldcotton",
-        "Convergence",
-        "Dayglow",
-        "Imperial",
-        "Merlin's",
-        "New Moon",
-        "Owlhorn",
-        "Phantasma",
-        "Royal",
-        "White Tower",
-        "Windhaven"
-    ],
-    "prefixrandom": [
-        "random-nature-freshwater",
-        "random-nature-rocky",
-        "random-nature-temperate",
-        "random-races/elf-darkelf-surname",
-        "random-races/elf-drow-surname",
-        "random-races/elf-highelf-surname",
-        "random-races/human-eastern-surname",
-        "random-races/human-western-surname"
-    ],
+    "prefix": {
+        "preset": [
+            "Aquillian",
+            "Arcaneum",
+            "Astral",
+            "Black Garden",
+            "Coldcotton",
+            "Convergence",
+            "Dayglow",
+            "Evermore",
+            "Imperial",
+            "Merlin's",
+            "New Moon",
+            "Owlhorn",
+            "Phantasma",
+            "Royal",
+            "White Tower",
+            "Windhaven"
+        ],
+        "random": [
+            "random-nature-freshwater",
+            "random-nature-temperate",
+            "random-races/elf-darkelf-surname",
+            "random-races/elf-drow-surname",
+            "random-races/elf-highelf-surname",
+            "random-races/human-eastern-surname",
+            "random-races/human-western-surname"
+        ]
+    },
     "adjective": [
         "Preparatory",
         "Selective",

@@ -1,0 +1,21 @@
+{
+    "title": "Shared Namelists",
+    "description": "Shared components that can be pulled from anything.",
+    "leafy": {
+        "racial": [
+            "random-races/human-eastern-surname",
+            "random-races/elf-highelf-surname",
+            "random-races/human-western-surname",
+            "random-races/elf-woodelf-surname",
+            "random-locations-shared-human.settlement",
+            "random-locations-shared-elf.settlement"
+        ],
+        "adjective": [
+            "random-util-resources-colors",
+            "random-util-resources-environmentalharsh",
+            "random-util-resources-materials",
+            "random-util-resources-flowers",
+            "random-util-resources-trees"
+        ]
+    }
+}

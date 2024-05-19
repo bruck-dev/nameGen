@@ -23,23 +23,6 @@ def getJsonDirectories(firstDir):
                     directories.append(root)
                     break
     return directories
-            
-def getJson(path):
-    paths = glob.glob(path + '/*.json')
-    
-    # Don't show config files
-    for element in paths:
-        if "config" in element:
-            del paths[paths.index(element)]
-            
-    return paths
-
-def getJsonKeys(json):
-    keys = list(json.keys())
-    keys.remove('title')
-    keys.remove('description')
-    keys.sort()
-    return keys
 
 def getImmediateSubdirs(dir):
     return [f.path for f in os.scandir(dir) if f.is_dir()]

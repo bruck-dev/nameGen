@@ -23,9 +23,8 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
 
         if(surname)
         {
-            const sur = data['surname'];
+            const sur = data.surname;
             let pickedSur = randomItem(sur);
-
             if(gender == 'female')
             {
                 if(namelist == 'nordic')
@@ -40,14 +39,11 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
                     }
                     generatedName += pickedSur;
                 }
-                
             }
-
-            if(namelist == 'eastern')
+            else if(namelist == 'eastern')
             {
                 generatedName = pickedSur + ' ' + generatedName.slice(0, -1);
             }
-
             else if(namelist == 'slavic')
             {
                 if(gender == 'female')
@@ -89,29 +85,46 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         let genericTitles = [];
 
         // Check for subrace titles
-        subraceTitles = subraceTitles.concat(data[namelist + gender]);
-        subraceTitles = subraceTitles.concat(data[namelist + 'neutral']);
+        try
+        {
+            if(data[race][namelist][gender] != undefined)
+            {
+                subraceTitles = subraceTitles.concat(data[race][namelist][gender]);
+            }
+            if(data[race][namelist]['neutral'] != undefined)
+            {
+                subraceTitles = subraceTitles.concat(data[race][namelist]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for race specific titles
-        raceTitles = raceTitles.concat(data[race + gender]);
-        raceTitles = raceTitles.concat(data[race + 'neutral']);
+        try
+        {
+            if(data[race][gender] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[race][gender]);
+            }
+            if(data[race]['neutral'] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[race]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for generic titles
-        genericTitles = genericTitles.concat(data[gender]);
-        genericTitles = genericTitles.concat(data['neutral']);
-
-        // Remove any undefined values, i.e. disregarding any namelists that don't exist
-        subraceTitles = subraceTitles.filter(function( element ) {
-            return element !== undefined;
-            });
-
-        raceTitles = raceTitles.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        genericTitles = genericTitles.filter(function( element ) {
-            return element !== undefined;
-        });
+        try
+        {
+            if(data.generic[gender] != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic[gender]);
+            }
+            if(data.generic.neutral != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic.neutral);
+            }
+        }
+        catch {}
 
         // Pick a random from the lists, weighted. Checks if lists have values first.
         generatedTitle = '';
@@ -171,29 +184,46 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         let genericNicks = [];
 
         // Check for subrace nicks
-        subraceNicks = subraceNicks.concat(data[namelist + gender]);
-        subraceNicks = subraceNicks.concat(data[namelist + 'neutral']);
+        try
+        {
+            if(data[race][namelist][gender] != undefined)
+            {
+                subraceNicks = subraceNicks.concat(data[namelist][gender]);
+            }
+            if(data[race][namelist]['neutral'] != undefined)
+            {
+                subraceNicks = subraceNicks.concat(data[namelist]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for race specific nicks
-        raceNicks = raceNicks.concat(data[race + gender]);
-        raceNicks = raceNicks.concat(data[race + 'neutral']);
+        try
+        {
+            if(data[race][gender] != undefined)
+            {
+                raceNicks = raceNicks.concat(data[race][gender]);
+            }
+            if(data[race]['neutral'] != undefined)
+            {
+                raceNicks = raceNicks.concat(data[race]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for generic nicks
-        genericNicks = genericNicks.concat(data[gender]);
-        genericNicks = genericNicks.concat(data['neutral']);
-
-        // Remove any undefined values, i.e. disregarding any namelists that don't exist
-        subraceNicks = subraceNicks.filter(function( element ) {
-            return element !== undefined;
-         });
-
-        raceNicks = raceNicks.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        genericNicks = genericNicks.filter(function( element ) {
-            return element !== undefined;
-        });
+        try
+        {
+            if(data.generic[gender] != undefined)
+            {
+                genericNicks = genericNicks.concat(data.generic[gender]);
+            }
+            if(data.generic.neutral != undefined)
+            {
+                genericNicks = genericNicks.concat(data.generic.neutral);
+            }
+        }
+        catch {}
 
         // Pick a random from the lists, weighted. Checks if lists have values first.
         const rando = Math.random();
@@ -259,31 +289,51 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
     size = size.toLowerCase();
     subrace = subrace.toLowerCase();
     let generatedName = '';
+    let tier = ''
+
     switch(list)
     {
         case 'realms':
-            let tierRacial = data[('tier-' + race + size)];
-            const tierGeneric = data['tier-' + size];
+            const tierGeneric = data.tier.generic[size];
 
-            if(tierRacial != undefined)
+            // Check if race tiers exist
+            let tierRace = data.tier[race][size];
+            if(tierRace == undefined)
             {
-                tierRacial = tierRacial.filter(function( element ) {
-                    return element !== undefined;
-                 });
+                tierRace = [];
             }
-            else
+            
+            // Check if subrace tiers exist
+            try
             {
-                tierRacial = [];
-            }
+                let tierSubrace = data.tier[race][subrace][size];
 
-            let tier = ''
-            if(Math.random() < 0.65 && tierRacial.length > 0)
-            {
-                tier = randomItem(tierRacial);
+                const tierSelect = Math.random();
+                if(tierSelect < 0.45 && tierSubrace.length > 0)
+                {
+                    tier = randomItem(tierSubrace);
+                }
+                else if(tierSelect < 0.75 && tierRace.length > 0)
+                {
+                    tier = randomItem(tierRace);
+                }
+                else
+                {
+                    tier = randomItem(tierGeneric);
+                }
             }
-            else
+            catch {}
+
+            if(tier == '')
             {
-                tier = randomItem(tierGeneric);
+                if(Math.random() < 0.65 && tierRace.length > 0)
+                {
+                    tier = randomItem(tierRace);
+                }
+                else
+                {
+                    tier = randomItem(tierGeneric);
+                }
             }
 
             let name = '';
@@ -291,6 +341,18 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
             name = randomItem(data[race]);
             if(name.includes('random-'))
             {
+                // Exclude all other races and subraces from subgeneration
+                let excludes = [];
+                const options = Array.from(document.getElementById('select1').options).concat(Array.from(document.getElementById('select2').options))
+                for(let i = 0; i < options.length; i++)
+                {
+                    element = options[i].value.toLowerCase();
+                    if(!element.includes(race) || !element.includes(subrace))
+                    {
+                        excludes.push(element + '-');
+                        excludes.push('-' + element);
+                    }
+                }
                 const randomParameters = name.split('-');
                 name = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
             }
@@ -301,19 +363,20 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
             
             if(generatedName.includes('random-'))
             {
+                // Exclude all other races from subgeneration
                 const randomParameters = generatedName.split('-');
                 let excludes = [];
-                // Exclude all other races from subgeneration
-                const options = document.getElementById('select1').options;
+                const options = Array.from(document.getElementById('select1').options).concat(Array.from(document.getElementById('select2').options))
                 for(let i = 0; i < options.length; i++)
                 {
                     element = options[i].value.toLowerCase();
-                    excludes.push(element + '-');
-                    excludes.push('-' + element);
+                    if(!element.includes(race) || !element.includes(subrace))
+                    {
+                        excludes.push(element + '-');
+                        excludes.push('-' + element);
+                    }
                 }
 
-                
-                excludes = excludes.filter(s => !s.includes(race));
                 if(generatedName.includes('nature'))
                 {
 
@@ -325,7 +388,7 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
                 }
             }
             
-            let descriptor = randomItem(data[size]);
+            let descriptor = randomItem(data['size'][size]);
             // Descriptors with spaces at the front should not appear before
             if(descriptor.charAt(0) == ' ')
             {
@@ -411,26 +474,26 @@ function generateFantasyOrg(root, subfolder, list, select1)
     switch(list)
     {
         case 'guilds':
-            return randomItem(data[select1]) + ' ' + randomItem(data['suffix']);
+            return randomItem(data[select1]) + ' ' + randomItem(data.suffix);
         case 'gangs':
             return generateSimple(root, subfolder, list);
         case 'orders':
             if(Math.random() < 0.5)
             {
-                return randomItem(data[select1]) + ' ' + randomItem(data['prefix']) + ' ' + randomItem(data['name']);
+                return randomItem(data[select1]) + ' ' + randomItem(data.prefix) + ' ' + randomItem(data.name);
             }
             else
             {
-                return randomItem(data['name']) + ' ' + randomItem(data[select1]) + ' ' + randomItem(data['suffix']);
+                return randomItem(data.name) + ' ' + randomItem(data[select1]) + ' ' + randomItem(data.suffix);
             }
         case 'magicacademy':
             if(Math.random() < 0.5)
             {
-                prefix = randomItem(data['prefix']);
+                prefix = randomItem(data.prefix['preset']);
             }
             else
             {
-                prefix = randomItem(data['prefixrandom']);
+                prefix = randomItem(data.prefix['random']);
                 let randomParameters = prefix.split('-');
                 if(prefix.includes('nature'))
                 {
@@ -474,7 +537,7 @@ function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, titl
     alignment = alignment.toLowerCase();
     if(aspect == 'indeterminate')
     {
-        generatedName = randomItem(data[aspect + 'neutral'].concat(data[aspect + alignment]));
+        generatedName = randomItem(data.indeterminate.neutral.concat(data.indeterminate[alignment]));
     }
     else
     {
@@ -491,16 +554,15 @@ function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, titl
 
     if(title && ( domain1 != null || domain2 != null))
     {
-        const domainsWithAlignment = ['life', 'death', 'conflict', 'conceptual', 'laworder'];
         if(domain1 != null)
         {
             let domain1List = [];
-            if(domainsWithAlignment.indexOf(domain1) != -1)
+            if(data[domain1][alignment] != undefined)
             {
-                domain1List = data[domain1 + alignment];
+                domain1List = data[domain1][alignment];
                 if(alignment != 'neutral')
                 {
-                    domain1List = data[domain1 + alignment].concat(data[domain1 + 'neutral']);
+                    domain1List = data[domain1][alignment].concat(data[domain1]['neutral']);
                 }
             }
             else
@@ -508,17 +570,17 @@ function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, titl
                 domain1List = data[domain1];
             }
             domain1 = randomItem(domain1List)
-            generatedName += ', ' + randomItem(data['titles' + aspect]) + ' of ' + domain1;
+            generatedName += ', ' + randomItem(data.titles[aspect]) + ' of ' + domain1;
         }
         if(domain2 != null)
         {
             let domain2List = [];
-            if(domainsWithAlignment.indexOf(domain2) != -1)
+            if(data[domain2][alignment] != undefined)
             {
-                domain2List = data[domain2 + alignment];
+                domain2List = data[domain2][alignment];
                 if(alignment != 'neutral')
                 {
-                    domain2List = data[domain2 + alignment].concat(data[domain2 + 'neutral']);
+                    domain2List = data[domain2][alignment].concat(data[domain2]['neutral']);
                 }
             }
             else
@@ -527,7 +589,7 @@ function generateFantasyDeity(root, subfolder, aspect=null, alignment=null, titl
             }
             if(domain1 == null)
             {
-                generatedName += ', ' + randomItem(data['titles' + aspect]) + ' of ' + randomItem(domain2List);  
+                generatedName += ', ' + randomItem(data.titles[aspect]) + ' of ' + randomItem(domain2List);  
             }
             else
             {

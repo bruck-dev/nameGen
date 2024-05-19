@@ -2,85 +2,130 @@
     "title": "Realms Namelist",
     "description": "List of fantasy realm names.",
     "human": [
-        "random-locations-shared-humanrealm",
-        "random-locations-shared-humansettlement",
-        "random-locations-shared-humanrandom"
+        "random-locations-shared-human.realm",
+        "random-locations-shared-human.settlement",
+        "random-locations-shared-human.random"
     ],
     "elf": [
-        "random-locations-shared-elfsettlement",
-        "random-locations-shared-elfrandom"
+        "random-locations-shared-elf.settlement",
+        "random-locations-shared-elf.random"
     ],
     "dwarf": [
-        "random-locations-shared-dwarfsettlement",
-        "random-locations-shared-dwarfrandom"
+        "random-locations-shared-dwarf.random",
+        "random-locations-shared-dwarf.settlement"
     ],
     "orc": [
-        "random-locations-shared-orcsettlement",
-        "random-locations-shared-orcrandom"
+        "random-locations-shared-orc.settlement",
+        "random-locations-shared-orc.random"
     ],
-    "tier-humansmall": [
-        "Earldom",
-        "Hold"
-    ],
-    "tier-humanmedium": [
-        "Grand Duchy",
-        "Grand Principality",
-        "Principality",
-        "Jarldom",
-        "House"
-    ],
-    "tier-humanlarge": [
-        "High Kingdom",
-        "Republic",
-        "Sovereignty",
-        "Empire"
-    ],
-    "tier-elfsmall": [],
-    "tier-elfmedium": [
-        "House"
-    ],
-    "tier-elflarge": [
-        "Elven Realm"
-    ],
-    "tier-dwarfsmall": [
-        "Chiefdom",
-        "Hold",
-        "Oath"
-    ],
-    "tier-dwarfmedium": [
-        "High Chiefdom"
-    ],
-    "tier-dwarflarge": [
-        "Dwarf Clan",
-        "High Kingdom",
-        "Underkingdom",
-        "Empire"
-    ],
-    "tier-orcsmall": [
-        "Chiefdom",
-        "Tribe"
-    ],
-    "tier-orcmedium": [
-        "High Chiefdom"
-    ],
-    "tier-orclarge": [
-        "War Tribe",
-        "Orcish Clan",
-        "High Kingdom"
-    ],
-    "tier-tiny": [
-        "Barony"
-    ],
-    "tier-small": [
-        "County"
-    ],
-    "tier-medium": [
-        "Archduchy",
-        "Duchy",
-        "Province"
-    ],
-    "tier-large": [
-        "Kingdom",
-        "Dominion"
-    ]
+    "tier": {
+        "human": {
+            "small": [
+                "Earldom"
+            ],
+            "medium": [
+                "Grand Duchy",
+                "House"
+            ],
+            "large": [
+                "Empire",
+                "High Kingdom",
+                "Republic",
+                "Sovereignty"
+            ],
+            "eastern": {
+                "tiny": [
+                    "Petty Prefecture"
+                ],
+                "small": [
+                    "Banner",
+                    "Commandery",
+                    "Prefecture"
+                ],
+                "medium": [
+                    "Protectorate General",
+                    "Greater Prefecture"
+                ]
+            },
+            "nordic": {
+                "small": [
+                    "Hold"
+                ],
+                "medium": [
+                    "Jarldom"
+                ]
+            },
+            "slavic": {
+                "small": [
+                    "Oblast"
+                ],
+                "medium": [
+                    "Banate",
+                    "Grand Principality",
+                    "Principality",
+                    "Voivodeship"
+                ]
+            },
+            "western": {
+                "medium": [
+                    "Archduchy"
+                ]
+            }
+        },
+        "elf": {
+            "small": [],
+            "medium": [
+                "House"
+            ],
+            "large": [
+                "Elven Realm"
+            ]
+        },
+        "dwarf": {
+            "small": [
+                "Chiefdom",
+                "Hold",
+                "Oath"
+            ],
+            "medium": [
+                "High Chiefdom"
+            ],
+            "large": [
+                "Dwarf Clan",
+                "High Kingdom",
+                "Underkingdom",
+                "Empire"
+            ]
+        },
+        "orc": {
+            "small": [
+                "Chiefdom",
+                "Tribe"
+            ],
+            "medium": [
+                "High Chiefdom"
+            ],
+            "large": [
+                "War Tribe",
+                "Orcish Clan",
+                "High Kingdom"
+            ]
+        },
+        "generic": {
+            "tiny": [
+                "Barony"
+            ],
+            "small": [
+                "County"
+            ],
+            "medium": [
+                "Duchy",
+                "Province"
+            ],
+            "large": [
+                "Kingdom",
+                "Dominion"
+            ]
+        }
+    }
 }

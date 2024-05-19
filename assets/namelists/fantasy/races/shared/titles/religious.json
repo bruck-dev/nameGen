@@ -1,62 +1,76 @@
 {
     "title": "Religious Titles Namelist",
     "description": "Namelist for religious title prefixes.",
-    "male": [
-        "Abbot",
-        "Brother",
-        "Father",
-        "Friar",
-        "High Priest",
-        "Patriarch",
-        "Priest",
-        "Prior"
-    ],
-    "female": [
-        "Abbess",
-        "Druidess",
-        "High Priestess",
-        "Matriarch",
-        "Mother",
-        "Mother Superior",
-        "Priestess",
-        "Prioress",
-        "Sister"
-    ],
-    "neutral": [
-        "Acolyte",
-        "Adept",
-        "Almoner",
-        "Apostle",
-        "Ardent",
-        "Cleric",
-        "Druid",
-        "Elder",
-        "High Almoner",
-        "Inquisitor",
-        "Missionary",
-        "Novice",
-        "Paladin",
-        "Prelate",
-        "Principate",
-        "Rector",
-        "Saint",
-        "Shaman",
-        "Vicar",
-        "Zealot"
-    ],
-    "nordicmale": [
-        "Godi"
-    ],
-    "nordicfemale": [
-        "Gydja"
-    ],
-    "slavicmale": [
-        "Volkhv"
-    ],
-    "slavicfemale": [
-        "Vedunya"
-    ],
-    "highelfneutral": [
-        "Aldarch"
-    ]
+    "generic": {
+        "male": [
+            "Abbot",
+            "Brother",
+            "Father",
+            "Friar",
+            "High Priest",
+            "Patriarch",
+            "Priest",
+            "Prior"
+        ],
+        "female": [
+            "Abbess",
+            "Druidess",
+            "High Priestess",
+            "Matriarch",
+            "Mother",
+            "Mother Superior",
+            "Priestess",
+            "Prioress",
+            "Sister"
+        ],
+        "neutral": [
+            "Acolyte",
+            "Adept",
+            "Almoner",
+            "Apostle",
+            "Ardent",
+            "Cleric",
+            "Druid",
+            "Elder",
+            "High Almoner",
+            "Inquisitor",
+            "Missionary",
+            "Novice",
+            "Paladin",
+            "Prelate",
+            "Principate",
+            "Rector",
+            "Saint",
+            "Shaman",
+            "Vicar",
+            "Zealot"
+        ]
+    },
+
+    "human": {
+        "nordic": {
+            "male": [
+                "Godi"
+            ],
+            "female": [
+                "Gydja"
+            ]
+        },
+        "slavic": {
+            "male": [
+                "Volkhv"
+            ],
+            "female": [
+                "Vedunya"
+            ]
+        }
+    },
+    
+    "elf": {
+        "highelf": {
+            "neutral": [
+                "Aldarch"
+            ]
+        }
+    }
 }

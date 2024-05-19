@@ -1,22 +1,24 @@
 {
     "title": "Government Titles Namelist",
     "description": "classic corruption moment",
-    "male": [],
-    "female": [],
-    "neutral": [
-        "Adjudicator",
-        "Chancellor",
-        "Exchequer",
-        "Governor",
-        "Herald",
-        "Lord Chancellor",
-        "Magistrate",
-        "Military-Governor",
-        "Minister",
-        "Overseer",
-        "Proctor",
-        "Seneschal",
-        "Steward",
-        "Administrator"
-    ]
+    "generic": {
+        "male": [],
+        "female": [],
+        "neutral": [
+            "Adjudicator",
+            "Chancellor",
+            "Exchequer",
+            "Governor",
+            "Herald",
+            "Lord Chancellor",
+            "Magistrate",
+            "Military-Governor",
+            "Minister",
+            "Overseer",
+            "Proctor",
+            "Seneschal",
+            "Steward",
+            "Administrator"
+        ]
+    }
 }

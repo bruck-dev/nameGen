@@ -2,61 +2,63 @@
     "title": "Settlement Namelist",
     "description": "List of fantasy settlement names.",
     "human": [
-        "random-locations-shared-humansettlement",
-        "random-locations-shared-humanrandom"
+        "random-locations-shared-human.settlement",
+        "random-locations-shared-human.random"
     ],
     "elf": [
-        "random-locations-shared-elfsettlement",
-        "random-locations-shared-elfrandom"
+        "random-locations-shared-elf.settlement",
+        "random-locations-shared-elf.random"
     ],
     "dwarf": [
-        "random-locations-shared-dwarfsettlement",
-        "random-locations-shared-dwarfrandom"
+        "random-locations-shared-dwarf.settlement",
+        "random-locations-shared-dwarf.random"
     ],
     "orc": [
-        "random-locations-shared-orcsettlement",
-        "random-locations-shared-orcrandom"
+        "random-locations-shared-orc.settlement",
+        "random-locations-shared-orc.random"
     ],
-    "tiny": [
-        "Abbey",
-        " Bridge",
-        " Community",
-        " Crossing",
-        " Crossroads",
-        "Farm",
-        " Farms",
-        "Hamlet",
-        "Homestead",
-        "Mill",
-        "Mine",
-        "Outpost",
-        "Ranch",
-        "Ward",
-        " Orchard"
-    ],
-    "small": [
-        " Crossing",
-        " Crossroads",
-        "District",
-        "Fort ",
-        "Village",
-        "Ward",
-        " Orchards"
-    ],
-    "medium": [
-        "District",
-        " Fortress",
-        " Keep",
-        "Town",
-        "Township"
-    ],
-    "large": [
-        " Castle",
-        "Citadel",
-        "City",
-        "Harbor",
-        " Palace",
-        "Port of ",
-        "Stronghold"
-    ]
+    "size": {
+        "tiny": [
+            "Abbey",
+            " Bridge",
+            " Community",
+            " Crossing",
+            " Crossroads",
+            "Farm",
+            " Farms",
+            "Hamlet",
+            "Homestead",
+            "Mill",
+            "Mine",
+            "Outpost",
+            "Ranch",
+            "Ward",
+            " Orchard"
+        ],
+        "small": [
+            " Crossing",
+            " Crossroads",
+            "District",
+            "Fort ",
+            "Village",
+            "Ward",
+            " Orchards"
+        ],
+        "medium": [
+            "District",
+            " Fortress",
+            " Keep",
+            "Town",
+            "Township"
+        ],
+        "large": [
+            " Castle",
+            "Citadel",
+            "City",
+            "Harbor",
+            " Palace",
+            "Port of ",
+            "Stronghold"
+        ]
+    }
 }

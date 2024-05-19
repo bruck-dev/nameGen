@@ -265,15 +265,15 @@ function updateSelectContent(selectid)
     case 'fantasy/locations/settlements':
       if(selectid == 'select1')
       {
-        let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
-        setSelectContent('select2', list);
+        let contentList = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        setSelectContent('select2', contentList);
       }
       break;
     case 'fantasy/locations/realms':
       if(selectid == 'select1')
       {
-        let list = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
-        setSelectContent('select2', list);
+        let contentList = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        setSelectContent('select2', contentList);
       }
       break;
 

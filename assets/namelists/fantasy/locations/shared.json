@@ -1,141 +1,151 @@
 {
     "title": "Settlements shared sublist",
     "description": "Contains constant and random names.",
-    "humansettlement": [
-        "Cotia",
-        "Delacourt",
-        "Denvalton",
-        "Dunham",
-        "Dunharrow",
-        "Enora",
-        "Falkirk",
-        "Florin",
-        "Forvast",
-        "Gaerham",
-        "Gerin",
-        "Glenham",
-        "Harperton",
-        "Harrington",
-        "Heldon",
-        "Jevan",
-        "Kelberg",
-        "Marshpoint",
-        "Myrcourt",
-        "Oulia",
-        "Ravenwood",
-        "Rivergate",
-        "Vallenford",
-        "Yolona"
-    ],
-    "humanrealm": [
-        "Erodan",
-        "Hessia",
-        "Ladina",
-        "Laesia",
-        "Mirelen",
-        "Osteran",
-        "Relain",
-        "Volaneux"
-    ],
-    "humanrandom": [
-        "random-nature-temperate",
-        "random-races/human-eastern-surname",
-        "random-races/human-slavic-surname",
-        "random-races/human-western-surname"
-    ],
-    "elfsettlement": [
-        "Alanar",
-        "Alereia",
-        "Anelor",
-        "Ayinor",
-        "Belanore",
-        "Caelora",
-        "Calvinor",
-        "Dawnspire",
-        "Elaera",
-        "Elhenas",
-        "Elunore",
-        "Elysia",
-        "Emhel",
-        "Enera",
-        "Enetear",
-        "Entheas",
-        "Erelond",
-        "Fenrille",
-        "Galas Doriel",
-        "Galas Elren",
-        "Goldspire",
-        "Illadorei",
-        "Imyalune",
-        "Isilme",
-        "Islona",
-        "Loria",
-        "Lyellon",
-        "Maeriel",
-        "Myehna",
-        "Mythal",
-        "Nylond",
-        "Nyrennora",
-        "Relthwin",
-        "Sabelle",
-        "Selenor",
-        "Seluria",
-        "Sithedral",
-        "Sunspire",
-        "Syann",
-        "Syll Unarith",
-        "Thalorin",
-        "Tilonder"
-    ],
-    "elfrandom": [
-        "random-races/elf-highelf-surname",
-        "random-races/elf-woodelf-surname",
-        "random-races/elf-drow-surname"
-    ],
-    "dwarfsettlement": [
-        "Bakraz",
-        "Blackhorn",
-        "Doleor",
-        "Durn Baldak",
-        "Durn Olfrir",
-        "Eduhr",
-        "Gedum",
-        "Gorunn",
-        "Haldrach",
-        "Hammerhall",
-        "Holgrun",
-        "Ironkeep",
-        "Ironsong",
-        "Kar-Akor",
-        "Kar-Seor",
-        "Kar-Varem",
-        "Kar-Zadum",
-        "Keltin",
-        "Kholdor",
-        "Krûnbar",
-        "Mekraz",
-        "Nador",
-        "Silverstone",
-        "Stonespire",
-        "Thalmir"
-    ],
-    "dwarfrandom": [
-        "random-nature-rocky"
-    ],
-    "orcsettlement": [
-        "Dûl Ord",
-        "Nak Goz",
-        "Urgduz",
-        "Margashburz"
-    ],
-    "orcrandom": [
-        "random-races/orc-orc-surname"
-    ],
-    "tieflingsettlement": [
-        "Syrona",
-        "Lucerna"
-    ],
-    "tieflingrandom": [
-        "random-races/tiefling-infernal-surname"
-    ]
+    "human": {
+        "settlement": [
+            "Cotia",
+            "Delacourt",
+            "Denvalton",
+            "Dunham",
+            "Dunharrow",
+            "Enora",
+            "Falkirk",
+            "Florin",
+            "Forvast",
+            "Gaerham",
+            "Gerin",
+            "Glenham",
+            "Harperton",
+            "Harrington",
+            "Heldon",
+            "Jevan",
+            "Kelberg",
+            "Marshpoint",
+            "Myrcourt",
+            "Oulia",
+            "Ravenwood",
+            "Rivergate",
+            "Vallenford",
+            "Yolona"
+        ],
+        "realm": [
+            "Erodan",
+            "Hessia",
+            "Ladina",
+            "Laesia",
+            "Mirelen",
+            "Osteran",
+            "Relain",
+            "Volaneux"
+        ],
+        "random": [
+            "random-nature-temperate",
+            "random-races/human-eastern-surname",
+            "random-races/human-slavic-surname",
+            "random-races/human-western-surname"
+        ]
+    },
+    "elf": {
+        "settlement": [
+            "Alanar",
+            "Alereia",
+            "Anelor",
+            "Ayinor",
+            "Belanore",
+            "Caelora",
+            "Calvinor",
+            "Dawnspire",
+            "Elaera",
+            "Elhenas",
+            "Elunore",
+            "Elysia",
+            "Emhel",
+            "Enera",
+            "Enetear",
+            "Entheas",
+            "Erelond",
+            "Fenrille",
+            "Galas Doriel",
+            "Galas Elren",
+            "Goldspire",
+            "Illadorei",
+            "Imyalune",
+            "Isilme",
+            "Islona",
+            "Loria",
+            "Lyellon",
+            "Maeriel",
+            "Myehna",
+            "Mythal",
+            "Nylond",
+            "Nyrennora",
+            "Relthwin",
+            "Sabelle",
+            "Selenor",
+            "Seluria",
+            "Sithedral",
+            "Sunspire",
+            "Syann",
+            "Syll Unarith",
+            "Thalorin",
+            "Tilonder"
+        ],
+        "random": [
+            "random-races/elf-highelf-surname",
+            "random-races/elf-woodelf-surname",
+            "random-races/elf-drow-surname"
+        ]
+    },
+    "dwarf": {
+        "settlement": [
+            "Bakraz",
+            "Blackhorn",
+            "Doleor",
+            "Durn Baldak",
+            "Durn Olfrir",
+            "Eduhr",
+            "Gedum",
+            "Gorunn",
+            "Haldrach",
+            "Hammerhall",
+            "Holgrun",
+            "Ironkeep",
+            "Ironsong",
+            "Kar-Akor",
+            "Kar-Seor",
+            "Kar-Varem",
+            "Kar-Zadum",
+            "Keltin",
+            "Kholdor",
+            "Krûnbar",
+            "Mekraz",
+            "Nador",
+            "Silverstone",
+            "Stonespire",
+            "Thalmir"
+        ],
+        "random": [
+            "random-nature-rocky"
+        ]
+    },
+    "orc": {
+        "settlement": [
+            "Dûl Ord",
+            "Nak Goz",
+            "Urgduz",
+            "Margashburz"
+        ],
+        "random": [
+            "random-races/orc-orc-surname"
+        ]
+    },
+    "tiefling": {
+        "settlement": [
+            "Syrona",
+            "Lucerna"
+        ],
+        "random": [
+            "random-races/tiefling-infernal-surname"
+        ]
+    }
 }

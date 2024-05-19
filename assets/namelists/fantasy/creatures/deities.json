@@ -157,218 +157,232 @@
         "Xeris",
         "Yvraine"
     ],
-    "indeterminategood": [
-        "The Creator",
-        "The All-Creator",
-        "The Builder",
-        "The Ancestors",
-        "The Ever-Wise",
-        "The Prophet",
-        "The Savior"
-    ],
-    "indeterminateneutral": [
-        "The Absent One",
-        "The All-Knowing",
-        "The All-Seeing",
-        "The Astral",
-        "The Boundless",
-        "The Dreamer",
-        "The Nameless One",
-        "The Old One",
-        "The Shard",
-        "The Weaver"
-    ],
-    "indeterminateevil": [
-        "The Destroyer",
-        "The Slaughterer"
-    ],
-    "titlesfeminine": [
-        "Goddess",
-        "Lady",
-        "Matron",
-        "Mother",
-        "Queen"
-    ],
-    "titlesmasculine": [
-        "Father",
-        "God",
-        "King",
-        "Lord",
-        "Patron",
-        "Prince"
-    ],
-    "titlesindeterminate": [
-        "Embodiment",
-        "Font",
-        "God",
-        "Spirit"
-    ],
-    "lifegood": [
-        "Abundance",
-        "Agriculture",
-        "Creation",
-        "Crops",
-        "Dawn",
-        "Fall",
-        "Fathers",
-        "Fertility",
-        "Flowers",
-        "Harvests",
-        "Healing",
-        "Mothers",
-        "Spring",
-        "Wine"
-    ],
-    "lifeneutral": [
-        "Beginnings",
-        "Forests",
-        "Grass",
-        "Growth",
-        "Hunts",
-        "Life",
-        "Nature",
-        "the Wilderness"
-    ],
-    "lifeevil": [
-        "Rot",
-        "Decay",
-        "Pestilence",
-        "Disease",
-        "Plagues"
-    ],
-    "deathgood": [
-        "Funerals",
-        "Rebirth",
-        "Renewal",
-        "Rites"
-    ],
-    "deathneutral": [
-        "Beginnings",
-        "Death",
-        "Ends",
-        "Graves",
-        "Souls",
-        "Spirits",
-        "the Afterlife",
-        "the Underworld"
-    ],
-    "deathevil": [
-        "Bones",
-        "Corpses",
-        "Necromancy",
-        "the Undead"
-    ],
-    "conflictgood": [
-        "Challenges",
-        "Competition",
-        "Generals",
-        "Glory",
-        "Soldiers",
-        "Strategy"
-    ],
-    "conflictneutral": [
-        "Assassins",
-        "Conquest",
-        "Retribution",
-        "Strength",
-        "Vengeance",
-        "War",
-        "Wrath",
-        "Conflict",
-        "Struggle"
-    ],
-    "conflictevil": [
-        "Betrayal",
-        "Blood",
-        "Destruction",
-        "Murder",
-        "Pain",
-        "Rage",
-        "Suffering",
-        "Torture",
-        "Violence",
-        "Strife"
-    ],
-    "conceptualgood": [
-        "Beauty",
-        "Charity",
-        "Courage",
-        "Duty",
-        "Festivals",
-        "Forgiveness",
-        "Freedom",
-        "Glory",
-        "Honor",
-        "Hope",
-        "Ingenuity",
-        "Love",
-        "Music",
-        "Peace",
-        "Poetry",
-        "Protection",
-        "Temperance",
-        "Truth",
-        "Wisdom"
-    ],
-    "conceptualneutral": [
-        "Ambition",
-        "Balance",
-        "Change",
-        "Cunning",
-        "Dreams",
-        "Judgement",
-        "Luck",
-        "Lust",
-        "Patience",
-        "Pleasure",
-        "Pride",
-        "Secrets",
-        "Strength",
-        "Time",
-        "Travel",
-        "Trickery",
-        "Unity",
-        "Zeal"
-    ],
-    "conceptualevil": [
-        "Betrayal",
-        "Chaos",
-        "Corruption",
-        "Cowardice",
-        "Cruelty",
-        "Dishonor",
-        "Envy",
-        "Frauds",
-        "Gluttony",
-        "Greed",
-        "Hatred",
-        "Liars",
-        "Madness",
-        "Rage"
-    ],
-    "lawordergood": [
-        "Justice",
-        "Protection",
-        "Fairness",
-        "Liberation"
-    ],
-    "laworderneutral": [
-        "Diplomats",
-        "Discipline",
-        "Judgement",
-        "Law",
-        "Nobility",
-        "Order",
-        "Rulership",
-        "Stewardship",
-        "Governance"
-    ],
-    "laworderevil": [
-        "Tyranny",
-        "Oppression",
-        "Slavery",
-        "Chaos"
-    ],
+    "indeterminate": {
+        "good": [
+            "The Creator",
+            "The All-Creator",
+            "The Builder",
+            "The Ancestors",
+            "The Ever-Wise",
+            "The Prophet",
+            "The Savior"
+        ],
+        "neutral": [
+            "The Absent One",
+            "The All-Knowing",
+            "The All-Seeing",
+            "The Astral",
+            "The Boundless",
+            "The Dreamer",
+            "The Nameless One",
+            "The Old One",
+            "The Shard",
+            "The Weaver"
+        ],
+        "evil": [
+            "The Destroyer",
+            "The Slaughterer"
+        ]
+    },
+    "titles": {
+        "feminine": [
+            "Goddess",
+            "Lady",
+            "Matron",
+            "Mother",
+            "Queen"
+        ],
+        "masculine": [
+            "Father",
+            "God",
+            "King",
+            "Lord",
+            "Patron",
+            "Prince"
+        ],
+        "indeterminate": [
+            "Embodiment",
+            "Font",
+            "God",
+            "Spirit"
+        ]
+    },
+    "life": {
+        "good": [
+            "Abundance",
+            "Agriculture",
+            "Creation",
+            "Crops",
+            "Dawn",
+            "Fall",
+            "Fathers",
+            "Fertility",
+            "Flowers",
+            "Harvests",
+            "Healing",
+            "Mothers",
+            "Spring",
+            "Wine"
+        ],
+        "neutral": [
+            "Beginnings",
+            "Forests",
+            "Grass",
+            "Growth",
+            "Hunts",
+            "Life",
+            "Nature",
+            "the Wilderness"
+        ],
+        "evil": [
+            "Rot",
+            "Decay",
+            "Pestilence",
+            "Disease",
+            "Plagues"
+        ]
+    },
+    "death": {
+        "good": [
+            "Funerals",
+            "Rebirth",
+            "Renewal",
+            "Rites"
+        ],
+        "neutral": [
+            "Beginnings",
+            "Death",
+            "Ends",
+            "Graves",
+            "Souls",
+            "Spirits",
+            "the Afterlife",
+            "the Underworld"
+        ],
+        "evil": [
+            "Bones",
+            "Corpses",
+            "Necromancy",
+            "the Undead"
+        ]
+    },
+    "conflict": {
+        "good": [
+            "Challenges",
+            "Competition",
+            "Generals",
+            "Glory",
+            "Soldiers",
+            "Strategy"
+        ],
+        "neutral": [
+            "Assassins",
+            "Conquest",
+            "Retribution",
+            "Strength",
+            "Vengeance",
+            "War",
+            "Wrath",
+            "Conflict",
+            "Struggle"
+        ],
+        "evil": [
+            "Betrayal",
+            "Blood",
+            "Destruction",
+            "Murder",
+            "Pain",
+            "Rage",
+            "Suffering",
+            "Torture",
+            "Violence",
+            "Strife"
+        ]
+    },
+    "conceptual": {
+        "good": [
+            "Beauty",
+            "Charity",
+            "Courage",
+            "Duty",
+            "Festivals",
+            "Forgiveness",
+            "Freedom",
+            "Glory",
+            "Honor",
+            "Hope",
+            "Ingenuity",
+            "Love",
+            "Music",
+            "Peace",
+            "Poetry",
+            "Protection",
+            "Temperance",
+            "Truth",
+            "Wisdom"
+        ],
+        "neutral": [
+            "Ambition",
+            "Balance",
+            "Change",
+            "Cunning",
+            "Dreams",
+            "Judgement",
+            "Luck",
+            "Lust",
+            "Patience",
+            "Pleasure",
+            "Pride",
+            "Secrets",
+            "Strength",
+            "Time",
+            "Travel",
+            "Trickery",
+            "Unity",
+            "Zeal"
+        ],
+        "evil": [
+            "Betrayal",
+            "Chaos",
+            "Corruption",
+            "Cowardice",
+            "Cruelty",
+            "Dishonor",
+            "Envy",
+            "Frauds",
+            "Gluttony",
+            "Greed",
+            "Hatred",
+            "Liars",
+            "Madness",
+            "Rage"
+        ]
+    },
+    "laworder": {
+        "good": [
+            "Justice",
+            "Protection",
+            "Fairness",
+            "Liberation"
+        ],
+        "neutral": [
+            "Diplomats",
+            "Discipline",
+            "Judgement",
+            "Law",
+            "Nobility",
+            "Order",
+            "Rulership",
+            "Stewardship",
+            "Governance"
+        ],
+        "evil": [
+            "Tyranny",
+            "Oppression",
+            "Slavery",
+            "Chaos"
+        ]
+    },
     "crafts": [
         "Artists",
         "Artisans",

@@ -1,71 +1,95 @@
 {
     "title": "Military Titles Namelist",
     "description": "Namelist for military title prefixes.",
-    "westernmale": [
-        "Knight",
-        "Knight-Errant",
-        "Man-At-Arms"
-    ],
-    "westernfemale": [
-        "Knightess",
-        "Knightess-Errant",
-        "Woman-At-Arms"
-    ],
-    "male": [
+    "generic": {
+        "male": [
         
-    ],
-    "female": [
-        
-    ],
-    "neutral": [
-        "Battlemage",
-        "Captain",
-        "Commander",
-        "General",
-        "Lieutenant",
-        "Marshal",
-        "Officer",
-        "Paladin",
-        "Sergeant"
-    ],
-    "tieflingneutral": [
-        "Centurion",
-        "Legate",
-        "Praetorian",
-        "Strategos"
-    ],
-    "nordicfemale": [
-        "Shieldmaiden",
-        "Valkyrie"
-    ],
-    "nordicmale": [
-        "Shieldbrother"
-    ],
-    "nordicneutral": [
-        "Berserker"
-    ],
-    "slavicneutral": [
-        "Druzhina"
-    ],
-    "tieflingmale": [
-        "Legatus"
-    ],
-    "tieflingfemale": [
-        "Legata"
-    ],
-    "orcfemale": [
-        "Warchieftess"
-    ],
-    "orcmale": [
-        "Warchief"
-    ],
-    "elfneutral": [
-        "Warden"
-    ],
-    "highelfneutral": [
-        "Justiciar"
-    ],
-    "woodelfneutral": [
-        "Forest Warden"
-    ]
+        ],
+        "female": [
+            
+        ],
+        "neutral": [
+            "Battlemage",
+            "Captain",
+            "Commander",
+            "General",
+            "Lieutenant",
+            "Marshal",
+            "Officer",
+            "Paladin",
+            "Sergeant"
+        ]
+    },
+
+    "human": {
+        "western": {
+            "male": [
+                "Knight",
+                "Knight-Errant",
+                "Man-At-Arms"
+            ],
+            "female": [
+                "Knightess",
+                "Knightess-Errant",
+                "Woman-At-Arms"
+            ]
+        },
+        "nordic": {
+            "female": [
+                "Shieldmaiden",
+                "Valkyrie"
+            ],
+            "male": [
+                "Shieldbrother"
+            ],
+            "neutral": [
+                "Berserker"
+            ]
+        },
+        "slavic": {
+            "neutral": [
+                "Druzhina"
+            ]
+        }
+    },
+
+    "tiefling": {
+        "neutral": [
+            "Centurion",
+            "Legate",
+            "Praetorian",
+            "Strategos"
+        ],
+        "male": [
+            "Legatus"
+        ],
+        "female": [
+            "Legata"
+        ]
+    },
+
+    "orc": {
+        "female": [
+            "Warchieftess"
+        ],
+        "male": [
+            "Warchief"
+        ]
+    },
+    
+    "elf": {
+        "neutral": [
+            "Warden"
+        ],
+        "highelf": {
+            "neutral": [
+                "Justiciar"
+            ]
+        },
+        "woodelf": {
+            "neutral": [
+                "Forest Warden"
+            ]
+        }
+    }
 }
