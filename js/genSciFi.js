@@ -163,21 +163,32 @@ function generateSciFiName(root, subfolder, namelist=null, gender=null, surname=
         let genericTitles = [];
 
         // Check for race specific titles
-        raceTitles = raceTitles.concat(data[namelist + gender]);
-        raceTitles = raceTitles.concat(data[namelist + 'neutral']);
+        try
+        {
+            if(data[race][gender] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[race][gender]);
+            }
+            if(data[race]['neutral'] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[race]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for generic titles
-        genericTitles = genericTitles.concat(data[gender]);
-        genericTitles = genericTitles.concat(data['neutral']);
-
-        // Remove any undefined values, i.e. disregarding any namelists that don't exist
-        raceTitles = raceTitles.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        genericTitles = genericTitles.filter(function( element ) {
-            return element !== undefined;
-        });
+        try
+        {
+            if(data.generic[gender] != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic[gender]);
+            }
+            if(data.generic.neutral != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic.neutral);
+            }
+        }
+        catch {}
 
         // Pick a random from the lists, weighted. Checks if lists have values first.
         generatedTitle = '';

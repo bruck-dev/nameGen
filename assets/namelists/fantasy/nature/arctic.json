@@ -2,17 +2,8 @@
     "title": "Arctic Namelist",
     "description": "Namelist for randomly generated arctic features.",
     "prefix": [
-        "random-nature-arctic-prefixarctic",
-        "random-nature-arctic-prefixrandom"
-    ],
-    "prefixarctic": [
-        "Frostcliff",
-        "Frozen",
-        "Northreach"
-    ],
-    "prefixrandom": [
-        "random-util-resources-colors",
-        "random-util-resources-environmentalharsh"
+        "random-nature-shared-arctic.adjective",
+        "random-nature-shared-arctic.preset"
     ],
     "suffix": [
         "Glacier",

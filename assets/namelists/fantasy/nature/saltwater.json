@@ -3,7 +3,7 @@
     "description": "Saltwater feature namelist.",
     "prefix": [
         "random-util-resources-colors",
-        "random-util-resources-environmentalharsh"
+        "random-util-resources-environmental.harsh"
     ],
     "suffix": [
         "Atoll",

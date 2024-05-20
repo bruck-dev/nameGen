@@ -37,7 +37,7 @@
         ],
         "select2": [
             "Subrace",
-            "fantasy-util-sets-humanlists"
+            "fantasy-util-sets-lists.human"
         ],
         "checkbox1": [
         ],
@@ -61,7 +61,7 @@
         ],
         "select2": [
             "Subrace",
-            "fantasy-util-sets-humanlists"
+            "fantasy-util-sets-lists.human"
         ],
         "checkbox1": [
         ],
@@ -168,7 +168,7 @@
     "fantasy/races/dwarf": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-dwarflists"
+            "fantasy-util-sets-lists.dwarf"
         ],
         "select2": [
             "Gender",
@@ -181,17 +181,17 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "fantasy/races/elf": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-elflists"
+            "fantasy-util-sets-lists.elf"
         ],
         "select2": [
             "Gender",
@@ -204,17 +204,17 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "fantasy/races/halfing": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-halflinglists"
+            "fantasy-util-sets-lists.halfling"
         ],
         "select2": [
             "Gender",
@@ -227,17 +227,17 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "fantasy/races/human": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-humanlists"
+            "fantasy-util-sets-lists.human"
         ],
         "select2": [
             "Gender",
@@ -250,17 +250,17 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "fantasy/races/orc": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-orclists"
+            "fantasy-util-sets-lists.orc"
         ],
         "select2": [
             "Gender",
@@ -273,17 +273,17 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "fantasy/races/tiefling": {
         "select1": [
             "Subrace",
-            "fantasy-util-sets-tieflinglists"
+            "fantasy-util-sets-lists.tiefling"
         ],
         "select2": [
             "Gender",
@@ -296,11 +296,11 @@
         ],
         "select4": [
             "Title",
-            "fantasy-util-sets-titlelists"
+            "fantasy-util-sets-lists.titles"
         ],
         "select5": [
             "Epithet",
-            "fantasy-util-sets-epithetlists"
+            "fantasy-util-sets-lists.epithets"
         ]
     },
     "scifi/masseffect/planets": {
@@ -347,7 +347,7 @@
         ],
         "select4": [
             "Title",
-            "scifi-util-sets-titlelists"
+            "scifi-util-sets-lists.titles"
         ],
         "select5": [
         ]

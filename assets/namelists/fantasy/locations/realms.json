@@ -21,7 +21,7 @@
     "tier": {
         "human": {
             "small": [
-                "Earldom"
+
             ],
             "medium": [
                 "Grand Duchy",
@@ -67,6 +67,10 @@
                 ]
             },
             "western": {
+                "small": [
+                    "Earldom",
+                    "March"
+                ],
                 "medium": [
                     "Archduchy"
                 ]

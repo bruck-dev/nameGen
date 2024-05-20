@@ -1,41 +1,53 @@
 {
     "title": "ME Goverment Titles Namelist",
     "description": "Namelist for government title prefixes.",
-    "male": [
+    "generic": {
+        "male": [
         
-    ],
-    "female": [
-        
-    ],
-    "neutral": [
-        "Councilor",
-        "Overseer",
-        "Administrator",
-        "Minister",
-        "Ambassador"
-    ],
-    "asarineutral": [
-        "Matriarch"
-    ],
-    "turianneutral": [
-        "Primarch"
-    ],
-    "humanneutral": [
-        "MP",
-        "Prime Minister"
-    ],
-    "kroganmale": [
-        "Chief",
-        "Patriarch"
-    ],
-    "kroganfemale": [
-        "Chieftess"
-    ],
-    "kroganneutral": [
-        "Shaman"
-    ],
-    "salarianfemale": [
-        "Dalatrass",
-        "Matriarch"
-    ]
+        ],
+        "female": [
+            
+        ],
+        "neutral": [
+            "Councilor",
+            "Overseer",
+            "Administrator",
+            "Minister",
+            "Ambassador"
+        ]
+    },
+    "asari": {
+        "neutral": [
+            "Matriarch"
+        ]
+    },
+    "turian": {
+        "neutral": [
+            "Primarch"
+        ]
+    },
+    "human": {
+        "neutral": [
+            "MP",
+            "Prime Minister"
+        ]
+    },
+    "krogan": {
+        "male": [
+            "Chief",
+            "Patriarch"
+        ],
+        "female": [
+            "Chieftess"
+        ],
+        "neutral": [
+            "Shaman"
+        ]
+    },
+    "salarian": {
+        "female": [
+            "Dalatrass",
+            "Matriarch"
+        ]
+    }
 }

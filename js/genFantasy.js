@@ -285,9 +285,9 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
 function generateFantasyLocation(root, subfolder, list, race, subrace, size)
 {
     const data = getNamelist(root, subfolder, list);
-    race = race.toLowerCase();
-    size = size.toLowerCase();
-    subrace = subrace.toLowerCase();
+    if(typeof(size) == 'string') { race = race.toLowerCase(); }
+    if(typeof(size) == 'string') { size = size.toLowerCase(); }
+    if(typeof(size) == 'string') { subrace = subrace.toLowerCase(); }
     let generatedName = '';
     let tier = ''
 
@@ -415,11 +415,13 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
             // Use predefined names
             let randomParameters = [];
             let prefix = '';
+            let alwaysAddEnding = false;
             if(Math.random() < 0.3)
             {
                 prefix = randomItem(data['prefix']);
                 if(prefix.includes('random-'))
                 {
+                    alwaysAddEnding = true;
                     randomParameters = prefix.split('-');
                     if(prefix.includes('nature'))
                     {
@@ -457,7 +459,7 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
             generatedName = 'The ' + prefix;
             
             // Add "Inn" or "Tavern" style endings
-            if(Math.random() < 0.55)
+            if(Math.random() < 0.55 || alwaysAddEnding)
             {
                 generatedName += ' ' + randomItem(data['suffix'])
             }

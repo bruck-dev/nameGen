@@ -12,10 +12,43 @@
         ],
         "adjective": [
             "random-util-resources-colors",
-            "random-util-resources-environmentalharsh",
+            "random-util-resources-environmental.harsh",
+            "random-util-resources-environmental.pleasant",
             "random-util-resources-materials",
             "random-util-resources-flowers",
             "random-util-resources-trees"
+        ],
+        "preset": [
+
+        ]
+    },
+    "arid": {
+        "racial": [
+            "random-races/elf-darkelf-surname",
+            "random-races/human-eastern-surname",
+            "random-races/tiefling-infernal-surname"
+        ],
+        "adjective": [
+            "random-util-resources-colors",
+            "random-util-resources-environmental.harsh"
+        ],
+        "preset": [
+            "Blackrock",
+            "Bohdan's",
+            "Brokerock",
+            "Drywinds",
+            "Red Sands"
+        ]
+    },
+    "arctic": {
+        "preset": [
+            "Frostcliff",
+            "Frozen",
+            "Northreach"
+        ],
+        "adjective": [
+            "random-util-resources-colors",
+            "random-util-resources-environmental.harsh"
         ]
     }
 }

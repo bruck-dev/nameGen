@@ -52,45 +52,12 @@ function createGeneratorUI()
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
 
-    // Check if configured like a dictionary
-    if(config[list] != undefined)
-    {
-      // Hide all controls if no configurations
-      if( (config[list]['select1'].length == 0) &&
-          (config[list]['select2'].length == 0) &&
-          (config[list]['checkbox1'].length == 0) &&
-          (config[list]['select4'].length == 0) &&
-          (config[list]['select5'].length == 0) )
-      {
-        var observer = new MutationObserver(function (mutations, me) {
-          var controls = document.getElementById('controls');
-          if(controls) {
-            setVisibility('controls', visible);
-            me.disconnect();
-            return;
-          }
-        });
-        observer.observe(document, {
-          childList: true,
-          subtree: true
-        });
-      }
-      else
-      {
-        selectInit('select1label', 'select1', config[list]['select1']);
-        selectInit('select2label', 'select2', config[list]['select2']);
-        checkInit('checkbox1label', 'checkbox1', config[list]['checkbox1']);
-        selectInit('select4label', 'select4', config[list]['select4']);
-        selectInit('select5label', 'select5', config[list]['select5']);
-      }
-    }
-
     // Hide all controls if no configurations
-    else if( (config['select1'].length == 0) &&
-        (config['select2'].length == 0) &&
-        (config['checkbox1'].length == 0) &&
-        (config['select4'].length == 0) &&
-        (config['select5'].length == 0) )
+    if( (config[list]['select1'].length == 0 || config[list]['select1'] == undefined) &&
+        (config[list]['select2'].length == 0 || config[list]['select2'] == undefined) &&
+        (config[list]['checkbox1'].length == 0 || config[list]['checkbox1'] == undefined) &&
+        (config[list]['select4'].length == 0 || config[list]['select4'] == undefined) &&
+        (config[list]['select5'].length == 0 || config[list]['select5'] == undefined) )
     {
       var observer = new MutationObserver(function (mutations, me) {
         var controls = document.getElementById('controls');
@@ -105,15 +72,13 @@ function createGeneratorUI()
         subtree: true
       });
     }
-
-    // Do general config
     else
     {
-      selectInit('select1label', 'select1', config['select1']);
-      selectInit('select2label', 'select2', config['select2']);
-      checkInit('checkbox1label', 'checkbox1', config['checkbox1']);
-      selectInit('select4label', 'select4', config['select4']);
-      selectInit('select5label', 'select5', config['select5']);
+      selectInit('select1label', 'select1', config[list]['select1']);
+      selectInit('select2label', 'select2', config[list]['select2']);
+      checkInit('checkbox1label', 'checkbox1', config[list]['checkbox1']);
+      selectInit('select4label', 'select4', config[list]['select4']);
+      selectInit('select5label', 'select5', config[list]['select5']);
     }
     
     // Wait until title is created and then set it
@@ -161,9 +126,9 @@ function setSelectContent(selectid, contentList)
         path += pathSplit[j] + '/';
       }
       path = path.slice(0, -1) + '.json'; // remove last /
-      newContent = newContent.concat(getJson(path)[pathSplit.at(-1)]);
+      data = getJson(path);
+      newContent = getNestedKey(data, pathSplit.at(-1));
     }
-
     contentList = newContent;
   }
 
@@ -259,20 +224,20 @@ function arrayCheckForSubstring(arr, substring)
 // Updates dropdown dynamically if needed
 function updateSelectContent(selectid)
 {
-  let pageId = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');
-  switch(pageId)
+  const page = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');
+  switch(page)
   {
     case 'fantasy/locations/settlements':
       if(selectid == 'select1')
       {
-        let contentList = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
         setSelectContent('select2', contentList);
       }
       break;
     case 'fantasy/locations/realms':
       if(selectid == 'select1')
       {
-        let contentList = ['fantasy-util-sets-' + document.getElementById(selectid).value.toLowerCase() + 'lists'];
+        let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
         setSelectContent('select2', contentList);
       }
       break;

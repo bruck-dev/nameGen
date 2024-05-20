@@ -43,28 +43,10 @@
 
     "human": {
         "male": [
-            "Baronet",
-            "Burgrave",
-            "Ealdorman",
-            "Elector-Count",
-            "Kaiser",
-            "Landgrave",
-            "Margrave",
-            "Marquis",
-            "Prince-Elector",
-            "Ser",
-            "Sir"
+
         ],
         "female": [
-            "Baronetess",
-            "Burgravine",
-            "Dame",
-            "Elector-Countess",
-            "Kaiserin",
-            "Landgravine",
-            "Margravine",
-            "Marquise",
-            "Princess-Elector"
+
         ],
         "slavic": {
             "male": [
@@ -94,7 +76,35 @@
                 "Tianzi"
             ],
             "female": [
+                "Margravine",
+                "Marquise",
                 "Onna-Daimyō"
+            ]
+        },
+        "western": {
+            "male": [
+                "Baronet",
+                "Burgrave",
+                "Ealdorman",
+                "Elector-Count",
+                "Kaiser",
+                "Landgrave",
+                "Margrave",
+                "Marquis",
+                "Prince-Elector",
+                "Ser",
+                "Sir"
+            ],
+            "female": [
+                "Baronetess",
+                "Burgravine",
+                "Dame",
+                "Elector-Countess",
+                "Kaiserin",
+                "Landgravine",
+                "Margravine",
+                "Marquise",
+                "Princess-Elector"
             ]
         }
     },

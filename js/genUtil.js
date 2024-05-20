@@ -128,3 +128,11 @@ function getNamelist(root, subfolder, namelist)
     path = 'assets/namelists/' + root + '/' + subfolder + '/' + namelist + '.json';
     return getJson(path);
 }
+
+// Accesses nested JSON key data recursively; keyPath should be in the form of lvl1.lvl2.lvl3.etc
+function getNestedKey(data, keyPath)
+{
+    if (!keyPath) return data;
+    const properties = keyPath.split('.');
+    return getNestedKey(data[properties.shift()], properties.join('.'))
+}

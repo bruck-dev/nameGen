@@ -1,45 +1,48 @@
 {
     "title": "Sets file",
     "description": "List of lists that can be used as dropdown options",
-    "epithetlists": [
-        "None",
-        "Animals",
-        "Nicknames",
-        "Sobriquets",
-        "Suffixes"
-    ],
-    "titlelists": [
-        "None",
-        "Government",
-        "Magic",
-        "Military",
-        "Nobility",
-        "Peasant",
-        "Religious"
-    ],
-    "dwarflists": [
-        "Dwarf"
-    ],
-    "elflists": [
-        "Dark Elf",
-        "Drow",
-        "High Elf",
-        "Wood Elf"
-    ],
-    "halflinglists": [
-        "Halfling"
-    ],
-    "humanlists": [
-        "Eastern",
-        "Nordic",
-        "Slavic",
-        "Western"
-    ],
-    "orclists": [
-        "Orc"
-    ],
-    "tieflinglists": [
-        "Infernal",
-        "Virtue"
-    ]
+    "lists": {
+        "epithets": [
+            "None",
+            "Animals",
+            "Nicknames",
+            "Sobriquets",
+            "Suffixes"
+        ],
+        "titles": [
+            "None",
+            "Government",
+            "Magic",
+            "Military",
+            "Nobility",
+            "Peasant",
+            "Religious"
+        ],
+        "dwarf": [
+            "Dwarf"
+        ],
+        "elf": [
+            "Dark Elf",
+            "Drow",
+            "High Elf",
+            "Wood Elf"
+        ],
+        "halfling": [
+            "Halfling"
+        ],
+        "human": [
+            "Eastern",
+            "Nordic",
+            "Slavic",
+            "Western"
+        ],
+        "orc": [
+            "Orc"
+        ],
+        "tiefling": [
+            "Infernal",
+            "Virtue"
+        ]
+    }
+
 }

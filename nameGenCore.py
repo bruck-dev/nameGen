@@ -92,7 +92,7 @@ class Main(QMainWindow):
         
         jsonKeysLabel = QLabel('JSON Key')
         self.jsonKeysCombo = QComboBox()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems((getJsonKeys(self.jsonFileCombo.currentText())))
         self.jsonKeysCombo.setFixedSize(225, 25)
         self.jsonInputBox = QPlainTextEdit()
         
@@ -284,7 +284,7 @@ class Main(QMainWindow):
         
         self.jsonKeysCombo.blockSignals(True)
         self.jsonKeysCombo.clear()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems(getJsonKeys(self.jsonFileCombo.currentText()))
         self.jsonKeysCombo.blockSignals(False)
     
     def subdirUpdated(self):
@@ -295,34 +295,23 @@ class Main(QMainWindow):
         
         self.jsonKeysCombo.blockSignals(True)
         self.jsonKeysCombo.clear()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems(getJsonKeys(self.jsonFileCombo.currentText()))
         self.jsonKeysCombo.blockSignals(False)
         
     def fileUpdated(self):
         self.jsonKeysCombo.blockSignals(True)
         self.jsonKeysCombo.clear()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems(getJsonKeys(self.jsonFileCombo.currentText()))
         self.jsonKeysCombo.blockSignals(False)
         
     def addKey(self):
-        key = self.jsonKeyBox.text()
-        data = json.load(open(self.jsonFileCombo.currentText(), encoding='utf-8'))
-        data[key] = []
-        with open(self.jsonFileCombo.currentText(), 'w',encoding='utf-8') as f:
-            json.dump(data, f, indent=4,ensure_ascii=False)
+        addJsonKey(self.jsonFileCombo.currentText(), self.jsonKeyBox.text())
         self.jsonKeysCombo.clear()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems(getJsonKeys(self.jsonFileCombo.currentText()))
     def removeKey(self):
-        key = self.jsonKeyBox.text()
-        data = json.load(open(self.jsonFileCombo.currentText(), encoding='utf-8'))
-        try:
-            del data[key]
-        except:
-            pass # Key didn't exist, ignore
-        with open(self.jsonFileCombo.currentText(), 'w',encoding='utf-8') as f:
-            json.dump(data, f, indent=4,ensure_ascii=False)
+        removeJsonKey(self.jsonFileCombo.currentText(), self.jsonKeyBox.text())
         self.jsonKeysCombo.clear()
-        self.jsonKeysCombo.addItems(getJsonKeys(json.load(open(self.jsonFileCombo.currentText()))))
+        self.jsonKeysCombo.addItems(getJsonKeys(self.jsonFileCombo.currentText()))
         
     # Name Processing Functions
     def addNames(self):
