@@ -25,49 +25,63 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
         {
             const sur = data.surname;
             let pickedSur = randomItem(sur);
-            if(gender == 'female')
+
+            // Special Surname Conditions
+            if(race == 'human')
             {
-                if(namelist == 'nordic')
-                { 
-                    if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
+                if(namelist == 'nordic' && gender == 'female')
                     {
-                        pickedSur = pickedSur.slice(0, -3) + randomItem(['dottir', 'datter', 'dotter']);
+                        if(pickedSur.endsWith('ssen') || pickedSur.endsWith('sson'))
+                        {
+                            pickedSur = pickedSur.slice(0, -3) + randomItem(['dottir', 'datter', 'dotter']);
+                        }
+                        else if(pickedSur.endsWith('sen') || pickedSur.endsWith('son'))
+                        {
+                            pickedSur = pickedSur.slice(0, -2) + randomItem(['dottir', 'datter', 'dotter']);
+                        }
+                        generatedName += pickedSur;
                     }
-                    else if(pickedSur.endsWith('sen') || pickedSur.endsWith('son'))
-                    {
-                        pickedSur = pickedSur.slice(0, -2) + randomItem(['dottir', 'datter', 'dotter']);
-                    }
-                    generatedName += pickedSur;
-                }
-            }
-            else if(namelist == 'eastern')
-            {
-                generatedName = pickedSur + ' ' + generatedName.slice(0, -1);
-            }
-            else if(namelist == 'slavic')
-            {
-                if(gender == 'female')
+                else if(namelist == 'eastern')                      
                 {
-                    if(pickedSur.endsWith('ov') || pickedSur.endsWith('ev') || pickedSur.endsWith('in') || pickedSur.endsWith('r'))
+                    generatedName = pickedSur + ' ' + generatedName.slice(0, -1);
+                }
+                else if(namelist == 'slavic')
+                {
+                    if(gender == 'female')
                     {
-                        if(Math.random() < 0.5)
+                        if(pickedSur.endsWith('ov') || pickedSur.endsWith('ev') || pickedSur.endsWith('r'))
+                        {
+                            if(Math.random() < 0.5)
+                            {
+                                pickedSur += 'a';
+                            }
+                            else
+                            {
+                                pickedSur += 'na';
+                            }
+                        }
+                        else if(pickedSur.endsWith('y'))
+                        {
+                            pickedSur = pickedSur.slice(0, -1) + 'aya';
+                        }
+                        else if(pickedSur.endsWith('in') || pickedSur.endsWith('z'))
                         {
                             pickedSur += 'a';
                         }
-                        else
+                    }
+                    else
+                    {
+                        if((pickedSur.endsWith('ov') || pickedSur.endsWith('ev')) && Math.random() < 0.4)
                         {
-                            pickedSur += 'na';
+                            pickedSur += 'ich'
                         }
                     }
+                    generatedName += pickedSur;
                 }
                 else
                 {
-                    if((pickedSur.endsWith('ov') || pickedSur.endsWith('ev')) && Math.random() < 0.4)
-                    {
-                        pickedSur += 'ich'
-                    }
-                }
-                generatedName += pickedSur;
+                    generatedName += pickedSur;
+                }  
             }
             else
             {

@@ -1,0 +1,39 @@
+{
+    "title": "Airforce Squadron/Callsigns",
+    "description": "GOOSE-4",
+    "callsign": [
+        "Discount",
+        "Detective",
+        "Spider",
+        "Mooch",
+        "Diplomat",
+        "Hedge",
+        "Jester",
+        "Karma"
+    ],
+    "squadron": [
+        "Bulldog",
+        "Quiver",
+        "Intruder",
+        "Hawk",
+        "Raven",
+        "Steel",
+        "Metal",
+        "Razor",
+        "Falcon",
+        "Eagle",
+        "Sword",
+        "Dagger",
+        "Mace",
+        "Shield",
+        "Talon",
+        "Goose"
+    ],
+    "shared": [
+        "Hyena",
+        "Archer",
+        "Jackal",
+        "Jackdaw",
+        "Mosquito"
+    ]
+}

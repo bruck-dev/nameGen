@@ -1,0 +1,104 @@
+{
+    "title": "Sets file",
+    "description": "List of lists that can be used as dropdown options",
+    "lists": {
+        "continents": [
+            "Africa",
+            "Americas",
+            "Asia",
+            "Europe"
+        ],
+        "europe": {
+            "west": [
+                "Dutch",
+                "English",
+                "French"
+            ],
+            "central": [
+                "Czech",
+                "Estonian",
+                "German",
+                "Hungarian",
+                "Latvia",
+                "Lithuanian",
+                "Polish"
+            ],
+            "south": [
+                "Basque",
+                "Catalan",
+                "Croatian",
+                "Greek",
+                "Italian",
+                "Portuguese",
+                "Spanish"
+            ],
+            "north": [
+                "Danish",
+                "Icelandic",
+                "Norwegian",
+                "Swedish"
+            ],
+            "east": [
+                "Belorussian",
+                "Bulgarian",
+                "Russian",
+                "Serbian",
+                "Ukrainian"
+            ]
+        },
+        "asia": {
+            "southeast": [
+                "Cambodian",
+                "Filipino",
+                "Indonesian",
+                "Laotian",
+                "Thai",
+                "Vietnamese"
+            ],
+            "south": [
+                "Indian",
+                "Pakistani",
+                "Sri Lankan"
+            ],
+            "central": [
+                "Uzbek",
+                "Kazakh"
+            ],
+            "mideast": [
+                "Afghan",
+                "Arabic",
+                "Iranian",
+                "Turkish"
+            ],
+            "east": [
+                "Chinese",
+                "Japanese",
+                "Korean"
+            ]
+        },
+        "americas": {
+            "north": [
+                "French-Canadian",
+                "Indigenous",
+                "Multicultural"
+            ],
+            "south": [
+                "Indigenous",
+                "Portuguese",
+                "Spanish"
+            ]
+        },
+        "africa": {
+            "north": [
+                "Arabic",
+                "Sudanese"
+            ],
+            "west": [],
+            "central": [],
+            "south": [
+                "English"
+            ],
+            "east": []
+        }
+    }
+}
