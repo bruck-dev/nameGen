@@ -1,433 +1,426 @@
 {
     "title": "Config file",
     "description": "Sets generator interface configurations. Follows element appearance order.",
-    "fantasy/creatures/deities": {
-        "select1": [
-            "Aspect",
-            "Masculine",
-            "Feminine",
-            "Indeterminate"
-        ],
-        "select2": [
-            "Alignment",
-            "Good",
-            "Neutral",
-            "Evil"
-        ],
-        "checkbox1": [
-            "Title",
-            "true"
-        ],
-        "select4": [
-            "1st Domain",
-            "fantasy-creatures/deities-domains"
-        ],
-        "select5": [
-            "2nd Domain",
-            "fantasy-creatures/deities-domains"
-        ]
-    },
-    "fantasy/locations/settlements": {
-        "select1": [
-            "Race",
-            "Human",
-            "Elf",
-            "Dwarf",
-            "Orc"
-        ],
-        "select2": [
-            "Subrace",
-            "fantasy-util-sets-lists.human"
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-            "Size",
-            "Tiny",
-            "Small",
-            "Medium",
-            "Large"
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/locations/realms": {
-        "select1": [
-            "Race",
-            "Human",
-            "Elf",
-            "Dwarf",
-            "Orc"
-        ],
-        "select2": [
-            "Subrace",
-            "fantasy-util-sets-lists.human"
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-            "Size",
-            "Tiny",
-            "Small",
-            "Medium",
-            "Large"
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/locations/inns": {
-        "select1": [
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/nature": {
-        "select1": [
-            "Biome",
-            "Arctic",
-            "Arid",
-            "Freshwater",
-            "Rocky",
-            "Saltwater",
-            "Humid",
-            "Temperate"
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/organizations/guilds": {
-        "select1": [
-            "Adventurers",
-            "Assassins",
-            "Criminals",
-            "Mages",
-            "Merchants"
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-    
-        ],
-        "select4": [
-    
-        ],
-        "select5": [
+    "fantasy": {
+        "creatures": {
+            "deities": {
+                "select1": [
+                    "Aspect",
+                    "Masculine",
+                    "Feminine",
+                    "Indeterminate"
+                ],
+                "select2": [
+                    "Alignment",
+                    "Good",
+                    "Neutral",
+                    "Evil"
+                ],
+                "checkbox1": [
+                    "Title",
+                    "true"
+                ],
+                "select4": [
+                    "1st Domain",
+                    "fantasy-creatures/deities-domains"
+                ],
+                "select5": [
+                    "2nd Domain",
+                    "fantasy-creatures/deities-domains"
+                ]
+            }
+        },
+        "locations": {
+            "settlements": {
+                "select1": [
+                    "Race",
+                    "Human",
+                    "Elf",
+                    "Dwarf",
+                    "Orc"
+                ],
+                "select2": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.human"
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                    "Size",
+                    "Tiny",
+                    "Small",
+                    "Medium",
+                    "Large"
+                ],
+                "select5": [
+                ]
+            },
+            "realms": {
+                "select1": [
+                    "Race",
+                    "Human",
+                    "Elf",
+                    "Dwarf",
+                    "Orc"
+                ],
+                "select2": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.human"
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                    "Size",
+                    "Tiny",
+                    "Small",
+                    "Medium",
+                    "Large"
+                ],
+                "select5": [
+                ]
+            },
+            "inns": {
+                "select1": [
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            }
+        },
+        "nature": {
+            "feature": {
+                "select1": [
+                    "Biome",
+                    "Arctic",
+                    "Arid",
+                    "Freshwater",
+                    "Rocky",
+                    "Saltwater",
+                    "Humid",
+                    "Temperate"
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            }
+        },
+        "organizations": {
+            "guilds": {
+                "select1": [
+                    "Adventurers",
+                    "Assassins",
+                    "Criminals",
+                    "Mages",
+                    "Merchants"
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
             
-        ]
+                ],
+                "select4": [
+            
+                ],
+                "select5": [
+                    
+                ]
+            },
+            "orders": {
+                "select1": [
+                    "Priestly",
+                    "Militant"
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [ 
+                ]
+            },
+            "magicacademy": {
+                "select1": [
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            },
+            "gangs": {
+                "select1": [
+                ],
+                "select2": [
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            }
+        },
+        "races": {
+            "dwarf": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.dwarf"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            },
+            "elf": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.elf"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            },
+            "halfing": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.halfling"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            },
+            "human": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.human"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            },
+            "orc": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.orc"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            },
+            "tiefling": {
+                "select1": [
+                    "Subrace",
+                    "fantasy-util-sets-lists.tiefling"
+                ],
+                "select2": [
+                    "Gender",
+                    "Male",
+                    "Female"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "fantasy-util-sets-lists.titles"
+                ],
+                "select5": [
+                    "Epithet",
+                    "fantasy-util-sets-lists.epithets"
+                ]
+            }
+        }
     },
-    "fantasy/organizations/orders": {
-        "select1": [
-            "Priestly",
-            "Militant"
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [ 
-        ]
-    },
-   "fantasy/organizations/magicacademy": {
-        "select1": [
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/organizations/gangs": {
-        "select1": [
-        ],
-        "select2": [
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "fantasy/races/dwarf": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.dwarf"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "fantasy/races/elf": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.elf"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "fantasy/races/halfing": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.halfling"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "fantasy/races/human": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.human"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "fantasy/races/orc": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.orc"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "fantasy/races/tiefling": {
-        "select1": [
-            "Subrace",
-            "fantasy-util-sets-lists.tiefling"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "fantasy-util-sets-lists.titles"
-        ],
-        "select5": [
-            "Epithet",
-            "fantasy-util-sets-lists.epithets"
-        ]
-    },
-    "scifi/masseffect/planets": {
-        "select1": [
-            "Climate",
-            "Temperate",
-            "Tropical",
-            "Aquatic",
-            "Arid",
-            "Snowy",
-            "Paradisal",
-            "Ecumenopolis",
-            "Uninhabitable"
-        ],
-        "select2": [
-            "Style",
-            "Alliance"
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "scifi/masseffect/races": {
-        "select1": [
-            "Race",
-            "Asari",
-            "Turian",
-            "Quarian",
-            "Krogan",
-            "Salarian",
-            "Batarian"
-        ],
-        "select2": [
-            "Gender",
-            "Male",
-            "Female"
-        ],
-        "checkbox1": [
-            "Surname",
-            "true"
-        ],
-        "select4": [
-            "Title",
-            "scifi-util-sets-lists.titles"
-        ],
-        "select5": [
-        ]
-    },
-    "scifi/masseffect/spacecraft": {
-        "select1": [
-            "Faction",
-            "Alliance",
-            "Asari",
-            "Turian",
-            "Quarian",
-            "Krogan",
-            "Salarian",
-            "Batarian",
-            "Pirate"
-        ],
-        "select2": [
-            "Class",
-            "Civilian",
-            "Military",
-            "Capital",
-            "Station"
-        ],
-        "checkbox1": [
-            "Prefix",
-            "true"
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "scifi/organizations/corporations": {
-        "select1": [
-            "Industry",
-            "Generic",
-            "Industrial",
-            "Tech",
-            "Medical",
-            "RND",
-            "Logistics",
-            "Defense",
-            "PMC"
-        ],
-        "select2": [
-            "Name Type",
-            "Acronym",
-            "Western",
-            "Soviet",
-            "Asian"
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
-    },
-    "scifi/planets": {
-        "select1": [
-            "Climate",
-            "Temperate",
-            "Tropical",
-            "Aquatic",
-            "Arid",
-            "Snowy",
-            "Paradisal",
-            "Ecumenopolis",
-            "Uninhabitable"
-        ],
-        "select2": [
-            "Style",
-            "Human Alliance",
-            "Dune"
-        ],
-        "checkbox1": [
-        ],
-        "select4": [
-        ],
-        "select5": [
-        ]
+    "scifi": {
+        "masseffect": {
+            "planets": {
+                "select1": [
+                    "Climate",
+                    "Temperate",
+                    "Tropical",
+                    "Aquatic",
+                    "Arid",
+                    "Snowy",
+                    "Paradisal",
+                    "Ecumenopolis",
+                    "Uninhabitable"
+                ],
+                "select2": [
+                    "Style",
+                    "Alliance"
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            },
+            "races": {
+                "select1": [
+                    "Race",
+                    "Asari",
+                    "Turian",
+                    "Quarian",
+                    "Krogan",
+                    "Salarian",
+                    "Batarian"
+                ],
+                "select2": [
+                    "Gender",
+                    "Neutral"
+                ],
+                "checkbox1": [
+                    "Surname",
+                    "true"
+                ],
+                "select4": [
+                    "Title",
+                    "scifi-util-sets-lists.titles"
+                ],
+                "select5": [
+                ]
+            },
+            "spacecraft": {
+                "select1": [
+                    "Faction",
+                    "Alliance",
+                    "Asari",
+                    "Turian",
+                    "Quarian",
+                    "Krogan",
+                    "Salarian",
+                    "Batarian",
+                    "Pirate"
+                ],
+                "select2": [
+                    "Class",
+                    "Civilian",
+                    "Military",
+                    "Capital",
+                    "Station"
+                ],
+                "checkbox1": [
+                    "Prefix",
+                    "true"
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            }
+        },
+        "organizations": {
+            "corporations": {
+                "select1": [
+                    "Industry",
+                    "Generic",
+                    "Industrial",
+                    "Tech",
+                    "Medical",
+                    "RND",
+                    "Logistics",
+                    "Defense",
+                    "PMC"
+                ],
+                "select2": [
+                    "Name Type",
+                    "Acronym",
+                    "Western",
+                    "Soviet",
+                    "Asian"
+                ],
+                "checkbox1": [
+                ],
+                "select4": [
+                ],
+                "select5": [
+                ]
+            }
+        }
     }
 }

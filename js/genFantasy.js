@@ -2,7 +2,7 @@
 function generateFantasyName(root, subfolder, namelist=null, gender=null, surname=false, title=null, epithet=null)
 {
     let generatedName = '';
-    let race = localStorage.getItem('subfolder').slice(6); // gets base race
+    let race = localStorage.getItem('list'); // gets base race
     gender = gender.toLowerCase();
     namelist = namelist.replaceAll(' ', '').toLowerCase();
 
@@ -16,7 +16,7 @@ function generateFantasyName(root, subfolder, namelist=null, gender=null, surnam
     // Picks a given name and surname if enabled
     if(namelist)
     {
-        const data = getNamelist(root, subfolder, namelist);
+        const data = getNamelist(root, subfolder + '/' + race, namelist);
         const names = data[gender];
 
         generatedName += randomItem(names) + ' '
@@ -361,14 +361,12 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
                 for(let i = 0; i < options.length; i++)
                 {
                     element = options[i].value.toLowerCase();
-                    if(!element.includes(race) || !element.includes(subrace))
-                    {
-                        excludes.push(element + '-');
-                        excludes.push('-' + element);
-                    }
+                    excludes.push(element + '-');
+                    excludes.push('-' + element);
                 }
+                excludes = excludes.filter(item => ![race + '-', '-' + race].includes(item));
                 const randomParameters = name.split('-');
-                name = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3]);
+                name = getRandomName(root, randomParameters[1], randomParameters[2], randomParameters[3], excludes);
             }
             return  tier + ' of ' + name;
 
@@ -382,14 +380,12 @@ function generateFantasyLocation(root, subfolder, list, race, subrace, size)
                 let excludes = [];
                 const options = Array.from(document.getElementById('select1').options).concat(Array.from(document.getElementById('select2').options))
                 for(let i = 0; i < options.length; i++)
-                {
-                    element = options[i].value.toLowerCase();
-                    if(!element.includes(race) || !element.includes(subrace))
                     {
+                        element = options[i].value.toLowerCase();
                         excludes.push(element + '-');
                         excludes.push('-' + element);
                     }
-                }
+                excludes = excludes.filter(item => ![race + '-', '-' + race].includes(item));
 
                 if(generatedName.includes('nature'))
                 {

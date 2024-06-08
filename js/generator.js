@@ -17,7 +17,7 @@ function generateOutput(select1=null, select2=null, checkbox1=false, select4=nul
     switch(root)
     {
         case 'fantasy':
-            if(subfolder.includes('races/'))
+            if(subfolder.includes('races'))
             {
                 generatedOutput = generateFantasyName(root, subfolder, select1, select2, checkbox1, select4, select5);
             }
@@ -40,19 +40,19 @@ function generateOutput(select1=null, select2=null, checkbox1=false, select4=nul
         break;
 
         case 'scifi':
-            if(subfolder.includes('spacecraft'))
+            if(list.includes('spacecraft'))
             {
-                generatedOutput = generateSciFiSpacecraft(root, subfolder, select1, select2, checkbox1);
+                generatedOutput = generateSciFiSpacecraft(root, subfolder + '/' + list, select1, select2, checkbox1);
             }
-            if(subfolder.includes('planets'))
+            if(list.includes('planets'))
             {
-                generatedOutput = generateSciFiPlanet(root, subfolder, select1, select2);
+                generatedOutput = generateSciFiPlanet(root, subfolder + '/' + list, select1, select2);
             }
             if(subfolder.includes('organizations'))
             {
                 generatedOutput = generateSciFiOrg(root, subfolder, list, select1, select2);
             }
-            if(subfolder.includes('masseffect/races'))
+            if(subfolder.includes('masseffect') && list.includes('races'))
             {
                 generatedOutput = generateSciFiName(root, subfolder, select1, select2, checkbox1, select4);
             }

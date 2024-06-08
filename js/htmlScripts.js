@@ -40,24 +40,20 @@ function createGeneratorUI()
 {
   const config = getJson('assets/namelists/config.json');
   let visible = false;
-
-  // Check if the config is per list or per subfolder
-  let list = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');;
-  if(config[list] == undefined)
-  {
-    list = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder');
-  }
+  const root = localStorage.getItem('root');
+  const subfolder = localStorage.getItem('subfolder');
+  const list = localStorage.getItem('list');
   
   try
   {
     includeHTML('html/modular/generatorInterface.html', 'generatorinterface');
 
     // Hide all controls if no configurations
-    if( (config[list]['select1'].length == 0 || config[list]['select1'] == undefined) &&
-        (config[list]['select2'].length == 0 || config[list]['select2'] == undefined) &&
-        (config[list]['checkbox1'].length == 0 || config[list]['checkbox1'] == undefined) &&
-        (config[list]['select4'].length == 0 || config[list]['select4'] == undefined) &&
-        (config[list]['select5'].length == 0 || config[list]['select5'] == undefined) )
+    if( (config[root][subfolder][list]['select1'].length == 0 || config[root][subfolder][list]['select1'] == undefined) &&
+        (config[root][subfolder][list]['select2'].length == 0 || config[root][subfolder][list]['select2'] == undefined) &&
+        (config[root][subfolder][list]['checkbox1'].length == 0 || config[root][subfolder][list]['checkbox1'] == undefined) &&
+        (config[root][subfolder][list]['select4'].length == 0 || config[root][subfolder][list]['select4'] == undefined) &&
+        (config[root][subfolder][list]['select5'].length == 0 || config[root][subfolder][list]['select5'] == undefined) )
     {
       var observer = new MutationObserver(function (mutations, me) {
         var controls = document.getElementById('controls');
@@ -74,11 +70,11 @@ function createGeneratorUI()
     }
     else
     {
-      selectInit('select1label', 'select1', config[list]['select1']);
-      selectInit('select2label', 'select2', config[list]['select2']);
-      checkInit('checkbox1label', 'checkbox1', config[list]['checkbox1']);
-      selectInit('select4label', 'select4', config[list]['select4']);
-      selectInit('select5label', 'select5', config[list]['select5']);
+      selectInit('select1label', 'select1', config[root][subfolder][list]['select1']);
+      selectInit('select2label', 'select2', config[root][subfolder][list]['select2']);
+      checkInit('checkbox1label', 'checkbox1', config[root][subfolder][list]['checkbox1']);
+      selectInit('select4label', 'select4', config[root][subfolder][list]['select4']);
+      selectInit('select5label', 'select5', config[root][subfolder][list]['select5']);
     }
     
     // Wait until title is created and then set it
@@ -222,26 +218,67 @@ function arrayCheckForSubstring(arr, substring)
 }
 
 // Updates dropdown dynamically if needed
-function updateSelectContent(selectid)
+function updateSelectHandler(selectid)
 {
-  const page = localStorage.getItem('root') + '/' + localStorage.getItem('subfolder') + '/' + localStorage.getItem('list');
-  switch(page)
+  const root = localStorage.getItem('root');
+  const subfolder = localStorage.getItem('subfolder');
+  const list = localStorage.getItem('list');
+  switch(root)
   {
-    case 'fantasy/locations/settlements':
-      if(selectid == 'select1')
+    case "fantasy":
+      switch(subfolder)
       {
-        let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
-        setSelectContent('select2', contentList);
+        case 'locations':
+          switch(list)
+          {
+            case 'settlements':
+              if(selectid == 'select1')
+              {
+                let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
+                setSelectContent('select2', contentList);
+              }
+              break;
+            case 'realms':
+              if(selectid == 'select1')
+              {
+                let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
+                setSelectContent('select2', contentList);
+              }
+              break;
+            default:
+              break;
+          }
+          break;
+        default:
+          break;
       }
       break;
-    case 'fantasy/locations/realms':
-      if(selectid == 'select1')
+    case "scifi":
+      switch(subfolder)
       {
-        let contentList = ['fantasy-util-sets-lists.' + document.getElementById(selectid).value.toLowerCase()];
-        setSelectContent('select2', contentList);
+        case 'masseffect':
+          switch(list)
+          {
+            case 'races':
+              if(selectid == 'select1')
+              {
+                if(document.getElementById(selectid).value.toLowerCase() == 'asari')
+                {
+                  setSelectContent('select2', ['Neutral'])
+                }
+                else
+                {
+                  setSelectContent('select2', ['Male', 'Female'])
+                }
+              }
+              break;
+            default:
+              break;
+          }
+          break;
+        default:
+          break;
       }
-      break;
-
     default:
       break;
   }

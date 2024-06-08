@@ -1,32 +1,40 @@
 {
     "title": "Military Titles Namelist",
     "description": "Namelist for military title prefixes.",
-    "male": [],
-    "female": [],
-    "neutral": [
-        "Admiral",
-        "Captain",
-        "Colonel",
-        "Commander",
-        "Corporal",
-        "General",
-        "Lieutenant",
-        "Officer",
-        "Private",
-        "Sergeant",
-        "Specialist",
-        "Spectre"
-    ],
-    "asarineutral": [
-        "Justicar"
-    ],
-    "turianneutral": [
-        "Auxiliary",
-        "Centurion",
-        "Hastatus"
-    ],
-    "kroganneutral": [
-        "Battlemaster",
-        "Warmaster"
-    ]
+    "generic": {
+        "male": [],
+        "female": [],
+        "neutral": [
+            "Admiral",
+            "Captain",
+            "Colonel",
+            "Commander",
+            "Corporal",
+            "General",
+            "Lieutenant",
+            "Officer",
+            "Private",
+            "Sergeant",
+            "Specialist",
+            "Spectre"
+        ]
+    },
+    "asari": {
+        "neutral": [
+            "Justicar"
+        ]
+    },
+    "turian": {
+        "neutral": [
+            "Auxiliary",
+            "Centurion",
+            "Hastatus"
+        ]
+    },
+    "krogan": {
+        "neutral": [
+            "Battlemaster",
+            "Warmaster"
+        ]
+    }
 }

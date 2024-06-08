@@ -117,6 +117,7 @@ function generateSciFiName(root, subfolder, namelist=null, gender=null, surname=
     let generatedName = '';
     gender = gender.toLowerCase();
     namelist = namelist.replaceAll(' ', '').toLowerCase();
+    subfolder = subfolder + '/races';
 
     if(namelist == 'quarian')
     {
@@ -165,13 +166,13 @@ function generateSciFiName(root, subfolder, namelist=null, gender=null, surname=
         // Check for race specific titles
         try
         {
-            if(data[race][gender] != undefined)
+            if(data[namelist][gender] != undefined)
             {
-                raceTitles = raceTitles.concat(data[race][gender]);
+                raceTitles = raceTitles.concat(data[namelist][gender]);
             }
-            if(data[race]['neutral'] != undefined)
+            if(gender != 'neutral' && data[namelist]['neutral'] != undefined)
             {
-                raceTitles = raceTitles.concat(data[race]['neutral']);
+                raceTitles = raceTitles.concat(data[namelist]['neutral']);
             }
         }
         catch {}
@@ -208,7 +209,6 @@ function generateSciFiName(root, subfolder, namelist=null, gender=null, surname=
                 generatedTitle = randomItem(genericTitles);
             }
         }
-
         generatedName = generatedTitle + ' ' + generatedName;
     }
 
@@ -231,26 +231,37 @@ function generatedSciFiNameQuarian(root, subfolder, namelist=null, gender=null, 
     // Picks a title
     if(title)
     {
-        data = getNamelist(root, subfolder + '/shared/titles', title);
+        const data = getNamelist(root, subfolder + '/shared/titles', title);
         let raceTitles =[];
         let genericTitles = [];
 
         // Check for race specific titles
-        raceTitles = raceTitles.concat(data[namelist + gender]);
-        raceTitles = raceTitles.concat(data[namelist + 'neutral']);
+        try
+        {
+            if(data[namelist][gender] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[namelist][gender]);
+            }
+            if(gender != 'neutral' && data[namelist]['neutral'] != undefined)
+            {
+                raceTitles = raceTitles.concat(data[namelist]['neutral']);
+            }
+        }
+        catch {}
 
         // Check for generic titles
-        genericTitles = genericTitles.concat(data[gender]);
-        genericTitles = genericTitles.concat(data['neutral']);
-
-        // Remove any undefined values, i.e. disregarding any namelists that don't exist
-        raceTitles = raceTitles.filter(function( element ) {
-            return element !== undefined;
-        });
-
-        genericTitles = genericTitles.filter(function( element ) {
-            return element !== undefined;
-        });
+        try
+        {
+            if(data.generic[gender] != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic[gender]);
+            }
+            if(data.generic.neutral != undefined)
+            {
+                genericTitles = genericTitles.concat(data.generic.neutral);
+            }
+        }
+        catch {}
 
         // Pick a random from the lists, weighted. Checks if lists have values first.
         generatedTitle = '';
@@ -270,7 +281,6 @@ function generatedSciFiNameQuarian(root, subfolder, namelist=null, gender=null, 
                 generatedTitle = randomItem(genericTitles);
             }
         }
-
         generatedName = generatedTitle + ' ' + generatedName;
     }
 
